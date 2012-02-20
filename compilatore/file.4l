@@ -1,0 +1,4 @@
+S
+E, T, F
+a, +, x, (, ), $
+S::=TE, S::=+TE, E::=eps, T::=FT, T::=xFT, T::=eps, F::=a, F::=(E)

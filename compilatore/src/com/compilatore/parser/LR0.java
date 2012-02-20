@@ -141,6 +141,10 @@ public abstract class LR0 {
 							automa.add(new State(automa.size(),chiusraX));
 						flag=true;
 					}
+					//TODO Qui ho fatto il controllo
+					//se ho aggiunto nuovi stati all'automa devo uscire dal WHILE e ricreare l'iteratore sulla nuova struttura
+					if(flag)
+						break;
 				}
 		}
 		

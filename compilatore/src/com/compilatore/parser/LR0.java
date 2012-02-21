@@ -55,9 +55,12 @@ public abstract class LR0 {
 						}
 					}
 				}
+				//se ho aggiunto nuove produzioni devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova Lista creata
+				if(flag)
+					break;
 			}
 		}
-		//ritorna una lista chiusura
+		//ritorna una lista chiusura con il kernel che la genera
 		return j;
 	}
 	
@@ -141,8 +144,7 @@ public abstract class LR0 {
 							automa.add(new State(automa.size(),chiusraX));
 						flag=true;
 					}
-					//TODO Qui ho fatto il controllo
-					//se ho aggiunto nuovi stati all'automa devo uscire dal WHILE e ricreare l'iteratore sulla nuova struttura
+					//se ho aggiunto nuovi stati all'automa devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova struttura
 					if(flag)
 						break;
 				}

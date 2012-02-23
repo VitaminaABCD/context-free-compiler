@@ -41,10 +41,12 @@ public abstract class LR0 {
 				item = iter.next();
 				ob = item.getRightList().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
-				//TODO Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore della lunghezza del list<>
-				if(item.getCurrentCharIndex()>= item.getRightList().size()){
+				//TODO Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore o uguale 
+				//della lunghezza del list<>
+				if(item.getCurrentCharIndex() >= item.getRightList().size()){
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
+					//quindi inseriamo nella tabella action la Reduce per la produzione giusta...
 					break;
 				}
 				//prendo il simbolo che segue il puntino nella produzione A:= a.Bc
@@ -143,8 +145,9 @@ public abstract class LR0 {
 					for(int i=0;i<grammatica.getV().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT o REDUCE nella tabella degli ACTION Inquanto generato da un Terminale
-						//se ChiusuraX non ï¿½ vuoto AND non ï¿½ contenuta nell'automa
+						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli ACTION Inquanto generato da un Terminale
+						
+						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
 						if(!chiusraX.isEmpty() & !automa.contains(chiusraX)){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
@@ -156,8 +159,8 @@ public abstract class LR0 {
 					for(int i=0;i<grammatica.getT().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli GOT Inquanto generato da un NON Terminale
-						//se ChiusuraX non ï¿½ vuoto AND non ï¿½ contenuta nell'automa
+						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella degli GOTo Inquanto generato da un NON Terminale
+						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
 						if(!chiusraX.isEmpty() & !automa.contains(chiusraX)){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
@@ -168,8 +171,8 @@ public abstract class LR0 {
 						break;
 				}
 		}
-		
-		int y= 0;
-		y++;
 	}
+	
+	
+	
 }

@@ -29,14 +29,14 @@ public abstract class LR0 {
 
 		//Copio il kernel item I in una List<IndexedProduction> j cos� avr� sia iKernel che i relativi Item che formano la chiusura
 		List<IndexedProduction> j = new ArrayList<IndexedProduction>();
-		j=i;
+		j.addAll(i);
 		//fino a quando  vengono aggiunti nuovi item a J
 		while (flag) {
 			flag=false;
 			Iterator <IndexedProduction> iter = j.iterator();
 			while(iter.hasNext()){
 				//per ogni Item appartenente a j
-				item = iter.next();   //TODO al secondo ciclo lancia eccezione (???)
+				item = iter.next();
 				ob = item.getRightList().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
 				//prendo il simbolo che segue il puntino nella produzione A:= a.Bc
@@ -101,12 +101,8 @@ public abstract class LR0 {
 		List<IndexedProduction>chiusraX = new ArrayList<IndexedProduction>();
 		List<State> automa = new ArrayList<State>();
 		List<IndexedProduction> aumentata= new ArrayList<IndexedProduction>();
-		Production p = new Production();
 		//creiamo una produzione S'::= S che fa diventare la nostra grammatica aumentata
-		p.setLeft("S'");
-		p.setRight(grammatica.getS());
-		//TODO Dovrebbe funzionare.... 
-		p.getRightList().add(grammatica.getS()); 
+		Production p = new Production("S'", grammatica.getS());
 		//dopo di che inseriamo il tutto in un List<IndexedProdaction> mettendo il punto al primo posto nella produzione S'::=.S
 		aumentata.add( new IndexedProduction(0, p));
 		//per poterlo inserire nell'automa al primo posto come Stat[0]

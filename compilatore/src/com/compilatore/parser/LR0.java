@@ -99,7 +99,7 @@ public abstract class LR0 {
 			item = iter.next();
 			ob= item.getRightList().toArray();
 			right = Arrays.copyOf(ob ,ob.length ,String[].class);
-			//controlliamo se il carattere che segue il punto � lo stesso di A::= a.Xc
+			//controlliamo se il carattere che segue il punto e' lo stesso di A::= a.Xc
 			//TODO da qui si capisce quali sono gli stati di chiusura e quali no.......
 			if(right[item.getCurrentCharIndex()].equals(X))
 				//quindi aggiungiamo la produzione a J spostando il punto al carattere succesivo
@@ -137,8 +137,7 @@ public abstract class LR0 {
 				stato =iter.next();
 				//recupero la Lsit<indexedProduction>contenente tutte le produzioni
 				List<IndexedProduction>Items = stato.getItems();
-					//per ogni Terminale della grammatica
-				//non fa la conversione in Array....
+				//per ogni Terminale della grammatica
 				ob= grammatica.getV().toArray();
 				x = Arrays.copyOf(ob,ob.length,String[].class);
 					for(int i=0;i<grammatica.getV().size();i++){

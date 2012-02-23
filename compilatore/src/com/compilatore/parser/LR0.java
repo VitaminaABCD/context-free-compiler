@@ -21,7 +21,9 @@ public abstract class LR0 {
 	 */
 	public List<IndexedProduction> chiusura (List<IndexedProduction> i){
 		boolean flag =true;
+		boolean uguale =true;
 		IndexedProduction item ;
+		IndexedProduction item1 ;
 		Production corrente;
 		String x;
 		Object[] ob;
@@ -47,8 +49,18 @@ public abstract class LR0 {
 					corrente=prod.next();
 					//se il simbolo alla destra del punto ï¿½ uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
-						//se la produzione nn ï¿½ giï¿½ presente in J
-						if(!j.contains(corrente)){
+						//se la produzione nn e' gi presente in J
+						Iterator <IndexedProduction> iter1 = j.iterator();
+						//uso questa variabile per vedere se è già presente in j la setto di default a false, e poi la cambio se ne trova 2  uguali
+						uguale=false;
+						while(iter1.hasNext()){
+							//per ogni Item appartenente a j
+							item1 = iter1.next();
+							//controllo sia se la parte destra che la parte sinistra sono già presenti
+							if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
+								uguale =true;
+							}
+						if(!uguale){
 							//aggiungo la produzione mettendo il punto come primo elemnto B::=.Z
 							j.add(new IndexedProduction(corrente));
 							flag=true;
@@ -73,7 +85,7 @@ public abstract class LR0 {
 	public List<IndexedProduction> GoTo(List<IndexedProduction> i, String X){
 		IndexedProduction item;
 		String [] right;
-		List<IndexedProduction> j = new ArrayList<IndexedProduction>(null);
+		List<IndexedProduction> j = new ArrayList<IndexedProduction>();
 		Iterator <IndexedProduction> iter = i.iterator();
 		//Per ogni produzione contenuta in I
 		while (iter.hasNext()){
@@ -97,6 +109,7 @@ public abstract class LR0 {
 	public void Item(){
 		boolean flag = true;
 		State stato;
+		Object[] ob;
 		String[] x;
 		List<IndexedProduction>chiusraX = new ArrayList<IndexedProduction>();
 		List<State> automa = new ArrayList<State>();
@@ -117,7 +130,9 @@ public abstract class LR0 {
 				//recupero la Lsit<indexedProduction>contenente tutte le produzioni
 				List<IndexedProduction>Items = stato.getItems();
 					//per ogni Terminale della grammatica
-					x = (String[]) grammatica.getV().toArray();
+				//non fa la conversione in Array....
+				ob= grammatica.getV().toArray();
+				x = Arrays.copyOf(ob,ob.length,String[].class);
 					for(int i=0;i<grammatica.getV().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
@@ -129,7 +144,8 @@ public abstract class LR0 {
 						flag=true;
 					}
 					//ora si deve fare la stessa cosa per i non terminali
-					x = (String[]) grammatica.getT().toArray();
+					ob = grammatica.getT().toArray();
+					x = Arrays.copyOf(ob,ob.length,String[].class);
 					for(int i=0;i<grammatica.getT().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);

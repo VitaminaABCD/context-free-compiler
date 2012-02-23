@@ -42,7 +42,7 @@ public abstract class LR0 {
 				ob = item.getRightList().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
 				//TODO Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore della lunghezza del list<>
-				if(item.getCurrentCharIndex()> item.getRightList().size()){
+				if(item.getCurrentCharIndex()>= item.getRightList().size()){
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
 					break;

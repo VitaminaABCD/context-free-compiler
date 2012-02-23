@@ -55,19 +55,10 @@ public abstract class LR0 {
 				//per ogni produzione della grammatica 
 				while (prod.hasNext()){
 					corrente=prod.next();
-					//se il simbolo alla destra del punto ï¿½ uguale alla Parte sinistra della produzione B::= z
+					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
 						//se la produzione nn e' gi presente in J
-						Iterator <IndexedProduction> iter1 = j.iterator();
-						//uso questa variabile per vedere se è già presente in j la setto di default a false, e poi la cambio se ne trova 2  uguali
-						uguale=false;
-						while(iter1.hasNext()){
-							//per ogni Item appartenente a j
-							item1 = iter1.next();
-							//controllo sia se la parte destra che la parte sinistra sono già presenti
-							if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
-								uguale =true;
-							}
+						uguale =controllo(j, corrente);
 						if(!uguale){
 							//aggiungo la produzione mettendo il punto come primo elemnto B::=.Z
 							j.add(new IndexedProduction(corrente));
@@ -148,7 +139,7 @@ public abstract class LR0 {
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli ACTION Inquanto generato da un Terminale
 						
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & !automa.contains(chiusraX)){
+						if(!chiusraX.isEmpty() & !!presente(automa, chiusraX)){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
 							flag=true;}
@@ -159,9 +150,9 @@ public abstract class LR0 {
 					for(int i=0;i<grammatica.getT().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella degli GOTo Inquanto generato da un NON Terminale
+						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei GOTo Inquanto generato da un NON Terminale
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & !automa.contains(chiusraX)){
+						if(!chiusraX.isEmpty() & !presente(automa, chiusraX)){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
 							flag=true;}
@@ -173,6 +164,38 @@ public abstract class LR0 {
 		}
 	}
 	
+	public boolean presente(List<State> automa, List<IndexedProduction> stato){
+		State it;
+		boolean presente = false;
 	
+		//per ogni stato dell'automa
+		Iterator<State> iter = automa.iterator();
+		while (iter.hasNext()){
+			it= iter.next();
+			
+		}
+		return presente;
+	}
+	
+	/**
+	 * controlla se una produzione è già presente in una lista di produzioni
+	 * @param j
+	 * @param corrente
+	 * @return
+	 */
+	public Boolean controllo(List<IndexedProduction>j,Production corrente){
+		Iterator <IndexedProduction> iter1 = j.iterator();
+		//uso questa variabile per vedere se è già presente in j la setto di default a false, e poi la cambio se ne trova 2  uguali
+		boolean uguale=false;
+		Production item1;
+		while(iter1.hasNext()){
+			//per ogni Item appartenente a j
+			item1 = iter1.next();
+			//controllo sia se la parte destra che la parte sinistra sono già presenti
+			if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
+				uguale =true;
+			}
+		return uguale;
+	}
 	
 }

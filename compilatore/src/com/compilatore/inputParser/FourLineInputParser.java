@@ -78,7 +78,7 @@ public class FourLineInputParser extends A_InputParser{
 				for (i = 0; i < P_temp.length; i++) {
 					// separo soggetto e espressione per ogni produzione
 					singPro = P_temp[i].split("::=");
-					P.add(new Production(singPro[0], singPro[1]));	
+					P.add(new Production(singPro[0], singPro[1],1));	
 				}
 			} catch (Exception e) {
 				ErrorManager.manage(ERROR_TYPE.INVALID_GRAMMAR, e);

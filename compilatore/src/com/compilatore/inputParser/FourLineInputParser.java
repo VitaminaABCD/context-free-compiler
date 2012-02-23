@@ -78,6 +78,7 @@ public class FourLineInputParser extends A_InputParser{
 				for (i = 0; i < P_temp.length; i++) {
 					// separo soggetto e espressione per ogni produzione
 					singPro = P_temp[i].split("::=");
+					//e li inserisco in un oggetto di tipo Prodaction
 					P.add(new Production(singPro[0], singPro[1],true));	
 				}
 			} catch (Exception e) {

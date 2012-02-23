@@ -68,6 +68,7 @@ public class GrammarFactory {
 					else{
 						//inseriamo un carattere di stringa vuota per dire che � il carattere nullo
 						p.getRightList().add(" ");
+						break;
 					}
 				}
 			}

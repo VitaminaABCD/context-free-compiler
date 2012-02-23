@@ -14,7 +14,11 @@ public class Production {
                 left="";
                 right="";
         }
-        
+        /**
+         * crea un oggetto Prodaction completa di RightList passandogli la parte destra e sinistra
+         * @param lt
+         * @param rt
+         */
         public Production(String lt, String rt){
                 left=lt;
                 right=rt;

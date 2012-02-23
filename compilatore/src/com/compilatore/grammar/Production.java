@@ -23,9 +23,13 @@ public class Production {
                 left=lt;
                 right=rt;
                 rightList = new ArrayList<String>();
-                char[] temp = right.toCharArray();
-                for(int i=0;i<temp.length;i++)
+                if (!right.equals("eps")){
+                	char[] temp = right.toCharArray();
+                	for(int i=0;i<temp.length;i++)
                         this.rightList.add(Character.toString(temp[i]));
+                }
+                else 
+                	this.rightList.add(" ");
         }
         
         public Production(String lt, String rt,boolean flag){

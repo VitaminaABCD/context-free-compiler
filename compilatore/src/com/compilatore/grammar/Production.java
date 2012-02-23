@@ -19,6 +19,15 @@ public class Production {
 		left=lt;
 		right=rt;
 		rightList = new ArrayList<String>();
+		char[] temp = right.toCharArray();
+		for(int i=0;i<temp.length;i++)
+			this.rightList.add(Character.toString(temp[i]));
+	}
+	
+	public Production(String lt, String rt,boolean flag){
+		left=lt;
+		right=rt;
+		rightList = new ArrayList<String>();
 	}
 	
 	public String getLeft() {
@@ -38,15 +47,6 @@ public class Production {
 	}
 	
 	public List<String> getRightList() {
-		if(rightList==null)
-			this.rightList =new ArrayList<String>();
-		else{
-			if(rightList.size()!=right.length()){
-				char[] temp = right.toCharArray();
-				for(int i=0;i<temp.length;i++)
-					this.rightList.add(Character.toString(temp[i]));
-			}
-		}
 		return rightList;
 	}
 

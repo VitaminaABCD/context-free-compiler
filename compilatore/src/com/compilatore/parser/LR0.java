@@ -41,6 +41,12 @@ public abstract class LR0 {
 				item = iter.next();
 				ob = item.getRightList().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
+				//TODO Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore della lunghezza del list<>
+				if(item.getCurrentCharIndex()> item.getRightList().size()){
+					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
+					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
+					break;
+				}
 				//prendo il simbolo che segue il puntino nella produzione A:= a.Bc
 				x =(String) right[item.getCurrentCharIndex()];
 				Iterator<Production> prod = grammatica.getP().iterator();
@@ -84,16 +90,18 @@ public abstract class LR0 {
 	 */
 	public List<IndexedProduction> GoTo(List<IndexedProduction> i, String X){
 		IndexedProduction item;
+		Object[] ob;
 		String [] right;
 		List<IndexedProduction> j = new ArrayList<IndexedProduction>();
 		Iterator <IndexedProduction> iter = i.iterator();
 		//Per ogni produzione contenuta in I
 		while (iter.hasNext()){
 			item = iter.next();
-			right = (String[]) item.getRightList().toArray();
+			ob= item.getRightList().toArray();
+			right = Arrays.copyOf(ob ,ob.length ,String[].class);
 			//controlliamo se il carattere che segue il punto ï¿½ lo stesso di A::= a.Xc
 			//TODO da qui si capisce quali sono gli stati di chiusura e quali no.......
-			if(right[item.getCurrentCharIndex()]== X)
+			if(right[item.getCurrentCharIndex()].equals(X))
 				//quindi aggiungiamo la produzione a J spostando il punto al carattere succesivo
 				j.add(new IndexedProduction(item.getCurrentCharIndex()+1, item));
 		}
@@ -138,10 +146,10 @@ public abstract class LR0 {
 						chiusraX =GoTo(Items, x[i]);
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT o REDUCE nella tabella degli ACTION Inquanto generato da un Terminale
 						//se ChiusuraX non ï¿½ vuoto AND non ï¿½ contenuta nell'automa
-						if(!chiusraX.isEmpty() & !automa.contains(chiusraX))
+						if(!chiusraX.isEmpty() & !automa.contains(chiusraX)){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
-						flag=true;
+							flag=true;}
 					}
 					//ora si deve fare la stessa cosa per i non terminali
 					ob = grammatica.getT().toArray();
@@ -151,10 +159,10 @@ public abstract class LR0 {
 						chiusraX =GoTo(Items, x[i]);
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli GOT Inquanto generato da un NON Terminale
 						//se ChiusuraX non ï¿½ vuoto AND non ï¿½ contenuta nell'automa
-						if(!chiusraX.isEmpty() & !automa.contains(chiusraX))
+						if(!chiusraX.isEmpty() & !automa.contains(chiusraX)){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
-						flag=true;
+							flag=true;}
 					}
 					//se ho aggiunto nuovi stati all'automa devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova struttura
 					if(flag)

@@ -92,11 +92,13 @@ public abstract class LR0 {
 			item = iter.next();
 			ob= item.getRightList().toArray();
 			right = Arrays.copyOf(ob ,ob.length ,String[].class);
-			//controlliamo se il carattere che segue il punto e' lo stesso di A::= a.Xc
-			//TODO da qui si capisce quali sono gli stati di chiusura e quali no.......
-			if(right[item.getCurrentCharIndex()].equals(X))
-				//quindi aggiungiamo la produzione a J spostando il punto al carattere succesivo
-				j.add(new IndexedProduction(item.getCurrentCharIndex()+1, item));
+			//se il puntino non si trova nell'ultima posizione
+			if(!(item.getCurrentCharIndex() >= item.getRightList().size()))
+				//controlliamo se il carattere che segue il punto e' lo stesso di A::= a.Xc
+				//TODO da qui si capisce quali sono gli stati di chiusura e quali no.......
+				if(right[item.getCurrentCharIndex()].equals(X))
+					//quindi aggiungiamo la produzione a J spostando il punto al carattere succesivo
+					j.add(new IndexedProduction(item.getCurrentCharIndex()+1, item));
 		}
 		//ritorna il nuovo kernel con la relativa chiusura
 		return chiusura(j);

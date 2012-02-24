@@ -164,6 +164,12 @@ public abstract class LR0 {
 		}
 	}
 	
+	/**
+	 * controlla se uno stato è presente in un automa
+	 * @param automa
+	 * @param stato
+	 * @return
+	 */
 	public boolean presente(List<State> automa, List<IndexedProduction> stato){
 		State it;
 		boolean presente = false;
@@ -178,7 +184,7 @@ public abstract class LR0 {
 	}
 	
 	/**
-	 * controlla se una produzione è già presente in una lista di produzioni
+	 * controlla se una produzione è già presente in una lista di produzioni ritorna vero se è presente falso se non lo è
 	 * @param j
 	 * @param corrente
 	 * @return

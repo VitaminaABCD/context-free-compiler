@@ -42,7 +42,7 @@ public abstract class LR0 {
 				ob = item.getRightList().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
 				//TODO Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore o uguale 
-				//della lunghezza del list<>
+				//della lunghezza del Rightlist
 				if(item.getCurrentCharIndex() >= item.getRightList().size()){
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
@@ -139,7 +139,7 @@ public abstract class LR0 {
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli ACTION Inquanto generato da un Terminale
 						
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & !!presente(automa, chiusraX)){
+						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
 							flag=true;}
@@ -152,7 +152,7 @@ public abstract class LR0 {
 						chiusraX =GoTo(Items, x[i]);
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei GOTo Inquanto generato da un NON Terminale
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & !presente(automa, chiusraX)){
+						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
 							flag=true;}
@@ -165,22 +165,42 @@ public abstract class LR0 {
 	}
 	
 	/**
-	 * controlla se uno stato è presente in un automa
+	 * controlla se uno stato è presente in un automa restituisce -1 
+	 * se non è presente se no restituisce il numero di stato uguale a quello passato
 	 * @param automa
 	 * @param stato
 	 * @return
 	 */
-	public boolean presente(List<State> automa, List<IndexedProduction> stato){
+	public int uguale(List<State> automa, List<IndexedProduction> stato){
 		State it;
-		boolean presente = false;
+		Production prod ;
+		int uguale = -1;
+		int proUguali = 0; 	//questa variabile ci servirà per controllare che tutte le produzioni siano uguali
 	
-		//per ogni stato dell'automa
 		Iterator<State> iter = automa.iterator();
+		//per ogni stato dell'automa
 		while (iter.hasNext()){
 			it= iter.next();
+			//prendiamo la lista delle produzioni dello stato
+			Iterator<IndexedProduction> stato1 = it.getItems().iterator();
+			//questa variabile contera' quante produzioni sono uguali a quello dello stato che stiamo controllando 
+			proUguali = 0;
+			//per ogni produzione contenuta nell'iteratore
+			while(stato1.hasNext()){
+				prod = stato1.next();
+				//se la produzione dello stato è presente nello stato che stiamo controllando incrementa il contatore 
+				if (controllo(stato, prod))
+					proUguali++;
+			}
+			if (proUguali == stato.size()){
+				//se il numero di produzioni uguali è uguale alla dimensione dello stato vuol dire che 
+				//sono tutti uguali e quindi 
+				uguale = it.getIndex();
+				break;
+			}
 			
 		}
-		return presente;
+		return uguale;	
 	}
 	
 	/**
@@ -189,17 +209,24 @@ public abstract class LR0 {
 	 * @param corrente
 	 * @return
 	 */
-	public Boolean controllo(List<IndexedProduction>j,Production corrente){
-		Iterator <IndexedProduction> iter1 = j.iterator();
+	public boolean controllo(List<IndexedProduction>j,Production corrente){
 		//uso questa variabile per vedere se è già presente in j la setto di default a false, e poi la cambio se ne trova 2  uguali
 		boolean uguale=false;
 		Production item1;
+		
+		Iterator <IndexedProduction> iter1 = j.iterator();
 		while(iter1.hasNext()){
 			//per ogni Item appartenente a j
 			item1 = iter1.next();
 			//controllo sia se la parte destra che la parte sinistra sono già presenti
 			if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
+				{
+				//setto la variabile booleana a TRUE per segnalare che sono uguali
 				uguale =true;
+				//esco dal ciclo xke' gia' ho trovato la corrispondenza
+				break;
+				
+				}
 			}
 		return uguale;
 	}

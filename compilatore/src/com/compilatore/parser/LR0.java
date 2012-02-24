@@ -165,15 +165,17 @@ public abstract class LR0 {
 	}
 	
 	/**
-	 * controlla se uno stato è presente in un automa restituisce -1 
-	 * se non è presente se no restituisce il numero di stato uguale a quello passato
+	 * controlla se uno stato è presente in un automa restituisce
+	 * -1se non è presente 
+	 * se no restituisce il numero di stato uguale a quello passato
 	 * @param automa
 	 * @param stato
-	 * @return
+	 * @return 
 	 */
 	public int uguale(List<State> automa, List<IndexedProduction> stato){
 		State it;
 		Production prod ;
+		int leng=0;
 		int uguale = -1;
 		int proUguali = 0; 	//questa variabile ci servirà per controllare che tutte le produzioni siano uguali
 	
@@ -185,21 +187,23 @@ public abstract class LR0 {
 			Iterator<IndexedProduction> stato1 = it.getItems().iterator();
 			//questa variabile contera' quante produzioni sono uguali a quello dello stato che stiamo controllando 
 			proUguali = 0;
+			leng=0;
 			//per ogni produzione contenuta nell'iteratore
 			while(stato1.hasNext()){
 				prod = stato1.next();
+				leng++;
 				//se la produzione dello stato è presente nello stato che stiamo controllando incrementa il contatore 
 				if (controllo(stato, prod))
 					proUguali++;
 			}
-			if (proUguali == stato.size()){
-				//se il numero di produzioni uguali è uguale alla dimensione dello stato vuol dire che 
+			//se il numero di produzioni uguali è uguale alla dimensione dello stato vuol dire che
+			if (proUguali == stato.size() & leng==proUguali){ 
 				//sono tutti uguali e quindi 
 				uguale = it.getIndex();
 				break;
 			}
 			
-		}
+		} 
 		return uguale;	
 	}
 	

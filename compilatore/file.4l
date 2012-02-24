@@ -1,4 +1,4 @@
 S
-E, T, F
+E, T, P
 a, +, x, (, ), $
-S::=TE, S::=+TE, E::=eps, T::=FT, T::=xFT, T::=eps, F::=a, F::=(E)
+S::=E, E::=E+T, E::=T, T::=TxP, T::=P, P::=a, P::=(E)

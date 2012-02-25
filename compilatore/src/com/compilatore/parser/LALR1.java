@@ -1,7 +1,6 @@
 package com.compilatore.parser;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import com.compilatore.grammar.IGrammar;
 
@@ -26,8 +25,27 @@ public class LALR1 extends LR0{
 	@Override
 	public void calculateKernels(){
 		Automa AutomaLR0 = new Automa(Item());
-		AutomaLR0.getKernels();
-		int x=0;
+		
+//		for(IndexedProduction ki : AutomaLR0.getKernels()){
+//			if(ki.getLeft()!=""){
+//				
+//			}
+//		}
+		
+		List<State> states = AutomaLR0.getStates();
+		for(State s : states){
+			calculateLookahead(s.getKernels(), new String());  //bisogna passare il simbolo grammaticale...
+		}
+		
 	}
 	
+	
+	public List<String> calculateLookahead(List<IndexedProduction> kernels, String simbol){
+		List<String> result = new LinkedList<String>();
+		for(IndexedProduction LR0kernel: kernels){
+			
+		}
+		
+		return result;
+	}
 }

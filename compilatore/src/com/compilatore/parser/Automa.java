@@ -23,6 +23,7 @@ public class Automa {
 	}
 	
 	/* Get kernels element for each states into automa
+	 * gli stati sono separati da una produzione vuota
 	 * @return the kernel element of the automa
 	 */
 	public List<IndexedProduction> getKernels(){
@@ -30,6 +31,7 @@ public class Automa {
 		//per ogni stato nell'automa
 		for(State s : states){
 			kernels.addAll(s.getKernels());
+			kernels.add(new IndexedProduction());
 		}
 		return kernels;
 	}

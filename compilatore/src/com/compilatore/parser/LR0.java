@@ -25,13 +25,12 @@ public abstract class LR0 {
 		boolean flag =true;
 		boolean uguale =true;
 		IndexedProduction item ;
-		IndexedProduction item1 ;
 		Production corrente;
 		String x;
 		Object[] ob;
 		String[] right;
 
-		//Copio il kernel item I in una List<IndexedProduction> j cosï¿½ avrï¿½ sia iKernel che i relativi Item che formano la chiusura
+		//Copio il kernel item I in una List<IndexedProduction> j cosi' avro' sia i Kernel che i relativi Item che formano la chiusura
 		List<IndexedProduction> j = new ArrayList<IndexedProduction>();
 		j.addAll(i);
 		//fino a quando  vengono aggiunti nuovi item a J
@@ -107,8 +106,8 @@ public abstract class LR0 {
 	}
 	
 	/**
-	 * data una grammatica G ci calcoliamo la grammatica aumentata associata aggiungendo la produzione S'::=.S, dove S ï¿½ l'assioma.
-	 * calcoliamo la chiusura di essa i GoTo associati cosï¿½ da avera l'automa a stati finiti
+	 * data una grammatica G ci calcoliamo la grammatica aumentata associata aggiungendo la produzione S'::=.S, dove S e' l'assioma.
+	 * calcoliamo la chiusura di essa i GoTo associati cosi' da avera l'automa a stati finiti
 	 * 
 	 */
 	public List<State> Item(){
@@ -214,7 +213,7 @@ public abstract class LR0 {
 	}
 	
 	/**
-	 * controlla se una produzione è già presente in una lista di produzioni ritorna vero se è presente falso se non lo è
+	 * controlla se una produzione è già presente in una lista di produzioni ritorna vero se è presente falso se non lo è.
 	 * @param j
 	 * @param corrente
 	 * @return

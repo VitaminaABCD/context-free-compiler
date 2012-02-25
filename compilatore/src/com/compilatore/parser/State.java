@@ -3,6 +3,7 @@ package com.compilatore.parser;
 import java.util.ArrayList;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class State {
@@ -47,7 +48,7 @@ public class State {
 	 */
 	public List<IndexedProduction> getKernels(){
 		 IndexedProduction prod = new IndexedProduction();
-		List<IndexedProduction> j =new ArrayList<IndexedProduction>();
+		List<IndexedProduction> j =new LinkedList<IndexedProduction>();
 		//se ci troviamo nello stato 0
 		if(index==0){
 			//tutte gli item appartenenti allo stato fanno parte del kernel
@@ -60,7 +61,7 @@ public class State {
 			 while(it.hasNext()){
 				 prod = it.next();
 				 //vediamo in che posizione si trova il puntino, perchè solo le produzionioni che hanno il 
-				 //puntino un una posizione diversa dalla prima faranno parte del kernel
+				 //puntino in una posizione diversa dalla prima faranno parte del kernel
 				 if(prod.getCurrentCharIndex()!=0)
 					//quindi la aggiungiamo a J
 					 j.add(new IndexedProduction(prod));

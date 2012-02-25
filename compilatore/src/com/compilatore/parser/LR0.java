@@ -13,11 +13,13 @@ public abstract class LR0 {
 	protected IGrammar grammatica;
 	
 	public abstract void setGrammar(IGrammar gram);
-	
+	public abstract void calculateKernels();
+
 	/**
 	 *Passata una lista di produzione I contenente i Kernel di uno stato, restitusce la chiusura di esso 
 	 * @param 	i
 	 * @return 	j
+	 * 
 	 */
 	public List<IndexedProduction> chiusura (List<IndexedProduction> i){
 		boolean flag =true;
@@ -109,7 +111,7 @@ public abstract class LR0 {
 	 * calcoliamo la chiusura di essa i GoTo associati cos� da avera l'automa a stati finiti
 	 * 
 	 */
-	public void Item(){
+	public List<State> Item(){
 		boolean flag = true;
 		State stato;
 		Object[] ob;
@@ -157,13 +159,15 @@ public abstract class LR0 {
 						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
-							flag=true;}
+							flag=true;
+							}
 					}
 					//se ho aggiunto nuovi stati all'automa devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova struttura
 					if(flag)
 						break;
 				}
 		}
+		return automa;
 	}
 	
 	/**

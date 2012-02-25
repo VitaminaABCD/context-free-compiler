@@ -12,6 +12,6 @@ public class Home{
 		InputParser parser = new InputParser("file.4l");
 		LR0 l = new LALR1(parser.parse());
 		
-		l.Item();
+		l.calculateKernels();
 	}
 }

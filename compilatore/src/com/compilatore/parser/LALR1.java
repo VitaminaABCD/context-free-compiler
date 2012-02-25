@@ -23,8 +23,11 @@ public class LALR1 extends LR0{
 		grammatica=gram;
 	}
 	
-	public void calculateKernel(){
-		
+	@Override
+	public void calculateKernels(){
+		Automa AutomaLR0 = new Automa(Item());
+		AutomaLR0.getKernels();
+		int x=0;
 	}
 	
 }

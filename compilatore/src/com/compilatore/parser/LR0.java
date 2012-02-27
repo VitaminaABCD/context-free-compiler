@@ -110,6 +110,7 @@ public abstract class LR0 {
 	/**
 	 * data una grammatica G ci calcoliamo la grammatica aumentata associata aggiungendo la produzione S'::=.S, dove S e' l'assioma.
 	 * calcoliamo la chiusura di essa, i GoTo associati cosi' da avera l'automa a stati finiti.
+	 * Ritorna l'automa di tipo LR(0)
 	 *  @return automa
 	 */
 	public List<State> Item(){

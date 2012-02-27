@@ -1,5 +1,13 @@
 package com.compilatore.parser;
 
-public class LR1 {
+import com.compilatore.grammar.IGrammar;
 
+public  abstract class LR1 {
+	
+	protected IGrammar grammatica;
+
+	public abstract void setGrammar(IGrammar gram);
+
+	
 }
+

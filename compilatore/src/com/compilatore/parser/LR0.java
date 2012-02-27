@@ -16,7 +16,7 @@ public abstract class LR0 {
 	public abstract void calculateKernels();
 
 	/**
-	 *Passata una lista di produzione I contenente i Kernel di uno stato, restitusce la chiusura di esso 
+	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
 	 * @param 	i
 	 * @return 	j
 	 * 
@@ -48,6 +48,7 @@ public abstract class LR0 {
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
 					//quindi inseriamo nella tabella action la Reduce per la produzione giusta...
+					//ossi R = P::=aBc. 
 					break;
 				}
 				//prendo il simbolo che segue il puntino nella produzione A:= a.Bc
@@ -75,6 +76,7 @@ public abstract class LR0 {
 		//ritorna una lista chiusura con il kernel che la genera
 		return j;
 	}
+	
 	
 	/**
 	 * Passato uno stato e il simbolo che segue il punto, restituisce il kernel del nuovo stato con la relativa chiusura 
@@ -107,8 +109,8 @@ public abstract class LR0 {
 	
 	/**
 	 * data una grammatica G ci calcoliamo la grammatica aumentata associata aggiungendo la produzione S'::=.S, dove S e' l'assioma.
-	 * calcoliamo la chiusura di essa i GoTo associati cosi' da avera l'automa a stati finiti
-	 * 
+	 * calcoliamo la chiusura di essa, i GoTo associati cosi' da avera l'automa a stati finiti.
+	 *  @return automa
 	 */
 	public List<State> Item(){
 		boolean flag = true;

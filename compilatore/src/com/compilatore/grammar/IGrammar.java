@@ -25,4 +25,5 @@ public interface IGrammar {
 
 	public Set<String>[] getFollow();
 	
+	public Set<String> getFirst(String A);
 }

@@ -85,7 +85,14 @@ public class ContextFreeGrammar implements IGrammar {
 		first();
 		return first;
 	}
-
+	
+	/*
+	 * passato un carattere mi ritorna la lista di first associati a esso
+	 */
+	public Set<String> getFirst(String A){
+		return first[V.indexOf(A)];
+	}
+	
 	public Set<String>[] getFollow() {
 		follow();
 		return follow;

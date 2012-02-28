@@ -1,6 +1,8 @@
 package com.compilatore.parser;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.compilatore.grammar.Production;
@@ -32,6 +34,19 @@ public class IndexedProduction extends Production{
 		lookahead = new HashSet<String>();
 		lookahead.add(la);
 	}
+	
+	
+	public IndexedProduction(Production p, Set<String> la){
+		super(p.getLeft(),p.getRight());
+		currentCharIndex=0;
+		//controlliamo se Lookahead è vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementi
+		//TODO mi sa che questa creazione del lookahead non va tanto bene.....
+		if(lookahead==null)
+			lookahead = new HashSet<String>();
+		//aggiungo ttutti gli elementi conntenuti in la
+		lookahead.addAll(la);
+	}
+	
 	
 	public int getCurrentCharIndex() {
 		return currentCharIndex;

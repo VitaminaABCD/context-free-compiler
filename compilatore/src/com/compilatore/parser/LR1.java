@@ -18,7 +18,6 @@ public  abstract class LR1 {
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
 	 * @param 	i
 	 * @return 	j
-	 * 
 	 */
 	public List<IndexedProduction> chiusura (List<IndexedProduction> i){
 		boolean flag =true;
@@ -47,7 +46,8 @@ public  abstract class LR1 {
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
 					//quindi inseriamo nella tabella action la Reduce per la produzione giusta...
-					//ossi R = P::=aBc. 
+					//ossi R = P::=aBc.
+					//se la casella è già occupata abbiamo un conflitto e cerchiamo di risolverlo avvalendocci dei simboli di lookahead
 					break;
 				}
 				//prendo il simbolo che segue il puntino nella produzione A:= a.Bc
@@ -58,6 +58,8 @@ public  abstract class LR1 {
 					corrente=prod.next();
 					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
+						//TODO a questo punto si deve applciare una specie di algoritmo simile a quello usato per calcolare il first così come è fatto epr nella teoria
+						
 						//se la produzione nn e' gi presente in J
 						uguale =controllo(j, corrente);
 						if(!uguale){
@@ -75,71 +77,7 @@ public  abstract class LR1 {
 		//ritorna una lista chiusura con il kernel che la genera
 		return j;
 	}
-	
-	/**
-	 * data una grammatica G ci calcoliamo la grammatica aumentata associata aggiungendo la produzione S'::=.S, dove S e' l'assioma.
-	 * calcoliamo la chiusura di essa, i GoTo associati cosi' da avera l'automa a stati finiti.
-	 * 
-	 *  @return automa
-	 */
-	public List<State> Item(){
-		boolean flag = true;
-		State stato;
-		Object[] ob;
-		String[] x;
-		List<IndexedProduction>chiusraX = new ArrayList<IndexedProduction>();
-		List<State> automa = new ArrayList<State>();
-		List<IndexedProduction> aumentata= new ArrayList<IndexedProduction>();
-		//creiamo una produzione S'::= S che fa diventare la nostra grammatica aumentata
-		Production p = new Production("S'", grammatica.getS());
-		//dopo di che inseriamo il tutto in un List<IndexedProdaction> mettendo il punto al primo posto nella produzione S'::=.S
-		aumentata.add( new IndexedProduction(0, p, "$"));
-		//per poterlo inserire nell'automa al primo posto come Stat[0]
-		automa.add(new State(0, chiusura(aumentata)));
-		//fino a quando vengono aggiunti nuovi insiemi di item ad AUTOMA
-		while(flag){
-			flag=false;
-			Iterator <State> iter = automa.iterator();
-			//per ogni insieme di item(o stato) nell'Automa
-			while(iter.hasNext()){
-				stato =iter.next();
-				//recupero la Lsit<indexedProduction>contenente tutte le produzioni
-				List<IndexedProduction>Items = stato.getItems();
-				//per ogni Terminale della grammatica
-				ob= grammatica.getV().toArray();
-				x = Arrays.copyOf(ob,ob.length,String[].class);
-					for(int i=0;i<grammatica.getV().size();i++){
-						//faccio il GoTo dello stato 
-						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli ACTION Inquanto generato da un Terminale
-						
-						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
-							//allora lo aggiungo
-							automa.add(new State(automa.size(),chiusraX));
-							flag=true;}
-					}
-					//ora si deve fare la stessa cosa per i non terminali
-					ob = grammatica.getT().toArray();
-					x = Arrays.copyOf(ob,ob.length,String[].class);
-					for(int i=0;i<grammatica.getT().size();i++){
-						//faccio il GoTo dello stato 
-						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei GOTo Inquanto generato da un NON Terminale
-						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
-							//allora lo aggiungo
-							automa.add(new State(automa.size(),chiusraX));
-							flag=true;
-							}
-					}
-					//se ho aggiunto nuovi stati all'automa devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova struttura
-					if(flag)
-						break;
-				}
-		}
-		return automa;
-	}
+
 	
 	/**
 	 * controlla se uno stato è presente in un automa restituisce

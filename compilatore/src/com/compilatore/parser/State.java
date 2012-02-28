@@ -51,8 +51,14 @@ public class State {
 		List<IndexedProduction> j =new LinkedList<IndexedProduction>();
 		//se ci troviamo nello stato 0
 		if(index==0){
-			//tutte gli item appartenenti allo stato fanno parte del kernel
-			j=items;
+			//solo la produzione S'::=S appartiene al kernel
+			 Iterator<IndexedProduction> it = items.iterator();
+			 //per ogni item dello stato
+			 while(it.hasNext()){
+				 prod = it.next();
+				 j.add(prod);
+				 break;
+			 }
 		}
 		//se non siamo nello stato 0
 		 else{

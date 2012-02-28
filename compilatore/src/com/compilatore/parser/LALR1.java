@@ -36,44 +36,19 @@ public class LALR1 extends LR0{
 		List<State> states = AutomaLR0.getStates();
 		for(State s : states){
 			calculateLookahead(s.getKernels()); 
-			//TODO:
-			System.out.println(s.toString());
 		}
 		
 	}
 	
 	
-	public void calculateLookahead(List<IndexedProduction> LR0kernels){
-		List<IndexedProduction> J;
-		
-		for(IndexedProduction K : LR0kernels){
-			/**Trasformo la singola produzione k in una list per poterla passare
-			** a chiusura LR1 */
-			List<IndexedProduction> temp = new LinkedList<IndexedProduction>();
-			temp.add(K);
-			J = chiusuraLR1(temp);
-			for(IndexedProduction jItem : J){
-				String X = jItem.getCharAfter();
-				List<IndexedProduction> Goto = GoTo(chiusura(LR0kernels), X);
-				for(String lookahead : jItem.getLookahead()){
-						for(IndexedProduction p : Goto){
-							if(
-								p.getLeft().equals(jItem.getLeft())
-											&& 
-								p.getRight().equals(jItem.getRight())
-											&& 
-								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
-							){
-								if(lookahead != "$"){
-									p.getLookahead().add(lookahead);
-								}else{
-									p.getLookahead().addAll(K.getLookahead());
-								} 
-							}
-						}
-				}
-			}
+	public List<String> calculateLookahead(List<IndexedProduction> kernels){
+		List<String> result = new LinkedList<String>();
+		List<IndexedProduction> J = chiusuraLR1(kernels);
+		for(IndexedProduction LR1kernel: J){
+			System.out.println(LR1kernel);
 		}
+		
+		return result;
 	}
 	
 	/**
@@ -85,6 +60,7 @@ public class LALR1 extends LR0{
 		boolean flag =true;
 		boolean uguale =true;
 		IndexedProduction item ;
+		IndexedProduction item1 ;
 		int punto;
 		Production corrente;
 		String x;
@@ -153,7 +129,21 @@ public class LALR1 extends LR0{
 							j.add(new IndexedProduction(corrente,look));
 							flag=true;
 						}
+						else{
+							Iterator <IndexedProduction> iter1 = j.iterator();
+							while(iter1.hasNext()){
+								//per ogni Item appartenente a j
+								item1 = iter1.next();
+								//controllo sia se la parte destra che la parte sinistra sono già presenti
+								if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
+									{
+										item1.getLookahead().addAll(look);
+										break;
+									}
+							}
+						}
 					}
+
 				}
 				//se ho aggiunto nuove produzioni devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova Lista creata
 				if(flag)

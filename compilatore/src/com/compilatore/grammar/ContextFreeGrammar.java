@@ -39,6 +39,8 @@ public class ContextFreeGrammar implements IGrammar {
 		this.P = prod;
 		this.S = ass;
 		nullo();
+		first();
+		follow();
 	}
 
 	@Override

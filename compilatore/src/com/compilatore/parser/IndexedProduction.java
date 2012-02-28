@@ -51,6 +51,23 @@ public class IndexedProduction extends Production{
 	public int getCurrentCharIndex() {
 		return currentCharIndex;
 	}
+	
+	public String getCharAfter(){
+		try{
+			return Character.toString(getRight().charAt(currentCharIndex));
+		}catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public String getCharBefore(){
+		try{
+			return Character.toString(getRight().charAt(currentCharIndex-1));
+		}catch (Exception e) {
+			return null;
+		}
+		
+	}
 
 	public void setCurrentCharIndex(int currentCharIndex) {
 		this.currentCharIndex = currentCharIndex;

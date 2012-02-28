@@ -30,8 +30,10 @@ public class IndexedProduction extends Production{
 	public IndexedProduction(int i, Production p, String la){
 		super(p.getLeft(),p.getRight());
 		currentCharIndex=i;
-		//TODO mi sa che questa creazione del lookahead non va tanto bene.....
-		lookahead = new HashSet<String>();
+		//controlliamo se Lookahead è vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementi
+		if(lookahead==null)
+			lookahead = new HashSet<String>();
+		//aggiungo ttutti gli elementi conntenuti in la
 		lookahead.add(la);
 	}
 	

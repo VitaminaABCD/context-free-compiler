@@ -83,9 +83,6 @@ public class IndexedProduction extends Production{
 		return lookahead;
 	}
 
-	public void setLookahead(Set<String> lookahead) {
-		this.lookahead = lookahead;
-	}
 	
 	@Override
 	public String toString(){

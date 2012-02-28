@@ -42,7 +42,7 @@ public abstract class LR0 {
 				item = iter.next();
 				ob = item.getRightList().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
-				//TODO Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore o uguale 
+				//Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione è maggiore o uguale 
 				//della lunghezza del Rightlist
 				if(item.getCurrentCharIndex() >= item.getRightList().size()){
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 

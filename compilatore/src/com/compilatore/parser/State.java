@@ -76,4 +76,13 @@ public class State {
 		return j;
 	}
 	
+	@Override
+	public String toString(){
+		String result= "State number: "+index+"\n";
+		for(IndexedProduction i : items){
+			result += i.toString() + "\n";
+		}
+		return result;		
+	}
+	
 }

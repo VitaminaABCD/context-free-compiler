@@ -12,16 +12,22 @@ public class IndexedProduction extends Production{
 	public IndexedProduction(){
 		super();
 		currentCharIndex=0;
+		lookahead = new HashSet<String>();
+
 	}
 	
 	public IndexedProduction(Production p){
 		super(p.getLeft(),p.getRight());
 		currentCharIndex=0;
+		lookahead = new HashSet<String>();
+
 	}
 	
 	public IndexedProduction(int i, Production p){
 		super(p.getLeft(),p.getRight());
 		currentCharIndex=i;
+		lookahead = new HashSet<String>();
+
 	}
 	
 	
@@ -79,6 +85,16 @@ public class IndexedProduction extends Production{
 
 	public void setLookahead(Set<String> lookahead) {
 		this.lookahead = lookahead;
+	}
+	
+	@Override
+	public String toString(){
+		String right = super.getRight();
+		String result = super.getLeft()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + "{";
+		for(String l : lookahead){
+			result += l + "  ";
+		}
+		return result +"}";
 	}
 	
 }

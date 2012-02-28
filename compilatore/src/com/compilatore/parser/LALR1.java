@@ -36,6 +36,8 @@ public class LALR1 extends LR0{
 		List<State> states = AutomaLR0.getStates();
 		for(State s : states){
 			calculateLookahead(s.getKernels()); 
+			//TODO:
+			System.out.println(s.toString());
 		}
 		
 	}
@@ -66,7 +68,7 @@ public class LALR1 extends LR0{
 									p.getLookahead().add(lookahead);
 								}else{
 									p.getLookahead().addAll(K.getLookahead());
-								}
+								} 
 							}
 						}
 				}

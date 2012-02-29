@@ -35,20 +35,49 @@ public class LALR1 extends LR0{
 		
 		List<State> states = AutomaLR0.getStates();
 		for(State s : states){
-			calculateLookahead(s.getKernels()); 
+			System.out.println(s.toString());
+//			calculateLookahead(s.getKernels());
+			for(IndexedProduction i : s.getKernels()){
+				System.out.println("Kernel: \n" + i.toString() + "\n");
+	
+			}
+			
 		}
 		
 	}
 	
 	
-	public List<String> calculateLookahead(List<IndexedProduction> kernels){
-		List<String> result = new LinkedList<String>();
-		List<IndexedProduction> J = chiusuraLR1(kernels);
-		for(IndexedProduction LR1kernel: J){
-			System.out.println(LR1kernel);
-		}
+	public void calculateLookahead(List<IndexedProduction> LR0kernels){
+		List<IndexedProduction> J;
 		
-		return result;
+		for(IndexedProduction K : LR0kernels){
+			/**Trasformo la singola produzione k in una list per poterla passare
+			** a chiusura LR1 */
+			List<IndexedProduction> temp = new LinkedList<IndexedProduction>();
+			temp.add(K);
+			J = chiusuraLR1(temp);
+			for(IndexedProduction jItem : J){
+				String X = jItem.getCharAfter();
+				List<IndexedProduction> Goto = GoTo(chiusura(LR0kernels), X);
+				for(String lookahead : jItem.getLookahead()){
+						for(IndexedProduction p : Goto){
+							if(
+								p.getLeft().equals(jItem.getLeft())
+											&& 
+								p.getRight().equals(jItem.getRight())
+											&& 
+								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
+							){
+								if(lookahead != "$"){
+									p.getLookahead().add(lookahead);
+								}else{
+									p.getLookahead().addAll(K.getLookahead());
+								}
+							}
+						}
+				}
+			}
+		}
 	}
 	
 	/**

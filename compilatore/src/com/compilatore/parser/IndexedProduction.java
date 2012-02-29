@@ -16,6 +16,16 @@ public class IndexedProduction extends Production{
 
 	}
 	
+	
+	public IndexedProduction(IndexedProduction pro){
+		super(pro.getLeft(),pro.getRight());
+		currentCharIndex=pro.getCurrentCharIndex();
+		if (lookahead==null)
+			lookahead = new HashSet<String>();
+		lookahead.addAll(pro.getLookahead());
+
+	}
+	
 	public IndexedProduction(Production p){
 		super(p.getLeft(),p.getRight());
 		currentCharIndex=0;

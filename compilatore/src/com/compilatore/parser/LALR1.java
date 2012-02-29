@@ -101,14 +101,14 @@ public class LALR1 extends LR0{
 					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
 						/////////////////////////
-						//TODO a questo punto si deve applciare una specie di algoritmo simile a quello usato per calcolare il first così come è fatto epr nella teoria
+						//TODO a questo punto si deve applciare una specie di algoritmo simile a quello usato per calcolare il first così come è fatto nella teoria
 						look= new HashSet<String>();
 						//conrtolliamo se esiste un elemento dopo il simbolo evidenziato dal punto [A:= a.Bc, d] 
 						if(!(punto+1 >= item.getRightList().size())){
 							//se esiste allora aggiungiamo ai simboli di lookahead i first(cd)
 							//quindi per prima cosa controlliamo se c è un terminale o un non terminale
 							la = (String) right[punto+1];
-							//se la è un Terminale aggiungiamo il simbolo alla lista dei  lookahead per la produzione che dovremo inserire
+							//se "la" è un Terminale aggiungiamo il simbolo alla lista dei  lookahead per la produzione che dovremo inserire
 							if (grammatica.getT().contains(la))
 								//aggiungiamo il simbolo di lookahead per la produzione che dobbiamo inserire nella chiusura
 								look.add(la);
@@ -130,13 +130,16 @@ public class LALR1 extends LR0{
 							flag=true;
 						}
 						else{
+							//se la produzione è già presente all'interno di j dobbiamo semplicemente aggiornare i simboli di lookahead
 							Iterator <IndexedProduction> iter1 = j.iterator();
+							//quindi scorriamo le produzioni d j fino a quando non troviamo quella che dobbiamo modificare
 							while(iter1.hasNext()){
 								//per ogni Item appartenente a j
 								item1 = iter1.next();
-								//controllo sia se la parte destra che la parte sinistra sono già presenti
+								//controllo che  sia se la parte destra che la parte sinistra sono già presenti
 								if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
 									{
+									//quindi aggiorno i simbolii di look ahead per questa produzione e esco dal ciclo perchè ho già trovato quella che ci interessava
 										item1.getLookahead().addAll(look);
 										break;
 									}

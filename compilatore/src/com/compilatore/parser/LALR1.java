@@ -6,16 +6,18 @@ import com.compilatore.grammar.IGrammar;
 import com.compilatore.grammar.Production;
 
 public class LALR1 extends LR0{
-	private List<IndexedProduction> kernel; 
+	private Automa automa;
+	private List<State> state; 
+	private List<IndexedProduction> kernel;
 	
 	public LALR1(){
 		grammatica=null;
-		kernel=new ArrayList<IndexedProduction>();
+		state=new LinkedList<State>();
 	}
 	
 	public LALR1(IGrammar gram){
 		setGrammar(gram);
-		kernel=new ArrayList<IndexedProduction>();
+		state=new ArrayList<State>();
 	}
 	
 	@Override
@@ -26,7 +28,7 @@ public class LALR1 extends LR0{
 	@Override
 	public void calculateKernels(){
 		Automa AutomaLR0 = new Automa(Item());
-		
+		kernel=new LinkedList<IndexedProduction>();
 //		for(IndexedProduction ki : AutomaLR0.getKernels()){
 //			if(ki.getLeft()!=""){
 //				
@@ -36,12 +38,16 @@ public class LALR1 extends LR0{
 		List<State> states = AutomaLR0.getStates();
 		for(State s : states){
 			System.out.println(s.toString());
-//			calculateLookahead(s.getKernels());
+			calculateLookahead(s.getKernels());
 			for(IndexedProduction i : s.getKernels()){
 				System.out.println("Kernel: \n" + i.toString() + "\n");
-	
 			}
-			
+		}
+		
+		int x=1;
+		for(IndexedProduction i : kernel){
+			System.out.println(x+" lalr1: \n" + i+"\n");
+			x++;
 		}
 		
 	}
@@ -74,6 +80,7 @@ public class LALR1 extends LR0{
 									p.getLookahead().addAll(K.getLookahead());
 								}
 							}
+							kernel.add(p);
 						}
 				}
 			}

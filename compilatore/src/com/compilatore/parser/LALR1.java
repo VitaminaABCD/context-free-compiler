@@ -66,7 +66,10 @@ public class LALR1 extends LR0{
 				String X = jItem.getCharAfter();
 				List<IndexedProduction> Goto = GoTo(chiusura(LR0kernels), X);
 				for(String lookahead : jItem.getLookahead()){
-						for(IndexedProduction p : Goto){
+					
+					
+					/////////////////////////////////
+					for(IndexedProduction p : Goto){
 							if(
 								p.getLeft().equals(jItem.getLeft())
 											&& 
@@ -80,8 +83,10 @@ public class LALR1 extends LR0{
 									p.getLookahead().addAll(K.getLookahead());
 								}
 							}
-							kernel.add(p);
-						}
+					}
+					////////////////////////////////
+					
+					
 				}
 			}
 		}

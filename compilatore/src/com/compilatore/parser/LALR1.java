@@ -85,15 +85,11 @@ public class LALR1 extends LR0{
 	}
 	
 	private void generateLookahead(IndexedProduction p) {
-		Iterator<State> s = this.automa.getStates().iterator();
-		while(s.hasNext()){
-			State st = s.next();
-			Iterator<IndexedProduction> k = st.getKernels().iterator();
-			while(k.hasNext()){
-				IndexedProduction kn = k.next();
-				if(p.compare(kn)) {
-					kn.getLookahead().addAll(p.getLookahead());
-					logger.debug("aggiunto " + p.getLookahead() + " a " + kn.toString());
+		for(State s : this.automa.getStates()){
+			for(IndexedProduction k : s.getKernels()){
+				if(p.compare(k)) {
+					k.addLookahead(p.getLookahead());
+					logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString());
 				}
 			}
 		}

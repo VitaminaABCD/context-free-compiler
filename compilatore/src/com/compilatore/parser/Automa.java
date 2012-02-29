@@ -23,16 +23,22 @@ public class Automa {
 	}
 	
 	/* Get kernels element for each states into automa
-	 * gli stati sono separati da una produzione vuota
-	 * @return the kernel element of the automa
+	 * @return new State list with kernel item only
 	 */
-	public List<IndexedProduction> getKernels(){
-		List<IndexedProduction> kernels = new LinkedList<IndexedProduction>();
+	public List<State> getKernels(){
+		List<State> result= new LinkedList<State>();
 		//per ogni stato nell'automa
 		for(State s : states){
-			kernels.addAll(s.getKernels());
-			kernels.add(new IndexedProduction());
+			result.add(new State(s.getIndex(), s.getKernels()));
+
 		}
-		return kernels;
+		return result;
+	}
+	
+	@Override
+	public String toString(){
+		String result = "";
+		for(State s : this.states) result+=s.toString();
+		return result;
 	}
 }

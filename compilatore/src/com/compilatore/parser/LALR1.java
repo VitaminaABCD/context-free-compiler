@@ -2,20 +2,25 @@ package com.compilatore.parser;
 
 import java.util.*;
 
+import org.apache.log4j.Logger;
+
 import com.compilatore.grammar.IGrammar;
 import com.compilatore.grammar.Production;
 
 public class LALR1 extends LR0{
+	static Logger logger = Logger.getLogger(LALR1.class.getName());
+	
 	private Automa automa;
 	private List<State> state; 
-	private List<IndexedProduction> kernel;
 	
 	public LALR1(){
+		automa=new Automa();
 		grammatica=null;
 		state=new LinkedList<State>();
 	}
 	
 	public LALR1(IGrammar gram){
+		automa = new Automa();
 		setGrammar(gram);
 		state=new ArrayList<State>();
 	}
@@ -28,26 +33,14 @@ public class LALR1 extends LR0{
 	@Override
 	public void calculateKernels(){
 		Automa AutomaLR0 = new Automa(Item());
-		kernel=new LinkedList<IndexedProduction>();
-//		for(IndexedProduction ki : AutomaLR0.getKernels()){
-//			if(ki.getLeft()!=""){
-//				
-//			}
-//		}
+		logger.debug("Inizializzazione dell'automa con stati contenenti i kernel LR0");
+		this.automa.setStates(AutomaLR0.getKernels());
 		
 		List<State> states = AutomaLR0.getStates();
-		for(State s : states){
-			System.out.println(s.toString());
-			calculateLookahead(s.getKernels());
-			for(IndexedProduction i : s.getKernels()){
-				System.out.println("Kernel: \n" + i.toString() + "\n");
-			}
-		}
 		
-		int x=1;
-		for(IndexedProduction i : kernel){
-			System.out.println(x+" lalr1: \n" + i+"\n");
-			x++;
+		
+		for(State s : states){
+			calculateLookahead(s.getKernels());
 		}
 		
 	}
@@ -64,34 +57,44 @@ public class LALR1 extends LR0{
 			J = chiusuraLR1(temp);
 			for(IndexedProduction jItem : J){
 				String X = jItem.getCharAfter();
-				List<IndexedProduction> Goto = GoTo(chiusura(LR0kernels), X);
+				List<IndexedProduction> cl = chiusura(LR0kernels);
+				List<IndexedProduction> Goto = GoTo(cl, X);
 				for(String lookahead : jItem.getLookahead()){
 					
 					
 					/////////////////////////////////
 					for(IndexedProduction p : Goto){
-							if(
-								p.getLeft().equals(jItem.getLeft())
-											&& 
-								p.getRight().equals(jItem.getRight())
+							if( p.compare(jItem)
 											&& 
 								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
 							){
 								if(lookahead != "$"){
 									p.getLookahead().add(lookahead);
+									logger.debug("Simbolo [" + lookahead + "] generato");
 								}else{
+									logger.debug("Simboli "+K.getLookahead()+" propagati");
 									p.getLookahead().addAll(K.getLookahead());
 								}
 							}
+					generateLookahead(p);	
 					}
 					////////////////////////////////
-					
-					
 				}
 			}
 		}
 	}
 	
+	private void generateLookahead(IndexedProduction p) {
+		for(State s : this.automa.getStates()){
+			for(IndexedProduction k : s.getKernels()){
+				if(p.compare(k)) {
+					k.getLookahead().addAll(p.getLookahead());
+					logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString());
+				}
+			}
+		}
+	}
+
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
 	 * @param 	i
@@ -196,5 +199,10 @@ public class LALR1 extends LR0{
 		}
 		//ritorna una lista chiusura con il kernel che la genera
 		return j;
+	}
+	
+	@Override
+	public String toString(){
+		return this.automa.toString();
 	}
 }

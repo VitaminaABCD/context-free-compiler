@@ -22,7 +22,6 @@ public class IndexedProduction extends Production{
 		currentCharIndex=pro.getCurrentCharIndex();
 		if (lookahead==null)
 			lookahead = new HashSet<String>();
-		lookahead.addAll(pro.getLookahead());
 
 	}
 	
@@ -93,15 +92,22 @@ public class IndexedProduction extends Production{
 		return lookahead;
 	}
 
+	public boolean compare(IndexedProduction p){
+		if( p.getLeft().equals(getLeft())
+					&& 
+			p.getRight().equals(getRight())
+			) return true;
+		else return false;
+	}
 	
 	@Override
 	public String toString(){
 		String right = super.getRight();
-		String result = super.getLeft()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + "{";
-		for(String l : lookahead){
-			result += l + "  ";
-		}
-		return result +"}";
+		return super.getLeft()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + lookahead;
+//		for(String l : lookahead){
+//			result += l + "  ";
+//		}
+//		return result +"}";
 	}
 	
 }

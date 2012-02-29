@@ -68,9 +68,12 @@ public class State {
 				 prod = it.next();
 				 //vediamo in che posizione si trova il puntino, perchè solo le produzionioni che hanno il 
 				 //puntino in una posizione diversa dalla prima faranno parte del kernel
-				 if(prod.getCurrentCharIndex()!=0)
+				 if(prod.getCurrentCharIndex()!=0){
 					//quindi la aggiungiamo a J
-					 j.add(new IndexedProduction(prod));
+					 IndexedProduction p = new IndexedProduction(prod);
+				 	 p.getLookahead().addAll(prod.getLookahead());
+					 j.add(p);
+				 }
 			 }
 		 }
 		return j;

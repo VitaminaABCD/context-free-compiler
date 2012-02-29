@@ -9,7 +9,7 @@ public class Home{
 	public static void main(String[] args){
 		IGrammar grammar;
 		
-		InputParser parser = new InputParser("esempioLibro.4l");
+		InputParser parser = new InputParser("file.4l");
 		LR0 l = new LALR1(parser.parse());
 		
 		l.calculateKernels();

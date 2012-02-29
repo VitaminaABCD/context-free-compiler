@@ -109,5 +109,10 @@ public class IndexedProduction extends Production{
 //		}
 //		return result +"}";
 	}
+
+
+	public void addLookahead(Set<String> lookahead2) {
+		this.lookahead.addAll(lookahead2);
+	}
 	
 }

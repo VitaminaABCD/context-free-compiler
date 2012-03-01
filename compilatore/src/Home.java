@@ -16,8 +16,9 @@ public class Home{
 		
 		IGrammar grammar;
 		
-		logger.debug("Start application");
+
 		InputParser parser = new InputParser("esempioLibro.4l");
+
 		LR0 l = new LALR1(parser.parse());
 		
 		l.calculateKernels();

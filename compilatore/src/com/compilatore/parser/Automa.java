@@ -25,7 +25,7 @@ public class Automa {
 	/* Get kernels element for each states into automa
 	 * @return new State list with kernel item only
 	 */
-	public List<State> getKernels(){
+	public List<State> newItemsFromKernels(){
 		List<State> result= new LinkedList<State>();
 		//per ogni stato nell'automa
 		for(State s : states){
@@ -34,11 +34,21 @@ public class Automa {
 		}
 		return result;
 	}
+
 	
 	@Override
 	public String toString(){
 		String result = "";
 		for(State s : this.states) result+=s.toString();
 		return result;
+	}
+
+	public void removeDollarLookahed() {
+		for(State s : states){
+			if(s.getIndex()!=0)
+				for(IndexedProduction p : s.getItems()){
+					p.getLookahead().remove("$");
+				}
+		}
 	}
 }

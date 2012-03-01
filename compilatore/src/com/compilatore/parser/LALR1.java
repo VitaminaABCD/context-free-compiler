@@ -89,8 +89,11 @@ public class LALR1 extends LR0{
 			for(IndexedProduction k : s.getKernels()){
 				if(p.compare(k)) {
 					k.setLeft("");
+					System.out.println(k.toString());
 					k.addLookahead(p.getLookahead());
 					logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString() +" nello stato "+ s.getIndex());
+					System.out.println(k.toString());
+					System.out.println(s.toString());
 				}
 			}
 		}

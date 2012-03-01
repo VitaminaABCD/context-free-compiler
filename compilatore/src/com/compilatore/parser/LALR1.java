@@ -34,21 +34,32 @@ public class LALR1 extends LR0{
 	public void calculateKernels(){
 		Automa AutomaLR0 = new Automa(Item());
 		logger.debug("Inizializzazione dell'automa con stati contenenti i kernel LR0");
-		this.automa.setStates(AutomaLR0.getKernels());
 		
+		this.automa.setStates(AutomaLR0.newItemsFromKernels());
+		
+		System.out.println(this.automa.toString());
 		List<State> states = AutomaLR0.getStates();
-		
-		
-		for(State s : states){
-			calculateLookahead(s.getKernels());
+		int flag=1;
+		int count=0;
+		while(flag!=0){
+			flag=0;
+			System.out.println("ciclo");
+			for(State s : states){
+				flag+=calculateLookahead(s.getKernels());
+			}
+			if(count==0){
+				this.automa.removeDollarLookahed();
+				System.out.println(this.automa.toString());
+			}
+			count++;
 		}
 		
 	}
 	
 	
-	public void calculateLookahead(List<IndexedProduction> LR0kernels){
+	public int calculateLookahead(List<IndexedProduction> LR0kernels){
 		List<IndexedProduction> J;
-		
+		int flag=0;
 		for(IndexedProduction K : LR0kernels){
 			/**Trasformo la singola produzione k in una list per poterla passare
 			** a chiusura LR1 */
@@ -72,27 +83,33 @@ public class LALR1 extends LR0{
 									p.getLookahead().add(lookahead);
 									logger.debug("Simbolo [" + lookahead + "] generato");
 								}else{
-									logger.debug("Simboli "+K.getLookahead()+" propagati");
+									logger.debug("Simboli "+K.getLookahead()+" propagati da " + K.toString());
 									p.getLookahead().addAll(K.getLookahead());
 								}
+								if(generateLookahead(p)) flag=1;
 							}
-					generateLookahead(p);	
 					}
 					////////////////////////////////
 				}
 			}
 		}
+		return flag;
 	}
 	
-	private void generateLookahead(IndexedProduction p) {
+	private boolean generateLookahead(IndexedProduction p) {
+		boolean result=false;
 		for( State s : this.automa.getStates()){
 			for(IndexedProduction k : s.getItems()){
 				if(p.compare(k)) {
-					k.addLookahead(p.getLookahead());
-					logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString() +" nello stato "+ s.getIndex());
+					result=k.addLookahead(p.getLookahead());
+					if(result){
+						logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString() +" nello stato "+ s.getIndex());
+						return result;
+					}
 				}
 			}
 		}
+		return result;
 	}
 
 	/**

@@ -88,8 +88,9 @@ public class LALR1 extends LR0{
 		for(State s : this.automa.getStates()){
 			for(IndexedProduction k : s.getKernels()){
 				if(p.compare(k)) {
+					k.setLeft("");
 					k.addLookahead(p.getLookahead());
-					logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString());
+					logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString() +" nello stato "+ s.getIndex());
 				}
 			}
 		}

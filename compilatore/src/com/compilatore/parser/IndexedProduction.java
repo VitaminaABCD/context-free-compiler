@@ -1,6 +1,7 @@
 package com.compilatore.parser;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.compilatore.grammar.Production;
@@ -8,12 +9,12 @@ import com.compilatore.grammar.Production;
 public class IndexedProduction extends Production{
 	private int currentCharIndex;
 	private Set<String> lookahead;
+	private List<String> l;
 	
 	public IndexedProduction(){
 		super();
 		currentCharIndex=0;
 		lookahead = new HashSet<String>();
-
 	}
 	
 	

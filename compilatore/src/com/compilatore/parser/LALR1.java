@@ -34,7 +34,6 @@ public class LALR1 extends LR0{
 	public void calculateKernels(){
 		Automa AutomaLR0 = new Automa(Item());
 		logger.debug("Inizializzazione dell'automa con stati contenenti i kernel LR0");
-		
 		this.automa.setStates(AutomaLR0.newItemsFromKernels());
 		
 		System.out.println(this.automa.toString());
@@ -162,29 +161,27 @@ public class LALR1 extends LR0{
 					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
 						/////////////////////////
-						//TODO a questo punto si deve applciare una specie di algoritmo simile a quello usato per calcolare il first così come è fatto nella teoria
+						//TODO a questo punto calcoliamo  il First (cd) così come è fatto nella teoria
 						look= new HashSet<String>();
 						//conrtolliamo se esiste un elemento dopo il simbolo evidenziato dal punto [A:= a.Bc, d] 
 						if(!(punto+1 >= item.getRightList().size())){
-							//se esiste allora aggiungiamo ai simboli di lookahead i first(cd)
-							//quindi per prima cosa controlliamo se c è un terminale o un non terminale
+							//quindi per prima cosa controlliamo se "c" è un terminale o un non terminale
 							la = (String) right[punto+1];
-							//se "la" è un Terminale aggiungiamo il simbolo alla lista dei  lookahead per la produzione che dovremo inserire
+							//se "la"="c" è un Terminale aggiungiamo il simbolo alla lista dei  lookahead per la produzione che dovremo inserire
 							if (grammatica.getT().contains(la))
-								//aggiungiamo il simbolo di lookahead per la produzione che dobbiamo inserire nella chiusura
 								look.add(la);
-							//se è un NoN Terminale aggiungiamo i first legati a quel simbolo
+							//se è un NoN Terminale aggiungiamo i first legati a quel simbolo. First(c) sara' contenuto nei First(cd)
 							else{
 								look.addAll(grammatica.getFirst(la));
 							}
 						}
-						//se non esiste dobbiamo inserire i simbolo di lookahead d
+						//se non esiste dobbiamo inserire i simboli di lookahead d, inquanto ci troveremmo sempre nella stessa situazione
 						else{
 							look.addAll(item.getLookahead());
 						}
 						///////////////////////////////////	
 						//se la produzione nn e' gi presente in J
-						uguale =controllo(j, corrente);
+						uguale =prodPresente(j, corrente);
 						if(!uguale){
 							//aggiungo la produzione mettendo il punto come primo elemnto B::=.Z e inserendo i nuovi termini di lookahead
 							j.add(new IndexedProduction(corrente,look));

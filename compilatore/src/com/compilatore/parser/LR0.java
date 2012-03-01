@@ -60,7 +60,7 @@ public abstract class LR0 {
 					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
 						//se la produzione nn e' gi presente in J
-						uguale =controllo(j, corrente);
+						uguale =prodPresente(j, corrente);
 						if(!uguale){
 							//aggiungo la produzione mettendo il punto come primo elemnto B::=.Z
 							j.add(new IndexedProduction(corrente));
@@ -136,7 +136,7 @@ public abstract class LR0 {
 				stato =iter.next();
 				//recupero la Lsit<indexedProduction>contenente tutte le produzioni
 				List<IndexedProduction>Items = stato.getItems();
-				//per ogni Terminale della grammatica
+				//per ogni  NON Terminale della grammatica
 				ob= grammatica.getV().toArray();
 				x = Arrays.copyOf(ob,ob.length,String[].class);
 					for(int i=0;i<grammatica.getV().size();i++){
@@ -145,7 +145,9 @@ public abstract class LR0 {
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli ACTION Inquanto generato da un Terminale
 						
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
+						if(!chiusraX.isEmpty() 
+									& 
+							uguale(automa, chiusraX)==-1){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
 							flag=true;}
@@ -158,7 +160,9 @@ public abstract class LR0 {
 						chiusraX =GoTo(Items, x[i]);
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei GOTo Inquanto generato da un NON Terminale
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() & uguale(automa, chiusraX)==-1){
+						if(!chiusraX.isEmpty() 
+									& 
+							uguale(automa, chiusraX)==-1){
 							//allora lo aggiungo
 							automa.add(new State(automa.size(),chiusraX));
 							flag=true;
@@ -182,7 +186,7 @@ public abstract class LR0 {
 	 */
 	public int uguale(List<State> automa, List<IndexedProduction> stato){
 		State it;
-		Production prod ;
+		IndexedProduction prod ;
 		int leng=0;
 		int uguale = -1;
 		int proUguali = 0; 	//questa variabile ci servirà per controllare che tutte le produzioni siano uguali
@@ -200,12 +204,19 @@ public abstract class LR0 {
 			while(stato1.hasNext()){
 				prod = stato1.next();
 				leng++;
-				//se la produzione dello stato è presente nello stato che stiamo controllando incrementa il contatore 
-				if (controllo(stato, prod))
+				//controllo se la produzione dello stato1 è presente nello stato che stiamo controllando, in caso incrementa il contatore
+				for(IndexedProduction prodStato : stato)
+				if (prodStato.getLeft().equalsIgnoreCase(prod.getLeft())
+						&
+					prodStato.getRight().equalsIgnoreCase(prod.getRight())
+						&
+						prodStato.getCurrentCharIndex()==prod.getCurrentCharIndex())
 					proUguali++;
 			}
 			//se il numero di produzioni uguali è uguale alla dimensione dello stato vuol dire che
-			if (proUguali == stato.size() & leng==proUguali){ 
+			if (proUguali == stato.size()
+						&
+				leng==proUguali){ 
 				//sono tutti uguali e quindi 
 				uguale = it.getIndex();
 				break;
@@ -221,23 +232,26 @@ public abstract class LR0 {
 	 * @param corrente
 	 * @return
 	 */
-	public boolean controllo(List<IndexedProduction>j,Production corrente){
+	public boolean prodPresente(List<IndexedProduction>j,Production corrente){
 		//uso questa variabile per vedere se è già presente in j la setto di default a false, e poi la cambio se ne trova 2  uguali
 		boolean uguale=false;
-		Production item1;
+		IndexedProduction item1;
 		
 		Iterator <IndexedProduction> iter1 = j.iterator();
 		while(iter1.hasNext()){
 			//per ogni Item appartenente a j
 			item1 = iter1.next();
 			//controllo sia se la parte destra che la parte sinistra sono già presenti
-			if (item1.getRight().equals(corrente.getRight()) & item1.getLeft().equals(corrente.getLeft()))
+			if (item1.getRight().equals(corrente.getRight()) 
+								&
+				item1.getLeft().equals(corrente.getLeft())
+				&
+				item1.getCurrentCharIndex()==0)
 				{
 				//setto la variabile booleana a TRUE per segnalare che sono uguali
 				uguale =true;
 				//esco dal ciclo xke' gia' ho trovato la corrispondenza
 				break;
-				
 				}
 			}
 		return uguale;

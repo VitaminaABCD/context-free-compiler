@@ -39,18 +39,20 @@ public class LALR1 extends LR0{
 		System.out.println(this.automa.toString());
 		List<State> states = AutomaLR0.getStates();
 		int flag=1;
-		int count=0;
+		
+		for(State s : states){
+			flag+=calculateLookahead(s.getKernels());
+		}
+		this.automa.removeDollarLookahed();
+		
+		System.out.println(automa.toString());
+		states = automa.getStates();
 		while(flag!=0){
 			flag=0;
 			System.out.println("ciclo");
 			for(State s : states){
 				flag+=calculateLookahead(s.getKernels());
 			}
-			if(count==0){
-				this.automa.removeDollarLookahed();
-				System.out.println(this.automa.toString());
-			}
-			count++;
 		}
 		
 	}
@@ -78,7 +80,7 @@ public class LALR1 extends LR0{
 											&& 
 								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
 							){
-								if(lookahead != "$"){
+								if(!K.getLookahead().contains(lookahead)){
 									p.getLookahead().add(lookahead);
 									logger.debug("Simbolo [" + lookahead + "] generato");
 								}else{
@@ -95,6 +97,44 @@ public class LALR1 extends LR0{
 		return flag;
 	}
 	
+	public int calculateLookahead2(List<IndexedProduction> LR0kernels){
+		List<IndexedProduction> J;
+		int flag=0;
+		for(IndexedProduction K : LR0kernels){
+			/**Trasformo la singola produzione k in una list per poterla passare
+			** a chiusura LR1 */
+			List<IndexedProduction> temp = new LinkedList<IndexedProduction>();
+			temp.add(K);
+			J = chiusuraLR1(temp);
+			for(IndexedProduction jItem : J){
+				String X = jItem.getCharAfter();
+				List<IndexedProduction> cl = chiusura(LR0kernels);
+				List<IndexedProduction> Goto = GoTo(cl, X);
+				for(String lookahead : jItem.getLookahead()){
+					
+					
+					/////////////////////////////////
+					for(IndexedProduction p : Goto){
+							if( p.compare(jItem)
+											&& 
+								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
+							){
+								if(!K.getLookahead().contains(lookahead)){
+									p.getLookahead().add(lookahead);
+									logger.debug("Simbolo [" + lookahead + "] generato");
+								}else{
+									logger.debug("Simboli "+K.getLookahead()+" propagati da " + K.toString());
+									p.getLookahead().addAll(K.getLookahead());
+								}
+								if(generateLookahead(p)) flag=1;
+							}
+					}
+					////////////////////////////////
+				}
+			}
+		}
+		return flag;
+	}
 	private boolean generateLookahead(IndexedProduction p) {
 		boolean result=false;
 		for( State s : this.automa.getStates()){

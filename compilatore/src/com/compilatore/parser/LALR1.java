@@ -161,8 +161,8 @@ public class LALR1 extends LR0{
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
-	 * @param 	i
-	 * @return 	j
+	 * @param 	i kernel di cui va calcolata la chiusura
+	 * @return 	j chiusura del kernel passato
 	 */
 	public List<IndexedProduction> chiusuraLR1 (List<IndexedProduction> i){
 		boolean flag =true;
@@ -209,7 +209,7 @@ public class LALR1 extends LR0{
 					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
 						/////////////////////////
-						//TODO a questo punto si deve applciare una specie di algoritmo simile a quello usato per calcolare il first così come è fatto nella teoria
+						//applchiamo un algoritmo simile a quello usato per calcolare il first così come è fatto nella teoria
 						look= new HashSet<String>();
 						//conrtolliamo se esiste un elemento dopo il simbolo evidenziato dal punto [A:= a.Bc, d] 
 						if(!(punto+1 >= item.getRightList().size())){
@@ -272,21 +272,31 @@ public class LALR1 extends LR0{
 
 	
 	/**
-	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1)
+	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1) e ci dice se è di tipo LALR1 o meno
 	 * 
-	 * @param automa
+	 * @param automa da analizzare
 	 */
 	public void tableCostruction(List<State> automa){
+		//serve per vedere se ci sono stati di ambiguità
+		boolean esito=false;
 		//salveremo l'indice identificativo dello stato di destinazione
 		int j=0;
 		List<IndexedProduction> chiusuraX =  new ArrayList<IndexedProduction>();
-		//inizializzazione tabelle action goTo
+		//inizzializzazione tabella action Goto
 		gotoTable= new String[automa.size()][grammatica.getV().size()];
+		//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con uno schift sono di errore
+		for(int h=0;h<automa.size();h++)
+			for(int k=0; k<grammatica.getV().size();k++)
+				gotoTable[h][k]="err";
 		actionTable=new String [automa.size()][grammatica.getT().size()];
+		//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con una reduce o uno schift sono di errore
+		for(int h=0;h<automa.size();h++)
+			for(int k=0; k<grammatica.getT().size();k++)
+				actionTable[h][k]="err";
 		//per ogni stato dell'automa
 		for(State statoi : automa){
 			//vediamo se ci sono riduzioni ed eventualmente le scriviamo
-			reduce(statoi);
+			esito=reduce(statoi);
 			//per ogni NON TERMINALE X nella grammatica
 			for(String X :grammatica.getV()){
 				//facciamo il GoTo per lo statoi con il  terminale x
@@ -297,6 +307,7 @@ public class LALR1 extends LR0{
 				if(!chiusuraX.isEmpty()
 						&
 						j!=-1)
+					//scrivo nella tabella GOTO lo scift 
 					gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]="s"+j;
 			}
 			//per ogni TERMINALE X nella grammatica
@@ -309,31 +320,66 @@ public class LALR1 extends LR0{
 				if(!chiusuraX.isEmpty()
 						&
 						j!=-1)
-					actionTable[statoi.getIndex()][grammatica.getT().indexOf(X)]="s"+j;
+					//scrivo nella tabella ACTION lo scift
+					esito = actionWrite(statoi.getIndex(),j,grammatica.getT().indexOf(X),"s");
 			}
 		}
-			
+		if (esito)
+			System.out.println("La grammatica è LALR(1)");
+		else
+			System.out.println("La grammatica non è LALR(1)");
 		
 	}
 	
 	/**
-	 * se il puntino è nell'ultima posizione scrive la reduce nell'action table
-	 * @param stato
+	 * se il puntino è nell'ultima posizione scrive la reduce nell'action table restituisce false se ci sono conflitti
+	 * @param stato stato da controllare
+	 * @return
 	 */
-	public void reduce(State stato){
+	public boolean reduce(State stato){
+		//serve per vedere se ci sono stati di ambiguità
+		boolean esito=false;
 		//per ogni produzione dello stato
 		for(IndexedProduction prodStato : stato.getKernels())
 			//se il puntino si trove nell'ultima posizione ci troviamo nel caso di una reduce
 			if(prodStato.getCurrentCharIndex()>=stato.size()){
 				//se si tratta della reduce [S'::=S, $] è il caso dell'accettazione
-				if(prodStato.getLeft().equalsIgnoreCase("S'"))
-					actionTable[stato.getIndex()][grammatica.getT().indexOf("$")] ="acc";
+				if(prodStato.getLeft().equals("S'"))
+					////chiamo la funzione per scrivere nella tabella action
+					esito = actionWrite(stato.getIndex(),-1,grammatica.getT().indexOf("$"),"acc");
 				//se no ci troviamo nel caso di una risuzione 
 				else{
 					//per ogni simbolo di lookahead
 					for(String la : prodStato.getLookahead())
-					actionTable[stato.getIndex()][grammatica.getT().indexOf(la)] = prodStato.getLeft()+"::="+prodStato.getRight();
+						//chiamo la funzione per scrivere nella tabella action
+						esito = actionWrite(stato.getIndex(),-1,grammatica.getT().indexOf(la),prodStato.getLeft()+"::="+prodStato.getRight());
 				}
 			}
+		return esito;
+	}
+	
+	/**
+	 *  * scrive l'action Reduce o Scift nela tabella Action ritornando un false in caso di ambiguità restituisce false se ci sono ambiguità
+	 * @param i stato attuale
+	 * @param j -1 se reduce, se no lo stato di destinazione dello shift
+	 * @param x simbolo per cui si va ascrivere nella tabella
+	 * @param action "s" se si tratta di shift, altrimenti la produzione per cui si fa il reduce
+	 * @return
+	 */
+	public boolean actionWrite(int i, int j, int x, String action){
+		boolean esito=false;
+		if (actionTable[i][x].equals("err")){
+			if(action.equals("s"))
+				actionTable[i][x]=action + j;
+			else
+				actionTable[i][x]=action;
+			esito =true;
+		}
+		else
+			if(j>=0)
+				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ "string" + j );
+			else
+				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ "string");
+		return esito;
 	}
 }

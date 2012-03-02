@@ -51,4 +51,8 @@ public class Automa {
 				}
 		}
 	}
+	
+	public int size(){
+		return this.size();
+	}
 }

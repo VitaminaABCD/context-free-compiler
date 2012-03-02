@@ -2,6 +2,8 @@ package com.compilatore.parser;
 
 import java.util.*;
 
+import javax.swing.Action;
+
 import org.apache.log4j.Logger;
 
 import com.compilatore.grammar.IGrammar;
@@ -12,6 +14,8 @@ public class LALR1 extends LR0{
 	
 	private Automa automa;
 	private List<State> state; 
+	private String[][] actionTable;
+	private String[][] gotoTable;
 	
 	public LALR1(){
 		automa=new Automa();
@@ -264,5 +268,72 @@ public class LALR1 extends LR0{
 	@Override
 	public String toString(){
 		return this.automa.toString();
+	}
+
+	
+	/**
+	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1)
+	 * 
+	 * @param automa
+	 */
+	public void tableCostruction(List<State> automa){
+		//salveremo l'indice identificativo dello stato di destinazione
+		int j=0;
+		List<IndexedProduction> chiusuraX =  new ArrayList<IndexedProduction>();
+		//inizializzazione tabelle action goTo
+		gotoTable= new String[automa.size()][grammatica.getV().size()];
+		actionTable=new String [automa.size()][grammatica.getT().size()];
+		//per ogni stato dell'automa
+		for(State statoi : automa){
+			//vediamo se ci sono riduzioni ed eventualmente le scriviamo
+			reduce(statoi);
+			//per ogni NON TERMINALE X nella grammatica
+			for(String X :grammatica.getV()){
+				//facciamo il GoTo per lo statoi con il  terminale x
+				chiusuraX = GoTo(statoi.getItems(), X);
+				//recuperiamo l'indice dello stato chiusurax
+				j=uguale(automa, chiusuraX);
+				//se chiusuraX non è vuoto ed è stato trovato
+				if(!chiusuraX.isEmpty()
+						&
+						j!=-1)
+					gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]="s"+j;
+			}
+			//per ogni TERMINALE X nella grammatica
+			for(String X :grammatica.getT()){
+				//facciamo il GoTo per lo statoi con il  terminale x
+				chiusuraX = GoTo(statoi.getItems(), X);
+				//recuperiamo l'indice dello stato chiusurax
+				j=uguale(automa, chiusuraX);
+				//se chiusuraX non è vuoto ed è stato trovato
+				if(!chiusuraX.isEmpty()
+						&
+						j!=-1)
+					actionTable[statoi.getIndex()][grammatica.getT().indexOf(X)]="s"+j;
+			}
+		}
+			
+		
+	}
+	
+	/**
+	 * se il puntino è nell'ultima posizione scrive la reduce nell'action table
+	 * @param stato
+	 */
+	public void reduce(State stato){
+		//per ogni produzione dello stato
+		for(IndexedProduction prodStato : stato.getKernels())
+			//se il puntino si trove nell'ultima posizione ci troviamo nel caso di una reduce
+			if(prodStato.getCurrentCharIndex()>=stato.size()){
+				//se si tratta della reduce [S'::=S, $] è il caso dell'accettazione
+				if(prodStato.getLeft().equalsIgnoreCase("S'"))
+					actionTable[stato.getIndex()][grammatica.getT().indexOf("$")] ="acc";
+				//se no ci troviamo nel caso di una risuzione 
+				else{
+					//per ogni simbolo di lookahead
+					for(String la : prodStato.getLookahead())
+					actionTable[stato.getIndex()][grammatica.getT().indexOf(la)] = prodStato.getLeft()+"::="+prodStato.getRight();
+				}
+			}
 	}
 }

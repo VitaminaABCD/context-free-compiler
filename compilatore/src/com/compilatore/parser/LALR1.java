@@ -307,8 +307,8 @@ public class LALR1 extends LR0{
 				if(!chiusuraX.isEmpty()
 						&
 						j!=-1)
-					//scrivo nella tabella GOTO lo scift 
-					gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]="s"+j;
+					//scrivo nella tabella GOTO lo scift al posto di err
+					gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)].replaceAll("err", "s"+j);
 			}
 			//per ogni TERMINALE X nella grammatica
 			for(String X :grammatica.getT()){
@@ -368,18 +368,24 @@ public class LALR1 extends LR0{
 	 */
 	public boolean actionWrite(int i, int j, int x, String action){
 		boolean esito=false;
+		//se la cella è occupata da "err"
 		if (actionTable[i][x].equals("err")){
+			//e si tratta di uno shift
 			if(action.equals("s"))
-				actionTable[i][x]=action + j;
+				//sostituisco la String "err" con lo shift alla posizione j
+				actionTable[i][x].replaceAll("err", action + j);
 			else
-				actionTable[i][x]=action;
+				// se no sostituisco la String "err" con la reduce action
+				actionTable[i][x].replaceAll("err", action);
+			//e setto esito a true per dire che è andato tutto bene
 			esito =true;
 		}
 		else
+			//se no evidenzio lo stato di ambiguità
 			if(j>=0)
-				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ "string" + j );
+				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ "shift" + j );
 			else
-				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ "string");
+				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ action);
 		return esito;
 	}
 }

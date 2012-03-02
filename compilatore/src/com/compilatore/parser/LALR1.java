@@ -56,6 +56,9 @@ public class LALR1 extends LR0{
 			}
 		}
 		
+		for(State s: automa.getStates()){
+			s.setItems(chiusuraLR1(s.getKernels()));
+		}
 	}
 	
 	

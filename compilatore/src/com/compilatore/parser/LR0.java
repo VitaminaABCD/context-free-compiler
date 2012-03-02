@@ -122,7 +122,6 @@ public abstract class LR0 {
 		List<State> automa = new ArrayList<State>();
 		List<IndexedProduction> aumentata= new ArrayList<IndexedProduction>();
 		//creiamo una produzione S'::= S che fa diventare la nostra grammatica aumentata
-		//Production p = new Production("S'", grammatica.getS()+"$");
 		Production p = new Production("S'", grammatica.getS());
 		//dopo di che inseriamo il tutto in un List<IndexedProdaction> mettendo il punto al primo posto nella produzione S'::=.S
 		aumentata.add( new IndexedProduction(0, p,"$"));

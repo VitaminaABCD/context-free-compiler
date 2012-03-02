@@ -122,6 +122,7 @@ public abstract class LR0 {
 		List<State> automa = new ArrayList<State>();
 		List<IndexedProduction> aumentata= new ArrayList<IndexedProduction>();
 		//creiamo una produzione S'::= S che fa diventare la nostra grammatica aumentata
+		//Production p = new Production("S'", grammatica.getS()+"$");
 		Production p = new Production("S'", grammatica.getS());
 		//dopo di che inseriamo il tutto in un List<IndexedProdaction> mettendo il punto al primo posto nella produzione S'::=.S
 		aumentata.add( new IndexedProduction(0, p,"$"));
@@ -142,7 +143,7 @@ public abstract class LR0 {
 					for(int i=0;i<grammatica.getV().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli ACTION Inquanto generato da un Terminale
+						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli GOTO Inquanto generato da un Terminale
 						
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
 						if(!chiusraX.isEmpty() 
@@ -158,7 +159,7 @@ public abstract class LR0 {
 					for(int i=0;i<grammatica.getT().size();i++){
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
-						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei GOTo Inquanto generato da un NON Terminale
+						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei ACTION Inquanto generato da un NON Terminale
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
 						if(!chiusraX.isEmpty() 
 									& 

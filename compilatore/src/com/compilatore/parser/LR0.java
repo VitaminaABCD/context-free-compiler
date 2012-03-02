@@ -17,8 +17,8 @@ public abstract class LR0 {
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
-	 * @param 	i
-	 * @return 	j
+	 * @param 	i kernel di cui va calcolata la chiusura
+	 * @return 	j stato creato da i
 	 * 
 	 */
 	public List<IndexedProduction> chiusura (List<IndexedProduction> i){
@@ -80,9 +80,9 @@ public abstract class LR0 {
 	
 	/**
 	 * Passato uno stato e il simbolo che segue il punto, restituisce il kernel del nuovo stato con la relativa chiusura 
-	 * @param i 
-	 * @param X
-	 * @return chiusura(j)
+	 * @param i stato su cui va calcolato il nuovo kernel
+	 * @param X simbolo per cui si sposta il puntiono
+	 * @return chiusura(j) nuovo stato
 	 */
 	public List<IndexedProduction> GoTo(List<IndexedProduction> i, String X){
 		IndexedProduction item;
@@ -178,10 +178,10 @@ public abstract class LR0 {
 	
 	/**
 	 * controlla se uno stato è presente in un automa restituisce
-	 * -1se non è presente 
+	 * -1 se non è presente 
 	 * se no restituisce il numero di stato uguale a quello passato
-	 * @param automa
-	 * @param stato
+	 * @param automa automa in cui controllare
+	 * @param stato stato che va cercato
 	 * @return 
 	 */
 	public int uguale(List<State> automa, List<IndexedProduction> stato){
@@ -228,8 +228,8 @@ public abstract class LR0 {
 	
 	/**
 	 * controlla se una produzione è già presente in una lista di produzioni ritorna vero se è presente falso se non lo è.
-	 * @param j
-	 * @param corrente
+	 * @param j stato in cui controllare
+	 * @param corrente produzione da cercare
 	 * @return
 	 */
 	public boolean prodPresente(List<IndexedProduction>j,Production corrente){

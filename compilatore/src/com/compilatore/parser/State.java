@@ -49,6 +49,8 @@ public class State {
 	public int size(){
 		return size();
 	}
+	
+	
 	/**
 	 * ritorna una List<IndexedProduction> contenente il Kernel di uno stato
 	 * @return j

@@ -324,6 +324,8 @@ public class LALR1 extends LR0{
 					esito = actionWrite(statoi.getIndex(),j,grammatica.getT().indexOf(X),"s");
 			}
 		}
+		//stampo l'esito della creazione delle tabelle ACTION GOTO
+		stampa();
 		if (esito)
 			System.out.println("La grammatica è LALR(1)");
 		else
@@ -387,5 +389,42 @@ public class LALR1 extends LR0{
 			else
 				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ action);
 		return esito;
+	}
+	
+	/**
+	 * Stampa le tabelle Action Goto
+	 */
+	public void stampa(){
+		String str="\t";
+		System.out.println("\n\t\tTabella ACTION\n");
+		str="\t";
+		//stampo i simboli Terminali
+		for (String t :grammatica.getT())
+			str=str+t.toString()+"\t";
+		System.out.println(str);
+		//per ogni stato
+		for (int i=0; i<automa.size();i++){
+			str=i+"\t";
+			//Per ogni terminale
+			for (int j=0;j<grammatica.getT().size();j++)
+				str=str+actionTable[i][j]+"\t";
+			System.out.println(str);
+		}
+		System.out.println("\t\tTabella GOTO\n");
+		//resetto la stringa
+		str="\t";
+		//stampo i Simboli Non Terminali
+		for (String t :grammatica.getV())
+			str=str+t.toString()+"\t";
+		System.out.println(str);
+		//per ogni stato
+		for (int i=0; i<automa.size();i++){
+			str=i+"\t";
+			//per ogni NON TERMINALE
+			for (int j=0;j<grammatica.getV().size();j++)
+				str=str+gotoTable[i][j]+"\t";
+			System.out.println(str);
+		}
+		
 	}
 }

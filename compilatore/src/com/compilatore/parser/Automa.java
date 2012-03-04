@@ -63,6 +63,6 @@ public class Automa {
 	}
 	
 	public int size(){
-		return this.size();
+		return this.states.size();
 	}
 }

@@ -2,10 +2,10 @@ package com.compilatore.parser;
 
 import java.util.*;
 
-import javax.swing.Action;
-
 import org.apache.log4j.Logger;
 
+import com.compilatore.error.ERROR_TYPE;
+import com.compilatore.error.ErrorManager;
 import com.compilatore.grammar.IGrammar;
 import com.compilatore.grammar.Production;
 
@@ -13,20 +13,17 @@ public class LALR1 extends LR0{
 	static Logger logger = Logger.getLogger(LALR1.class.getName());
 	
 	private Automa automa;
-	private List<State> state; 
 	private String[][] actionTable;
 	private String[][] gotoTable;
 	
 	public LALR1(){
 		automa=new Automa();
 		grammatica=null;
-		state=new LinkedList<State>();
 	}
 	
 	public LALR1(IGrammar gram){
 		automa = new Automa();
 		setGrammar(gram);
-		state=new ArrayList<State>();
 	}
 	
 	@Override
@@ -35,128 +32,64 @@ public class LALR1 extends LR0{
 	}
 	
 	@Override
-	public void calculateKernels(){
+	public void init(){
 		Automa AutomaLR0 = new Automa(Item());
 		logger.debug("Inizializzazione dell'automa con stati contenenti i kernel LR0");
-		
 		this.automa.setStates(AutomaLR0.newItemsFromKernels());
 		
-		System.out.println(this.automa.toString());
-		List<State> states = AutomaLR0.getStates();
-		int flag=1;
-		
-		for(State s : states){
-			flag+=calculateLookahead(s.getKernels());
-		}
+		//////////////////potrebbe non essere necessario (ci vorrebbero meno cicli///////////////
+		//genera i simboli e rimuove il dollaro in tutte le produzioni ad eccezione della prima//
+		calculateSymbol(this.automa);
 		this.automa.removeDollarLookahed();
+		////////////////////////////////////////////////////////////////////////////////////////
 		
-		System.out.println(automa.toString());
-		states = automa.getStates();
+		int flag=1;
 		while(flag!=0){
 			flag=0;
-			System.out.println("ciclo");
-			for(State s : states){
-				flag+=calculateLookahead(s.getKernels());
+				flag+=calculateSymbol(this.automa);
 			}
-		}
-		
-		for(State s: automa.getStates()){
-			s.setItems(chiusuraLR1(s.getKernels()));
-		}
 	}
 	
-	
-	public int calculateLookahead(List<IndexedProduction> LR0kernels){
+	private int calculateSymbol(Automa atm){
 		List<IndexedProduction> J;
-		int flag=0;
-		for(IndexedProduction K : LR0kernels){
-			/**Trasformo la singola produzione k in una list per poterla passare
-			** a chiusura LR1 */
-			List<IndexedProduction> temp = new LinkedList<IndexedProduction>();
-			temp.add(K);
-			J = chiusuraLR1(temp);
-			for(IndexedProduction jItem : J){
-				String X = jItem.getCharAfter();
-				List<IndexedProduction> cl = chiusura(LR0kernels);
-				List<IndexedProduction> Goto = GoTo(cl, X);
-				for(String lookahead : jItem.getLookahead()){
-					
-					
-					/////////////////////////////////
-					for(IndexedProduction p : Goto){
-							if( p.compare(jItem)
-											&& 
-								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
-							){
-								if(!K.getLookahead().contains(lookahead)){
-									p.getLookahead().add(lookahead);
-									logger.debug("Simbolo [" + lookahead + "] generato");
-								}else{
-									logger.debug("Simboli "+K.getLookahead()+" propagati da " + K.toString());
-									p.getLookahead().addAll(K.getLookahead());
-								}
-								if(generateLookahead(p)) flag=1;
-							}
-					}
-					////////////////////////////////
-				}
-			}
-		}
-		return flag;
-	}
-	
-	public int calculateLookahead2(List<IndexedProduction> LR0kernels){
-		List<IndexedProduction> J;
-		int flag=0;
-		for(IndexedProduction K : LR0kernels){
-			/**Trasformo la singola produzione k in una list per poterla passare
-			** a chiusura LR1 */
-			List<IndexedProduction> temp = new LinkedList<IndexedProduction>();
-			temp.add(K);
-			J = chiusuraLR1(temp);
-			for(IndexedProduction jItem : J){
-				String X = jItem.getCharAfter();
-				List<IndexedProduction> cl = chiusura(LR0kernels);
-				List<IndexedProduction> Goto = GoTo(cl, X);
-				for(String lookahead : jItem.getLookahead()){
-					
-					
-					/////////////////////////////////
-					for(IndexedProduction p : Goto){
-							if( p.compare(jItem)
-											&& 
-								p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)
-							){
-								if(!K.getLookahead().contains(lookahead)){
-									p.getLookahead().add(lookahead);
-									logger.debug("Simbolo [" + lookahead + "] generato");
-								}else{
-									logger.debug("Simboli "+K.getLookahead()+" propagati da " + K.toString());
-									p.getLookahead().addAll(K.getLookahead());
-								}
-								if(generateLookahead(p)) flag=1;
-							}
-					}
-					////////////////////////////////
-				}
-			}
-		}
-		return flag;
-	}
-	private boolean generateLookahead(IndexedProduction p) {
-		boolean result=false;
-		for( State s : this.automa.getStates()){
-			for(IndexedProduction k : s.getItems()){
-				if(p.compare(k)) {
-					result=k.addLookahead(p.getLookahead());
-					if(result){
-						logger.debug("aggiunto " + p.getLookahead() + " a " + k.toString() +" nello stato "+ s.getIndex());
-						return result;
+		int flag = 0;
+		try{
+			for(State s : atm.getStates()){								//  1.Per ogni stato dell'automa 
+				for(IndexedProduction K : s.getKernels()){				//	1.1 per ogni kernel dello stato
+					/**Trasformo la singola produzione k in una list per poterla passare
+					** a chiusura LR1 */
+					List<IndexedProduction> temp = new LinkedList<IndexedProduction>();
+					temp.add(K);
+					J = chiusuraLR1(temp);								//1.1.1 calcolo la chiusura
+					for(IndexedProduction jItem : J){						
+						for(String lookahead : jItem.getLookahead()){   //1.1.1.1	per ogni simbolo di lookahead
+							Integer i;
+							State tmpState;
+							if((i=s.gotoStateIndex(jItem.getCharAfter()))!=null)	//1.1.1.1.1  mi faccio dire a quale stato arrivo per un determinato simbolo
+							if((tmpState = atm.getState(i))!=null){
+								for(IndexedProduction p : tmpState.getItems()){		//1.1.1.1.1.1 confronto ogni produzione all'interno dello stato di arrivo con la produzione della chiusura J
+									if(p.compare(jItem)	&& 
+											p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)){
+										Set<String> kLook = K.getLookahead();
+										if(!kLook.contains(lookahead)){				//1.1.1.1.1.2 se non contiene il simbolo di lookahead corrente il simbolo viene generato per produzione che "segue" nello stato successivo
+											if(p.getLookahead().add(lookahead)) flag = 1;
+											logger.debug("Simbolo [" + lookahead + "] generato per "+ p.toString());
+										}else{										//1.1.1.1.1.2 se contiene il simbolo di lookahead corrente i simboli della produzione in esame della chiusura vengono propagati alla produzione che "segue" nello stato successivo
+											if(p.getLookahead().addAll(K.getLookahead())) flag = 1;
+											logger.debug("Simboli "+K.getLookahead()+" propagati da " + K.toString() +"a "+p.toString());
+										}
+									}
+								}	
+							}					
+						}
 					}
 				}
 			}
+			return flag;
+		}catch (Exception e) {
+			ErrorManager.manage(ERROR_TYPE.LOOKAHEAD_PROPAGATION_ERROR, e);
+			return -1;
 		}
-		return result;
 	}
 
 	/**
@@ -270,6 +203,7 @@ public class LALR1 extends LR0{
 		return this.automa.toString();
 	}
 
+	
 	
 	/**
 	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1) e ci dice se è di tipo LALR1 o meno

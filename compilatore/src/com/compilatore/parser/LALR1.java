@@ -51,6 +51,7 @@ public class LALR1 extends LR0{
 				flag+=calculateSymbol(this.automa);
 				count++;
 			}
+
 	}
 	
 	private int calculateSymbol(Automa atm){
@@ -213,7 +214,7 @@ public class LALR1 extends LR0{
 	 * 
 	 * @param automa da analizzare
 	 */
-	public void tableCostruction(List<State> automa){
+	public void tableCostruction(){
 		//serve per vedere se ci sono stati di ambiguità
 		boolean esito=false;
 		//salveremo l'indice identificativo dello stato di destinazione
@@ -231,7 +232,7 @@ public class LALR1 extends LR0{
 			for(int k=0; k<grammatica.getT().size();k++)
 				actionTable[h][k]="err";
 		//per ogni stato dell'automa
-		for(State statoi : automa){
+		for(State statoi : automa.getStates()){
 			//vediamo se ci sono riduzioni ed eventualmente le scriviamo
 			esito=reduce(statoi);
 			//per ogni NON TERMINALE X nella grammatica
@@ -239,7 +240,7 @@ public class LALR1 extends LR0{
 				//facciamo il GoTo per lo statoi con il  terminale x
 				chiusuraX = GoTo(statoi.getItems(), X);
 				//recuperiamo l'indice dello stato chiusurax
-				j=uguale(automa, chiusuraX);
+				j=uguale(automa.getStates(), chiusuraX);
 				//se chiusuraX non è vuoto ed è stato trovato
 				if(!chiusuraX.isEmpty()
 						&
@@ -252,7 +253,7 @@ public class LALR1 extends LR0{
 				//facciamo il GoTo per lo statoi con il  terminale x
 				chiusuraX = GoTo(statoi.getItems(), X);
 				//recuperiamo l'indice dello stato chiusurax
-				j=uguale(automa, chiusuraX);
+				j=uguale(automa.getStates(), chiusuraX);
 				//se chiusuraX non è vuoto ed è stato trovato
 				if(!chiusuraX.isEmpty()
 						&
@@ -347,7 +348,7 @@ public class LALR1 extends LR0{
 				str=str+actionTable[i][j]+"\t";
 			System.out.println(str);
 		}
-		System.out.println("\t\tTabella GOTO\n");
+		System.out.println("\n\t\tTabella GOTO\n");
 		//resetto la stringa
 		str="\t";
 		//stampo i Simboli Non Terminali

@@ -13,7 +13,7 @@ public abstract class LR0 {
 	protected IGrammar grammatica;
 	
 	public abstract void setGrammar(IGrammar gram);
-	public abstract void calculateKernels();
+	public abstract void init();
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
@@ -145,12 +145,16 @@ public abstract class LR0 {
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli GOTO Inquanto generato da un Terminale
 						
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() 
-									& 
-							uguale(automa, chiusraX)==-1){
-							//allora lo aggiungo
-							automa.add(new State(automa.size(),chiusraX));
-							flag=true;}
+						int uguale=uguale(automa,chiusraX);
+						if(!chiusraX.isEmpty())
+							if(uguale==-1){
+								//allora lo aggiungo
+								automa.add(new State(automa.size(),chiusraX));
+								stato.getShift().put(x[i],automa.size()-1);
+								flag=true;
+							}else{
+								stato.getShift().put(x[i], uguale);
+							}
 					}
 					//ora si deve fare la stessa cosa per i non terminali
 					ob = grammatica.getT().toArray();
@@ -160,12 +164,15 @@ public abstract class LR0 {
 						chiusraX =GoTo(Items, x[i]);
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT  o REDUCE nella tabella dei ACTION Inquanto generato da un NON Terminale
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
-						if(!chiusraX.isEmpty() 
-									& 
-							uguale(automa, chiusraX)==-1){
-							//allora lo aggiungo
-							automa.add(new State(automa.size(),chiusraX));
-							flag=true;
+						int uguale=uguale(automa,chiusraX);
+						if(!chiusraX.isEmpty())
+							if(uguale==-1){
+								//allora lo aggiungo
+								automa.add(new State(automa.size(),chiusraX));
+								stato.getShift().put(x[i],automa.size()-1);
+								flag=true;
+							}else{
+								stato.getShift().put(x[i], uguale);
 							}
 					}
 					//se ho aggiunto nuovi stati all'automa devo uscire dal while(iter.hasNext()) e ricreare l'iteratore sulla nuova struttura

@@ -1,7 +1,6 @@
 package com.compilatore.parser;
 
-import java.util.ArrayList;
-
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,29 +8,30 @@ import java.util.List;
 public class State {
 	private int index;
 	private List<IndexedProduction> items;
-
-	
-	public int getIndex() {
-		return index;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
-	}
+	private Hashtable<String, Integer> shift;
 
 	public State(){
 		this.index=0;
-		this.items = new ArrayList<IndexedProduction>();
+		this.items = new LinkedList<IndexedProduction>();
+		this.shift = new Hashtable<String, Integer>();
 	}
 	
 	public State(int i){
 		this.index=i;
-		this.items = new ArrayList<IndexedProduction>();
+		this.items = new LinkedList<IndexedProduction>();
+		this.shift = new Hashtable<String, Integer>();
 	}
 	
 	public State(int i, List<IndexedProduction> c){
 		this.index=i;
 		this.items = c;
+		this.shift = new Hashtable<String, Integer>();
+	}
+	
+	public State(int i, List<IndexedProduction> c, Hashtable<String, Integer> table){
+		this.index=i;
+		this.items = c;
+		this.shift = new Hashtable<String, Integer>(table);
 	}
 	
 	public List<IndexedProduction> getItems() {
@@ -42,14 +42,34 @@ public class State {
 		this.items = Items;
 	}
 	
-	/**
-	 * ritorna la dimensione dello stato
-	 * @return
-	 */
-	public int size(){
-		return size();
+	public Hashtable<String, Integer> getShift() {
+		return shift;
+	}
+
+	public void setShift(Hashtable<String, Integer> shift) {
+		this.shift = shift;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
 	
+	
+	/**	Return the index of the state shifted with a specific simbol
+	 * 	@param simbol the shift simbol
+	 *  @return the index of the state or null
+	 */
+	public Integer gotoStateIndex(String simbol){
+		try{
+			return this.shift.get(simbol);
+		}catch (Exception e) {
+			return null;
+		}
+	}
 	
 	/**
 	 * ritorna una List<IndexedProduction> contenente il Kernel di uno stato
@@ -90,11 +110,26 @@ public class State {
 	
 	@Override
 	public String toString(){
-		String result= "State number: "+index+"\n";
+		String result= "\nState number: "+index+"\t";
+		if(shift.values().size()!=0)
+			result+=" | goto"+shift.values().toString()+"\n";
 		for(IndexedProduction i : items){
 			result += i.toString() + "\n";
 		}
 		return result;		
 	}
+
+	public int size() {
+		return items.size();
+	}
+	
+//	/**
+//	 * ritorna la dimensione dello stato
+//	 * @return
+//	 */
+//	public int size(){
+//		return size();
+//	}
+	
 	
 }

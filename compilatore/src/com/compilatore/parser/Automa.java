@@ -22,19 +22,29 @@ public class Automa {
 		this.states = states;
 	}
 	
-	/* Get kernels element for each states into automa
-	 * @return new State list with kernel item only
+	/** Get kernels element for each states into automa
+	 * @return new State list with shift value and kernel item only
 	 */
 	public List<State> newItemsFromKernels(){
 		List<State> result= new LinkedList<State>();
 		//per ogni stato nell'automa
 		for(State s : states){
-			result.add(new State(s.getIndex(), s.getKernels()));
+			result.add(new State(s.getIndex(), s.getKernels(),s.getShift()));
 
 		}
 		return result;
 	}
 
+	/**	Return a state with a specific state index
+	 * 	@param i the index of desired state
+	 *  @return the State reference if the state exist else null;
+	 */	
+	public State getState(int i){
+		for(State s : states){
+			if(s.getIndex()==i) return s;
+		}
+		return null;
+	}
 	
 	@Override
 	public String toString(){

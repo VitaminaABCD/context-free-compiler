@@ -20,7 +20,7 @@ public class Home{
 		InputParser parser = new InputParser("esempioLibro.4l");
 		LR0 l = new LALR1(parser.parse());
 		
-		l.calculateKernels();
+		l.init();
 		System.out.println("\n"+l.toString());
 	}
 }

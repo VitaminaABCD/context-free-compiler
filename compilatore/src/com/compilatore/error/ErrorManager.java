@@ -1,17 +1,19 @@
 package com.compilatore.error;
 
+import org.apache.log4j.Logger;
+
 
 public final class ErrorManager {
-
+	static Logger logger = Logger.getLogger(ErrorManager.class.getName());
 
 	public static void manage(ERROR_TYPE type){
 		switch(type){
 		case FILE_EXTENSION:
-			System.out.println("ERROR: The extension of input file is not allowed\n");
+			logger.error("ERROR: The extension of input file is not allowed\n");
 			//TODO log4j
 			break;
 		case FILE_FORMAT:
-			System.out.println("ERROR: Incorrect format: \n Remember that the file must have this form:\n");
+			logger.error("ERROR: Incorrect format: \n Remember that the file must have this form:\n");
 			System.out.println(
 					"Example:\nS::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)}");
 		}
@@ -27,6 +29,11 @@ public final class ErrorManager {
 				System.out.println("Contex-free incompleto si ricorda che il contex free è composto da 4 righe contenti rispettivamente:/n Assioma/n Non Terminali /n Non Terminali/n Produzioni nella forma A::=bBc, B::= (C)/n gli elementi della produzione non devono essere separati da uno spazio");
 				//TODO log4j
 				break;
+			case LOOKAHEAD_GENERATION_ERROR:
+				logger.error("Errore nella generazione spontanea dei simboli",e);
+				break;
+			case LOOKAHEAD_PROPAGATION_ERROR:
+				logger.error("Errore nella propagazione dei simboli",e);
 			default:
 				break;
 			

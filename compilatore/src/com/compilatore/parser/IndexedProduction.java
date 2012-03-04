@@ -21,6 +21,7 @@ public class IndexedProduction extends Production{
 	public IndexedProduction(IndexedProduction pro){
 		super(pro.getLeft(),pro.getRight());
 		currentCharIndex=pro.getCurrentCharIndex();
+		lookahead=pro.getLookahead();
 		if (lookahead==null)
 			lookahead = new HashSet<String>();
 
@@ -37,7 +38,6 @@ public class IndexedProduction extends Production{
 		super(p.getLeft(),p.getRight());
 		currentCharIndex=i;
 		lookahead = new HashSet<String>();
-
 	}
 	
 	
@@ -68,6 +68,10 @@ public class IndexedProduction extends Production{
 		return currentCharIndex;
 	}
 	
+	/**
+	 * Return the next character that that will be read
+	 * @return the character after dot in the production
+	 */
 	public String getCharAfter(){
 		try{
 			return Character.toString(getRight().charAt(currentCharIndex));
@@ -89,10 +93,19 @@ public class IndexedProduction extends Production{
 		this.currentCharIndex = currentCharIndex;
 	}
 
+	/**
+	 * 
+	 * @return a reference to the lookahead list
+	 */
 	public Set<String> getLookahead() {
 		return lookahead;
 	}
 
+	/**
+	 * Compare to production without the dot
+	 * @param p production to compare
+	 * @return true if they are equal, false otherwise 
+	 */
 	public boolean compare(IndexedProduction p){
 		if( p.getLeft().equals(getLeft())
 					&& 

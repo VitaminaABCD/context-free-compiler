@@ -43,10 +43,13 @@ public class LALR1 extends LR0{
 		this.automa.removeDollarLookahed();
 		////////////////////////////////////////////////////////////////////////////////////////
 		
+		int count=1; //variabile di supporto per il numero di cicli nel logger
 		int flag=1;
 		while(flag!=0){
 			flag=0;
+				logger.debug("\nCiclo "+count);
 				flag+=calculateSymbol(this.automa);
+				count++;
 			}
 	}
 	

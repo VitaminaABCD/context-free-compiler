@@ -287,7 +287,7 @@ public class LALR1 extends LR0{
 		//per ogni produzione dello stato
 		for(IndexedProduction prodStato : stato.getKernels())
 			//se il puntino si trove nell'ultima posizione ci troviamo nel caso di una reduce
-			if(prodStato.getCurrentCharIndex()>=stato.size()){
+			if(prodStato.getCurrentCharIndex()>=prodStato.getRightList().size()){
 				//se si tratta della reduce [S'::=S, $] è il caso dell'accettazione
 				if(prodStato.getLeft().equals("S'"))
 					////chiamo la funzione per scrivere nella tabella action
@@ -328,9 +328,9 @@ public class LALR1 extends LR0{
 		else
 			//se no evidenzio lo stato di ambiguità
 			if(j>=0)
-				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ "shift" + j );
+				System.out.println("stato di ambiguità "+ i+ actionTable[i][x]+ " shift" + j );
 			else
-				System.out.println("stato di ambiguità"+ i+ actionTable[i][x]+ action);
+				System.out.println("stato di ambiguità "+ i+ actionTable[i][x]+ " "+action);
 		return esito;
 	}
 	

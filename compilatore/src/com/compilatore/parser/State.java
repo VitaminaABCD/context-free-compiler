@@ -123,13 +123,4 @@ public class State {
 		return items.size();
 	}
 	
-//	/**
-//	 * ritorna la dimensione dello stato
-//	 * @return
-//	 */
-//	public int size(){
-//		return size();
-//	}
-	
-	
 }

@@ -34,7 +34,7 @@ public class FourLineInputParser extends A_InputParser{
 		P=new ArrayList<Production>();
 	}
 	
-	public IGrammar parse(){
+	public IGrammar parse() throws Exception{
 
 		
 		try {

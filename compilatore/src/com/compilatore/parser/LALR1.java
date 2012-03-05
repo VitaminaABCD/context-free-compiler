@@ -24,7 +24,7 @@ public class LALR1 extends LR0{
 	public LALR1(IGrammar gram){
 		automa = new Automa();
 		setGrammar(gram);
-	}
+		}
 	
 	@Override
 	public void setGrammar(IGrammar gram) {
@@ -32,29 +32,35 @@ public class LALR1 extends LR0{
 	}
 	
 	@Override
-	public void init(){
-		Automa AutomaLR0 = new Automa(Item());
-		logger.debug("Inizializzazione dell'automa con stati contenenti i kernel LR0");
-		this.automa.setStates(AutomaLR0.newItemsFromKernels());
-		
-		//////////////////potrebbe non essere necessario (ci vorrebbero meno cicli///////////////
-		//genera i simboli e rimuove il dollaro in tutte le produzioni ad eccezione della prima//
-		calculateSymbol(this.automa);
-		this.automa.removeDollarLookahed();
-		////////////////////////////////////////////////////////////////////////////////////////
-		
-		int count=1; //variabile di supporto per il numero di cicli nel logger
-		int flag=1;
-		while(flag!=0){
-			flag=0;
-				logger.debug("\nCiclo "+count);
-				flag+=calculateSymbol(this.automa);
-				count++;
-			}
+	public void init() throws Exception{
+		try{
+			Automa AutomaLR0 = new Automa(Item());
 
+			logger.debug("Inizializzazione dell'automa con stati contenenti i kernel LR0");
+			this.automa.setStates(AutomaLR0.newItemsFromKernels());
+			
+			//////////////////potrebbe non essere necessario (ci vorrebbero meno cicli///////////////
+			//genera i simboli e rimuove il dollaro in tutte le produzioni ad eccezione della prima//
+			calculateSymbol(this.automa);
+			this.automa.removeDollarLookahed();
+			////////////////////////////////////////////////////////////////////////////////////////
+			
+			int count=1; //variabile di supporto per il numero di cicli nel logger
+			int flag=1;
+			while(flag!=0){
+				flag=0;
+					logger.debug("\nCiclo "+count);
+					flag+=calculateSymbol(this.automa);
+					count++;
+				}
+			
+			tableCostruction();
+		}catch (Exception e) {
+			ErrorManager.manage(ERROR_TYPE.LALR1_INIT,e);
+		}
 	}
 	
-	private int calculateSymbol(Automa atm){
+	private int calculateSymbol(Automa atm) throws Exception{
 		List<IndexedProduction> J;
 		int flag = 0;
 		try{
@@ -204,7 +210,7 @@ public class LALR1 extends LR0{
 	
 	@Override
 	public String toString(){
-		return this.automa.toString();
+		return this.automa.toString() + "\n"+printTable();
 	}
 
 	
@@ -213,62 +219,67 @@ public class LALR1 extends LR0{
 	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1) e ci dice se è di tipo LALR1 o meno
 	 * 
 	 * @param automa da analizzare
+	 * @throws Exception 
 	 */
-	public void tableCostruction(){
-		//serve per vedere se ci sono stati di ambiguità
-		boolean esito=false;
-		//salveremo l'indice identificativo dello stato di destinazione
-		int j=0;
-		List<IndexedProduction> chiusuraX =  new ArrayList<IndexedProduction>();
-		//inizzializzazione tabella action Goto
-		gotoTable= new String[automa.size()][grammatica.getV().size()];
-		//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con uno schift sono di errore
-		for(int h=0;h<automa.size();h++)
-			for(int k=0; k<grammatica.getV().size();k++)
-				gotoTable[h][k]="err";
-		actionTable=new String [automa.size()][grammatica.getT().size()];
-		//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con una reduce o uno schift sono di errore
-		for(int h=0;h<automa.size();h++)
-			for(int k=0; k<grammatica.getT().size();k++)
-				actionTable[h][k]="err";
-		//per ogni stato dell'automa
-		for(State statoi : automa.getStates()){
-			//vediamo se ci sono riduzioni ed eventualmente le scriviamo
-			esito=reduce(statoi);
-			//per ogni NON TERMINALE X nella grammatica
-			for(String X :grammatica.getV()){
-				//facciamo il GoTo per lo statoi con il  terminale x
-				chiusuraX = GoTo(statoi.getItems(), X);
-				//recuperiamo l'indice dello stato chiusurax
-				j=uguale(automa.getStates(), chiusuraX);
-				//se chiusuraX non è vuoto ed è stato trovato
-				if(!chiusuraX.isEmpty()
-						&
-						j!=-1)
-					//scrivo nella tabella GOTO lo scift al posto di err
-					gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)].replaceAll("err", "s"+j);
+	public int tableCostruction() throws Exception{
+		try{
+			//serve per vedere se ci sono stati di ambiguità
+			boolean esito=false;
+			//salveremo l'indice identificativo dello stato di destinazione
+			int j=0;
+			List<IndexedProduction> chiusuraX =  new ArrayList<IndexedProduction>();
+			//inizzializzazione tabella action Goto
+			gotoTable= new String[automa.size()][grammatica.getV().size()];
+			//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con uno schift sono di errore
+			for(int h=0;h<automa.size();h++)
+				for(int k=0; k<grammatica.getV().size();k++)
+					gotoTable[h][k]="err";
+			actionTable=new String [automa.size()][grammatica.getT().size()];
+			//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con una reduce o uno schift sono di errore
+			for(int h=0;h<automa.size();h++)
+				for(int k=0; k<grammatica.getT().size();k++)
+					actionTable[h][k]="err";
+			//per ogni stato dell'automa
+			for(State statoi : automa.getStates()){
+				//vediamo se ci sono riduzioni ed eventualmente le scriviamo
+				esito=reduce(statoi);
+				//per ogni NON TERMINALE X nella grammatica
+				for(String X :grammatica.getV()){
+					//facciamo il GoTo per lo statoi con il  terminale x
+					chiusuraX = GoTo(statoi.getItems(), X);
+					//recuperiamo l'indice dello stato chiusurax
+					j=uguale(automa.getStates(), chiusuraX);
+					//se chiusuraX non è vuoto ed è stato trovato
+					if(!chiusuraX.isEmpty()
+							&
+							j!=-1)
+						//scrivo nella tabella GOTO lo scift al posto di err
+						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)].replaceAll("err", "s"+j);
+				}
+				//per ogni TERMINALE X nella grammatica
+				for(String X :grammatica.getT()){
+					//facciamo il GoTo per lo statoi con il  terminale x
+					chiusuraX = GoTo(statoi.getItems(), X);
+					//recuperiamo l'indice dello stato chiusurax
+					j=uguale(automa.getStates(), chiusuraX);
+					//se chiusuraX non è vuoto ed è stato trovato
+					if(!chiusuraX.isEmpty()
+							&
+							j!=-1)
+						//scrivo nella tabella ACTION lo scift
+						esito = actionWrite(statoi.getIndex(),j,grammatica.getT().indexOf(X),"s");
+				}
 			}
-			//per ogni TERMINALE X nella grammatica
-			for(String X :grammatica.getT()){
-				//facciamo il GoTo per lo statoi con il  terminale x
-				chiusuraX = GoTo(statoi.getItems(), X);
-				//recuperiamo l'indice dello stato chiusurax
-				j=uguale(automa.getStates(), chiusuraX);
-				//se chiusuraX non è vuoto ed è stato trovato
-				if(!chiusuraX.isEmpty()
-						&
-						j!=-1)
-					//scrivo nella tabella ACTION lo scift
-					esito = actionWrite(statoi.getIndex(),j,grammatica.getT().indexOf(X),"s");
-			}
+			//stampo l'esito della creazione delle tabelle ACTION GOTO
+			if (esito)
+				System.out.println("La grammatica è LALR(1)");
+			else
+				System.out.println("La grammatica non è LALR(1)");
+			return esito? 1 : 0;
+		}catch (Exception e) {
+			ErrorManager.manage(ERROR_TYPE.TABLE_CONSTRUCTION, e);
 		}
-		//stampo l'esito della creazione delle tabelle ACTION GOTO
-		stampa();
-		if (esito)
-			System.out.println("La grammatica è LALR(1)");
-		else
-			System.out.println("La grammatica non è LALR(1)");
-		
+		return -1;
 	}
 	
 	/**
@@ -332,37 +343,36 @@ public class LALR1 extends LR0{
 	/**
 	 * Stampa le tabelle Action Goto
 	 */
-	public void stampa(){
-		String str="\t";
-		System.out.println("\n\t\tTabella ACTION\n");
+	public String printTable(){
+		String str="\n\t\tTabella ACTION\n";
+//		System.out.println("\n\t\tTabella ACTION\n");
 		str="\t";
 		//stampo i simboli Terminali
 		for (String t :grammatica.getT())
-			str=str+t.toString()+"\t";
+			str+=t.toString()+"\t";
 		System.out.println(str);
 		//per ogni stato
 		for (int i=0; i<automa.size();i++){
-			str=i+"\t";
+			str+=i+"\t";
 			//Per ogni terminale
 			for (int j=0;j<grammatica.getT().size();j++)
 				str=str+actionTable[i][j]+"\t";
-			System.out.println(str);
 		}
-		System.out.println("\n\t\tTabella GOTO\n");
+		str+="\n\t\tTabella GOTO\n";
+//		System.out.println("\n\t\tTabella GOTO\n");
 		//resetto la stringa
-		str="\t";
+		str+="\t";
 		//stampo i Simboli Non Terminali
 		for (String t :grammatica.getV())
 			str=str+t.toString()+"\t";
-		System.out.println(str);
 		//per ogni stato
 		for (int i=0; i<automa.size();i++){
 			str=i+"\t";
 			//per ogni NON TERMINALE
 			for (int j=0;j<grammatica.getV().size();j++)
 				str=str+gotoTable[i][j]+"\t";
-			System.out.println(str);
 		}
 		
+		return str;
 	}
 }

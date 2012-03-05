@@ -14,7 +14,7 @@ public class Home{
 
 	static Logger logger = Logger.getLogger(Home.class.getName());
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		PropertyConfigurator.configure("log4j.config");
 		
 		IGrammar grammar;
@@ -23,7 +23,6 @@ public class Home{
 		InputParser parser = new InputParser("esempioLibro.4l");
 		LR0 l = new LALR1(parser.parse());
 		
-		l.init();
 		System.out.println("\n"+l.toString());
 		
 	}

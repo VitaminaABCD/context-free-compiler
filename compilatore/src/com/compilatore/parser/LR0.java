@@ -13,7 +13,7 @@ public abstract class LR0 {
 	protected IGrammar grammatica;
 	
 	public abstract void setGrammar(IGrammar gram);
-	public abstract void init();
+	public abstract void init() throws Exception;
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 

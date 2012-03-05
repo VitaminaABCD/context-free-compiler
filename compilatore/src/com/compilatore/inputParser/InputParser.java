@@ -33,7 +33,7 @@ public class InputParser {
 		grammar=gr;
 	}
 	
-	public IGrammar parse(){
+	public IGrammar parse() throws Exception{
 		ParserFactory fc = new ConcreteParserFactory();
 		return fc.factoryMethod(input).parse();
 	}

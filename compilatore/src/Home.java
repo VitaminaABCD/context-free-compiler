@@ -20,7 +20,7 @@ public class Home{
 		PropertyConfigurator.configure("log4j.config");
 		
 		logger.debug("Start Application");
-		InputParser parser = new InputParser("esempioLibro.4l");
+		InputParser parser = new InputParser("file.4l");
 		
 		ParsingFactory p = new ParsingFactory();
 //		IParsing l = p.createParsing();

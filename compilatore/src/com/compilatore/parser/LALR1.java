@@ -233,8 +233,6 @@ public class LALR1 extends LR0{
 			//serve per vedere se ci sono stati di ambiguità
 			boolean esito=false;
 			//salveremo l'indice identificativo dello stato di destinazione
-			int j=0;
-			List<IndexedProduction> chiusuraX =  new ArrayList<IndexedProduction>();
 			//inizzializzazione tabella action Goto
 			gotoTable= new String[automa.size()][grammatica.getV().size()];
 			//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con uno schift sono di errore
@@ -253,28 +251,16 @@ public class LALR1 extends LR0{
 				//per ogni NON TERMINALE X nella grammatica
 				for(String X :grammatica.getV()){
 					//facciamo il GoTo per lo statoi con il  terminale x
-					chiusuraX = GoTo(statoi.getItems(), X);
-					//recuperiamo l'indice dello stato chiusurax
-					j=uguale(automa.getStates(), chiusuraX);
-					//se chiusuraX non è vuoto ed è stato trovato
-					if(!chiusuraX.isEmpty()
-							&
-							j!=-1)
+
 						//scrivo nella tabella GOTO lo scift al posto di err
-						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)].replaceAll("err", "s"+j);
+					if(statoi.getShift().get(X)!=null)
+						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]= "s"+statoi.getShift().get(X);
 				}
 				//per ogni TERMINALE X nella grammatica
 				for(String X :grammatica.getT()){
-					//facciamo il GoTo per lo statoi con il  terminale x
-					chiusuraX = GoTo(statoi.getItems(), X);
-					//recuperiamo l'indice dello stato chiusurax
-					j=uguale(automa.getStates(), chiusuraX);
-					//se chiusuraX non è vuoto ed è stato trovato
-					if(!chiusuraX.isEmpty()
-							&
-							j!=-1)
+					if(statoi.getShift().get(X)!=null)
 						//scrivo nella tabella ACTION lo scift
-						esito = actionWrite(statoi.getIndex(),j,grammatica.getT().indexOf(X),"s");
+						esito = actionWrite(statoi.getIndex(),statoi.getShift().get(X),grammatica.getT().indexOf(X),"s");
 				}
 			}
 			//stampo l'esito della creazione delle tabelle ACTION GOTO
@@ -331,10 +317,10 @@ public class LALR1 extends LR0{
 			//e si tratta di uno shift
 			if(action.equals("s"))
 				//sostituisco la String "err" con lo shift alla posizione j
-				actionTable[i][x].replaceAll("err", action + j);
+				actionTable[i][x]= action + j;
 			else
 				// se no sostituisco la String "err" con la reduce action
-				actionTable[i][x].replaceAll("err", action);
+				actionTable[i][x]= action;
 			//e setto esito a true per dire che è andato tutto bene
 			esito =true;
 		}
@@ -347,44 +333,34 @@ public class LALR1 extends LR0{
 		return esito;
 	}
 	
+
 	/**
-	 * Stampa le tabelle Action Goto
+	 * restiruisce una stringa con le  tabelle Action Goto
+	 * @return
 	 */
 	public String printTable(){
-		String str="\n\t\tTabella ACTION\n";
-//		System.out.println("\n\t\tTabella ACTION\n");
-//		str="\t";
+		String str="\n\t\tTabella ACTION\n\t";
 		//stampo i simboli Terminali
 		for (String t :grammatica.getT())
 			str+=t.toString()+"\t";
-//		System.out.println(str);
 		//per ogni stato
-//		str+="\n";
 		for (int i=0; i<automa.size();i++){
-			str+=i+"\t";
+			str+="\n"+i+"\t";
 			//Per ogni terminale
-			str+="\n";
 			for (int j=0;j<grammatica.getT().size();j++)
 				str=str+actionTable[i][j]+"\t";
 		}
-		str+="\n\t\tTabella GOTO\n";
-//		System.out.println("\n\t\tTabella GOTO\n");
-		//resetto la stringa
-		str+="\t";
-		//stampo i Simboli Non Terminali
-		str+="\n";
+		str+="\n\n\t\tTabella GOTO\n\t";
+		//stampo i non terminali
 		for (String t :grammatica.getV())
-			str=str+t.toString()+"\t";
+			str+=t.toString()+"\t";
 		//per ogni stato
-//		str+="\n";
 		for (int i=0; i<automa.size();i++){
-			str+=i+"\t";
-			//per ogni NON TERMINALE
-			str+="\n";
+			str+="\n"+i+"\t";
+			//Per ogni NON Terminale
 			for (int j=0;j<grammatica.getV().size();j++)
-				str+=gotoTable[i][j]+"\t";
+				str=str+gotoTable[i][j]+"\t";
 		}
-		
 		return str;
 	}
 }

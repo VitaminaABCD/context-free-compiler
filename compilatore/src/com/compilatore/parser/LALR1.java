@@ -242,6 +242,7 @@ public class LALR1 extends LR0{
 			actionTable=new String [automa.size()][grammatica.getT().size()];
 			//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con una reduce o uno schift sono di errore
 			for(int h=0;h<automa.size();h++)
+				//controllo nella lista degli shift se è presente X e in caso lo scrivo nella tabella
 				for(int k=0; k<grammatica.getT().size();k++)
 					actionTable[h][k]="err";
 			//per ogni stato dell'automa
@@ -250,10 +251,9 @@ public class LALR1 extends LR0{
 				esito=reduce(statoi);
 				//per ogni NON TERMINALE X nella grammatica
 				for(String X :grammatica.getV()){
-					//facciamo il GoTo per lo statoi con il  terminale x
-
-						//scrivo nella tabella GOTO lo scift al posto di err
+					//controllo nella lista degli shift se è presente X e in caso lo scrivo nella tabella
 					if(statoi.getShift().get(X)!=null)
+						//scrivo nella tabella GOTO lo scift al posto di err
 						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]= "s"+statoi.getShift().get(X);
 				}
 				//per ogni TERMINALE X nella grammatica

@@ -54,7 +54,12 @@ public class LALR1 extends LR0{
 					count++;
 				}
 			
-			return tableCostruction();
+			for(State s : this.automa.getStates()){				//Calcolo la chiusura dei kernel per completare gli stati
+				s.setItems(chiusuraLR1(s.getItems()));
+			}
+			
+			if(tableCostruction()==1) return 1;
+			else return 0;
 		}catch (Exception e) {
 			ErrorManager.manage(ERROR_TYPE.LALR1_INIT,e);
 			return -1;

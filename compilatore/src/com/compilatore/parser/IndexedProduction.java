@@ -9,7 +9,6 @@ import com.compilatore.grammar.Production;
 public class IndexedProduction extends Production{
 	private int currentCharIndex;
 	private Set<String> lookahead;
-	private List<String> l;
 	
 	public IndexedProduction(){
 		super();

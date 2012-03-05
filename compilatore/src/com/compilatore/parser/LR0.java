@@ -150,9 +150,11 @@ public abstract class LR0 implements IParsing{
 							if(uguale==-1){
 								//allora lo aggiungo
 								automa.add(new State(automa.size(),chiusraX));
+								//e setto nella lista degli shift dello stato di origine, lo spostamento per il simbolo x[i] al nuovo stato
 								stato.getShift().put(x[i],automa.size()-1);
 								flag=true;
 							}else{
+								//se chiusurax già esiste aggiungo alla lista degli shift dello stato di origine, lo spostamento per il simbolo x[i] allo stato uguale
 								stato.getShift().put(x[i], uguale);
 							}
 					}
@@ -169,9 +171,11 @@ public abstract class LR0 implements IParsing{
 							if(uguale==-1){
 								//allora lo aggiungo
 								automa.add(new State(automa.size(),chiusraX));
+								//e setto nella lista degli shift dello stato di origine, lo spostamento per il simbolo x[i] al nuovo stato  
 								stato.getShift().put(x[i],automa.size()-1);
 								flag=true;
 							}else{
+								//se chiusurax già esiste aggiungo alla lista degli shift dello stato di origine, lo spostamento per il simbolo x[i] allo stato uguale
 								stato.getShift().put(x[i], uguale);
 							}
 					}

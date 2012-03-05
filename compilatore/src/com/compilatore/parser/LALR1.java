@@ -232,7 +232,6 @@ public class LALR1 extends LR0{
 		try{
 			//serve per vedere se ci sono stati di ambiguità
 			boolean esito=false;
-			//salveremo l'indice identificativo dello stato di destinazione
 			//inizzializzazione tabella action Goto
 			gotoTable= new String[automa.size()][grammatica.getV().size()];
 			//inizzializzo la tabella a ERR inquanto i campi che non saranno riempiti con uno schift sono di errore
@@ -245,21 +244,23 @@ public class LALR1 extends LR0{
 				//controllo nella lista degli shift se è presente X e in caso lo scrivo nella tabella
 				for(int k=0; k<grammatica.getT().size();k++)
 					actionTable[h][k]="err";
+			
 			//per ogni stato dell'automa
 			for(State statoi : automa.getStates()){
 				//vediamo se ci sono riduzioni ed eventualmente le scriviamo
 				esito=reduce(statoi);
 				//per ogni NON TERMINALE X nella grammatica
 				for(String X :grammatica.getV()){
-					//controllo nella lista degli shift se è presente X e in caso lo scrivo nella tabella
+					//controllo nella lista degli shift dello stato se è presente per X
 					if(statoi.getShift().get(X)!=null)
 						//scrivo nella tabella GOTO lo scift al posto di err
 						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]= "s"+statoi.getShift().get(X);
 				}
-				//per ogni TERMINALE X nella grammatica
+				//per ogni simbolo Terminale
 				for(String X :grammatica.getT()){
+					//controllo nella lista degli shift dello stato se è presente X
 					if(statoi.getShift().get(X)!=null)
-						//scrivo nella tabella ACTION lo scift
+						//scrivo nella tabella ACTION lo scift 
 						esito = actionWrite(statoi.getIndex(),statoi.getShift().get(X),grammatica.getT().indexOf(X),"s");
 				}
 			}

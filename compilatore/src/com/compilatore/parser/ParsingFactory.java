@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import org.apache.log4j.Logger;
 
+import com.compilatore.grammar.IGrammar;
 import com.compilatore.inputParser.InputParser;
 
 public class ParsingFactory {
@@ -39,6 +40,26 @@ public class ParsingFactory {
 		try {
 			logger.debug("Grammar type init...");
 			l = new LALR1(parser.parse());
+			if(l.init()==1) {
+				logger.debug("Grammar created and initialized correctly");
+				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
+			}
+			else {
+				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma cerrà terminato...");
+				return null;
+			}
+		} catch (Exception e) {
+			logger.error("Error occurred in grammar initialization");
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public IParsing createParsing(IGrammar grammar) {
+		IParsing l;
+		try {
+			logger.debug("Grammar type init...");
+			l = new LALR1(grammar);
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
 				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza

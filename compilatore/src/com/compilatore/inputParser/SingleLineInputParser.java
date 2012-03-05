@@ -24,7 +24,7 @@ public class SingleLineInputParser extends A_InputParser {
 	}
 
 	@Override
-	public IGrammar parse() {
+	public IGrammar parse() throws Exception {
 		String input="";
 		try {
 			BufferedReader f = new BufferedReader(new FileReader(file));

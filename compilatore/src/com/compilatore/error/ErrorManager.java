@@ -19,7 +19,7 @@ public final class ErrorManager {
 		}
 	}
 	
-	public static void manage(ERROR_TYPE type, Exception e){
+	public static void manage(ERROR_TYPE type, Exception e) throws Exception{
 		switch(type){
 			case INPUT_FILE:
 				System.out.println("Problem with input file:\n" + e);
@@ -34,6 +34,12 @@ public final class ErrorManager {
 				break;
 			case LOOKAHEAD_PROPAGATION_ERROR:
 				logger.error("Errore nella propagazione dei simboli",e);
+			case TABLE_CONSTRUCTION:
+				logger.error("Errore nella costruzione delle tabelle di ACTION - GOTO",e);
+				throw new Exception("Errore nella costruzione delle tabelle di ACTION - GOTO",e);
+			case LALR1_INIT:
+				logger.error("Errore nell'inizializzazione della struttura LALR1",e);
+				throw new Exception("LALR1 init error",e);
 			default:
 				break;
 			

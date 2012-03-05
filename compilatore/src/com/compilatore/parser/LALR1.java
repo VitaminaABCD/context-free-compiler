@@ -32,7 +32,7 @@ public class LALR1 extends LR0{
 	}
 	
 	@Override
-	public void init() throws Exception{
+	public int init() throws Exception{
 		try{
 			Automa AutomaLR0 = new Automa(Item());
 
@@ -54,9 +54,10 @@ public class LALR1 extends LR0{
 					count++;
 				}
 			
-			tableCostruction();
+			return tableCostruction();
 		}catch (Exception e) {
 			ErrorManager.manage(ERROR_TYPE.LALR1_INIT,e);
+			return -1;
 		}
 	}
 	
@@ -219,6 +220,7 @@ public class LALR1 extends LR0{
 	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1) e ci dice se è di tipo LALR1 o meno
 	 * 
 	 * @param automa da analizzare
+	 * @return 1 se la grammatica è di tipo LALR(1), 0 altrimenti
 	 * @throws Exception 
 	 */
 	public int tableCostruction() throws Exception{
@@ -278,8 +280,8 @@ public class LALR1 extends LR0{
 			return esito? 1 : 0;
 		}catch (Exception e) {
 			ErrorManager.manage(ERROR_TYPE.TABLE_CONSTRUCTION, e);
+			return -1;
 		}
-		return -1;
 	}
 	
 	/**
@@ -346,15 +348,17 @@ public class LALR1 extends LR0{
 	public String printTable(){
 		String str="\n\t\tTabella ACTION\n";
 //		System.out.println("\n\t\tTabella ACTION\n");
-		str="\t";
+//		str="\t";
 		//stampo i simboli Terminali
 		for (String t :grammatica.getT())
 			str+=t.toString()+"\t";
-		System.out.println(str);
+//		System.out.println(str);
 		//per ogni stato
+//		str+="\n";
 		for (int i=0; i<automa.size();i++){
 			str+=i+"\t";
 			//Per ogni terminale
+			str+="\n";
 			for (int j=0;j<grammatica.getT().size();j++)
 				str=str+actionTable[i][j]+"\t";
 		}
@@ -363,14 +367,17 @@ public class LALR1 extends LR0{
 		//resetto la stringa
 		str+="\t";
 		//stampo i Simboli Non Terminali
+		str+="\n";
 		for (String t :grammatica.getV())
 			str=str+t.toString()+"\t";
 		//per ogni stato
+//		str+="\n";
 		for (int i=0; i<automa.size();i++){
-			str=i+"\t";
+			str+=i+"\t";
 			//per ogni NON TERMINALE
+			str+="\n";
 			for (int j=0;j<grammatica.getV().size();j++)
-				str=str+gotoTable[i][j]+"\t";
+				str+=gotoTable[i][j]+"\t";
 		}
 		
 		return str;

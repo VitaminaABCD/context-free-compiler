@@ -1,19 +1,19 @@
 package com.compilatore.parser;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.compilatore.grammar.IGrammar;
 import com.compilatore.grammar.Production;
 
-public abstract class LR0 {
+public abstract class LR0 implements IParsing{
 
 	protected IGrammar grammatica;
 	
 	public abstract void setGrammar(IGrammar gram);
-	public abstract void init() throws Exception;
+	public abstract int init() throws Exception;
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
@@ -31,7 +31,7 @@ public abstract class LR0 {
 		String[] right;
 
 		//Copio il kernel item I in una List<IndexedProduction> j cosi' avro' sia i Kernel che i relativi Item che formano la chiusura
-		List<IndexedProduction> j = new ArrayList<IndexedProduction>();
+		List<IndexedProduction> j = new LinkedList<IndexedProduction>();
 		j.addAll(i);
 		//fino a quando  vengono aggiunti nuovi item a J
 		while (flag) {
@@ -88,7 +88,7 @@ public abstract class LR0 {
 		IndexedProduction item;
 		Object[] ob;
 		String [] right;
-		List<IndexedProduction> j = new ArrayList<IndexedProduction>();
+		List<IndexedProduction> j = new LinkedList<IndexedProduction>();
 		Iterator <IndexedProduction> iter = i.iterator();
 		//Per ogni produzione contenuta in I
 		while (iter.hasNext()){
@@ -118,9 +118,9 @@ public abstract class LR0 {
 		State stato;
 		Object[] ob;
 		String[] x;
-		List<IndexedProduction>chiusraX = new ArrayList<IndexedProduction>();
-		List<State> automa = new ArrayList<State>();
-		List<IndexedProduction> aumentata= new ArrayList<IndexedProduction>();
+		List<IndexedProduction>chiusraX = new LinkedList<IndexedProduction>();
+		List<State> automa = new LinkedList<State>();
+		List<IndexedProduction> aumentata= new LinkedList<IndexedProduction>();
 		//creiamo una produzione S'::= S che fa diventare la nostra grammatica aumentata
 		Production p = new Production("S'", grammatica.getS());
 		//dopo di che inseriamo il tutto in un List<IndexedProdaction> mettendo il punto al primo posto nella produzione S'::=.S

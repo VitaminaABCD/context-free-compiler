@@ -5,8 +5,10 @@ import org.apache.log4j.PropertyConfigurator;
 
 import com.compilatore.grammar.IGrammar;
 import com.compilatore.inputParser.InputParser;
+import com.compilatore.parser.IParsing;
 import com.compilatore.parser.LALR1;
 import com.compilatore.parser.LR0;
+import com.compilatore.parser.ParsingFactory;
 import com.compilatore.parser.State;
 
 
@@ -17,13 +19,15 @@ public class Home{
 	public static void main(String[] args) throws Exception{
 		PropertyConfigurator.configure("log4j.config");
 		
-		IGrammar grammar;
-		
 		logger.debug("Start Application");
 		InputParser parser = new InputParser("esempioLibro.4l");
-		LR0 l = new LALR1(parser.parse());
 		
-		System.out.println("\n"+l.toString());
+		ParsingFactory p = new ParsingFactory();
+//		IParsing l = p.createParsing();
+		IParsing l = p.createParsing(parser);
+		
+		if(l!=null)
+			System.out.println("\n"+l.toString());
 		
 	}
 }

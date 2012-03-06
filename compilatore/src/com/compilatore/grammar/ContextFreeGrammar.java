@@ -321,9 +321,24 @@ public class ContextFreeGrammar implements IGrammar {
 		}
 	}
 
+	@Override
 	public String toString() {
 		return "ASSIOMA: \t" + S + "\nTERMINALI: \t" + T + "\nNON TERMINALI: \t" + V
 				+ "\nPRODUZIONI: \t" + P;
 	}
 
+	@Override
+	public String toOneLineString() {
+		String result=S.toString()+"::= {";
+		for(String v  : V){
+			result+=v+": ";			
+			for(Production p : P){
+				if(p.getLeft().equals(v)) result+=p.getRight()+" | ";
+			}
+			result=result.substring(0, result.length()-3);
+			result+="; ";
+		}
+		
+		return result=result.substring(0,result.length()-2)+"}";
+	}
 }

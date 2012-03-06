@@ -248,7 +248,8 @@ public class LALR1 extends LR0{
 			//per ogni stato dell'automa
 			for(State statoi : automa.getStates()){
 				//vediamo se ci sono riduzioni ed eventualmente le scriviamo
-				esito=reduce(statoi);
+				if(!reduce(statoi))
+				esito= true;
 				//per ogni NON TERMINALE X nella grammatica
 				for(String X :grammatica.getV()){
 					//controllo nella lista degli shift dello stato se è presente per X
@@ -261,14 +262,15 @@ public class LALR1 extends LR0{
 					//controllo nella lista degli shift dello stato se è presente X
 					if(statoi.getShift().get(X)!=null)
 						//scrivo nella tabella ACTION lo scift 
-						esito = actionWrite(statoi.getIndex(),statoi.getShift().get(X),grammatica.getT().indexOf(X),"s");
+						if(!actionWrite(statoi.getIndex(),statoi.getShift().get(X),grammatica.getT().indexOf(X),"s"))
+							esito=true;
 				}
 			}
 			//stampo l'esito della creazione delle tabelle ACTION GOTO
 			if (esito)
-				System.out.println("La grammatica è LALR(1)");
-			else
 				System.out.println("La grammatica non è LALR(1)");
+			else
+				System.out.println("La grammatica  è LALR(1)");
 			return esito? 1 : 0;
 		}catch (Exception e) {
 			ErrorManager.manage(ERROR_TYPE.TABLE_CONSTRUCTION, e);
@@ -284,23 +286,29 @@ public class LALR1 extends LR0{
 	public boolean reduce(State stato){
 		//serve per vedere se ci sono stati di ambiguità
 		boolean esito=false;
+		boolean ret=true;
 		//per ogni produzione dello stato
 		for(IndexedProduction prodStato : stato.getKernels())
 			//se il puntino si trove nell'ultima posizione ci troviamo nel caso di una reduce
 			if(prodStato.getCurrentCharIndex()>=prodStato.getRightList().size()){
 				//se si tratta della reduce [S'::=S, $] è il caso dell'accettazione
-				if(prodStato.getLeft().equals("S'"))
+				if(prodStato.getLeft().equals("S'")){
 					////chiamo la funzione per scrivere nella tabella action
 					esito = actionWrite(stato.getIndex(),-1,grammatica.getT().indexOf("$"),"acc");
+					if (!esito)
+						ret=false;
+				}
 				//se no ci troviamo nel caso di una risuzione 
 				else{
 					//per ogni simbolo di lookahead
 					for(String la : prodStato.getLookahead())
 						//chiamo la funzione per scrivere nella tabella action
 						esito = actionWrite(stato.getIndex(),-1,grammatica.getT().indexOf(la),prodStato.getLeft()+"::="+prodStato.getRight());
+					if (!esito)
+						ret=false;
 				}
 			}
-		return esito;
+		return ret;
 	}
 	
 	/**

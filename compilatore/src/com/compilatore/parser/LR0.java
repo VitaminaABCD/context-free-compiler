@@ -14,6 +14,8 @@ public abstract class LR0 implements IParsing{
 	
 	public abstract void setGrammar(IGrammar gram);
 	public abstract int init() throws Exception;
+	
+	
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
@@ -262,6 +264,5 @@ public abstract class LR0 implements IParsing{
 				}
 			}
 		return uguale;
-	}
-	
+	}	
 }

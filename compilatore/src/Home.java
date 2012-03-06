@@ -12,14 +12,14 @@ public class Home{
 		PropertyConfigurator.configure("log4j.config");
 		
 		logger.debug("Start Application");
-		InputParser parser = new InputParser("file.4l");
+		InputParser parser = new InputParser("esempioLibro.4l");
 		
 		ParsingFactory p = new ParsingFactory();
 //		IParsing l = p.createParsing();
 		IParsing l = p.createParsing(parser);
 		
-		if(l!=null)
-			System.out.println("\n"+l.toString());
-		
+		if(l!=null){
+			System.out.println("\n" +l.toString()+"\n\nGrammatica: " + l.getGrammar().toOneLineString() );
+		}
 	}
 }

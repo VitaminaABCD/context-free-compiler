@@ -27,6 +27,11 @@ public class LALR1 extends LR0{
 		}
 	
 	@Override
+	public IGrammar getGrammar(){
+		return this.grammatica;
+	}
+	
+	@Override
 	public void setGrammar(IGrammar gram) {
 		grammatica=gram;
 	}
@@ -216,7 +221,7 @@ public class LALR1 extends LR0{
 	
 	@Override
 	public String toString(){
-		return "Grammatica:\n"+this.grammatica.toOneLineString()+ "\n" + this.automa.toString() + "\n"+printTable();
+		return "Grammatica:\n"+this.grammatica.toString()+ "\n" + this.automa.toString() + "\n"+printTable();
 	}
 
 	

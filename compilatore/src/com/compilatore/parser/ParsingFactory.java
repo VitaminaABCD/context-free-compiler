@@ -22,7 +22,7 @@ public class ParsingFactory {
 				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
 			}
 			else {
-				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma cerrà terminato...");
+				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma verrà terminato...");
 				return null;
 			}
 
@@ -65,7 +65,7 @@ public class ParsingFactory {
 				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
 			}
 			else {
-				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma Verrà terminato...");
+				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma verrà terminato...");
 				return null;
 			}
 		} catch (Exception e) {

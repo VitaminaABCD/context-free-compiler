@@ -336,9 +336,9 @@ public class LALR1 extends LR0{
 		else
 			//se no evidenzio lo stato di ambiguità
 			if(j>=0)
-				System.out.println("stato di ambiguità "+ i+ actionTable[i][x]+ " shift" + j );
+				System.out.println("Ambiguità allo stato "+ i+": "+ actionTable[i][x]+ ", shift " + j );
 			else
-				System.out.println("stato di ambiguità "+ i+ actionTable[i][x]+ " "+action);
+				System.out.println("Ambiguità allo stato "+ i+ ": "+ actionTable[i][x]+ ", "+action);
 		return esito;
 	}
 	

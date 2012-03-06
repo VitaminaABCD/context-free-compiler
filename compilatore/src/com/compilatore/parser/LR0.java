@@ -47,8 +47,6 @@ public abstract class LR0 implements IParsing{
 				if(item.getCurrentCharIndex() >= item.getRightList().size()){
 					//esci dal while xkè ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
-					//quindi inseriamo nella tabella action la Reduce per la produzione giusta...
-					//ossi R = P::=aBc. 
 					break;
 				}
 				//prendo il simbolo che segue il puntino nella produzione A:= a.Bc
@@ -98,7 +96,6 @@ public abstract class LR0 implements IParsing{
 			//se il puntino non si trova nell'ultima posizione
 			if(!(item.getCurrentCharIndex() >= item.getRightList().size()))
 				//controlliamo se il carattere che segue il punto e' lo stesso di A::= a.Xc
-				//TODO da qui si capisce quali sono gli stati di chiusura e quali no.......
 				if(right[item.getCurrentCharIndex()].equals(X))
 					//quindi aggiungiamo la produzione a J spostando il punto al carattere succesivo
 					j.add(new IndexedProduction(item.getCurrentCharIndex()+1, item));
@@ -143,7 +140,6 @@ public abstract class LR0 implements IParsing{
 						//faccio il GoTo dello stato 
 						chiusraX =GoTo(Items, x[i]);
 						//TODO se si crea il nuovo stato vado a inserire lo SHIFT nella tabella degli GOTO Inquanto generato da un Terminale
-						
 						//se ChiusuraX non e' vuoto AND non e' contenuta nell'automa
 						int uguale=uguale(automa,chiusraX);
 						if(!chiusraX.isEmpty())

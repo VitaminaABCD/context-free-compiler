@@ -266,12 +266,7 @@ public class LALR1 extends LR0{
 							esito=true;
 				}
 			}
-			//stampo l'esito della creazione delle tabelle ACTION GOTO
-			if (esito)
-				System.out.println("La grammatica non è LALR(1)");
-			else
-				System.out.println("La grammatica  è LALR(1)");
-			return esito? 1 : 0;
+			return esito? 0 : 1;
 		}catch (Exception e) {
 			ErrorManager.manage(ERROR_TYPE.TABLE_CONSTRUCTION, e);
 			return -1;

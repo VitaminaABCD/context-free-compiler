@@ -44,7 +44,7 @@ public class Home{
 		
 		
 		Parser parserProgram = (Parser)parser.parse();
-		parserProgram.setInput("=$");
+		parserProgram.setInput("=$");                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
 		System.out.println(parserProgram.parse());
 	}
 }

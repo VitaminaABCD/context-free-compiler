@@ -12,7 +12,7 @@ import com.compilatore.grammar.GrammarFactory;
 import com.compilatore.grammar.IGrammar;
 import com.compilatore.grammar.Production;
 
-public class SingleLineInputParser extends A_InputParser {
+public class SingleLineInputParser extends InputParser {
 
 	String S,file;
 	List<Production> P;

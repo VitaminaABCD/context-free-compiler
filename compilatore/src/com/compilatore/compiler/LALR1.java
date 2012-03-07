@@ -13,23 +13,6 @@ public class LALR1 extends LR0{
 	static Logger logger = Logger.getLogger(LALR1.class.getName());
 	
 	private Automa automa;
-	public String[][] getActionTable() {
-		return actionTable;
-	}
-
-	public void setActionTable(String[][] actionTable) {
-		this.actionTable = actionTable;
-	}
-
-	public String[][] getGotoTable() {
-		return gotoTable;
-	}
-
-	public void setGotoTable(String[][] gotoTable) {
-		this.gotoTable = gotoTable;
-	}
-
-
 	private String[][] actionTable;
 	private String[][] gotoTable;
 	
@@ -383,7 +366,7 @@ public class LALR1 extends LR0{
 		//per ogni stato
 		for (int i=0; i<automa.size();i++){
 			str+="\n"+i+"\t";
-//			Per ogni NON Terminale
+			//Per ogni NON Terminale
 			for (int j=0;j<grammatica.getV().size();j++)
 				str=str+gotoTable[i][j]+"\t";
 		}

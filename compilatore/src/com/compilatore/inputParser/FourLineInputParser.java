@@ -12,7 +12,7 @@ import com.compilatore.grammar.GrammarFactory;
 import com.compilatore.grammar.IGrammar;
 import com.compilatore.grammar.Production;
 
-public class FourLineInputParser extends A_InputParser{
+public class FourLineInputParser extends InputParser{
 	String file;
 	String A_reader, V_reader, T_reader, P_reader;
 	String[] V_temp, T_temp, P_temp;
@@ -34,9 +34,8 @@ public class FourLineInputParser extends A_InputParser{
 		P=new ArrayList<Production>();
 	}
 	
+	@Override
 	public IGrammar parse() throws Exception{
-
-		
 		try {
 			BufferedReader f = new BufferedReader(new FileReader(file));
 			// abbiamo bisognodi due variabili temporali una dove andr�

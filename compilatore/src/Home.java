@@ -1,5 +1,7 @@
 
+import java.io.BufferedWriter;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.PrintStream;
 
 import org.apache.log4j.Logger;
@@ -27,9 +29,25 @@ public class Home{
 //		IParsing l = p.createParsing();
 		IParsing l = p.createParsing(parser);
 		
+		if(l!=null){
+			PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
+			String table = l.toString();
+			String [] temp = table.split("\\n");
+			for(String o : temp)
+				output.println(o);
+			output.println("\nGrammatica:");
+			output.println(l.getGrammar().toOneLineString());
+		}
+		
 //		if(l!=null){
-//			PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
-//			output.print("\n" +l.toString()+"\n\nGrammatica: \n" + l.getGrammar().toOneLineString());
+//			try{
+//				FileWriter fstream = new FileWriter("Result.txt");
+//				  BufferedWriter out = new BufferedWriter(fstream);
+//				  out.write("\n" +l.toString()+"\n\nGrammatica: \n" + l.getGrammar().toOneLineString());
+//				  out.close();
+//			}catch (Exception e) {
+//				logger.error("Error on Result.txt writing");
+//			}
 //		}
 		
 		parser = new LRInputParser("Result.txt");

@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Result.txt</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/Result.txt</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

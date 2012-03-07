@@ -39,7 +39,7 @@ public class LRInputParser extends InputParser {
 					readTable(f,actionTable);
 				}
 				else if(in.contains("Tabella GOTO")){
-					readTable(f,actionTable);
+					readTable(f,gotoTable);
 				}
 				else if(in.contains("Grammatica")){
 					in=f.readLine();

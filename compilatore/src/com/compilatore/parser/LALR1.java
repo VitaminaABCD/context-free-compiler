@@ -238,7 +238,8 @@ public class LALR1 extends LR0{
 	
 	@Override
 	public String toString(){
-		return "Grammatica:\n"+this.grammatica.toString()+ "\n" + this.automa.toString() + "\n"+printTable();
+//		return "Grammatica:\n"+this.grammatica.toString()+ "\n" + this.automa.toString() + "\n"+printTable();
+		return printTable();
 	}
 
 	

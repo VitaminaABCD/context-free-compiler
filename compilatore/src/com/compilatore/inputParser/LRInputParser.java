@@ -46,6 +46,7 @@ public class LRInputParser extends InputParser {
 					grammar = new SingleLineInputParser().parseString(in);
 				}
 			}	
+			f.close();
 			return new Parser(grammar, actionTable,gotoTable);
 			//es.     actionTable.get("*").get(8)); 		recupera lo stato 8 del simbolo "*" nella tabella action
 		}catch(IOException e){

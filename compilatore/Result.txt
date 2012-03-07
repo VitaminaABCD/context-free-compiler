@@ -1,0 +1,29 @@
+
+		Tabella ACTION
+	*	=	d	$	
+0	s4	err	s5	err	
+1	err	err	err	acc	
+2	err	s6	err	R::=L	
+3	err	err	err	S::=R	
+4	s4	err	s5	err	
+5	err	L::=d	err	L::=d	
+6	s4	err	s5	err	
+7	err	R::=L	err	R::=L	
+8	err	L::=*R	err	L::=*R	
+9	err	err	err	S::=L=R	
+
+		Tabella GOTO
+	S	L	R	
+0	s1	s2	s3	
+1	err	err	err	
+2	err	err	err	
+3	err	err	err	
+4	err	s7	s8	
+5	err	err	err	
+6	err	s7	s9	
+7	err	err	err	
+8	err	err	err	
+9	err	err	err	
+
+Grammatica:
+S::= {S: L=R | R; L: *R | d; R: L}

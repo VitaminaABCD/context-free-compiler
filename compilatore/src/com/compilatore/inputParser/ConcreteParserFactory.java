@@ -16,7 +16,7 @@ public class ConcreteParserFactory extends ParserFactory{
 		if(type[index].equals("1l"))
 			return new SingleLineInputParser(in);
 		if(type[index].equals("txt"))
-			return new LRParser(in);
+			return new LRInputParser(in);
 		ErrorManager.manage(ERROR_TYPE.FILE_EXTENSION);
 	return null;
 	}

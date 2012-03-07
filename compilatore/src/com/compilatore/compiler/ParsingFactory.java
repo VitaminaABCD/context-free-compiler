@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import org.apache.log4j.Logger;
 
 import com.compilatore.grammar.IGrammar;
-import com.compilatore.inputParser.GrammarParser;
 import com.compilatore.inputParser.InputParser;
 
 public class ParsingFactory {
@@ -16,8 +15,8 @@ public class ParsingFactory {
 	public IParsing createParsing(){
 		System.out.println("E' necessario inserire una grammatica[indicare il file]:");
 		try {
-			InputParser parser = new GrammarParser(new BufferedReader(new InputStreamReader(System.in)).readLine());
-			IParsing l = new LALR1((IGrammar)parser.parse());
+			InputParser parser = new InputParser(new BufferedReader(new InputStreamReader(System.in)).readLine());
+			IParsing l = new LALR1(parser.parse());
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
 				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
@@ -40,7 +39,7 @@ public class ParsingFactory {
 		IParsing l;
 		try {
 			logger.debug("Grammar type init...");
-			l = new LALR1((IGrammar)parser.parse());
+			l = new LALR1(parser.parse());
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
 				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza

@@ -1,40 +1,6 @@
 package com.compilatore.inputParser;
 
+public abstract class InputParser {
 
-import com.compilatore.grammar.IGrammar;
-
-public class InputParser {
-
-	private String input;
-	private IGrammar grammar;
-	
-	public InputParser(){
-		input="";
-		grammar=null; 
-	}
-	
-	public InputParser(String in){
-		input = in;
-	}
-	
-	public String getInput(){
-		return input;
-	}
-	
-	public void setInput(String in){
-		input=in;
-	}
-	
-	public IGrammar getGrammar(){
-		return grammar;
-	}
-	
-	public void setGrammar(IGrammar gr){
-		grammar=gr;
-	}
-	
-	public IGrammar parse() throws Exception{
-		ParserFactory fc = new ConcreteParserFactory();
-		return fc.factoryMethod(input).parse();
-	}
+	public abstract Object parse() throws Exception;
 }

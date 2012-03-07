@@ -41,9 +41,10 @@ public class Home{
 		}
 		
 		parser = new LRInputParser("Result.txt");
-		parser.parse();
 		
-		Parser parserProgram = new Parser();
 		
+		Parser parserProgram = (Parser)parser.parse();
+		parserProgram.setInput("=$");
+		System.out.println(parserProgram.parse());
 	}
 }

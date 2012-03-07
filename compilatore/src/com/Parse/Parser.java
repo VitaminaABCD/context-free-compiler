@@ -1,5 +1,7 @@
-package compiler;
+package com.Parse;
 
+import java.util.Hashtable;
+import java.util.List;
 import java.util.Stack;
 
 import org.apache.log4j.Logger;
@@ -13,15 +15,15 @@ public class Parser {
 	private String input;
 	private IGrammar grammar;
 
-	private String[][] actionTable;
-	private String[][] gotoTable;
+	Hashtable<String,List<String>> actionTable = new Hashtable<String, List<String>>();
+	Hashtable<String,List<String>> gotoTable = new Hashtable<String, List<String>>();
 	
 	public Parser(){
 		this.stack = null;
 		this.input="";
 		grammar=null;
 	}
-	
+
 	public Parser(String in){
 		this.stack = new Stack<String>();
 		this.stack.add("0");
@@ -29,11 +31,24 @@ public class Parser {
 		this.grammar=null;  //TODO
 	}
 	
-	public void setActionTable(String[][] actionTable) {
+	
+	
+	public Parser(IGrammar g,
+			Hashtable<String, List<String>> action,
+			Hashtable<String, List<String>> goTo) {
+		this.stack = new Stack<String>();
+		this.stack.add("0");
+		this.input="";
+		this.grammar=g;
+		this.actionTable=action;
+		this.gotoTable=goTo;
+	}
+
+	public void setActionTable(Hashtable<String, List<String>> actionTable) {
 		this.actionTable = actionTable;
 	}
 
-	public void setGotoTable(String[][] gotoTable) {
+	public void setGotoTable(Hashtable<String, List<String>> gotoTable) {
 		this.gotoTable = gotoTable;
 	}
 	public Stack<String> getStack() {
@@ -49,6 +64,14 @@ public class Parser {
 		this.input = input;
 	}
 	
+	public IGrammar getGrammar() {
+		return grammar;
+	}
+
+	public void setGrammar(IGrammar grammar) {
+		this.grammar = grammar;
+	}
+	
 	public RESULT parse(){
 		String result=this.input;
 		Integer state;
@@ -60,7 +83,8 @@ public class Parser {
 		while(true){
 			String temp=Character.toString(result.charAt(index));
 			state=Integer.parseInt(stack.firstElement());
-			String act = actionTable[state][grammar.getV().indexOf(temp)];       //non ho un riferimento a quale colonna si riferisce al carattere temp letto
+//			String act = actionTable[state][grammar.getV().indexOf(temp)];    //non ho un riferimento a quale colonna si riferisce al carattere temp letto
+			String act = actionTable.get("*").get(8); 
 			char [] splitAct = act.toCharArray();
 			if(splitAct[0]=='s'){
 				stack.push(String.valueOf(splitAct[1]));

@@ -1,13 +1,17 @@
+
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.Parse.Parser;
 import com.compilatore.parser.IParsing;
 import com.compilatore.parser.ParsingFactory;
 import com.compilatore.inputParser.GrammarParser;
 import com.compilatore.inputParser.InputParser;
-import com.compilatore.inputParser.LRParser;
+import com.compilatore.inputParser.LRInputParser;
 
-import compiler.Parser;
 
 public class Home{
 
@@ -23,12 +27,13 @@ public class Home{
 //		IParsing l = p.createParsing();
 		IParsing l = p.createParsing(parser);
 		
-		if(l!=null){
-			System.out.println("\n" +l.toString()+"\n\nGrammatica: " + l.getGrammar().toOneLineString());
-		}
+//		if(l!=null){
+//			PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
+//			output.print("\n" +l.toString()+"\n\nGrammatica: \n" + l.getGrammar().toOneLineString());
+//		}
 		
-		parser = new LRParser("Result.txt");
-		
+		parser = new LRInputParser("Result.txt");
+		parser.parse();
 		
 		Parser parserProgram = new Parser();
 		

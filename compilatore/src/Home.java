@@ -37,18 +37,8 @@ public class Home{
 				output.println(o);
 			output.println("\nGrammatica:");
 			output.println(l.getGrammar().toOneLineString());
+			output.close();
 		}
-		
-//		if(l!=null){
-//			try{
-//				FileWriter fstream = new FileWriter("Result.txt");
-//				  BufferedWriter out = new BufferedWriter(fstream);
-//				  out.write("\n" +l.toString()+"\n\nGrammatica: \n" + l.getGrammar().toOneLineString());
-//				  out.close();
-//			}catch (Exception e) {
-//				logger.error("Error on Result.txt writing");
-//			}
-//		}
 		
 		parser = new LRInputParser("Result.txt");
 		parser.parse();

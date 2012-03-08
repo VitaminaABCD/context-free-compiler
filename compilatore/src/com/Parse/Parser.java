@@ -74,24 +74,24 @@ public class Parser {
 	}
 	
 	public RESULT parse(){
-		String result=this.input;
 		Integer state;
-		if(result.length()==0){
+		int size=this.input.length();
+		if(size==0){
 			logger.info("Nessun input");
 			return RESULT.INVALID_IN;
 		}
 		int index=0;
-		while(true){
-			String temp=Character.toString(result.charAt(index));
+		while(index<size){
+			String temp=Character.toString(this.input.charAt(index));
 			state=Integer.parseInt(stack.lastElement());
-			String act = actionTable.get(temp).get(state);   //TODO: ritorna null se il simbolo non è presente tra le key->solleva eccezione
+			String act = actionTable.get(temp).get(state);   //TODO: ritorna null se il simbolo non ï¿½ presente tra le key->solleva eccezione
 			char [] splitAct = act.toCharArray();
 			if(splitAct[0]=='s'){
 				stack.push(String.valueOf(splitAct[1]));
 				index++;
 			}else if(act.equals("acc")) break;
 			else if(act.equals("err")) return RESULT.ERROR;
-			else{ //è una riduzione
+			else{ //ï¿½ una riduzione
 				String [] t=act.split("::=");
 				for(int i=0;i<t[1].length();i++){ //rimuove beta simboli dallo stack
 					stack.pop();

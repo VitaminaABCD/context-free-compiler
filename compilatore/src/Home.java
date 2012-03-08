@@ -30,6 +30,7 @@ public class Home{
 		IParsing l = p.createParsing(parser);
 		
 		if(l!=null){
+			System.out.println(l.toString());
 			PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
 			String table = l.toString();
 			String [] temp = table.split("\\n");
@@ -44,7 +45,7 @@ public class Home{
 		
 		
 		Parser parserProgram = (Parser)parser.parse();
-		parserProgram.setInput("*$");                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)..."d=$" e"d$"solleva eccezione da controllare
+		parserProgram.setInput("d$");                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)..."d=$" e"d$"solleva eccezione da controllare
 		System.out.println(parserProgram.parse());
 		System.out.println(parserProgram.getStack().toString());
 	}

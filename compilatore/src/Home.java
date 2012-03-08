@@ -23,6 +23,7 @@ public class Home{
 		PropertyConfigurator.configure("log4j.config");
 		
 		logger.debug("Start Application");
+	   	    
 		InputParser parser = new GrammarParser("esempioLibro.4l");
 		
 		ParsingFactory p = new ParsingFactory();
@@ -48,5 +49,35 @@ public class Home{
 		parserProgram.setInput("d$");                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)..."d=$" e"d$"solleva eccezione da controllare
 		System.out.println(parserProgram.parse());
 		System.out.println(parserProgram.getStack().toString());
+		System.out.println("\tProgetto di compilatori e interpreti");
+		System.out.println("\n\tRealizzato da Paolo Pino e Pierluigi Sottile ");
+		System.out.println("\nun programma che accetta in ingresso una grammatica context-free e produca in uscita\n" +
+						   "le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione \n"+
+						   "di ambiguita scriva i risultati in un file di testo Result.txt.");
+		System.out.println("un compilatore generico che preso in ingresso il file Result.txt traduca la generica \n" +
+						   "frase del linguaggio generato dalla grammatica contenuta nel file Result.txt in un albero\n" +
+						   "sintattico, nel caso in cui la frase appartenga alla grammatica scrivai risultati in \n" +
+						   "un file di testo");
+		 do
+		    {
+		      //print out a menu
+		      System.out.println("\n------- Menu----------");
+		      System.out.println("1. Analizzare una gramamtica Contex-Free");
+		      System.out.println("2. COntrollare se una frase appartiene alla grammatica e stampare l'albero sintattico");
+		      System.out.println("3. EXIT");
+		      System.out.println("Digitare la propria scelta:");
+		      System.out.flush();
+		      int scelta= System.in.read();
+		    switch (scelta)
+		      {
+		        //the choices go here - print the details
+		        case 1:
+		      	  System.out.println("\nDATE: "); break;
+		        case 2:
+		          System.out.println("\nMONTH: " ); break;
+		        case 3:
+		        	System.exit(0);
+		      }
+		    }while(true);
 	}
 }

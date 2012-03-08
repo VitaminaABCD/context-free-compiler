@@ -284,7 +284,7 @@ public class LALR1 extends LR0{
 				for(String X :grammatica.getT()){
 					//controllo nella lista degli shift dello stato se è presente X
 					if(statoi.getShift().get(X)!=null)
-						//scrivo nella tabella ACTION lo scift 
+						//scrivo nella tabella ACTION lo shift 
 						if(!actionWrite(statoi.getIndex(),statoi.getShift().get(X),grammatica.getT().indexOf(X),"s"))
 							esito=true;
 				}

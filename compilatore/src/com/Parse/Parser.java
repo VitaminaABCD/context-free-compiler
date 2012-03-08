@@ -84,14 +84,14 @@ public class Parser {
 		while(index<size){
 			String temp=Character.toString(this.input.charAt(index));
 			state=Integer.parseInt(stack.lastElement());
-			String act = actionTable.get(temp).get(state);   //TODO: ritorna null se il simbolo non � presente tra le key->solleva eccezione
+			String act = actionTable.get(temp).get(state);   //TODO: ritorna null se il simbolo non e' presente tra le key->solleva eccezione
 			char [] splitAct = act.toCharArray();
 			if(splitAct[0]=='s'){
 				stack.push(String.valueOf(splitAct[1]));
 				index++;
 			}else if(act.equals("acc")) break;
 			else if(act.equals("err")) return RESULT.ERROR;
-			else{ //� una riduzione
+			else{ //e' una riduzione
 				String [] t=act.split("::=");
 				for(int i=0;i<t[1].length();i++){ //rimuove beta simboli dallo stack
 					stack.pop();

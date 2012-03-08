@@ -1,7 +1,9 @@
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 
 import org.apache.log4j.Logger;
@@ -66,17 +68,19 @@ public class Home{
 		      System.out.println("2. COntrollare se una frase appartiene alla grammatica e stampare l'albero sintattico");
 		      System.out.println("3. EXIT");
 		      System.out.println("Digitare la propria scelta:");
-		      System.out.flush();
-		      int scelta= System.in.read();
+		      BufferedReader leggi=new BufferedReader(new InputStreamReader(System.in));
+		      int scelta= Integer.parseInt(leggi.readLine());
 		    switch (scelta)
 		      {
 		        //the choices go here - print the details
-		        case 1:
-		      	  System.out.println("\nDATE: "); break;
-		        case 2:
-		          System.out.println("\nMONTH: " ); break;
-		        case 3:
-		        	System.exit(0);
+		        case 1:{
+		      	  System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
+		      	  break;}
+		        case 2:{
+		          System.out.println("\nAnalisi sintattica " ); 
+		          break;}
+		        case 3:{
+		        	System.exit(0);}
 		      }
 		    }while(true);
 	}

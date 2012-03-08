@@ -14,13 +14,13 @@
 
 		Tabella GOTO
 	S	L	R	
-0	s1	s2	s3	
+0	1	2	3	
 1	err	err	err	
 2	err	err	err	
 3	err	err	err	
-4	err	s7	s8	
+4	err	7	8	
 5	err	err	err	
-6	err	s7	s9	
+6	err	7	9	
 7	err	err	err	
 8	err	err	err	
 9	err	err	err	

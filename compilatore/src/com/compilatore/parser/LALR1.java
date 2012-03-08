@@ -278,7 +278,7 @@ public class LALR1 extends LR0{
 					//controllo nella lista degli shift dello stato se è presente per X
 					if(statoi.getShift().get(X)!=null)
 						//scrivo nella tabella GOTO lo scift al posto di err
-						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]= "s"+statoi.getShift().get(X);
+						gotoTable[statoi.getIndex()][grammatica.getV().indexOf(X)]= statoi.getShift().get(X).toString();
 				}
 				//per ogni simbolo Terminale
 				for(String X :grammatica.getT()){

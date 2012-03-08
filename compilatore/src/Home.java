@@ -60,28 +60,35 @@ public class Home{
 						   "frase del linguaggio generato dalla grammatica contenuta nel file Result.txt in un albero\n" +
 						   "sintattico, nel caso in cui la frase appartenga alla grammatica scrivai risultati in \n" +
 						   "un file di testo");
-		 do
-		    {
-		      //print out a menu
-		      System.out.println("\n------- Menu----------");
-		      System.out.println("1. Analizzare una gramamtica Contex-Free");
-		      System.out.println("2. COntrollare se una frase appartiene alla grammatica e stampare l'albero sintattico");
-		      System.out.println("3. EXIT");
-		      System.out.println("Digitare la propria scelta:");
-		      BufferedReader leggi=new BufferedReader(new InputStreamReader(System.in));
-		      int scelta= Integer.parseInt(leggi.readLine());
-		    switch (scelta)
-		      {
-		        //the choices go here - print the details
-		        case 1:{
-		      	  System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
-		      	  break;}
-		        case 2:{
-		          System.out.println("\nAnalisi sintattica " ); 
-		          break;}
-		        case 3:{
-		        	System.exit(0);}
-		      }
-		    }while(true);
+		try{ 
+			do
+			    {
+			      //print out a menu
+			      System.out.println("\n------- Menu----------");
+			      System.out.println("1. Analizzare una gramamtica Contex-Free");
+			      System.out.println("2. COntrollare se una frase appartiene alla grammatica e stampare l'albero sintattico");
+			      System.out.println("3. EXIT");
+			      System.out.println("Digitare la propria scelta:");
+			      BufferedReader leggi=new BufferedReader(new InputStreamReader(System.in));
+			      int scelta= Integer.parseInt(leggi.readLine());
+			    switch (scelta)
+			      {
+			        //the choices go here - print the details
+			        case 1:
+			      	  System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
+			      	  String file = leggi.readLine();
+			      	  //questo è il nome del file da passare al metodo di lettura
+			      	  break;
+			        case 2:
+			          System.out.println("\nAnalisi sintattica " ); 
+			          break;
+			        case 3:
+			        	System.exit(0);
+			      }
+			    }while(true);
+			}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }

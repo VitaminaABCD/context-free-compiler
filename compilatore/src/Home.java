@@ -1,14 +1,10 @@
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.InputStreamReader;
 import java.io.PrintStream;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.Parse.HistoryElement;
 import com.Parse.Parser;
 import com.compilatore.parser.IParsing;
 import com.compilatore.parser.ParsingFactory;
@@ -48,47 +44,50 @@ public class Home{
 		
 		
 		Parser parserProgram = (Parser)parser.parse();
-		parserProgram.setInput("d$");                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)..."d=$" e"d$"solleva eccezione da controllare
+		parserProgram.setInput("d=d$");                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
 		System.out.println(parserProgram.parse());
 		System.out.println(parserProgram.getStack().toString());
-		System.out.println("\tProgetto di compilatori e interpreti");
-		System.out.println("\n\tRealizzato da Paolo Pino e Pierluigi Sottile ");
-		System.out.println("\nun programma che accetta in ingresso una grammatica context-free e produca in uscita\n" +
-						   "le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione \n"+
-						   "di ambiguita scriva i risultati in un file di testo Result.txt.");
-		System.out.println("un compilatore generico che preso in ingresso il file Result.txt traduca la generica \n" +
-						   "frase del linguaggio generato dalla grammatica contenuta nel file Result.txt in un albero\n" +
-						   "sintattico, nel caso in cui la frase appartenga alla grammatica scrivai risultati in \n" +
-						   "un file di testo");
-		try{ 
-			do
-			    {
-			      //print out a menu
-			      System.out.println("\n------- Menu----------");
-			      System.out.println("1. Analizzare una gramamtica Contex-Free");
-			      System.out.println("2. COntrollare se una frase appartiene alla grammatica e stampare l'albero sintattico");
-			      System.out.println("3. EXIT");
-			      System.out.println("Digitare la propria scelta:");
-			      BufferedReader leggi=new BufferedReader(new InputStreamReader(System.in));
-			      int scelta= Integer.parseInt(leggi.readLine());
-			    switch (scelta)
-			      {
-			        //the choices go here - print the details
-			        case 1:
-			      	  System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
-			      	  String file = leggi.readLine();
-			      	  //questo è il nome del file da passare al metodo di lettura
-			      	  break;
-			        case 2:
-			          System.out.println("\nAnalisi sintattica " ); 
-			          break;
-			        case 3:
-			        	System.exit(0);
-			      }
-			    }while(true);
-			}
-		catch (Exception e) {
-			// TODO: handle exception
-		}
+		System.out.println("\nCRONOLOGIA:\n");
+		for(HistoryElement e : parserProgram.getHistory()) System.out.println(e.toString()+"\n");		
+
+//		System.out.println("\tProgetto di compilatori e interpreti");
+//		System.out.println("\n\tRealizzato da Paolo Pino e Pierluigi Sottile ");
+//		System.out.println("\nun programma che accetta in ingresso una grammatica context-free e produca in uscita\n" +
+//						   "le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione \n"+
+//						   "di ambiguita scriva i risultati in un file di testo Result.txt.");
+//		System.out.println("un compilatore generico che preso in ingresso il file Result.txt traduca la generica \n" +
+//						   "frase del linguaggio generato dalla grammatica contenuta nel file Result.txt in un albero\n" +
+//						   "sintattico, nel caso in cui la frase appartenga alla grammatica scrivai risultati in \n" +
+//						   "un file di testo");
+//		try{ 
+//			do
+//			    {
+//			      //print out a menu
+//			      System.out.println("\n------- Menu----------");
+//			      System.out.println("1. Analizzare una gramamtica Contex-Free");
+//			      System.out.println("2. COntrollare se una frase appartiene alla grammatica e stampare l'albero sintattico");
+//			      System.out.println("3. EXIT");
+//			      System.out.println("Digitare la propria scelta:");
+//			      BufferedReader leggi=new BufferedReader(new InputStreamReader(System.in));
+//			      int scelta= Integer.parseInt(leggi.readLine());
+//			    switch (scelta)
+//			      {
+//			        //the choices go here - print the details
+//			        case 1:
+//			      	  System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
+//			      	  String file = leggi.readLine();
+//			      	  //questo ï¿½ il nome del file da passare al metodo di lettura
+//			      	  break;
+//			        case 2:
+//			          System.out.println("\nAnalisi sintattica " ); 
+//			          break;
+//			        case 3:
+//			        	System.exit(0);
+//			      }
+//			    }while(true);
+//			}
+//		catch (Exception e) {
+//			// TODO: handle exception
+//		}
 	}
 }

@@ -13,9 +13,7 @@ public abstract class LR0 implements IParsing{
 	protected IGrammar grammatica;
 	
 	public abstract void setGrammar(IGrammar gram);
-	public abstract int init() throws Exception;
-	
-	
+	public abstract int init() throws Exception;	
 
 	/**
 	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 

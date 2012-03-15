@@ -20,12 +20,11 @@ public class ParsingFactory {
 			IParsing l = new LALR1((IGrammar)parser.parse());
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
-				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
 			}
 			else {
-				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma verrà terminato...");
-				return null;
+				System.out.println("\n!!!!ATTENZIONE: La grammatica non è di tipo LALR(1)...");
 			}
+			return l;
 
 		} catch (IOException e) {
 			logger.debug("Input read error");
@@ -43,12 +42,11 @@ public class ParsingFactory {
 			l = new LALR1((IGrammar)parser.parse());
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
-				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
 			}
 			else {
-				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma verrà terminato...");
-				return null;
+				System.out.println("\n!!!!ATTENZIONE: La grammatica non è di tipo LALR(1)...");
 			}
+			return l;
 		} catch (Exception e) {
 			logger.error("Error occurred in grammar initialization");
 			e.printStackTrace();
@@ -63,12 +61,11 @@ public class ParsingFactory {
 			l = new LALR1(grammar);
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
-				return l;		//se la grammatica è di tipo LALR(1) ritorna l'istanza
+		//se la grammatica è di tipo LALR(1) ritorna l'istanza
+			}else {
+				System.out.println("\n!!!!!!ATTENZIONE: La grammatica non è di tipo LALR(1)...");
 			}
-			else {
-				System.out.println("ATTENZIONE: La grammatica non è di tipo LALR(1).\n Il programma verrà terminato...");
-				return null;
-			}
+			return l;
 		} catch (Exception e) {
 			logger.error("Error occurred in grammar initialization");
 			e.printStackTrace();

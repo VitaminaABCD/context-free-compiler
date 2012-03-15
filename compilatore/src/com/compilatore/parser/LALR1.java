@@ -12,7 +12,22 @@ import com.compilatore.grammar.Production;
 public class LALR1 extends LR0{
 	static Logger logger = Logger.getLogger(LALR1.class.getName());
 	
+	private boolean isAmbiguous=false;
+	private String ambiguo="";
 	private Automa automa;
+	private String[][] actionTable;
+	private String[][] gotoTable;
+	
+	public LALR1(){
+		automa=new Automa();
+		grammatica=null;
+	}
+	
+	public LALR1(IGrammar gram){
+		automa = new Automa();
+		setGrammar(gram);
+		}
+	
 	public String[][] getActionTable() {
 		return actionTable;
 	}
@@ -28,20 +43,6 @@ public class LALR1 extends LR0{
 	public void setGotoTable(String[][] gotoTable) {
 		this.gotoTable = gotoTable;
 	}
-
-
-	private String[][] actionTable;
-	private String[][] gotoTable;
-	
-	public LALR1(){
-		automa=new Automa();
-		grammatica=null;
-	}
-	
-	public LALR1(IGrammar gram){
-		automa = new Automa();
-		setGrammar(gram);
-		}
 	
 	@Override
 	public IGrammar getGrammar(){
@@ -81,7 +82,10 @@ public class LALR1 extends LR0{
 			}
 			
 			if(tableCostruction()==1) return 1;
-			else return 0;
+			else {
+				isAmbiguous=true;
+				return 0;
+			}
 		}catch (Exception e) {
 			ErrorManager.manage(ERROR_TYPE.LALR1_INIT,e);
 			return -1;
@@ -236,14 +240,6 @@ public class LALR1 extends LR0{
 		return j;
 	}
 	
-	@Override
-	public String toString(){
-//		return "Grammatica:\n"+this.grammatica.toString()+ "\n" + this.automa.toString() + "\n"+printTable();
-		return printTable();
-	}
-
-	
-	
 	/**
 	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1) e ci dice se è di tipo LALR1 o meno
 	 * 
@@ -315,6 +311,7 @@ public class LALR1 extends LR0{
 					esito = actionWrite(stato.getIndex(),-1,grammatica.getT().indexOf("$"),"acc");
 					if (!esito)
 						ret=false;
+						
 				}
 				//se no ci troviamo nel caso di una risuzione 
 				else{
@@ -354,13 +351,15 @@ public class LALR1 extends LR0{
 		else
 			//se no evidenzio lo stato di ambiguità
 			if(j>=0)
-				System.out.println("Ambiguità allo stato "+ i+": "+ actionTable[i][x]+ ", shift " + j );
+				ambiguo+="\nAmbiguità allo stato "+ i+": "+ actionTable[i][x]+ ", shift " + j ;
 			else
-				System.out.println("Ambiguità allo stato "+ i+ ": "+ actionTable[i][x]+ ", "+action);
+				ambiguo+="\nAmbiguità allo stato "+ i+ ": "+ actionTable[i][x]+ ", "+action;
 		return esito;
 	}
-	
-
+	@Override
+	public boolean isAmbiguos(){
+		return isAmbiguous;
+	}
 	/**
 	 * restiruisce una stringa con le  tabelle Action Goto
 	 * @return
@@ -390,4 +389,11 @@ public class LALR1 extends LR0{
 		}
 		return str;
 	}
+
+	@Override
+		public String toString(){
+			if(isAmbiguous) return ambiguo;
+	//		return "Grammatica:\n"+this.grammatica.toString()+ "\n" + this.automa.toString() + "\n"+printTable();
+			return printTable();
+		}
 }

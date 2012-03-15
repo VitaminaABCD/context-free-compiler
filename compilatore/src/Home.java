@@ -7,6 +7,7 @@ import java.io.PrintStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.Parse.Ast;
 import com.Parse.HistoryElement;
 import com.Parse.Parser;
 import com.compilatore.parser.IParsing;
@@ -60,13 +61,14 @@ public class Home{
 				        case 1:
 				      	  	System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
 				      	  	leggi = new BufferedReader(new InputStreamReader(System.in));
-				      	  	parser = new GrammarParser(leggi.readLine());
+				      	  	parser = new GrammarParser("esempioLibro.4l");    //TODO: da rimuovere
+//				      	  	parser = new GrammarParser(leggi.readLine());
 				      	  	analizer(parser);
 				      	  	break;
 				        case 2:
 				        	System.out.println("\nAnalisi sintattica " ); 
 				  			parser = new LRInputParser("Result.txt");
-				  			AST(parser);
+				  			astMethod(parser);
 				          break;
 				        case 3:
 				        	System.exit(0);
@@ -82,16 +84,20 @@ public class Home{
 	}
 	
 
-	private static void AST(InputParser parser) throws Exception {
+	private static void astMethod(InputParser parser) throws Exception {
 		Parser parserProgram = (Parser)parser.parse();
 		System.out.println("\nDigitare la stringa in input: "); 
 		BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
-		parserProgram.setInput(leggi.readLine());                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
+		parserProgram.setInput("d=d$");                     //TODO: da rimuovere	
+//		parserProgram.setInput(leggi.readLine());                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
 		System.out.println(parserProgram.parse());
 		System.out.println(parserProgram.getStack().toString());
 		System.out.println("\nCRONOLOGIA:\n");
 		for(HistoryElement e : parserProgram.getHistory()) System.out.println(e.toString()+"\n");
-
+		
+		Ast ast = new Ast(parserProgram.getHistory());
+		ast.initFromHistory();
+		System.out.println(ast.toString());
 	}
 
 

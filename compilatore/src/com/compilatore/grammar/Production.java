@@ -37,7 +37,10 @@ public class Production {
                 right=rt;
                 rightList = new ArrayList<String>();
         }
-        
+        /**
+         * 
+         * @return the left side of production
+         */
         public String getLeft() {
                 return left;
         }

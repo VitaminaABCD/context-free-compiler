@@ -40,6 +40,10 @@ public class HistoryElement {
 		this.stack = stack;
 	}
 
+	/**
+	 * 
+	 * @return the production in the history element
+	 */
 	public Production getProduction() {
 		return production;
 	}
@@ -56,7 +60,10 @@ public class HistoryElement {
 		this.simbol = simbol;
 	}
 
-
+	public boolean isShift(){
+		if(production==null) return true;
+		return false;
+	}
 	
 	
 	@Override

@@ -16,8 +16,8 @@ import com.compilatore.inputParser.GrammarParser;
 import com.compilatore.inputParser.InputParser;
 import com.compilatore.inputParser.LRInputParser;
 
-
 public class Home{
+
 
 	static Logger logger = Logger.getLogger(Home.class.getName());
 	
@@ -61,7 +61,7 @@ public class Home{
 				        case 1:
 				      	  	System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
 				      	  	leggi = new BufferedReader(new InputStreamReader(System.in));
-				      	  	parser = new GrammarParser("esempioLibro.4l");    //TODO: da rimuovere
+				      	  	parser = new GrammarParser("file.4l");    //TODO: da rimuovere
 //				      	  	parser = new GrammarParser(leggi.readLine());
 				      	  	analizer(parser);
 				      	  	break;
@@ -105,18 +105,20 @@ public class Home{
 			throws FileNotFoundException, Exception {
 		ParsingFactory p = new ParsingFactory();
 //		IParsing l = p.createParsing();
-		IParsing l = p.createParsing(parser);
+		IParsing lalr1 = p.createParsing(parser);
 		
-		if(l!=null){
-			System.out.println(l.toString());
-			PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
-			String table = l.toString();
-			String [] temp = table.split("\\n");
-			for(String o : temp)
-				output.println(o);
-			output.println("\nGrammatica:");
-			output.println(l.getGrammar().toOneLineString());
-			output.close();
+		if(lalr1!=null){
+			System.out.println(lalr1.toString());
+			if(!lalr1.isAmbiguos()){
+				PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
+				String table = lalr1.toString();
+				String [] temp = table.split("\\n");
+				for(String o : temp)
+					output.println(o);
+				output.println("\nGrammatica:");
+				output.println(lalr1.getGrammar().toOneLineString());
+				output.close();
+			}
 		}		
 	}
 }

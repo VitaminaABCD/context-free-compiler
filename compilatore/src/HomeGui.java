@@ -7,6 +7,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.WindowConstants;
 
 import java.awt.Panel;
@@ -226,9 +227,15 @@ public class HomeGui extends JFrame{
 		frame.getContentPane().add(fileChooserPanel);
 		
 		leftPanel = new JTextPane();
-		leftPanel.setBounds(0, 115, 490, 372);
+		//leftPanel.setBounds(0, 115, 490, 372);
 		leftPanel.setEditable(false);
-		frame.getContentPane().add(leftPanel);
+		//frame.getContentPane().add(leftPanel);
+		JScrollPane slider	 = new JScrollPane(leftPanel);	// slider owns textpane
+	    slider.setBounds(0, 115, 490, 350);
+		slider.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);	
+	    slider.setVisible(true);						
+	    slider.setEnabled(true);						
+		frame.getContentPane().add(slider);
 		JTextPane txtpnFraseDiInput = new JTextPane();
 		txtpnFraseDiInput.setBackground(SystemColor.menu);
 		txtpnFraseDiInput.setEditable(false);

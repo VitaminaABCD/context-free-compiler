@@ -156,17 +156,17 @@ public class HomeGui extends JFrame{
 		frame.getContentPane().setLayout(null);
 		
 		input = new JTextField();
-		input.setBounds(577, 90, 139, 20);
+		input.setBounds(577, 120, 139, 20);
 		frame.getContentPane().add(input);
 		input.setColumns(10);
 		
 		JTextPane txtpnDss = new JTextPane();
-		txtpnDss.setBounds(0, 0, 726, 90);
+		txtpnDss.setBounds(0, 0, 726, 115);
 		txtpnDss.setBackground(SystemColor.control);
 		txtpnDss.setEditable(false);
-		txtpnDss.setText("Progetto di compilatori e interpreti"+
-			"\n\tRealizzato da Paolo Pino e Pierluigi Sottile "+
-		"\nun programma che accetta in ingresso una grammatica context-free e produca in uscita" +
+		txtpnDss.setText("\t\tProgetto di compilatori e interpreti"+
+			"\n\t\tRealizzato da Paolo Pino e Pierluigi Sottile "+
+		"\nE' stato realizzato un programma che accetta in ingresso una grammatica context-free e produca in uscita" +
 							   "le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione"+
 							   "di ambiguita scriva i risultati in un file di testo Result.txt."
 			+"un compilatore generico che preso in ingresso il file Result.txt traduca la generica " +
@@ -233,7 +233,7 @@ public class HomeGui extends JFrame{
 		txtpnFraseDiInput.setBackground(SystemColor.menu);
 		txtpnFraseDiInput.setEditable(false);
 		txtpnFraseDiInput.setText("Frase di input:");
-		txtpnFraseDiInput.setBounds(495, 90, 85, 20);
+		txtpnFraseDiInput.setBounds(495, 120, 85, 20);
 		frame.getContentPane().add(txtpnFraseDiInput);
 		
 		startParsing = new JButton("PARSE");
@@ -248,7 +248,7 @@ public class HomeGui extends JFrame{
 				}
 			}
 		});
-		startParsing.setBounds(627, 112, 89, 23);
+		startParsing.setBounds(627, 150, 89, 23);
 		frame.getContentPane().add(startParsing);
 	}
 

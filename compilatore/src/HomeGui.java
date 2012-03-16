@@ -16,12 +16,15 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 
 import javax.swing.filechooser.FileFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
+import javax.swing.tree.TreePath;
 
 
 import org.apache.log4j.Logger;
@@ -29,9 +32,11 @@ import org.apache.log4j.PropertyConfigurator;
 
 import com.Parse.Ast;
 import com.Parse.Parser;
+import com.Parse.RESULT;
 import com.compilatore.inputParser.GrammarParser;
 import com.compilatore.inputParser.InputParser;
 import com.compilatore.inputParser.LRInputParser;
+import com.compilatore.parser.Automa;
 import com.compilatore.parser.IParsing;
 import com.compilatore.parser.ParsingFactory;
 import javax.swing.JTree;
@@ -41,6 +46,8 @@ import java.awt.Font;
 import javax.swing.SpringLayout;
 import java.awt.FlowLayout;
 import java.awt.Button;
+import javax.swing.JTextArea;
+import java.awt.Color;
 
 
 public class HomeGui extends JFrame{
@@ -51,7 +58,7 @@ public class HomeGui extends JFrame{
 	private Panel rightPanel;
 	private String filePath;
 	private JButton startParsing;
-	private TextArea leftPanel;
+	private TextArea leftPanel,automaText;
 	private JTree tree;
 	private TreeModel model;
 	/**
@@ -106,7 +113,7 @@ public class HomeGui extends JFrame{
         if (stato == JFileChooser.APPROVE_OPTION) {
             File fileSelezionato = apriFileChooser.getSelectedFile();
 
-            JOptionPane.showMessageDialog(this, "Hai selezionato per l'apertura:\n\n" + fileSelezionato);
+            JOptionPane.showMessageDialog(this, "Il file \"" + fileSelezionato + "\" verra' analizzato...\n...i risultati saranno scritti nel file \"Result.txt\"");
             this.filePath=fileSelezionato.getPath();
             startProcess(filePath);
         }
@@ -121,6 +128,7 @@ public class HomeGui extends JFrame{
 		if(lalr1!=null){
 			leftPanel.setText(lalr1.toString());
 			if(!lalr1.isAmbiguos()){
+				automaText.setText(lalr1.getAutoma().toString());
 				PrintStream output = new PrintStream(new FileOutputStream("Result.txt"));
 				String table = lalr1.toString();
 				String [] temp = table.split("\\n");
@@ -157,7 +165,7 @@ public class HomeGui extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 825, 623);
+		frame.setBounds(100, 100, 899, 629);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
@@ -173,6 +181,7 @@ public class HomeGui extends JFrame{
 		input.setColumns(10);
 		
 		startParsing = new JButton("PARSE");
+		springLayout.putConstraint(SpringLayout.WEST, input, -133, SpringLayout.WEST, startParsing);
 		springLayout.putConstraint(SpringLayout.EAST, input, -6, SpringLayout.WEST, startParsing);
 		springLayout.putConstraint(SpringLayout.WEST, startParsing, -99, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, startParsing, -10, SpringLayout.EAST, frame.getContentPane());
@@ -180,6 +189,7 @@ public class HomeGui extends JFrame{
 		
 		JTextPane txtpnDss = new JTextPane();
 		springLayout.putConstraint(SpringLayout.NORTH, input, 4, SpringLayout.SOUTH, txtpnDss);
+		springLayout.putConstraint(SpringLayout.SOUTH, input, 26, SpringLayout.SOUTH, txtpnDss);
 		springLayout.putConstraint(SpringLayout.NORTH, startParsing, 3, SpringLayout.SOUTH, txtpnDss);
 		springLayout.putConstraint(SpringLayout.SOUTH, txtpnDss, 106, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.NORTH, txtpnDss, 0, SpringLayout.NORTH, frame.getContentPane());
@@ -238,12 +248,31 @@ public class HomeGui extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {        
 		        try {
 		        	InputParser parser = new LRInputParser("Result.txt");
-		            tree.setModel(new JTree(astMethod(parser)).getModel());
-		            tree.setVisible(true);
-		            tree.updateUI();
+		        	DefaultMutableTreeNode root = astMethod(parser);
+		        	if(root!=null){
+		        		tree.setModel(new JTree(astMethod(parser)).getModel());
+		        		
+		        		tree.expandPath(new TreePath(root.getPath()));
+		        		DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
+		        	    renderer.setOpenIcon(null);
+		        	    renderer.setClosedIcon(null);
+		        	    renderer.setLeafIcon(null);
+		        	    tree.setCellRenderer(renderer);
+		        		for (int i = 0; i < tree.getRowCount(); i++) {
+		        			tree.expandRow(i);
+		        		}
+		        		tree.setVisible(true);
+			            tree.updateUI();
+		        	}else{
+		        		JOptionPane.showMessageDialog(frame.getContentPane(), "La frase non appartiene alla grammatica");
+		        	}
+				} catch (IOException e) {
+					JOptionPane.showMessageDialog(frame.getContentPane(), "Insert input");
+//					e.printStackTrace();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(frame.getContentPane(), "Uno o più caratteri tra quelli inseriti\nnon sono ammessi dalla grammatica corrente");
+//					e.printStackTrace();
+//					logger.error("Parsing Result.txt fallito",e);
 				}
 			}
 		});
@@ -257,11 +286,9 @@ public class HomeGui extends JFrame{
         onelineFileFilter = new GenericFileFilter("File context-free-gramar format (*.1l)", "1l");
 		
 		JTextPane txtpnFraseDiInput = new JTextPane();
-		springLayout.putConstraint(SpringLayout.WEST, input, 7, SpringLayout.EAST, txtpnFraseDiInput);
+		springLayout.putConstraint(SpringLayout.NORTH, txtpnFraseDiInput, 4, SpringLayout.SOUTH, txtpnDss);
 		springLayout.putConstraint(SpringLayout.WEST, txtpnFraseDiInput, -324, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, txtpnFraseDiInput, -239, SpringLayout.EAST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.NORTH, txtpnFraseDiInput, -22, SpringLayout.SOUTH, input);
-		springLayout.putConstraint(SpringLayout.SOUTH, txtpnFraseDiInput, 0, SpringLayout.SOUTH, input);
 		txtpnFraseDiInput.setBackground(SystemColor.menu);
 		txtpnFraseDiInput.setEditable(false);
 		txtpnFraseDiInput.setText("Frase di input:");
@@ -271,43 +298,54 @@ public class HomeGui extends JFrame{
 		frame.getContentPane().add(txtpnFraseDiInput);
 		
 		leftPanel = new TextArea();
-		leftPanel.setEditable(false);
 		springLayout.putConstraint(SpringLayout.NORTH, leftPanel, 32, SpringLayout.SOUTH, txtpnDss);
-		springLayout.putConstraint(SpringLayout.SOUTH, leftPanel, -10, SpringLayout.SOUTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, leftPanel, 380, SpringLayout.WEST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, leftPanel, 10, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, leftPanel, -10, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, leftPanel, 349, SpringLayout.WEST, frame.getContentPane());
+		leftPanel.setEditable(false);
 		frame.getContentPane().add(leftPanel);
 		
 		rightPanel = new Panel();
+		springLayout.putConstraint(SpringLayout.NORTH, rightPanel, 6, SpringLayout.SOUTH, txtpnFraseDiInput);
+		springLayout.putConstraint(SpringLayout.WEST, rightPanel, 6, SpringLayout.EAST, leftPanel);
+		springLayout.putConstraint(SpringLayout.SOUTH, rightPanel, 0, SpringLayout.SOUTH, leftPanel);
+		springLayout.putConstraint(SpringLayout.EAST, rightPanel, -324, SpringLayout.EAST, frame.getContentPane());
 		FlowLayout flowLayout = (FlowLayout) rightPanel.getLayout();
 		flowLayout.setAlignment(FlowLayout.LEFT);
-		springLayout.putConstraint(SpringLayout.NORTH, rightPanel, 138, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, input, -6, SpringLayout.NORTH, rightPanel);
-		springLayout.putConstraint(SpringLayout.WEST, rightPanel, 6, SpringLayout.EAST, leftPanel);
-		springLayout.putConstraint(SpringLayout.SOUTH, rightPanel, -10, SpringLayout.SOUTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, rightPanel, -6, SpringLayout.EAST, frame.getContentPane());
 		rightPanel.setBackground(SystemColor.text);
         rightPanel.add(tree);
 		frame.getContentPane().add(rightPanel);
+		
+		automaText = new TextArea();
+		springLayout.putConstraint(SpringLayout.NORTH, automaText, 6, SpringLayout.SOUTH, input);
+		springLayout.putConstraint(SpringLayout.WEST, automaText, 10, SpringLayout.EAST, rightPanel);
+		springLayout.putConstraint(SpringLayout.SOUTH, automaText, -10, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, automaText, -10, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, txtpnFraseDiInput, -6, SpringLayout.NORTH, automaText);
+		automaText.setBackground(SystemColor.menu);
+		automaText.setEditable(false);
+		frame.getContentPane().add(automaText);
 	}
 
 	private DefaultMutableTreeNode astMethod(InputParser parser) throws Exception {
 		Parser parserProgram = (Parser)parser.parse();
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		String in = this.input.getText();
-		if(in.length()!=0) {
-			parserProgram.setInput(in);                     //TODO: da rimuovere	
-			switch(parserProgram.parse()){
-				case ACCEPT:
-					logger.debug("ACCEPT");		
-					Ast ast = new Ast(parserProgram.getHistory());
-					ast.initFromHistory();
-//					this.tree.setModel(ast.getRoot());			
-					return ast.getRoot();			
-			}	
-		}else{
-			JOptionPane.showInternalMessageDialog(frame.getContentPane(), "Insert input");
+		if(in.length()==0) throw new IOException("Nessuna stringa in ingresso");
+		parserProgram.setInput(in);                     //TODO: da rimuovere	
+		switch(parserProgram.parse()){
+			case ACCEPT:
+				logger.debug("ACCEPT");		
+				Ast ast = new Ast(parserProgram.getHistory());
+				ast.initFromHistory();
+//				this.tree.setModel(ast.getRoot());			
+				return ast.getRoot();
+			case ERROR:
+				logger.debug("ERROR");
+				return null;
+			case INVALID_IN:
+				throw new Exception("Uno o più caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
 		}
-		return null;
+		return null;	
 	}
 }

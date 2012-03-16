@@ -7,4 +7,5 @@ public interface IParsing {
 	public int init() throws Exception;
 	public IGrammar getGrammar();
 	boolean isAmbiguos();
+	Automa getAutoma();
 }

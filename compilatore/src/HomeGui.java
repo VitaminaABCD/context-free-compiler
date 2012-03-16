@@ -109,7 +109,8 @@ public class HomeGui extends JFrame{
     }
 
     private void startProcess(String path) throws FileNotFoundException, Exception {
-        InputParser parser = new GrammarParser(path);
+        long startTime = System.currentTimeMillis();
+    	InputParser parser = new GrammarParser(path);
         ParsingFactory p = new ParsingFactory();
 //		IParsing l = p.createParsing();
 		IParsing lalr1 = p.createParsing(parser);
@@ -127,7 +128,9 @@ public class HomeGui extends JFrame{
 				output.println(lalr1.getGrammar().toOneLineString());
 				output.close();
 			}
-		}			
+		}	
+        long endTime = System.currentTimeMillis();
+		logger.info("Total elapsed time in execution of method callMethod() is :"+ (endTime-startTime));
 	}
 
 	private void operazioneSalvaConNome() {
@@ -235,7 +238,8 @@ public class HomeGui extends JFrame{
         
 		startParsing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {        
-		        try {
+				long startTime = System.currentTimeMillis();
+				try {
 		        	InputParser parser = new LRInputParser("Result.txt");
 		        	DefaultMutableTreeNode root = astMethod(parser);
 		        	if(root!=null){
@@ -263,6 +267,8 @@ public class HomeGui extends JFrame{
 //					e.printStackTrace();
 //					logger.error("Parsing Result.txt fallito",e);
 				}
+		        long endTime = System.currentTimeMillis();
+				logger.info("Total elapsed time in execution of method callMethod() is :"+ (endTime-startTime));
 			}
 		});
 

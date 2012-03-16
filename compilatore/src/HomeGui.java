@@ -23,7 +23,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
 
-import javax.swing.plaf.SliderUI;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -40,6 +40,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SpringLayout;
 import java.awt.FlowLayout;
+import java.awt.Button;
 
 
 public class HomeGui extends JFrame{
@@ -74,10 +75,13 @@ public class HomeGui extends JFrame{
 
 	/**
 	 * Create the application.
+	 * @throws Exception 
+	 * @throws FileNotFoundException 
 	 */
-	public HomeGui() {
-		filePath="esempioLibro";
+	public HomeGui() throws FileNotFoundException, Exception {
+		filePath="esempioLibro.4l";
 		initialize();
+		startProcess(filePath);
 	}
 	
 	private JFileChooser apriFileChooser;
@@ -127,12 +131,6 @@ public class HomeGui extends JFrame{
 				output.close();
 			}
 		}			
-		
-		//TODO->
-        parser = new LRInputParser("Result.txt");
-        JTree tree = new JTree(astMethod(parser));
-        rightPanel.add(tree);
-		//<-TODO
 	}
 
 	private void operazioneSalvaConNome() {
@@ -163,7 +161,8 @@ public class HomeGui extends JFrame{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
-		
+		tree = new JTree();
+		tree.setVisible(false);
 		input = new JTextField();
 
 		input.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -178,33 +177,6 @@ public class HomeGui extends JFrame{
 		springLayout.putConstraint(SpringLayout.WEST, startParsing, -99, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, startParsing, -10, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(startParsing);
-		
-		
-		//TODO->
-        InputParser parser = new LRInputParser("Result.txt");
-		try {
-			model = new DefaultTreeModel(astMethod(parser));
-		} catch (Exception e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		tree=new JTree(model);
-		tree.setEditable(true);
-		getContentPane().add(tree);
-		
-		startParsing.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-		        InputParser parser = new LRInputParser("Result.txt");
-		        try {
-					tree.setVisible(true);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		});
-		//<-TODO
-		
 		
 		JTextPane txtpnDss = new JTextPane();
 		springLayout.putConstraint(SpringLayout.NORTH, input, 4, SpringLayout.SOUTH, txtpnDss);
@@ -260,6 +232,21 @@ public class HomeGui extends JFrame{
                 operazioneSalvaConNome();
             }
         });
+        
+        
+		startParsing.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {        
+		        try {
+		        	InputParser parser = new LRInputParser("Result.txt");
+		            tree.setModel(new JTree(astMethod(parser)).getModel());
+		            tree.setVisible(true);
+		            tree.updateUI();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 
         //-- Filtro "cablato" per .txt --
         txtFileFilter = new TxtFileFilter();
@@ -284,6 +271,7 @@ public class HomeGui extends JFrame{
 		frame.getContentPane().add(txtpnFraseDiInput);
 		
 		leftPanel = new TextArea();
+		leftPanel.setEditable(false);
 		springLayout.putConstraint(SpringLayout.NORTH, leftPanel, 32, SpringLayout.SOUTH, txtpnDss);
 		springLayout.putConstraint(SpringLayout.SOUTH, leftPanel, -10, SpringLayout.SOUTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, leftPanel, 380, SpringLayout.WEST, frame.getContentPane());
@@ -299,33 +287,27 @@ public class HomeGui extends JFrame{
 		springLayout.putConstraint(SpringLayout.SOUTH, rightPanel, -10, SpringLayout.SOUTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, rightPanel, -6, SpringLayout.EAST, frame.getContentPane());
 		rightPanel.setBackground(SystemColor.text);
+        rightPanel.add(tree);
 		frame.getContentPane().add(rightPanel);
-
-		try {
-			startProcess("esempioLibro.4l");    //TODO:
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
 	}
 
 	private DefaultMutableTreeNode astMethod(InputParser parser) throws Exception {
 		Parser parserProgram = (Parser)parser.parse();
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
-//		parserProgram.setInput(input.getText());                     //TODO: da rimuovere	
-		parserProgram.setInput("d=d$)");			/////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
-		switch(parserProgram.parse()){
-			case ACCEPT:
-				logger.debug("ACCEPT");		
-				Ast ast = new Ast(parserProgram.getHistory());
-				ast.initFromHistory();
-//				this.tree.setModel(ast.getRoot());			
-				return ast.getRoot();			
-		}	
+		String in = this.input.getText();
+		if(in.length()!=0) {
+			parserProgram.setInput(in);                     //TODO: da rimuovere	
+			switch(parserProgram.parse()){
+				case ACCEPT:
+					logger.debug("ACCEPT");		
+					Ast ast = new Ast(parserProgram.getHistory());
+					ast.initFromHistory();
+//					this.tree.setModel(ast.getRoot());			
+					return ast.getRoot();			
+			}	
+		}else{
+			JOptionPane.showInternalMessageDialog(frame.getContentPane(), "Insert input");
+		}
 		return null;
 	}
 }

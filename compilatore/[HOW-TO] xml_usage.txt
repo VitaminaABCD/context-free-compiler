@@ -1,0 +1,8 @@
+Per deserializzare il file AST.xml basta includere le due liblerie 
+del progetto XSTREAM (http://xstream.codehaus.org/):
+- xstream-[version].jar 
+- kxml2-min-[version].jar
+
+Ottenere l'oggetto DefaultMutableTreeNode rappresentante l'AST attraverso la seguente riga:
+
+DefaultMutableTreeNode newJoe = DefaultMutableTreeNode xstream.fromXML("AST.xml");

@@ -130,7 +130,7 @@ public class HomeGui extends JFrame{
 			}
 		}	
         long endTime = System.currentTimeMillis();
-		logger.info("Total elapsed time in execution of method callMethod() is :"+ (endTime-startTime));
+		logger.info("Total elapsed time in execution of grammar parsing and \n\t\t\t\tAction e Goto table is :"+ (endTime-startTime));
 	}
 
 	private void operazioneSalvaConNome() {
@@ -268,7 +268,7 @@ public class HomeGui extends JFrame{
 //					logger.error("Parsing Result.txt fallito",e);
 				}
 		        long endTime = System.currentTimeMillis();
-				logger.info("Total elapsed time in execution of method callMethod() is :"+ (endTime-startTime));
+				logger.info("Total elapsed time in parsing grammar and table\n\t\t\t\tand fot creation of AST is :"+ (endTime-startTime));
 			}
 		});
 

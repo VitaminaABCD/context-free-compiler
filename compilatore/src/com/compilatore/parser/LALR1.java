@@ -15,6 +15,8 @@ public class LALR1 extends LR0{
 	private boolean isAmbiguous=false;
 	private String ambiguo="";
 	private Automa automa;
+
+
 	private String[][] actionTable;
 	private String[][] gotoTable;
 	
@@ -44,6 +46,11 @@ public class LALR1 extends LR0{
 		this.gotoTable = gotoTable;
 	}
 	
+	@Override
+	public Automa getAutoma() {
+		return automa;
+	}
+		
 	@Override
 	public IGrammar getGrammar(){
 		return this.grammatica;

@@ -29,7 +29,7 @@ public class Home{
 		   	
 			System.out.println("\tProgetto di compilatori e interpreti");
 			System.out.println("\n\tRealizzato da Paolo Pino e Pierluigi Sottile ");
-			System.out.println("\nun programma che accetta in ingresso una grammatica context-free e produca in uscita\n" +
+			System.out.println("\nE' stato realizzato un programma che accetta in ingresso una grammatica context-free e produca in uscita\n" +
 							   "le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione \n"+
 							   "di ambiguita scriva i risultati in un file di testo Result.txt.");
 			System.out.println("un compilatore generico che preso in ingresso il file Result.txt traduca la generica \n" +

@@ -25,6 +25,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 
 import javax.swing.filechooser.FileFilter;
+import javax.swing.plaf.SliderUI;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -225,10 +226,9 @@ public class HomeGui extends JFrame{
 		frame.getContentPane().add(fileChooserPanel);
 		
 		leftPanel = new JTextPane();
-		leftPanel.setBounds(0, 90, 6, 372);
+		leftPanel.setBounds(0, 115, 490, 372);
 		leftPanel.setEditable(false);
 		frame.getContentPane().add(leftPanel);
-		
 		JTextPane txtpnFraseDiInput = new JTextPane();
 		txtpnFraseDiInput.setBackground(SystemColor.menu);
 		txtpnFraseDiInput.setEditable(false);

@@ -18,36 +18,26 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-
 import javax.swing.filechooser.FileFilter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-
 import com.Parse.Ast;
 import com.Parse.Parser;
-import com.Parse.RESULT;
 import com.compilatore.inputParser.GrammarParser;
 import com.compilatore.inputParser.InputParser;
 import com.compilatore.inputParser.LRInputParser;
-import com.compilatore.parser.Automa;
 import com.compilatore.parser.IParsing;
 import com.compilatore.parser.ParsingFactory;
+import com.thoughtworks.xstream.XStream;
 import javax.swing.JTree;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SpringLayout;
 import java.awt.FlowLayout;
-import java.awt.Button;
-import javax.swing.JTextArea;
-import java.awt.Color;
 
 
 public class HomeGui extends JFrame{
@@ -60,7 +50,6 @@ public class HomeGui extends JFrame{
 	private JButton startParsing;
 	private TextArea leftPanel,automaText;
 	private JTree tree;
-	private TreeModel model;
 	/**
 	 * Launch the application.
 	 */
@@ -332,13 +321,14 @@ public class HomeGui extends JFrame{
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		String in = this.input.getText();
 		if(in.length()==0) throw new IOException("Nessuna stringa in ingresso");
-		parserProgram.setInput(in);                     //TODO: da rimuovere	
+		parserProgram.setInput(in);                  
 		switch(parserProgram.parse()){
 			case ACCEPT:
 				logger.debug("ACCEPT");		
 				Ast ast = new Ast(parserProgram.getHistory());
 				ast.initFromHistory();
-//				this.tree.setModel(ast.getRoot());			
+//				this.tree.setModel(ast.getRoot());	
+				writeToXml(ast.getRoot());
 				return ast.getRoot();
 			case ERROR:
 				logger.debug("ERROR");
@@ -347,5 +337,16 @@ public class HomeGui extends JFrame{
 				throw new Exception("Uno o più caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
 		}
 		return null;	
+	}
+
+	//Scrive l'AST nel file "AST.xml"
+	private void writeToXml(DefaultMutableTreeNode root) throws FileNotFoundException { 
+		XStream xstream = new XStream();
+		String xml = xstream.toXML(root);
+		PrintStream output = new PrintStream(new FileOutputStream("AST.xml"));
+		String [] temp = xml.split("\\n");
+		for(String o : temp)
+			output.println(o);
+		output.close();
 	}
 }

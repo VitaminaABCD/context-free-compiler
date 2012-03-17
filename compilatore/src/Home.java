@@ -1,3 +1,7 @@
+import inputParser.GrammarParser;
+import inputParser.InputParser;
+import inputParser.LRInputParser;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,14 +11,13 @@ import java.io.PrintStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import com.Parse.Ast;
-import com.Parse.HistoryElement;
-import com.Parse.Parser;
-import com.compilatore.parser.IParsing;
-import com.compilatore.parser.ParsingFactory;
-import com.compilatore.inputParser.GrammarParser;
-import com.compilatore.inputParser.InputParser;
-import com.compilatore.inputParser.LRInputParser;
+import parserProgram.Ast;
+import parserProgram.HistoryElement;
+import parserProgram.Parser;
+
+
+import contextFree.parser.IParsing;
+import contextFree.parser.ParsingFactory;
 
 public class Home{
 

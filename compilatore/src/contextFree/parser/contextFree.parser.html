@@ -1,0 +1,21 @@
+<body>
+Contains class and method for create and initialize grammar parser.
+Have been implemented LALR(1) bottom-up parser {@link LALR1} (LR(0) and LR(1) closure and goto have been implemented in respective class)
+The LALR1 automaton is constructed through the LR0 automaton.
+The lookahead symbols are calculated using an algorithm of "spontaneous generation and propagation of symbols" {@link LALR1#calculateSymbol(Automa) calculateSymbol"}
+When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the LALR1 instance {@link LALR1#tableCostruction() tableCostruction"}.
+
+USAGE:
+You can use the ParsingFactory class to obtain an instance:
+es:
+1)you can pass a IGrammar grammar...
+ParsingFactory factory = new ParsingFactory();
+IParsing lalr1 = factory.createParsing(IGrammar grammar);
+
+2)...or an InputParser instance (contains the path of grammar file, es."file.4l", and the grammar instance) 
+
+InputParser parser = new GrammarParser(path);		
+ParsingFactory factory = new ParsingFactory();
+IParsing lalr1 = factory.createParsing(parser);
+
+</body>

@@ -1,3 +1,7 @@
+import inputParser.GrammarParser;
+import inputParser.InputParser;
+import inputParser.LRInputParser;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFileChooser;
@@ -24,14 +28,15 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreePath;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-import com.Parse.Ast;
-import com.Parse.Parser;
-import com.compilatore.inputParser.GrammarParser;
-import com.compilatore.inputParser.InputParser;
-import com.compilatore.inputParser.LRInputParser;
-import com.compilatore.parser.IParsing;
-import com.compilatore.parser.ParsingFactory;
+
+import parserProgram.Ast;
+import parserProgram.Parser;
+
 import com.thoughtworks.xstream.XStream;
+
+import contextFree.parser.IParsing;
+import contextFree.parser.ParsingFactory;
+
 import javax.swing.JTree;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -263,7 +268,7 @@ public class HomeGui extends JFrame{
 					JOptionPane.showMessageDialog(frame.getContentPane(), "Insert input");
 //					e.printStackTrace();
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(frame.getContentPane(), "Uno o più caratteri tra quelli inseriti\nnon sono ammessi dalla grammatica corrente");
+					JOptionPane.showMessageDialog(frame.getContentPane(), "Uno o piï¿½ caratteri tra quelli inseriti\nnon sono ammessi dalla grammatica corrente");
 //					e.printStackTrace();
 //					logger.error("Parsing Result.txt fallito",e);
 				}
@@ -275,7 +280,7 @@ public class HomeGui extends JFrame{
         //-- Filtro "cablato" per .txt --
         txtFileFilter = new TxtFileFilter();
 
-        //-- Filtro per .rtf con la implementazione più generica --
+        //-- Filtro per .rtf con la implementazione piï¿½ generica --
         fourlineFileFilter= new GenericFileFilter("File context-free-gramar format (*.4l)", "4l");
 
         onelineFileFilter = new GenericFileFilter("File context-free-gramar format (*.1l)", "1l");
@@ -340,7 +345,7 @@ public class HomeGui extends JFrame{
 				logger.debug("ERROR");
 				return null;
 			case INVALID_IN:
-				throw new Exception("Uno o più caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
+				throw new Exception("Uno o piï¿½ caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
 		}
 		return null;	
 	}

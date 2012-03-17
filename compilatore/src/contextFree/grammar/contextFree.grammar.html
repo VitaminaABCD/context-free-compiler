@@ -1,0 +1,12 @@
+<body>
+Contains the class for represent and manipulate a grammar.
+
+USAGE:
+You can obtain a Grammar instance through the static factory "GrammarFactor" {@link GrammarFactory#createGrammar(String, List<Production>,List<String>, List<String>) createGrammar};
+you must pass the quadruple Axiom, Productions, terminals, non-terminals that define a grammar.
+
+es: 
+IGrammar grammar = GrammarFactory.createGrammar(A, P, V, T);
+
+If the grammar is context-free the factory return a ContextFreeGrammar instance {@link ContextFreeGrammar};
+</body>

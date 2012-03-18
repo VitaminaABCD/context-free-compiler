@@ -12,44 +12,6 @@
                   <javax.swing.tree.DefaultMutableTreeNode>
                     <default>
                       <allowsChildren>true</allowsChildren>
-                      <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-                    </default>
-                    <object-array>
-                      <string>userObject</string>
-                      <char>d</char>
-                    </object-array>
-                  </javax.swing.tree.DefaultMutableTreeNode>
-                </javax.swing.tree.DefaultMutableTreeNode>
-              </children>
-              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-            </default>
-            <object-array>
-              <string>userObject</string>
-              <char>L</char>
-            </object-array>
-          </javax.swing.tree.DefaultMutableTreeNode>
-        </javax.swing.tree.DefaultMutableTreeNode>
-        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-          <javax.swing.tree.DefaultMutableTreeNode>
-            <default>
-              <allowsChildren>true</allowsChildren>
-              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-            </default>
-            <object-array>
-              <string>userObject</string>
-              <char>=</char>
-            </object-array>
-          </javax.swing.tree.DefaultMutableTreeNode>
-        </javax.swing.tree.DefaultMutableTreeNode>
-        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-          <javax.swing.tree.DefaultMutableTreeNode>
-            <default>
-              <allowsChildren>true</allowsChildren>
-              <children>
-                <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-                  <javax.swing.tree.DefaultMutableTreeNode>
-                    <default>
-                      <allowsChildren>true</allowsChildren>
                       <children>
                         <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
                           <javax.swing.tree.DefaultMutableTreeNode>

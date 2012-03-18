@@ -360,9 +360,9 @@ public class LALR1 extends LR0{
 		else
 			//se no evidenzio lo stato di ambiguit�
 			if(j>=0)
-				ambiguo+="\nAmbiguit� allo stato "+ i+": "+ actionTable[i][x]+ ", shift " + j ;
+				ambiguo+="\nAmbiguita' allo stato "+ i+": "+ actionTable[i][x]+ ", shift " + j ;
 			else
-				ambiguo+="\nAmbiguit� allo stato "+ i+ ": "+ actionTable[i][x]+ ", "+action;
+				ambiguo+="\nAmbiguita' allo stato "+ i+ ": "+ actionTable[i][x]+ ", "+action;
 		return esito;
 	}
 	@Override

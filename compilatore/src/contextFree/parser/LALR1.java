@@ -58,11 +58,19 @@ public class LALR1 extends LR0{
 		return this.grammatica;
 	}
 	
+	
 	@Override
 	public void setGrammar(IGrammar gram) {
 		grammatica=gram;
 	}
 	
+	/**
+	 * Initialize the LALR(1) automaton from
+	 * LR0 automaton.
+	 * If the grammar is LALR(1) then initialize
+	 * action and goto table.
+	 * @return 0 if the grammar is ambiguous, 1 otherwise. -1 if error
+	 */
 	@Override
 	public int init() throws Exception{
 		try{
@@ -101,11 +109,12 @@ public class LALR1 extends LR0{
 		}
 	}
 	
-	
 	/**
-	 * 
-	 * @param atm
-	 * @return
+	 * Calculate one step of lookahead symbol from
+	 * an automaton with the algorithm of spontaneous
+	 * generation and propagation of symbol.
+	 * @param atm the automaton
+	 * @return 0 if no symbol have created, 1 otherwise. -1 if error.
 	 * @throws Exception
 	 * @author Paolo Pino
 	 */

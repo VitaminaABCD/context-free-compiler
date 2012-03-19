@@ -1,8 +1,6 @@
 package parserProgram;
 
 
-import java.util.List;
-
 import contextFree.grammar.Production;
 
 

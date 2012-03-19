@@ -25,7 +25,7 @@ public class ParsingFactory {
 				logger.debug("Grammar created and initialized correctly");
 			}
 			else {
-				System.out.println("\n!!!!ATTENZIONE: La grammatica non � di tipo LALR(1)...");
+				System.out.println("\n!!!!ATTENZIONE: La grammatica non e' di tipo LALR(1)...");
 			}
 			return l;
 

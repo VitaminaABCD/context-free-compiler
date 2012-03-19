@@ -1,0 +1,39 @@
+<body>
+Contains the class for file parsing. 
+Only 2 extension are allowed:
+1) *.4l - a file with 4 line that define a grammar:
+	 	first line -> axioms
+	 	second line -> non-terminlas
+	 	third line -> terminals
+	 	fourth line -> production
+ 	es: 
+ 	//////////grammar.4l//////////
+ 	E
+	E, T, P
+	a, +, x, (, ), $
+	E::=E+T, E::=T, T::=TxP, T::=P, P::=a, P::=(E)
+ 	/////////////////////////////
+ 	
+ 2) *.1l - a file with 1 line that define a grammar.
+ the  structure may look like this...
+ 	S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)}
+ ...where the first element is the axioms and all the element between 
+ the bracket are the production.
+ This format is pretty convenient associated with Action and Goto table for
+ context-free grammar type.
+ 
+
+You can also parse ".txt" file through LRInputParser
+this tyoe of file may contain the action and goto table and the grammar (written like *.1l grammar)
+ 
+USAGE:
+You can obtain the parsing result through the ParserFactory that return 
+a proper instance initialized with the result of parsing.
+es.
+ 
+InputParser parser = new GrammarParser(path); 	//return a parser for a grammar file (es. *.txt)
+ParsingFactory p = new ParsingFactory();		//the factory
+IParsing lalr1 = p.createParsing(parser);		//return an lalr1 instance initialized  
+  
+
+</body>

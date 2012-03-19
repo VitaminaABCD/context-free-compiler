@@ -1,0 +1,109 @@
+\hypertarget{classcontext_free_1_1grammar_1_1_grammar_factory}{\section{context\-Free.\-grammar.\-Grammar\-Factory Class Reference}
+\label{classcontext_free_1_1grammar_1_1_grammar_factory}\index{context\-Free.\-grammar.\-Grammar\-Factory@{context\-Free.\-grammar.\-Grammar\-Factory}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory_a6829a8d168584b20ac594fae87de591a}{create\-Context\-Free\-Grammar} (String ass, List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ prod)
+\item 
+static \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25}{create\-Grammar} (String ass, List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ prod, List$<$ String $>$ V, List$<$ String $>$ T)
+\begin{DoxyCompactList}\small\item\em Check the type of grammar (eg Contex-\/free) and returns the correct instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{enumcontext_free_1_1grammar_1_1_g_r_a_m_m_a_r___t_y_p_e}{G\-R\-A\-M\-M\-A\-R\-\_\-\-T\-Y\-P\-E} \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711}{check\-Type} (List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ prod, List$<$ String $>$ V, List$<$ String $>$ T)
+\begin{DoxyCompactList}\small\item\em controls that make up the grammar productions that are valid \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 7 of file Grammar\-Factory.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711}{\index{context\-Free\-::grammar\-::\-Grammar\-Factory@{context\-Free\-::grammar\-::\-Grammar\-Factory}!check\-Type@{check\-Type}}
+\index{check\-Type@{check\-Type}!contextFree::grammar::GrammarFactory@{context\-Free\-::grammar\-::\-Grammar\-Factory}}
+\subsubsection[{check\-Type}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf G\-R\-A\-M\-M\-A\-R\-\_\-\-T\-Y\-P\-E} {\bf context\-Free.\-grammar.\-Grammar\-Factory.\-check\-Type} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Production} $>$}]{prod, }
+\item[{List$<$ String $>$}]{V, }
+\item[{List$<$ String $>$}]{T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711}
+
+
+controls that make up the grammar productions that are valid 
+
+
+\begin{DoxyParams}{Parameters}
+{\em List} & of prodaction \\
+\hline
+{\em list} & of Not-\/terminal simbol \\
+\hline
+{\em list} & of Terminal Simbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 40 of file Grammar\-Factory.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_grammar_factory_a6829a8d168584b20ac594fae87de591a}{\index{context\-Free\-::grammar\-::\-Grammar\-Factory@{context\-Free\-::grammar\-::\-Grammar\-Factory}!create\-Context\-Free\-Grammar@{create\-Context\-Free\-Grammar}}
+\index{create\-Context\-Free\-Grammar@{create\-Context\-Free\-Grammar}!contextFree::grammar::GrammarFactory@{context\-Free\-::grammar\-::\-Grammar\-Factory}}
+\subsubsection[{create\-Context\-Free\-Grammar}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\-Grammar} {\bf context\-Free.\-grammar.\-Grammar\-Factory.\-create\-Context\-Free\-Grammar} (
+\begin{DoxyParamCaption}
+\item[{String}]{ass, }
+\item[{List$<$ {\bf Production} $>$}]{prod}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcontext_free_1_1grammar_1_1_grammar_factory_a6829a8d168584b20ac594fae87de591a}
+
+
+Definition at line 8 of file Grammar\-Factory.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25}{\index{context\-Free\-::grammar\-::\-Grammar\-Factory@{context\-Free\-::grammar\-::\-Grammar\-Factory}!create\-Grammar@{create\-Grammar}}
+\index{create\-Grammar@{create\-Grammar}!contextFree::grammar::GrammarFactory@{context\-Free\-::grammar\-::\-Grammar\-Factory}}
+\subsubsection[{create\-Grammar}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\-Grammar} {\bf context\-Free.\-grammar.\-Grammar\-Factory.\-create\-Grammar} (
+\begin{DoxyParamCaption}
+\item[{String}]{ass, }
+\item[{List$<$ {\bf Production} $>$}]{prod, }
+\item[{List$<$ String $>$}]{V, }
+\item[{List$<$ String $>$}]{T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25}
+
+
+Check the type of grammar (eg Contex-\/free) and returns the correct instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Assioma} & \\
+\hline
+{\em List} & of Prodaction \\
+\hline
+{\em List} & of Not Termianl Simbol \\
+\hline
+{\em list} & of Termianl Simbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 21 of file Grammar\-Factory.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/context\-Free/grammar/\hyperlink{_grammar_factory_8java}{Grammar\-Factory.\-java}\end{DoxyCompactItemize}

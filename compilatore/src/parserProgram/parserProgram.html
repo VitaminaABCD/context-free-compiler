@@ -1,0 +1,16 @@
+<body>
+Contains the parser program's class that to create the AST of an input phrase.
+
+USAGE:
+
+es:
+Parser parserProgram = (Parser)parser.parse();
+parserProgram.setInput(input_string);                  
+		switch(parserProgram.parse()){
+			case ACCEPT:	
+				Ast ast = new Ast(parserProgram.getHistory());  //create the AST
+				ast.initFromHistory();
+				return ast.getRoot();
+			case ERROR:
+			return null;
+</body>

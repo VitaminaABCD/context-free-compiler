@@ -1,0 +1,297 @@
+\hypertarget{classparser_program_1_1_parser}{\section{parser\-Program.\-Parser Class Reference}
+\label{classparser_program_1_1_parser}\index{parser\-Program.\-Parser@{parser\-Program.\-Parser}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classparser_program_1_1_parser_a9c62c824a5995e1097cc0883f8063bee}{Parser} ()
+\item 
+\hyperlink{classparser_program_1_1_parser_a5644d6222c7361fdb65c5ea16dd90b83}{Parser} (String in)
+\item 
+\hyperlink{classparser_program_1_1_parser_a4d849aad507c9e18cc30c62ba6204d0d}{Parser} (\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} g, Hashtable$<$ String, List$<$ String $>$$>$ action, Hashtable$<$ String, List$<$ String $>$$>$ go\-To)
+\item 
+void \hyperlink{classparser_program_1_1_parser_a4c6568b8fe03468e34af986b75ee7738}{set\-Action\-Table} (Hashtable$<$ String, List$<$ String $>$$>$ \hyperlink{classparser_program_1_1_parser_a42745877538a8470054f0714ca6c082f}{action\-Table})
+\item 
+void \hyperlink{classparser_program_1_1_parser_ae163ace9e4ba81f5f22141a3603d2395}{set\-Goto\-Table} (Hashtable$<$ String, List$<$ String $>$$>$ \hyperlink{classparser_program_1_1_parser_a1948270f44bb481bea3b69ef63483f5e}{goto\-Table})
+\item 
+Stack$<$ String $>$ \hyperlink{classparser_program_1_1_parser_a1b487b0da772e226bb5c63f4f8b6cc16}{get\-Stack} ()
+\item 
+void \hyperlink{classparser_program_1_1_parser_a2b0107ab4f177b2e568eab766e58a436}{set\-Stack} (Stack$<$ String $>$ \hyperlink{classparser_program_1_1_parser_aba60a83700b302e63b4467f15d5039b0}{stack})
+\item 
+String \hyperlink{classparser_program_1_1_parser_acda1496f2f1050294369019df45f00c0}{get\-Input} ()
+\item 
+void \hyperlink{classparser_program_1_1_parser_a46fb30b4d629ed1962f1f055d342e6ef}{set\-Input} (String \hyperlink{classparser_program_1_1_parser_ac728347af517d44c609290f2b56cda49}{input})
+\item 
+\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classparser_program_1_1_parser_a65d7eacbbc222a4b4bee5c31227313ea}{get\-Grammar} ()
+\item 
+void \hyperlink{classparser_program_1_1_parser_a3f672f1f86da2ddc6fb9c068ac1b3439}{set\-Grammar} (\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classparser_program_1_1_parser_a4a70fbf9ba96a8d228f6e569641755ae}{grammar})
+\item 
+List$<$ \hyperlink{classparser_program_1_1_history_element}{History\-Element} $>$ \hyperlink{classparser_program_1_1_parser_a3073cc18265fe23d58e5b4dd02905a2e}{get\-History} ()
+\item 
+\hyperlink{enumparser_program_1_1_r_e_s_u_l_t}{R\-E\-S\-U\-L\-T} \hyperlink{classparser_program_1_1_parser_a1dbfee8bebaafc33cdc821b978bba38a}{parse} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Logger \hyperlink{classparser_program_1_1_parser_ac181ea955dedf17144ec49b6c57a9d55}{logger} = Logger.\-get\-Logger(Parser.\-class.\-get\-Name())
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classparser_program_1_1_parser_a7c2bfbcc5791523125e01a37b19e0392}{replace\-Last} (String text, String regex, String replacement)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Stack$<$ String $>$ \hyperlink{classparser_program_1_1_parser_aba60a83700b302e63b4467f15d5039b0}{stack}
+\item 
+String \hyperlink{classparser_program_1_1_parser_a2916c5513beafc9ff7ae88ec269bfe76}{simbol}
+\item 
+String \hyperlink{classparser_program_1_1_parser_ac728347af517d44c609290f2b56cda49}{input}
+\item 
+\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classparser_program_1_1_parser_a4a70fbf9ba96a8d228f6e569641755ae}{grammar}
+\item 
+List$<$ \hyperlink{classparser_program_1_1_history_element}{History\-Element} $>$ \hyperlink{classparser_program_1_1_parser_ac2de45e9afed9d3991a11485f62f468b}{history}
+\item 
+Hashtable$<$ String, List$<$ String $>$ $>$ \hyperlink{classparser_program_1_1_parser_a42745877538a8470054f0714ca6c082f}{action\-Table}
+\item 
+Hashtable$<$ String, List$<$ String $>$ $>$ \hyperlink{classparser_program_1_1_parser_a1948270f44bb481bea3b69ef63483f5e}{goto\-Table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Parser.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classparser_program_1_1_parser_a9c62c824a5995e1097cc0883f8063bee}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parser\-Program.\-Parser.\-Parser} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a9c62c824a5995e1097cc0883f8063bee}
+
+
+Definition at line 31 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a5644d6222c7361fdb65c5ea16dd90b83}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parser\-Program.\-Parser.\-Parser} (
+\begin{DoxyParamCaption}
+\item[{String}]{in}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a5644d6222c7361fdb65c5ea16dd90b83}
+
+
+Definition at line 42 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a4d849aad507c9e18cc30c62ba6204d0d}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parser\-Program.\-Parser.\-Parser} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Grammar}}]{g, }
+\item[{Hashtable$<$ String, List$<$ String $>$$>$}]{action, }
+\item[{Hashtable$<$ String, List$<$ String $>$$>$}]{go\-To}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a4d849aad507c9e18cc30c62ba6204d0d}
+
+
+Definition at line 55 of file Parser.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classparser_program_1_1_parser_a65d7eacbbc222a4b4bee5c31227313ea}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!get\-Grammar@{get\-Grammar}}
+\index{get\-Grammar@{get\-Grammar}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{get\-Grammar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Grammar} {\bf parser\-Program.\-Parser.\-get\-Grammar} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a65d7eacbbc222a4b4bee5c31227313ea}
+
+
+Definition at line 88 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a3073cc18265fe23d58e5b4dd02905a2e}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!get\-History@{get\-History}}
+\index{get\-History@{get\-History}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{get\-History}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf History\-Element}$>$ {\bf parser\-Program.\-Parser.\-get\-History} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a3073cc18265fe23d58e5b4dd02905a2e}
+
+
+Definition at line 96 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_acda1496f2f1050294369019df45f00c0}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!get\-Input@{get\-Input}}
+\index{get\-Input@{get\-Input}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{get\-Input}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf parser\-Program.\-Parser.\-get\-Input} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_acda1496f2f1050294369019df45f00c0}
+
+
+Definition at line 81 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a1b487b0da772e226bb5c63f4f8b6cc16}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!get\-Stack@{get\-Stack}}
+\index{get\-Stack@{get\-Stack}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{get\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}Stack$<$String$>$ {\bf parser\-Program.\-Parser.\-get\-Stack} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a1b487b0da772e226bb5c63f4f8b6cc16}
+
+
+Definition at line 75 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a1dbfee8bebaafc33cdc821b978bba38a}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!parse@{parse}}
+\index{parse@{parse}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\-E\-S\-U\-L\-T} {\bf parser\-Program.\-Parser.\-parse} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a1dbfee8bebaafc33cdc821b978bba38a}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 104 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a7c2bfbcc5791523125e01a37b19e0392}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!replace\-Last@{replace\-Last}}
+\index{replace\-Last@{replace\-Last}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{replace\-Last}]{\setlength{\rightskip}{0pt plus 5cm}static String {\bf parser\-Program.\-Parser.\-replace\-Last} (
+\begin{DoxyParamCaption}
+\item[{String}]{text, }
+\item[{String}]{regex, }
+\item[{String}]{replacement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classparser_program_1_1_parser_a7c2bfbcc5791523125e01a37b19e0392}
+
+
+Definition at line 162 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a4c6568b8fe03468e34af986b75ee7738}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!set\-Action\-Table@{set\-Action\-Table}}
+\index{set\-Action\-Table@{set\-Action\-Table}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{set\-Action\-Table}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-Parser.\-set\-Action\-Table} (
+\begin{DoxyParamCaption}
+\item[{Hashtable$<$ String, List$<$ String $>$$>$}]{action\-Table}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a4c6568b8fe03468e34af986b75ee7738}
+
+
+Definition at line 68 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_ae163ace9e4ba81f5f22141a3603d2395}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!set\-Goto\-Table@{set\-Goto\-Table}}
+\index{set\-Goto\-Table@{set\-Goto\-Table}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{set\-Goto\-Table}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-Parser.\-set\-Goto\-Table} (
+\begin{DoxyParamCaption}
+\item[{Hashtable$<$ String, List$<$ String $>$$>$}]{goto\-Table}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_ae163ace9e4ba81f5f22141a3603d2395}
+
+
+Definition at line 72 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a3f672f1f86da2ddc6fb9c068ac1b3439}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!set\-Grammar@{set\-Grammar}}
+\index{set\-Grammar@{set\-Grammar}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{set\-Grammar}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-Parser.\-set\-Grammar} (
+\begin{DoxyParamCaption}
+\item[{{\bf I\-Grammar}}]{grammar}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a3f672f1f86da2ddc6fb9c068ac1b3439}
+
+
+Definition at line 92 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a46fb30b4d629ed1962f1f055d342e6ef}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!set\-Input@{set\-Input}}
+\index{set\-Input@{set\-Input}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{set\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-Parser.\-set\-Input} (
+\begin{DoxyParamCaption}
+\item[{String}]{input}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a46fb30b4d629ed1962f1f055d342e6ef}
+
+
+Definition at line 84 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a2b0107ab4f177b2e568eab766e58a436}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!set\-Stack@{set\-Stack}}
+\index{set\-Stack@{set\-Stack}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{set\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-Parser.\-set\-Stack} (
+\begin{DoxyParamCaption}
+\item[{Stack$<$ String $>$}]{stack}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_parser_a2b0107ab4f177b2e568eab766e58a436}
+
+
+Definition at line 78 of file Parser.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classparser_program_1_1_parser_a42745877538a8470054f0714ca6c082f}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!action\-Table@{action\-Table}}
+\index{action\-Table@{action\-Table}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{action\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Hashtable$<$String,List$<$String$>$ $>$ {\bf parser\-Program.\-Parser.\-action\-Table}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_a42745877538a8470054f0714ca6c082f}
+
+
+Definition at line 28 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a1948270f44bb481bea3b69ef63483f5e}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!goto\-Table@{goto\-Table}}
+\index{goto\-Table@{goto\-Table}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{goto\-Table}]{\setlength{\rightskip}{0pt plus 5cm}Hashtable$<$String,List$<$String$>$ $>$ {\bf parser\-Program.\-Parser.\-goto\-Table}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_a1948270f44bb481bea3b69ef63483f5e}
+
+
+Definition at line 29 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a4a70fbf9ba96a8d228f6e569641755ae}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!grammar@{grammar}}
+\index{grammar@{grammar}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{grammar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Grammar} {\bf parser\-Program.\-Parser.\-grammar}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_a4a70fbf9ba96a8d228f6e569641755ae}
+
+
+Definition at line 24 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_ac2de45e9afed9d3991a11485f62f468b}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!history@{history}}
+\index{history@{history}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{history}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf History\-Element}$>$ {\bf parser\-Program.\-Parser.\-history}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_ac2de45e9afed9d3991a11485f62f468b}
+
+
+Definition at line 25 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_ac728347af517d44c609290f2b56cda49}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!input@{input}}
+\index{input@{input}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf parser\-Program.\-Parser.\-input}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_ac728347af517d44c609290f2b56cda49}
+
+
+Definition at line 23 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_ac181ea955dedf17144ec49b6c57a9d55}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!logger@{logger}}
+\index{logger@{logger}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{logger}]{\setlength{\rightskip}{0pt plus 5cm}Logger {\bf parser\-Program.\-Parser.\-logger} = Logger.\-get\-Logger(Parser.\-class.\-get\-Name())\hspace{0.3cm}{\ttfamily  \mbox{[}static, package\mbox{]}}}}\label{classparser_program_1_1_parser_ac181ea955dedf17144ec49b6c57a9d55}
+
+
+Definition at line 19 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_a2916c5513beafc9ff7ae88ec269bfe76}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!simbol@{simbol}}
+\index{simbol@{simbol}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{simbol}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf parser\-Program.\-Parser.\-simbol}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_a2916c5513beafc9ff7ae88ec269bfe76}
+
+
+Definition at line 22 of file Parser.\-java.
+
+\hypertarget{classparser_program_1_1_parser_aba60a83700b302e63b4467f15d5039b0}{\index{parser\-Program\-::\-Parser@{parser\-Program\-::\-Parser}!stack@{stack}}
+\index{stack@{stack}!parserProgram::Parser@{parser\-Program\-::\-Parser}}
+\subsubsection[{stack}]{\setlength{\rightskip}{0pt plus 5cm}Stack$<$String$>$ {\bf parser\-Program.\-Parser.\-stack}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classparser_program_1_1_parser_aba60a83700b302e63b4467f15d5039b0}
+
+
+Definition at line 21 of file Parser.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/parser\-Program/\hyperlink{_parser_8java}{Parser.\-java}\end{DoxyCompactItemize}

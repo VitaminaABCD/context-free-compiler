@@ -1,0 +1,307 @@
+\hypertarget{class_home_gui}{\section{Home\-Gui Class Reference}
+\label{class_home_gui}\index{Home\-Gui@{Home\-Gui}}
+}
+
+
+Inherits J\-Frame.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_home_gui_add92e1cf71983b9cc6f70f040d3ea593}{Home\-Gui} ()  throws File\-Not\-Found\-Exception, Exception 
+\begin{DoxyCompactList}\small\item\em Create the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_home_gui_a241867731938068ae82ae7d5e7371fa3}{main} (String\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Launch the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Text\-Area \hyperlink{class_home_gui_a6b00edbcb893105ddc5e3b2beb4c2dca}{automa\-Text}
+\item 
+File\-Filter \hyperlink{class_home_gui_a7f56e390a2982689b92cee117f50e987}{fourline\-File\-Filter}
+\end{DoxyCompactItemize}
+\subsection*{Static Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Logger \hyperlink{class_home_gui_a6eef831dc2ff4533740f3395c4b9067a}{logger} = Logger.\-get\-Logger(Home\-Gui.\-class.\-get\-Name())
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_home_gui_a8a91bfb188035012962b468a651f73a5}{operazione\-Apri} ()  throws File\-Not\-Found\-Exception, Exception 
+\item 
+void \hyperlink{class_home_gui_a52f0602a97cd1ef63063bbbbda036d26}{start\-Process} (String path)  throws File\-Not\-Found\-Exception, Exception 
+\item 
+void \hyperlink{class_home_gui_ad557119a3d770022d77a7a396c7834bd}{operazione\-Salva\-Con\-Nome} ()
+\item 
+void \hyperlink{class_home_gui_a5e935834d62fe14dfda2c9884f1f7010}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the contents of the frame. \end{DoxyCompactList}\item 
+Default\-Mutable\-Tree\-Node \hyperlink{class_home_gui_a98af3aa80619748a678edae77b231bef}{ast\-Method} (\hyperlink{classinput_parser_1_1_input_parser}{Input\-Parser} parser)  throws Exception 
+\item 
+void \hyperlink{class_home_gui_a0428d3c56abfafc769684835c1581f38}{write\-To\-Xml} (Default\-Mutable\-Tree\-Node root)  throws File\-Not\-Found\-Exception 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+J\-Frame \hyperlink{class_home_gui_a0b1781db25b8fdacc8970aa6166b11ad}{frame}
+\item 
+Panel \hyperlink{class_home_gui_adb0131b6ea64353bf6b0c5993468341c}{right\-Panel}
+\item 
+String \hyperlink{class_home_gui_a1f9226407f1c2c6ff8d62f84dfcebfbe}{file\-Path}
+\item 
+J\-Button \hyperlink{class_home_gui_aedb975e31137435a02772599392bf195}{start\-Parsing}
+\item 
+Text\-Area \hyperlink{class_home_gui_ac6ba89ab2c3204e87ec00b9b4962f327}{left\-Panel}
+\item 
+J\-Tree \hyperlink{class_home_gui_ab4af4f54e925eedcab3cb87da41410e1}{tree}
+\item 
+J\-File\-Chooser \hyperlink{class_home_gui_a7b615d195d8208fab52fd9db85082d46}{apri\-File\-Chooser}
+\item 
+J\-File\-Chooser \hyperlink{class_home_gui_ae91c33454848f18d29839444a30a5bd7}{salva\-File\-Chooser}
+\item 
+File\-Filter \hyperlink{class_home_gui_af20bf1a94a96e4f53e1f66337a257ce3}{txt\-File\-Filter}
+\item 
+File\-Filter \hyperlink{class_home_gui_a8b0192c597368a34c855abe70a8a80ec}{oneline\-File\-Filter}
+\item 
+J\-Text\-Field \hyperlink{class_home_gui_ab33ea273ae2f2c5bde32041076af630c}{input}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final long \hyperlink{class_home_gui_a6a93dac6b8c89a59ca14536d6f5ad414}{serial\-Version\-U\-I\-D} = 1\-L
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 48 of file Home\-Gui.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_home_gui_add92e1cf71983b9cc6f70f040d3ea593}{\index{Home\-Gui@{Home\-Gui}!Home\-Gui@{Home\-Gui}}
+\index{Home\-Gui@{Home\-Gui}!HomeGui@{Home\-Gui}}
+\subsubsection[{Home\-Gui}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Home\-Gui.\-Home\-Gui} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws File\-Not\-Found\-Exception, Exception }}\label{class_home_gui_add92e1cf71983b9cc6f70f040d3ea593}
+
+
+Create the application. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+{\em File\-Not\-Found\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 82 of file Home\-Gui.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_home_gui_a98af3aa80619748a678edae77b231bef}{\index{Home\-Gui@{Home\-Gui}!ast\-Method@{ast\-Method}}
+\index{ast\-Method@{ast\-Method}!HomeGui@{Home\-Gui}}
+\subsubsection[{ast\-Method}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Mutable\-Tree\-Node {\bf Home\-Gui.\-ast\-Method} (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Parser}}]{parser}
+\end{DoxyParamCaption}
+)  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a98af3aa80619748a678edae77b231bef}
+
+
+Definition at line 330 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a5e935834d62fe14dfda2c9884f1f7010}{\index{Home\-Gui@{Home\-Gui}!initialize@{initialize}}
+\index{initialize@{initialize}!HomeGui@{Home\-Gui}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Home\-Gui.\-initialize} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a5e935834d62fe14dfda2c9884f1f7010}
+
+
+Initialize the contents of the frame. 
+
+
+
+Definition at line 163 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a241867731938068ae82ae7d5e7371fa3}{\index{Home\-Gui@{Home\-Gui}!main@{main}}
+\index{main@{main}!HomeGui@{Home\-Gui}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}static void {\bf Home\-Gui.\-main} (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{class_home_gui_a241867731938068ae82ae7d5e7371fa3}
+
+
+Launch the application. 
+
+
+
+Definition at line 61 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a8a91bfb188035012962b468a651f73a5}{\index{Home\-Gui@{Home\-Gui}!operazione\-Apri@{operazione\-Apri}}
+\index{operazione\-Apri@{operazione\-Apri}!HomeGui@{Home\-Gui}}
+\subsubsection[{operazione\-Apri}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Home\-Gui.\-operazione\-Apri} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws File\-Not\-Found\-Exception, Exception \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a8a91bfb188035012962b468a651f73a5}
+
+
+Definition at line 95 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_ad557119a3d770022d77a7a396c7834bd}{\index{Home\-Gui@{Home\-Gui}!operazione\-Salva\-Con\-Nome@{operazione\-Salva\-Con\-Nome}}
+\index{operazione\-Salva\-Con\-Nome@{operazione\-Salva\-Con\-Nome}!HomeGui@{Home\-Gui}}
+\subsubsection[{operazione\-Salva\-Con\-Nome}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Home\-Gui.\-operazione\-Salva\-Con\-Nome} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_ad557119a3d770022d77a7a396c7834bd}
+
+
+Definition at line 141 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a52f0602a97cd1ef63063bbbbda036d26}{\index{Home\-Gui@{Home\-Gui}!start\-Process@{start\-Process}}
+\index{start\-Process@{start\-Process}!HomeGui@{Home\-Gui}}
+\subsubsection[{start\-Process}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Home\-Gui.\-start\-Process} (
+\begin{DoxyParamCaption}
+\item[{String}]{path}
+\end{DoxyParamCaption}
+)  throws File\-Not\-Found\-Exception, Exception \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a52f0602a97cd1ef63063bbbbda036d26}
+
+
+Definition at line 116 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a0428d3c56abfafc769684835c1581f38}{\index{Home\-Gui@{Home\-Gui}!write\-To\-Xml@{write\-To\-Xml}}
+\index{write\-To\-Xml@{write\-To\-Xml}!HomeGui@{Home\-Gui}}
+\subsubsection[{write\-To\-Xml}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Home\-Gui.\-write\-To\-Xml} (
+\begin{DoxyParamCaption}
+\item[{Default\-Mutable\-Tree\-Node}]{root}
+\end{DoxyParamCaption}
+)  throws File\-Not\-Found\-Exception \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a0428d3c56abfafc769684835c1581f38}
+
+
+Definition at line 354 of file Home\-Gui.\-java.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_home_gui_a7b615d195d8208fab52fd9db85082d46}{\index{Home\-Gui@{Home\-Gui}!apri\-File\-Chooser@{apri\-File\-Chooser}}
+\index{apri\-File\-Chooser@{apri\-File\-Chooser}!HomeGui@{Home\-Gui}}
+\subsubsection[{apri\-File\-Chooser}]{\setlength{\rightskip}{0pt plus 5cm}J\-File\-Chooser {\bf Home\-Gui.\-apri\-File\-Chooser}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a7b615d195d8208fab52fd9db85082d46}
+
+
+Definition at line 88 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a6b00edbcb893105ddc5e3b2beb4c2dca}{\index{Home\-Gui@{Home\-Gui}!automa\-Text@{automa\-Text}}
+\index{automa\-Text@{automa\-Text}!HomeGui@{Home\-Gui}}
+\subsubsection[{automa\-Text}]{\setlength{\rightskip}{0pt plus 5cm}Text\-Area {\bf Home\-Gui.\-automa\-Text}\hspace{0.3cm}{\ttfamily  \mbox{[}package\mbox{]}}}}\label{class_home_gui_a6b00edbcb893105ddc5e3b2beb4c2dca}
+
+
+Definition at line 56 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a1f9226407f1c2c6ff8d62f84dfcebfbe}{\index{Home\-Gui@{Home\-Gui}!file\-Path@{file\-Path}}
+\index{file\-Path@{file\-Path}!HomeGui@{Home\-Gui}}
+\subsubsection[{file\-Path}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf Home\-Gui.\-file\-Path}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a1f9226407f1c2c6ff8d62f84dfcebfbe}
+
+
+Definition at line 54 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a7f56e390a2982689b92cee117f50e987}{\index{Home\-Gui@{Home\-Gui}!fourline\-File\-Filter@{fourline\-File\-Filter}}
+\index{fourline\-File\-Filter@{fourline\-File\-Filter}!HomeGui@{Home\-Gui}}
+\subsubsection[{fourline\-File\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}File\-Filter {\bf Home\-Gui.\-fourline\-File\-Filter}\hspace{0.3cm}{\ttfamily  \mbox{[}package\mbox{]}}}}\label{class_home_gui_a7f56e390a2982689b92cee117f50e987}
+
+
+Definition at line 92 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a0b1781db25b8fdacc8970aa6166b11ad}{\index{Home\-Gui@{Home\-Gui}!frame@{frame}}
+\index{frame@{frame}!HomeGui@{Home\-Gui}}
+\subsubsection[{frame}]{\setlength{\rightskip}{0pt plus 5cm}J\-Frame {\bf Home\-Gui.\-frame}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a0b1781db25b8fdacc8970aa6166b11ad}
+
+
+Definition at line 52 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_ab33ea273ae2f2c5bde32041076af630c}{\index{Home\-Gui@{Home\-Gui}!input@{input}}
+\index{input@{input}!HomeGui@{Home\-Gui}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}J\-Text\-Field {\bf Home\-Gui.\-input}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_ab33ea273ae2f2c5bde32041076af630c}
+
+
+Definition at line 93 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_ac6ba89ab2c3204e87ec00b9b4962f327}{\index{Home\-Gui@{Home\-Gui}!left\-Panel@{left\-Panel}}
+\index{left\-Panel@{left\-Panel}!HomeGui@{Home\-Gui}}
+\subsubsection[{left\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Text\-Area {\bf Home\-Gui.\-left\-Panel}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_ac6ba89ab2c3204e87ec00b9b4962f327}
+
+
+Definition at line 56 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a6eef831dc2ff4533740f3395c4b9067a}{\index{Home\-Gui@{Home\-Gui}!logger@{logger}}
+\index{logger@{logger}!HomeGui@{Home\-Gui}}
+\subsubsection[{logger}]{\setlength{\rightskip}{0pt plus 5cm}Logger {\bf Home\-Gui.\-logger} = Logger.\-get\-Logger(Home\-Gui.\-class.\-get\-Name())\hspace{0.3cm}{\ttfamily  \mbox{[}static, package\mbox{]}}}}\label{class_home_gui_a6eef831dc2ff4533740f3395c4b9067a}
+
+
+Definition at line 51 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a8b0192c597368a34c855abe70a8a80ec}{\index{Home\-Gui@{Home\-Gui}!oneline\-File\-Filter@{oneline\-File\-Filter}}
+\index{oneline\-File\-Filter@{oneline\-File\-Filter}!HomeGui@{Home\-Gui}}
+\subsubsection[{oneline\-File\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}File\-Filter {\bf Home\-Gui.\-oneline\-File\-Filter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_a8b0192c597368a34c855abe70a8a80ec}
+
+
+Definition at line 92 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_adb0131b6ea64353bf6b0c5993468341c}{\index{Home\-Gui@{Home\-Gui}!right\-Panel@{right\-Panel}}
+\index{right\-Panel@{right\-Panel}!HomeGui@{Home\-Gui}}
+\subsubsection[{right\-Panel}]{\setlength{\rightskip}{0pt plus 5cm}Panel {\bf Home\-Gui.\-right\-Panel}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_adb0131b6ea64353bf6b0c5993468341c}
+
+
+Definition at line 53 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_ae91c33454848f18d29839444a30a5bd7}{\index{Home\-Gui@{Home\-Gui}!salva\-File\-Chooser@{salva\-File\-Chooser}}
+\index{salva\-File\-Chooser@{salva\-File\-Chooser}!HomeGui@{Home\-Gui}}
+\subsubsection[{salva\-File\-Chooser}]{\setlength{\rightskip}{0pt plus 5cm}J\-File\-Chooser {\bf Home\-Gui.\-salva\-File\-Chooser}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_ae91c33454848f18d29839444a30a5bd7}
+
+
+Definition at line 89 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_a6a93dac6b8c89a59ca14536d6f5ad414}{\index{Home\-Gui@{Home\-Gui}!serial\-Version\-U\-I\-D@{serial\-Version\-U\-I\-D}}
+\index{serial\-Version\-U\-I\-D@{serial\-Version\-U\-I\-D}!HomeGui@{Home\-Gui}}
+\subsubsection[{serial\-Version\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}final long {\bf Home\-Gui.\-serial\-Version\-U\-I\-D} = 1\-L\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{class_home_gui_a6a93dac6b8c89a59ca14536d6f5ad414}
+
+
+Definition at line 49 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_aedb975e31137435a02772599392bf195}{\index{Home\-Gui@{Home\-Gui}!start\-Parsing@{start\-Parsing}}
+\index{start\-Parsing@{start\-Parsing}!HomeGui@{Home\-Gui}}
+\subsubsection[{start\-Parsing}]{\setlength{\rightskip}{0pt plus 5cm}J\-Button {\bf Home\-Gui.\-start\-Parsing}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_aedb975e31137435a02772599392bf195}
+
+
+Definition at line 55 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_ab4af4f54e925eedcab3cb87da41410e1}{\index{Home\-Gui@{Home\-Gui}!tree@{tree}}
+\index{tree@{tree}!HomeGui@{Home\-Gui}}
+\subsubsection[{tree}]{\setlength{\rightskip}{0pt plus 5cm}J\-Tree {\bf Home\-Gui.\-tree}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_ab4af4f54e925eedcab3cb87da41410e1}
+
+
+Definition at line 57 of file Home\-Gui.\-java.
+
+\hypertarget{class_home_gui_af20bf1a94a96e4f53e1f66337a257ce3}{\index{Home\-Gui@{Home\-Gui}!txt\-File\-Filter@{txt\-File\-Filter}}
+\index{txt\-File\-Filter@{txt\-File\-Filter}!HomeGui@{Home\-Gui}}
+\subsubsection[{txt\-File\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}File\-Filter {\bf Home\-Gui.\-txt\-File\-Filter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{class_home_gui_af20bf1a94a96e4f53e1f66337a257ce3}
+
+
+Definition at line 91 of file Home\-Gui.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_home_gui_8java}{Home\-Gui.\-java}\end{DoxyCompactItemize}

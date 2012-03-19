@@ -1,0 +1,29 @@
+\hypertarget{namespacecontext_free_1_1grammar}{\section{Package context\-Free.\-grammar}
+\label{namespacecontext_free_1_1grammar}\index{context\-Free.\-grammar@{context\-Free.\-grammar}}
+}
+
+
+Contains the class for represent and manipulate a grammar.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}
+\item 
+enum \hyperlink{enumcontext_free_1_1grammar_1_1_g_r_a_m_m_a_r___t_y_p_e}{G\-R\-A\-M\-M\-A\-R\-\_\-\-T\-Y\-P\-E}
+\item 
+class \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory}{Grammar\-Factory}
+\item 
+interface \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar}
+\item 
+class \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the class for represent and manipulate a grammar. U\-S\-A\-G\-E\-: You can obtain a Grammar instance through the static factory \char`\"{}\-Grammar\-Factor\char`\"{} \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25}{create\-Grammar}; you must pass the quadruple Axiom, Productions, terminals, non-\/terminals that define a grammar.
+
+es\-: \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} grammar = Grammar\-Factory.\-create\-Grammar(\-A, P, V, T);
+
+If the grammar is context-\/free the factory return a \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar} instance \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}; 

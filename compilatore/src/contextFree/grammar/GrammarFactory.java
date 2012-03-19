@@ -10,12 +10,13 @@ public class GrammarFactory {
 	}
 	
 	/**
-	 * Verifica il tipo di grammatica (es contex-free) e ritorna l'istanza corretta
-	 * @param ass
-	 * @param prod
-	 * @param V
-	 * @param T
+	 * Check the type of grammar (eg Contex-free) and returns the correct instance
+	 * @param Assioma
+	 * @param List of Prodaction
+	 * @param List of Not Termianl Simbol
+	 * @param list of Termianl Simbol
 	 * @return 
+	 * @author Pierluigi Sottile
 	 */
 	public static IGrammar createGrammar(String ass, List<Production> prod,List<String> V, List<String> T){
 		
@@ -29,11 +30,12 @@ public class GrammarFactory {
 	
 	
 	/**
-	 * 
-	 * @param prod
-	 * @param V
-	 * @param T
+	 * controls that make up the grammar productions that are valid
+	 * @param List of prodaction
+	 * @param list of Not-terminal simbol
+	 * @param list of Terminal Simbol
 	 * @return
+	 * @author Pierluigi Sottile
 	 */
 	private static GRAMMAR_TYPE checkType(List<Production> prod,List<String> V, List<String> T) {
 		
@@ -57,15 +59,15 @@ public class GrammarFactory {
 						// prima pero controllo che esso appartenga alla grammatica
 						String carattereCorrente = Character.toString(right.charAt(j));
 						if(!V.contains(carattereCorrente) && !T.contains(carattereCorrente)){
-							//se non ï¿½ ne un terminale ne un Non Terminale vuol dire che il carattere 
-							//non appartiene alla grammatica inquanto giï¿½ï¿½ abbiamo controlato che non sia 
+							//se non è ne un terminale ne un Non Terminale vuol dire che il carattere 
+							//non appartiene alla grammatica inquanto già abbiamo controlato che non sia 
 							//il carattere di stringa vuota epslon
 							return GRAMMAR_TYPE.NO_CONTEXT_FREE;
 						}
 						p.getRightList().add(carattereCorrente);
 					}
 					else{
-						//inseriamo un carattere di stringa vuota per dire che ï¿½ il carattere nullo
+						//inseriamo un carattere di stringa vuota per dire che è il carattere nullo
 						p.getRightList().add(" ");
 						break;
 					}

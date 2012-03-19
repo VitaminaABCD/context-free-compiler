@@ -53,6 +53,10 @@ public class Automa {
 		return result;
 	}
 
+	/**
+	 * remove dollar simbol lookahed
+	 * @author Paolo Pino
+	 */
 	public void removeDollarLookahed() {
 		for(State s : states){
 			if(s.getIndex()!=0)

@@ -47,7 +47,7 @@ public class ParsingFactory {
 				logger.debug("Grammar created and initialized correctly");
 			}
 			else {
-				System.out.println("\n!!!!ATTENZIONE: La grammatica non � di tipo LALR(1)...");
+				System.out.println("\n!!!!ATTENZIONE: La grammatica non e' di tipo LALR(1)...");
 			}
 			return l;
 		} catch (Exception e) {
@@ -64,9 +64,9 @@ public class ParsingFactory {
 			l = new LALR1(grammar);
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
-		//se la grammatica � di tipo LALR(1) ritorna l'istanza
+		//se la grammatica e' di tipo LALR(1) ritorna l'istanza
 			}else {
-				System.out.println("\n!!!!!!ATTENZIONE: La grammatica non � di tipo LALR(1)...");
+				System.out.println("\n!!!!!!ATTENZIONE: La grammatica non e' di tipo LALR(1)...");
 			}
 			return l;
 		} catch (Exception e) {

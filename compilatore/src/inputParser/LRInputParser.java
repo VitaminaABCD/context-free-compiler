@@ -13,8 +13,12 @@ import org.apache.log4j.Logger;
 import contextFree.grammar.IGrammar;
 
 import parserProgram.Parser;
-
-
+ 
+/**	Parse a txt file with action table, goto table and grammar in 
+ *  one line format (*.1l)
+ * @author Paolo Pino
+ *
+ */
 public class LRInputParser extends InputParser {
 	static Logger logger = Logger.getLogger(LRInputParser.class.getName());
 	
@@ -27,6 +31,9 @@ public class LRInputParser extends InputParser {
 		this.input=in;
 	}
 
+	/** Parse method
+	 * 
+	 */
 	@Override
 	public Parser parse() throws Exception {
 		Hashtable<String,List<String>> actionTable = new Hashtable<String, List<String>>();
@@ -56,6 +63,15 @@ public class LRInputParser extends InputParser {
 		}
 		return null;
 	}
+	
+	/**
+	 * read the table in the first part of the file
+	 * and store it in an hashtable with simbol as key and a list
+	 * with an element for each state
+	 * @param f the input file buffer
+	 * @param table the hashtable where the data is stored
+	 * @throws IOException
+	 */
 	private void readTable(BufferedReader f, Hashtable<String, List<String>> table) throws IOException {
 		String in=f.readLine();
 		String []simbol =  in.split("\t");
@@ -68,6 +84,4 @@ public class LRInputParser extends InputParser {
 				table.get(simbol[i]).add(temp[i]);
 		}	
 	}
-
-	
 }

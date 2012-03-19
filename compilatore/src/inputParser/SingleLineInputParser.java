@@ -14,6 +14,12 @@ import contextFree.grammar.Production;
 import error.ERROR_TYPE;
 import error.ErrorManager;
 
+/**
+ * Parse a single line grammar format.
+ * es. S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)} 
+ * @author Paolo Pino
+ *
+ */
 public class SingleLineInputParser extends InputParser {
 
 	String S,file;

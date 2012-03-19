@@ -101,6 +101,14 @@ public class LALR1 extends LR0{
 		}
 	}
 	
+	
+	/**
+	 * 
+	 * @param atm
+	 * @return
+	 * @throws Exception
+	 * @author Paolo Pino
+	 */
 	private int calculateSymbol(Automa atm) throws Exception{
 		List<IndexedProduction> J;
 		int flag = 0;
@@ -143,10 +151,12 @@ public class LALR1 extends LR0{
 		}
 	}
 
+	
 	/**
-	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
-	 * @param 	i kernel di cui va calcolata la chiusura
-	 * @return 	j chiusura del kernel passato
+	 * Passed a list of production I that form the kernel of a state, return closing it, and the lookahead symbols associated 
+	 * @param 	the kernels of the state
+	 * @return 	list of products forming the state
+	 * @author Pierluigi Sottile
 	 */
 	public List<IndexedProduction> chiusuraLR1 (List<IndexedProduction> i){
 		boolean flag =true;
@@ -250,11 +260,12 @@ public class LALR1 extends LR0{
 	}
 	
 	/**
-	 * costruisce le tabella Action GoTo a partire da un Automa LALR(1) e ci dice se � di tipo LALR1 o meno
+	 * builds the Action table GoTo from an automa LALR1 and tells us if it is or not type of LALR1
 	 * 
-	 * @param automa da analizzare
-	 * @return 1 se la grammatica � di tipo LALR(1), 0 altrimenti
+	 * @param automa to control
+	 * @return 1 if the type of grammar is LALR (1), 0 otherwise
 	 * @throws Exception 
+	 * @author Pierluigi Sottile
 	 */
 	public int tableCostruction() throws Exception{
 		try{
@@ -302,19 +313,20 @@ public class LALR1 extends LR0{
 	}
 	
 	/**
-	 * se il puntino � nell'ultima posizione scrive la reduce nell'action table restituisce false se ci sono conflitti
-	 * @param stato stato da controllare
-	 * @return
+	 * if the point is in the last position he wrote the reduces in the action table.
+	 * @param state to control 
+	 * @return  false if there are conflicts
+	 * @author Pierluigi Sottile
 	 */
 	public boolean reduce(State stato){
-		//serve per vedere se ci sono stati di ambiguit�
+		//serve per vedere se ci sono stati di ambiguita'
 		boolean esito=false;
 		boolean ret=true;
 		//per ogni produzione dello stato
 		for(IndexedProduction prodStato : stato.getKernels())
 			//se il puntino si trove nell'ultima posizione ci troviamo nel caso di una reduce
 			if(prodStato.getCurrentCharIndex()>=prodStato.getRightList().size()){
-				//se si tratta della reduce [S'::=S, $] � il caso dell'accettazione
+				//se si tratta della reduce [S'::=S, $] e' il caso dell'accettazione
 				if(prodStato.getLeft().equals("S'")){
 					////chiamo la funzione per scrivere nella tabella action
 					esito = actionWrite(stato.getIndex(),-1,grammatica.getT().indexOf("$"),"acc");
@@ -336,12 +348,13 @@ public class LALR1 extends LR0{
 	}
 	
 	/**
-	 *  * scrive l'action Reduce o Scift nela tabella Action ritornando un false in caso di ambiguit� restituisce false se ci sono ambiguit�
-	 * @param i stato attuale
-	 * @param j -1 se reduce, se no lo stato di destinazione dello shift
-	 * @param x simbolo per cui si va ascrivere nella tabella
-	 * @param action "s" se si tratta di shift, altrimenti la produzione per cui si fa il reduce
-	 * @return
+	 * Writes the action Reduce or Scift in the Action table.
+	 * @param current state
+	 * @param -1 If it reduces, else the destination state of the shift
+	 * @param symbol for which you go write in the Action table
+	 * @param action "s" if it is shift, else the production for which reduce
+	 * @return  false case of ambiguity
+	 * @author Pierluigi Sottile
 	 */
 	public boolean actionWrite(int i, int j, int x, String action){
 		boolean esito=false;
@@ -369,8 +382,10 @@ public class LALR1 extends LR0{
 	public boolean isAmbiguos(){
 		return isAmbiguous;
 	}
+	
+	
 	/**
-	 * restiruisce una stringa con le  tabelle Action Goto
+	 * Return a string with tables Goto Action
 	 * @return
 	 */
 	public String printTable(){

@@ -10,24 +10,42 @@ public class State {
 	private List<IndexedProduction> items;
 	private Hashtable<String, Integer> shift;
 
+	/**
+	 * constructor state 0
+	 */
 	public State(){
 		this.index=0;
 		this.items = new LinkedList<IndexedProduction>();
 		this.shift = new Hashtable<String, Integer>();
 	}
 	
+	/**
+	 * constructor state i-th, with empty list productions
+	 * @param index of state
+	 */
 	public State(int i){
 		this.index=i;
 		this.items = new LinkedList<IndexedProduction>();
 		this.shift = new Hashtable<String, Integer>();
 	}
 	
+	/**
+	 * constructor state i-th, whit list production c
+	 * @param index of state
+	 * @param List production
+	 */
 	public State(int i, List<IndexedProduction> c){
 		this.index=i;
 		this.items = c;
 		this.shift = new Hashtable<String, Integer>();
 	}
 	
+	/**
+	 * constructor state i-th, whit list production c and list of lookahead
+	 * @param index of state
+	 * @param List production
+	 * @param List of lookahead
+	 */
 	public State(int i, List<IndexedProduction> c, Hashtable<String, Integer> table){
 		this.index=i;
 		this.items = c;
@@ -72,8 +90,9 @@ public class State {
 	}
 	
 	/**
-	 * ritorna una List<IndexedProduction> contenente il Kernel di uno stato
-	 * @return j
+	 * return one list<IndexedProduction> with the kernel of a state
+	 * @return the kernels prodaction
+	 * @author Pierluigi Sottile
 	 */
 	public List<IndexedProduction> getKernels(){
 		 IndexedProduction prod = new IndexedProduction();

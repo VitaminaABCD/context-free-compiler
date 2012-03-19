@@ -2,7 +2,3 @@ E
 E, T, P
 a, +, x, (, ), $
 E::=E+T, E::=T, T::=TxP, T::=P, P::=a, P::=(E)
-
-
-
-E::=TA , A::=+TA, A::=eps, T::=FB, B::=xFB, B::=eps, F::=a, F::=(E)

@@ -13,7 +13,6 @@ public class ContextFreeGrammar implements IGrammar {
 	private List<String> T; // insieme di simboli terminali
 	private List<Production> P; // Insieme di produzioni
 	private String S; // Assioma
-
 	private boolean[] nullo; // Insieme dei null
 	private Set<String>[] first; // Insieme dei first
 	private Set<String>[] follow; // Insieme dei follow
@@ -88,25 +87,31 @@ public class ContextFreeGrammar implements IGrammar {
 		return first;
 	}
 	
-	/*
-	 * passato un carattere mi ritorna la lista di first associati a esso
+	
+	/**
+	 * I spent a character returns the first list associated to it
+	 * @param 	Simbol not-Terminal A
+	 * @return  First(A)
 	 */
 	public Set<String> getFirst(String A){
 		return first[V.indexOf(A)];
 	}
 	
+	/**
+	 * I spent a character returns the Follow list associated to it
+	 * @param 	Simbol not-terminal A
+	 * @return  Follow(A)
+	 */
 	public Set<String>[] getFollow() {
 		follow();
 		return follow;
 	}
 
 	/**
-	 * popola una struttura Bolean[] nullo definita nella classe grammatica,
-	 * essa per l'appunto avrï¿½ la stessa dimensione di V. un elemento si dice
-	 * nullo se ogni componente dell'espressione della produzione sarï¿½ nulla
-	 * facciamo un ciclo while che si fermerï¿½ quando sono stati controllati
-	 * tutti i nulli e contemporaneamente nn sono state fatte modifiche quindi
-	 * il nostro flag sarï¿½ falso
+	 * population structure Bolean [] null defined in class grammar,
+	 * it has the same size of V. one element is said to null if every component 
+	 * of the expression of the production will be 'null.
+	 * @author Pierluigi Sottile
 	 */
 	public void nullo() {
 
@@ -117,10 +122,11 @@ public class ContextFreeGrammar implements IGrammar {
 		boolean tuttiNull = true; // controlla se tutti gli elementi di una
 									// espressione sono nullable
 		nullo = new boolean[V.size()];
+		//fino a quando sono state fatte modifiche alla struttura
 		while (flag) {
 			flag = false;
 			Iterator<Production> posiz = P.iterator();
-			// itero per ogni produzioni per vedere se ï¿½ nulla
+			// itero per ogni produzioni per vedere se e' nulla
 			while (posiz.hasNext()) {
 				prod = (Production) posiz.next();
 				// per ogni produzione isolo la parte dell'associazione dalla
@@ -132,15 +138,15 @@ public class ContextFreeGrammar implements IGrammar {
 				// Controlliamo se tutti i termini dell'espressione sono nulli
 				while (termine.hasNext()) {
 					simbolo = termine.next();
-					// se anche un solo simbolo dell'espressione ï¿½ un elemento
-					// terminale tutta l'espressione nn potrï¿½ essere nulla
+					// se anche un solo simbolo dell'espressione e' un elemento
+					// terminale tutta l'espressione nn potra' essere nulla
 					// quindi analizzo il prossimo non terminale della tabella
 					// nullo
 					if (T.contains(simbolo)) {
 						tuttiNull = false;
 						break;
 					}
-					// Se il simbolo ï¿½ un non terminale devo vedere se ï¿½ nullo
+					// Se il simbolo ï¿½ un non terminale devo vedere se e' nullo
 					else if (V.contains(simbolo)) {
 						if (!nullo[V.indexOf(simbolo)]) {
 							tuttiNull = false;
@@ -149,7 +155,7 @@ public class ContextFreeGrammar implements IGrammar {
 					}
 				}
 				// se tutti i termini dell'espressione sono nulli e il nostro
-				// Non Terminale ï¿½ impostato a false allora
+				// Non Terminale e' impostato a false allora
 				// resettiamo a true nella tabella nullable e segnaliamo tramite
 				// il flag che abbiamo fatto un cambiamento e rieseguiamo tutto
 				// da capo
@@ -162,17 +168,15 @@ public class ContextFreeGrammar implements IGrammar {
 	}
 
 	/**
-	 * Popola una struttura Set<String>[] first per ogni non terminale V, uso
-	 * una struttura di tipo Set per evitare ripetizioni come prima ogni
-	 * modifica fatta a un first puï¿½ influire su tutti gli altri quinidi creiamo
-	 * un flag che ci indicherï¿½ se sono state fatte modifiche e il nostro ciclo
-	 * si fermerï¿½ quando esso sarï¿½ settato a false e restera tale per la
-	 * scansione di tutti i first della struttura
+	 * Population structure in Set <String> [] first for each non-terminal V, 
+	 * using a structure of type Set to avoid duplication. 
+	 * @author Pierluigi Sottile
 	 */
 	 @SuppressWarnings("unchecked")
 	public void first() {
 		boolean flag = true; // serve per controllare se sono stati fatti
-								// cambiamenti
+							// cambiamenti, inquanto essi influenzerebbero gli altri
+							// first
 		Production prod;
 		String ass;
 		String carattere;
@@ -198,14 +202,14 @@ public class ContextFreeGrammar implements IGrammar {
 				// itero i first per ogni termine dell'espressione
 				while (termine.hasNext()) {
 					carattere = termine.next();
-					// Se il simbolo ï¿½ un terminale,lo aggiungo a firstEspr
+					// Se il simbolo e' un terminale,lo aggiungo a firstEspr
 					// a questo punto esco dal ciclo inquanto gli altri termini non
 					// ci interessano
 					if (T.contains(carattere)) {
 						firstEspr.add(carattere);
 						break;
 					}
-					// Se il simbolo ï¿½ un nt...
+					// Se il simbolo e' un nt...
 					else if (V.contains(carattere)) {
 						// ..allora tutti i suoi first sono inclusi nel
 						// firstEspr
@@ -219,11 +223,11 @@ public class ContextFreeGrammar implements IGrammar {
 				}
 
 				// inserisco i First(Espr) nei First(ass), naturalmente essendo
-				// un Set verranno aggiunti solo i simboli che non sono giï¿½
+				// un Set verranno aggiunti solo i simboli che non sono gia'
 				// presenti
 				first[V.indexOf(ass)].addAll(firstEspr);
-				// se il numero di elementi in first(ass) ï¿½ cambiata devo
-				// rieseguire tutto xkï¿½ potrebbe influire su tutti gli altri
+				// se il numero di elementi in first(ass) e' cambiata devo
+				// rieseguire tutto perchè potrebbe influire su tutti gli altri
 				if (first[V.indexOf(ass)].size() != dimensione) {
 					flag = true;
 				}
@@ -232,12 +236,9 @@ public class ContextFreeGrammar implements IGrammar {
 	}
 
 	/**
-	 * Popola una struttura Set<String>[] follow per ogni non terminale V, uso
-	 * una struttura di tipo Set per evitare ripetizioni come prima ogni
-	 * modifica fatta a un follow puï¿½ influire su tutti gli altri quinidi
-	 * creiamo un flag che ci indicherï¿½ se sono state fatte modifiche e il
-	 * nostro ciclo si fermerï¿½ quando esso sarï¿½ setto a false e restera tale per
-	 * la scansione di tutti i follow
+	 * Population structure in Set <String> [] first for each non-terminal V, 
+	 * using a structure of type Set to avoid duplication.
+	 * @author Pierluigi Sottile
 	 */
 	 @SuppressWarnings("unchecked")
 	public void follow() {
@@ -271,7 +272,7 @@ public class ContextFreeGrammar implements IGrammar {
 				while (!espr.isEmpty()) {
 					termine = espr.removeFirst();
 					if (V.contains(termine)) {
-						// se ï¿½ un NON Terminale allora calcolo i follow per
+						// se e' un NON Terminale allora calcolo i follow per
 						// esso
 						Set<String> followTermine = new HashSet<String>();
 						tuttinull = true;
@@ -280,7 +281,7 @@ public class ContextFreeGrammar implements IGrammar {
 						// che lo seguono
 						while (elemen.hasNext()) {
 							simbolo = elemen.next();
-							// Se Simbolo ï¿½ un terminale lo aggiungo ai
+							// Se Simbolo e' un terminale lo aggiungo ai
 							// follow(termine) e setto la variabile tuttinull a
 							// folse
 							if (T.contains(simbolo)) {
@@ -288,7 +289,7 @@ public class ContextFreeGrammar implements IGrammar {
 								tuttinull = false;
 								break;
 							}
-							// Se il Simbolo ï¿½ un nt, aggiungo i first(simbolo)
+							// Se il Simbolo e' un nt, aggiungo i first(simbolo)
 							// ai follow(termine), controllo se Simbolo ï¿½ nullo
 							// e in caso positivo esco perchï¿½ ho finito
 							else if (V.contains(simbolo)) {

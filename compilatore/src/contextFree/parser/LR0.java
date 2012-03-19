@@ -18,9 +18,10 @@ public abstract class LR0 implements IParsing{
 	public abstract int init() throws Exception;	
 
 	/**
-	 *Passata una lista di produzione I che formano il Kernel di uno stato, restitusce la chiusura di esso 
-	 * @param 	i kernel di cui va calcolata la chiusura
-	 * @return 	j stato creato da i
+	 *I passed a list of production that form the kernel of a state, return closing it 
+	 * @param 	the kernels of the state
+	 * @return 	list of products forming the state
+	 * @author Pierluigi Sottile
 	 * 
 	 */
 	public List<IndexedProduction> chiusura (List<IndexedProduction> i){
@@ -79,10 +80,11 @@ public abstract class LR0 implements IParsing{
 	
 	
 	/**
-	 * Passato uno stato e il simbolo che segue il punto, restituisce il kernel del nuovo stato con la relativa chiusura 
-	 * @param i stato su cui va calcolato il nuovo kernel
-	 * @param X simbolo per cui si sposta il puntiono
-	 * @return chiusura(j) nuovo stato
+	 * Passed a state and the symbol that follows the point, returns the kernel of the new state with the relative closure 
+	 * @param State which calculated to be the new kernel
+	 * @param X symbol that moves the point
+	 * @return closure of new state
+	 * @author Pierluigi Sottile
 	 */
 	public List<IndexedProduction> GoTo(List<IndexedProduction> i, String X){
 		IndexedProduction item;
@@ -107,10 +109,11 @@ public abstract class LR0 implements IParsing{
 	}
 	
 	/**
-	 * data una grammatica G ci calcoliamo la grammatica aumentata associata aggiungendo la produzione S'::=.S, dove S e' l'assioma.
-	 * calcoliamo la chiusura di essa, i GoTo associati cosi' da avera l'automa a stati finiti.
-	 * Ritorna l'automa di tipo LR(0)
-	 *  @return automa
+	 * given a grammar G we calculate the associated grammar augmented by adding the production 
+	 * S ':: =. S, where S is the assiom. We calculate the closure 
+	 * of it and so associated GoTo 'to have the finite state autom.
+	 *  @return the autom LR(0)
+	 *  @author Pierluigi Sottile
 	 */
 	public List<State> Item(){
 		boolean flag = true;
@@ -186,12 +189,11 @@ public abstract class LR0 implements IParsing{
 	}
 	
 	/**
-	 * controlla se uno stato � presente in un automa restituisce
-	 * -1 se non � presente 
-	 * se no restituisce il numero di stato uguale a quello passato
-	 * @param automa automa in cui controllare
-	 * @param stato stato che va cercato
-	 * @return 
+	 * checks if a state is present in an automaton
+	 * @param autom
+	 * @param state to search
+	 * @return -1 If not present, otherwise returns the number state equal to the past
+	 * @author Pierluigi Sottile
 	 */
 	public int uguale(List<State> automa, List<IndexedProduction> stato){
 		State it;
@@ -236,10 +238,11 @@ public abstract class LR0 implements IParsing{
 	}
 	
 	/**
-	 * controlla se una produzione � gi� presente in una lista di produzioni ritorna vero se � presente falso se non lo �.
-	 * @param j stato in cui controllare
-	 * @param corrente produzione da cercare
-	 * @return
+	 * checks if a production is already in a list of productions. 
+	 * @param the state in which control
+	 * @param prodaction to search
+	 * @return  true if there is false if it is not
+	 * @author Pierluigi Sottile
 	 */
 	public boolean prodPresente(List<IndexedProduction>j,Production corrente){
 		//uso questa variabile per vedere se � gi� presente in j la setto di default a false, e poi la cambio se ne trova 2  uguali

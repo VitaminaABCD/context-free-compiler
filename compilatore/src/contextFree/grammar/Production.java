@@ -15,9 +15,11 @@ public class Production {
                 right="";
         }
         /**
-         * crea un oggetto Prodaction completa di RightList passandogli la parte destra e sinistra
-         * @param lt
-         * @param rt
+         *creates an object Prodaction complete RightList 
+         *passing between the right and left, check if eps
+         * @param left part of prodaction
+         * @param right part of prodaction
+         * @author Pierluigi Sottile
          */
         public Production(String lt, String rt){
                 left=lt;
@@ -65,7 +67,7 @@ public class Production {
                 this.rightList = rightList;
         }
         /**
-         * restiuisce una stringa formattata nella forma ass::=espr
+         * return a formatted string in the form ass :: = expr
          */
         @Override
         public String toString() {

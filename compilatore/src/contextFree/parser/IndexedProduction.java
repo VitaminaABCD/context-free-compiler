@@ -55,8 +55,7 @@ public class IndexedProduction extends Production{
 	public IndexedProduction(Production p, Set<String> la){
 		super(p.getLeft(),p.getRight());
 		currentCharIndex=0;
-		//controlliamo se Lookahead � vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementi
-		//TODO mi sa che questa creazione del lookahead non va tanto bene.....
+		//controlliamo se Lookahead � vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementis
 		if(lookahead==null)
 			lookahead = new HashSet<String>();
 		//aggiungo ttutti gli elementi conntenuti in la

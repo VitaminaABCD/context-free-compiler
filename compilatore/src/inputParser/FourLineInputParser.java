@@ -36,11 +36,16 @@ public class FourLineInputParser extends InputParser{
 		P=new ArrayList<Production>();
 	}
 	
+	/**
+	 * reads the file .4l and creates the object grammar
+	 * @return the grammar
+	 * @author Pierluigi Sottile
+	 */
 	@Override
 	public IGrammar parse() throws Exception{
 		try {
 			BufferedReader f = new BufferedReader(new FileReader(file));
-			// abbiamo bisognodi due variabili temporali una dove andr�
+			// abbiamo bisogno di due variabili temporali una dove andra'
 			// caricata la riga letta e un'altra di tipo String[] dove
 			// saranno caricati i singoli elementi
 			

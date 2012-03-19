@@ -90,7 +90,7 @@ public class Home{
 	private static void astMethod(InputParser parser) throws Exception {
 		Parser parserProgram = (Parser)parser.parse();
 		System.out.println("\nDigitare la stringa in input: "); 
-		BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		parserProgram.setInput("d=d$");                     //TODO: da rimuovere	
 //		parserProgram.setInput(leggi.readLine());                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
 		System.out.println(parserProgram.parse());

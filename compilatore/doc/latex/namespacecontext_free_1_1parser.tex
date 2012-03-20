@@ -13,7 +13,7 @@ class \hyperlink{classcontext_free_1_1parser_1_1_automa}{Automa}
 \item 
 class \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production}
 \item 
-interface \hyperlink{interfacecontext_free_1_1parser_1_1_i_parsing}{I\-Parsing}
+interface \hyperlink{interfacecontext_free_1_1parser_1_1_i_parser}{I\-Parser}
 \item 
 class \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1}{L\-A\-L\-R1}
 \item 
@@ -21,7 +21,7 @@ class \hyperlink{classcontext_free_1_1parser_1_1_l_r0}{L\-R0}
 \item 
 class \hyperlink{classcontext_free_1_1parser_1_1_l_r1}{L\-R1}
 \item 
-class \hyperlink{classcontext_free_1_1parser_1_1_parsing_factory}{Parsing\-Factory}
+class \hyperlink{classcontext_free_1_1parser_1_1_parser_factory}{Parser\-Factory}
 \item 
 class \hyperlink{classcontext_free_1_1parser_1_1_state}{State}
 \end{DoxyCompactItemize}
@@ -31,16 +31,16 @@ class \hyperlink{classcontext_free_1_1parser_1_1_state}{State}
 Contains class and method for create and initialize grammar parser. Have been implemented L\-A\-L\-R(1) bottom-\/up parser (\hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1}{L\-A\-L\-R1}) (L\-R(0) and L\-R(1) closure and goto have been implemented in respective class) The \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1}{L\-A\-L\-R1} automaton is constructed through the \hyperlink{classcontext_free_1_1parser_1_1_l_r0}{L\-R0} automaton. The lookahead symbols are calculated using an algorithm of \char`\"{}spontaneous generation and propagation of symbols\char`\"{} (see \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804}{L\-A\-L\-R1.\-calculate\-Symbol(\-Automa)}) When the automaton is constructed, if the grammar is L\-A\-L\-R(1) the Action and Goto table are created and stored inside the \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1}{L\-A\-L\-R1} instance (see \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36}{L\-A\-L\-R1.\-table\-Costruction()}).\par
 
 
-U\-S\-A\-G\-E\-: You can use the \hyperlink{classcontext_free_1_1parser_1_1_parsing_factory}{Parsing\-Factory} class to obtain an instance\-:\par
+U\-S\-A\-G\-E\-: You can use the \hyperlink{classcontext_free_1_1parser_1_1_parser_factory}{Parser\-Factory} class to obtain an instance\-:\par
  example\-:\par
  1)you can pass a I\-Grammar grammar...\par
- \hyperlink{classcontext_free_1_1parser_1_1_parsing_factory}{Parsing\-Factory} factory = new Parsing\-Factory();\par
- \hyperlink{interfacecontext_free_1_1parser_1_1_i_parsing}{I\-Parsing} lalr1 = factory.\-create\-Parsing(\-I\-Grammar grammar);\par
+ \hyperlink{classcontext_free_1_1parser_1_1_parser_factory}{Parser\-Factory} factory = new Parser\-Factory();\par
+ \hyperlink{interfacecontext_free_1_1parser_1_1_i_parser}{I\-Parser} lalr1 = factory.\-create\-Parsing(\-I\-Grammar grammar);\par
  \par
  2)...or an Input\-Parser instance (contains the path of grammar file, ex.\char`\"{}file.\-4l\char`\"{}, and the grammar instance)\par
 
 
 Input\-Parser parser = new Grammar\-Parser(path);\par
- \hyperlink{classcontext_free_1_1parser_1_1_parsing_factory}{Parsing\-Factory} factory = new Parsing\-Factory();\par
- \hyperlink{interfacecontext_free_1_1parser_1_1_i_parsing}{I\-Parsing} lalr1 = factory.\-create\-Parsing(parser);\par
+ \hyperlink{classcontext_free_1_1parser_1_1_parser_factory}{Parser\-Factory} factory = new Parser\-Factory();\par
+ \hyperlink{interfacecontext_free_1_1parser_1_1_i_parser}{I\-Parser} lalr1 = factory.\-create\-Parser(parser);\par
  

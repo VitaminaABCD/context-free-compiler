@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -74,12 +82,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('_l_r_input_parser_8java.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src/inputParser/LRInputParser.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_l_r_input_parser_8java.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>inputParser;
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>inputParser;
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="keyword">import</span> java.io.BufferedReader;
@@ -107,28 +128,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="keyword">import</span> contextFree.grammar.IGrammar;
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keyword">import</span> parserProgram.Parser;
+<a name="l00015"></a>00015 <span class="keyword">import</span> parserProgram.ParserProgram;
 <a name="l00016"></a>00016  
-<a name="l00021"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html">00021</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a> <span class="keyword">extends</span> <a class="code" href="classinput_parser_1_1_input_parser.html">InputParser</a> {
-<a name="l00022"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ae3d6e07ebb7d4368f1a2e2ad05dae6f7">00022</a>         <span class="keyword">static</span> Logger <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ae3d6e07ebb7d4368f1a2e2ad05dae6f7">logger</a> = Logger.getLogger(<a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>.class.getName());
+<a name="l00021"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html">00021</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a> <span class="keyword">extends</span> <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> {
+<a name="l00022"></a>00022         <span class="keyword">static</span> Logger logger = Logger.getLogger(<a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>.class.getName());
 <a name="l00023"></a>00023         
-<a name="l00024"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a7f407afa631516efdbaf3cee992bb16f">00024</a>         <span class="keyword">private</span> String <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a7f407afa631516efdbaf3cee992bb16f">input</a>;
+<a name="l00024"></a>00024         <span class="keyword">private</span> String input;
 <a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a243ff5c225bbbe63bc64e615fed97ec4">00026</a>         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a243ff5c225bbbe63bc64e615fed97ec4">LRInputParser</a>(){
-<a name="l00027"></a>00027                 <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a7f407afa631516efdbaf3cee992bb16f">input</a>=<span class="stringliteral">&quot;&quot;</span>;
+<a name="l00026"></a>00026         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(){
+<a name="l00027"></a>00027                 input=<span class="stringliteral">&quot;&quot;</span>;
 <a name="l00028"></a>00028         }
-<a name="l00029"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a42f9947db4e863a82e3a8ca89c655c2a">00029</a>         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a42f9947db4e863a82e3a8ca89c655c2a">LRInputParser</a>(String in) {
-<a name="l00030"></a>00030                 this.<a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a7f407afa631516efdbaf3cee992bb16f">input</a>=in;
+<a name="l00029"></a>00029         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(String in) {
+<a name="l00030"></a>00030                 this.input=in;
 <a name="l00031"></a>00031         }
 <a name="l00032"></a>00032 
 <a name="l00036"></a>00036         @Override
-<a name="l00037"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ab1fb2966ece506eead96dcededca86a6">00037</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_parser.html">Parser</a> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ab1fb2966ece506eead96dcededca86a6" title="Parse method.">parse</a>() throws Exception {
+<a name="l00037"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1">00037</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_parser_program.html">ParserProgram</a> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1" title="Parse method.">parse</a>() throws Exception {
 <a name="l00038"></a>00038                 Hashtable&lt;String,List&lt;String&gt;&gt; actionTable = <span class="keyword">new</span> Hashtable&lt;String, List&lt;String&gt;&gt;();
 <a name="l00039"></a>00039                 Hashtable&lt;String,List&lt;String&gt;&gt; gotoTable = <span class="keyword">new</span> Hashtable&lt;String, List&lt;String&gt;&gt;();
 <a name="l00040"></a>00040                 <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> grammar = null;
 <a name="l00041"></a>00041                 <span class="keywordflow">try</span>{
 <a name="l00042"></a>00042                         BufferedReader f
-<a name="l00043"></a>00043                            = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(this.<a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a7f407afa631516efdbaf3cee992bb16f">input</a>));
+<a name="l00043"></a>00043                            = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(this.input));
 <a name="l00044"></a>00044                         String in;
 <a name="l00045"></a>00045                         <span class="keywordflow">while</span>((in=f.readLine())!=null){
 <a name="l00046"></a>00046                                 <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Tabella ACTION&quot;</span>)){
@@ -139,14 +160,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00051"></a>00051                                 }
 <a name="l00052"></a>00052                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Grammatica&quot;</span>)){
 <a name="l00053"></a>00053                                         in=f.readLine();
-<a name="l00054"></a>00054                                         grammar = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>().<a class="code" href="classinput_parser_1_1_single_line_input_parser.html#a90641140f8686fc97fd40b72beccf0a3">parseString</a>(in);
+<a name="l00054"></a>00054                                         grammar = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>().parseString(in);
 <a name="l00055"></a>00055                                 }
 <a name="l00056"></a>00056                         }       
 <a name="l00057"></a>00057                         f.close();
-<a name="l00058"></a>00058                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_parser.html">Parser</a>(grammar, actionTable,gotoTable);
+<a name="l00058"></a>00058                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_parser_program.html">ParserProgram</a>(grammar, actionTable,gotoTable);
 <a name="l00059"></a>00059                         <span class="comment">//es.     actionTable.get(&quot;*&quot;).get(8));                 recupera lo stato 8 del simbolo &quot;*&quot; nella tabella action</span>
 <a name="l00060"></a>00060                 }<span class="keywordflow">catch</span>(IOException e){
-<a name="l00061"></a>00061                         <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ae3d6e07ebb7d4368f1a2e2ad05dae6f7">logger</a>.error(<span class="stringliteral">&quot;Error in file read operation&quot;</span>,e);
+<a name="l00061"></a>00061                         logger.error(<span class="stringliteral">&quot;Error in file read operation&quot;</span>,e);
 <a name="l00062"></a>00062                 }
 <a name="l00063"></a>00063                 <span class="keywordflow">return</span> null;
 <a name="l00064"></a>00064         }
@@ -165,13 +186,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00085"></a>00085         }
 <a name="l00086"></a>00086 }
 </pre></div></div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>LRInputParser.java</b>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

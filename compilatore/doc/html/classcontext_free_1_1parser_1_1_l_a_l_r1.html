@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -72,16 +80,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('classcontext_free_1_1parser_1_1_l_a_l_r1.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,14 +112,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespacecontext_free.html">contextFree</a>      </li>
-      <li class="navelem"><a class="el" href="namespacecontext_free_1_1parser.html">parser</a>      </li>
-      <li class="navelem"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html">LALR1</a>      </li>
-    </ul>
-  </div>
-</div>
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -108,30 +122,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">contextFree.parser.LALR1 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for contextFree.parser.LALR1:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classcontext_free_1_1parser_1_1_l_a_l_r1.png" usemap="#contextFree.parser.LALR1_map" alt=""/>
-  <map id="contextFree.parser.LALR1_map" name="contextFree.parser.LALR1_map">
-<area href="classcontext_free_1_1parser_1_1_l_r0.html" alt="contextFree.parser.LR0" shape="rect" coords="0,56,170,80"/>
-<area href="interfacecontext_free_1_1parser_1_1_i_parsing.html" alt="contextFree.parser.IParsing" shape="rect" coords="0,0,170,24"/>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for contextFree.parser.LALR1:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1__inherit__graph.png" border="0" usemap="#context_free_8parser_8_l_a_l_r1_inherit__map" alt="Inheritance graph"/></div>
+<map name="context_free_8parser_8_l_a_l_r1_inherit__map" id="context_free_8parser_8_l_a_l_r1_inherit__map">
 </map>
- </div></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for contextFree.parser.LALR1:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1__coll__graph.png" border="0" usemap="#context_free_8parser_8_l_a_l_r1_coll__map" alt="Collaboration graph"/></div>
+<map name="context_free_8parser_8_l_a_l_r1_coll__map" id="context_free_8parser_8_l_a_l_r1_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classcontext_free_1_1parser_1_1_l_a_l_r1-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b5c281089bfd06c95b3c61504352df2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9b5c281089bfd06c95b3c61504352df2">LALR1</a> ()</td></tr>
-<tr class="memitem:a38a0cedcd893b16f8207455f2287a7ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a38a0cedcd893b16f8207455f2287a7ad">LALR1</a> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> gram)</td></tr>
-<tr class="memitem:a4dcd4a4ae0b77edc1dc8abffca59c80a"><td class="memItemLeft" align="right" valign="top">String[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a4dcd4a4ae0b77edc1dc8abffca59c80a">getActionTable</a> ()</td></tr>
-<tr class="memitem:a4bf6b83fddf359b6b0f6df26b1e58455"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a4bf6b83fddf359b6b0f6df26b1e58455">setActionTable</a> (String[][] <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a50a59810900d20102a28766aad917b79">actionTable</a>)</td></tr>
-<tr class="memitem:af87607068fe2d41d8abbdb49fdeefcc0"><td class="memItemLeft" align="right" valign="top">String[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#af87607068fe2d41d8abbdb49fdeefcc0">getGotoTable</a> ()</td></tr>
-<tr class="memitem:a002ce309af59de1951007a27d86b53b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a002ce309af59de1951007a27d86b53b7">setGotoTable</a> (String[][] <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a6f27da8ba10ef81be36845b0fffc9858">gotoTable</a>)</td></tr>
-<tr class="memitem:a27ddf376aef3ff22758c44017b37c63d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a27ddf376aef3ff22758c44017b37c63d">getAutoma</a> ()</td></tr>
-<tr class="memitem:ab1127f78e9b15a062f6bf344f1117327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ab1127f78e9b15a062f6bf344f1117327">getGrammar</a> ()</td></tr>
-<tr class="memitem:a66f5fb1ac9aab089d3fa937acf3f63ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a66f5fb1ac9aab089d3fa937acf3f63ce">setGrammar</a> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> gram)</td></tr>
+<tr class="memitem:a38a0cedcd893b16f8207455f2287a7ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38a0cedcd893b16f8207455f2287a7ad"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LALR1</b> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> gram)</td></tr>
+<tr class="memitem:a4dcd4a4ae0b77edc1dc8abffca59c80a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4dcd4a4ae0b77edc1dc8abffca59c80a"></a>
+String[][]&#160;</td><td class="memItemRight" valign="bottom"><b>getActionTable</b> ()</td></tr>
+<tr class="memitem:a4bf6b83fddf359b6b0f6df26b1e58455"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bf6b83fddf359b6b0f6df26b1e58455"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setActionTable</b> (String[][] actionTable)</td></tr>
+<tr class="memitem:af87607068fe2d41d8abbdb49fdeefcc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af87607068fe2d41d8abbdb49fdeefcc0"></a>
+String[][]&#160;</td><td class="memItemRight" valign="bottom"><b>getGotoTable</b> ()</td></tr>
+<tr class="memitem:a002ce309af59de1951007a27d86b53b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a002ce309af59de1951007a27d86b53b7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setGotoTable</b> (String[][] gotoTable)</td></tr>
+<tr class="memitem:a27ddf376aef3ff22758c44017b37c63d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27ddf376aef3ff22758c44017b37c63d"></a>
+<a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getAutoma</b> ()</td></tr>
+<tr class="memitem:ab1127f78e9b15a062f6bf344f1117327"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1127f78e9b15a062f6bf344f1117327"></a>
+<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getGrammar</b> ()</td></tr>
+<tr class="memitem:a66f5fb1ac9aab089d3fa937acf3f63ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a66f5fb1ac9aab089d3fa937acf3f63ce"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setGrammar</b> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> gram)</td></tr>
 <tr class="memitem:a7618cff4af4edfffb9a538a7cb1e79cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf">init</a> ()  throws Exception</td></tr>
 <tr class="memdesc:a7618cff4af4edfffb9a538a7cb1e79cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the LALR(1) automaton from <a class="el" href="classcontext_free_1_1parser_1_1_l_r0.html">LR0</a> automaton.  <a href="#a7618cff4af4edfffb9a538a7cb1e79cf"></a><br/></td></tr>
 <tr class="memitem:ac711dbbc2be25d15c1a8aade7579e94e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ac711dbbc2be25d15c1a8aade7579e94e">chiusuraLR1</a> (List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> &gt; i)</td></tr>
@@ -142,67 +171,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2281981b3043c0150c1b3d3967572b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">if the point is in the last position he wrote the reduces in the action table.  <a href="#a2281981b3043c0150c1b3d3967572b1f"></a><br/></td></tr>
 <tr class="memitem:a7379103379c94e377daca0022b28771e"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7379103379c94e377daca0022b28771e">actionWrite</a> (int i, int j, int x, String action)</td></tr>
 <tr class="memdesc:a7379103379c94e377daca0022b28771e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the action Reduce or Scift in the Action table.  <a href="#a7379103379c94e377daca0022b28771e"></a><br/></td></tr>
-<tr class="memitem:a9c19be71fc16e04343eb3c23b6eac9da"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9c19be71fc16e04343eb3c23b6eac9da">isAmbiguos</a> ()</td></tr>
+<tr class="memitem:a9c19be71fc16e04343eb3c23b6eac9da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c19be71fc16e04343eb3c23b6eac9da"></a>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>isAmbiguos</b> ()</td></tr>
 <tr class="memitem:ad7628eb817b4a8efff71f6e22cc1659f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ad7628eb817b4a8efff71f6e22cc1659f">printTable</a> ()</td></tr>
 <tr class="memdesc:ad7628eb817b4a8efff71f6e22cc1659f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a string with tables Goto Action.  <a href="#ad7628eb817b4a8efff71f6e22cc1659f"></a><br/></td></tr>
-<tr class="memitem:afa3cc07b08ecbe69486105beb311eb69"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#afa3cc07b08ecbe69486105beb311eb69">toString</a> ()</td></tr>
+<tr class="memitem:afa3cc07b08ecbe69486105beb311eb69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa3cc07b08ecbe69486105beb311eb69"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pac-static-attribs"></a>
 Static Package Attributes</h2></td></tr>
-<tr class="memitem:a9684757c9b143a5b82609c1de472400e"><td class="memItemLeft" align="right" valign="top">static Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9684757c9b143a5b82609c1de472400e">logger</a> = Logger.getLogger(LALR1.class.getName())</td></tr>
+<tr class="memitem:a9684757c9b143a5b82609c1de472400e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9684757c9b143a5b82609c1de472400e"></a>
+static Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b> = Logger.getLogger(LALR1.class.getName())</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aeec32b5c83e031225114f46ac377f804"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#aeec32b5c83e031225114f46ac377f804">calculateSymbol</a> (<a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a> atm)  throws Exception</td></tr>
 <tr class="memdesc:aeec32b5c83e031225114f46ac377f804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol.  <a href="#aeec32b5c83e031225114f46ac377f804"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a3e69dd16d8b89cc9a210286efe0aa0d8"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a3e69dd16d8b89cc9a210286efe0aa0d8">isAmbiguous</a> = false</td></tr>
-<tr class="memitem:ac76b78ae26e1f59674ae10b9c1059213"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ac76b78ae26e1f59674ae10b9c1059213">ambiguo</a> = &quot;&quot;</td></tr>
-<tr class="memitem:ab6054628eaec08e8b3b77a37e219ef02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ab6054628eaec08e8b3b77a37e219ef02">automa</a></td></tr>
-<tr class="memitem:a50a59810900d20102a28766aad917b79"><td class="memItemLeft" align="right" valign="top">String[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a50a59810900d20102a28766aad917b79">actionTable</a></td></tr>
-<tr class="memitem:a6f27da8ba10ef81be36845b0fffc9858"><td class="memItemLeft" align="right" valign="top">String[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a6f27da8ba10ef81be36845b0fffc9858">gotoTable</a></td></tr>
+<tr class="memitem:a3e69dd16d8b89cc9a210286efe0aa0d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e69dd16d8b89cc9a210286efe0aa0d8"></a>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>isAmbiguous</b> = false</td></tr>
+<tr class="memitem:ac76b78ae26e1f59674ae10b9c1059213"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac76b78ae26e1f59674ae10b9c1059213"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>ambiguo</b> = &quot;&quot;</td></tr>
+<tr class="memitem:ab6054628eaec08e8b3b77a37e219ef02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6054628eaec08e8b3b77a37e219ef02"></a>
+<a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a>&#160;</td><td class="memItemRight" valign="bottom"><b>automa</b></td></tr>
+<tr class="memitem:a50a59810900d20102a28766aad917b79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50a59810900d20102a28766aad917b79"></a>
+String[][]&#160;</td><td class="memItemRight" valign="bottom"><b>actionTable</b></td></tr>
+<tr class="memitem:a6f27da8ba10ef81be36845b0fffc9858"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f27da8ba10ef81be36845b0fffc9858"></a>
+String[][]&#160;</td><td class="memItemRight" valign="bottom"><b>gotoTable</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00014">14</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a9b5c281089bfd06c95b3c61504352df2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9b5c281089bfd06c95b3c61504352df2">contextFree.parser.LALR1.LALR1</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00026">26</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a38a0cedcd893b16f8207455f2287a7ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9b5c281089bfd06c95b3c61504352df2">contextFree.parser.LALR1.LALR1</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td>
-          <td class="paramname"><em>gram</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00031">31</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a7379103379c94e377daca0022b28771e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,6 +254,17 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00369">369</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_a7379103379c94e377daca0022b28771e_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_a7379103379c94e377daca0022b28771e_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_a7379103379c94e377daca0022b28771e_icgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_a7379103379c94e377daca0022b28771e_icgraph">
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aeec32b5c83e031225114f46ac377f804"></a>
@@ -291,6 +301,28 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00122">122</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
 
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_cgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_cgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_icgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804_icgraph">
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ac711dbbc2be25d15c1a8aade7579e94e"></a>
@@ -320,81 +352,27 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00171">171</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
 
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_cgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_cgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_cgraph">
+</map>
 </div>
-<a class="anchor" id="a4dcd4a4ae0b77edc1dc8abffca59c80a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String [][] <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a4dcd4a4ae0b77edc1dc8abffca59c80a">contextFree.parser.LALR1.getActionTable</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00036">36</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_icgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e_icgraph">
+</map>
 </div>
-<a class="anchor" id="a27ddf376aef3ff22758c44017b37c63d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a> <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a27ddf376aef3ff22758c44017b37c63d">contextFree.parser.LALR1.getAutoma</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="interfacecontext_free_1_1parser_1_1_i_parsing.html#ae7681a63983b2b4eb37c207cc53deddf">contextFree.parser.IParsing</a>.</p>
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00053">53</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af87607068fe2d41d8abbdb49fdeefcc0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String [][] <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#af87607068fe2d41d8abbdb49fdeefcc0">contextFree.parser.LALR1.getGotoTable</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00044">44</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab1127f78e9b15a062f6bf344f1117327"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ab1127f78e9b15a062f6bf344f1117327">contextFree.parser.LALR1.getGrammar</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="interfacecontext_free_1_1parser_1_1_i_parsing.html#a518dbeee837638ba09a46f90f217e3b8">contextFree.parser.IParsing</a>.</p>
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00058">58</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -416,29 +394,20 @@ Private Attributes</h2></td></tr>
 <p>If the grammar is LALR(1) then initialize action and goto table. </p>
 <dl class="section return"><dt>Returns:</dt><dd>0 if the grammar is ambiguous, 1 otherwise. -1 if error </dd></dl>
 
-<p>Implements <a class="el" href="classcontext_free_1_1parser_1_1_l_r0.html#a1936c0d9c7c80de80a5b3913f8f710b7">contextFree.parser.LR0</a>.</p>
+<p>Implements <a class="el" href="classcontext_free_1_1parser_1_1_l_r0.html">contextFree.parser.LR0</a>.</p>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00076">76</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
 
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf_cgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf_cgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf_cgraph">
+</map>
 </div>
-<a class="anchor" id="a9c19be71fc16e04343eb3c23b6eac9da"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9c19be71fc16e04343eb3c23b6eac9da">contextFree.parser.LALR1.isAmbiguos</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="interfacecontext_free_1_1parser_1_1_i_parsing.html#a5022486813afab750b187046e06191a0">contextFree.parser.IParsing</a>.</p>
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00392">392</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -460,6 +429,17 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd></dd></dl>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00401">401</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_ad7628eb817b4a8efff71f6e22cc1659f_cgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_ad7628eb817b4a8efff71f6e22cc1659f_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_ad7628eb817b4a8efff71f6e22cc1659f_cgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_ad7628eb817b4a8efff71f6e22cc1659f_cgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -490,64 +470,27 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00331">331</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
 
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_cgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_cgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_cgraph">
+</map>
 </div>
-<a class="anchor" id="a4bf6b83fddf359b6b0f6df26b1e58455"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a4bf6b83fddf359b6b0f6df26b1e58455">contextFree.parser.LALR1.setActionTable</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>actionTable</em>[][]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00040">40</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_icgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f_icgraph">
+</map>
 </div>
-<a class="anchor" id="a002ce309af59de1951007a27d86b53b7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a002ce309af59de1951007a27d86b53b7">contextFree.parser.LALR1.setGotoTable</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>gotoTable</em>[][]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00048">48</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a66f5fb1ac9aab089d3fa937acf3f63ce"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a66f5fb1ac9aab089d3fa937acf3f63ce">contextFree.parser.LALR1.setGrammar</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td>
-          <td class="paramname"><em>gram</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Implements <a class="el" href="classcontext_free_1_1parser_1_1_l_r0.html#ab87079bb387c26bad40d3678e80eefc9">contextFree.parser.LR0</a>.</p>
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00064">64</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -583,114 +526,27 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00280">280</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
 
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_cgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_cgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_cgraph">
+</map>
 </div>
-<a class="anchor" id="afa3cc07b08ecbe69486105beb311eb69"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#afa3cc07b08ecbe69486105beb311eb69">contextFree.parser.LALR1.toString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00428">428</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_icgraph" id="classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36_icgraph">
+</map>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a50a59810900d20102a28766aad917b79"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String [][] <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a50a59810900d20102a28766aad917b79">contextFree.parser.LALR1.actionTable</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00022">22</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac76b78ae26e1f59674ae10b9c1059213"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ac76b78ae26e1f59674ae10b9c1059213">contextFree.parser.LALR1.ambiguo</a> = &quot;&quot;<code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00018">18</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab6054628eaec08e8b3b77a37e219ef02"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a> <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#ab6054628eaec08e8b3b77a37e219ef02">contextFree.parser.LALR1.automa</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00019">19</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6f27da8ba10ef81be36845b0fffc9858"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String [][] <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a6f27da8ba10ef81be36845b0fffc9858">contextFree.parser.LALR1.gotoTable</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00023">23</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3e69dd16d8b89cc9a210286efe0aa0d8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a3e69dd16d8b89cc9a210286efe0aa0d8">contextFree.parser.LALR1.isAmbiguous</a> = false<code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00017">17</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9684757c9b143a5b82609c1de472400e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Logger <a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html#a9684757c9b143a5b82609c1de472400e">contextFree.parser.LALR1.logger</a> = Logger.getLogger(LALR1.class.getName())<code> [static, package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_a_l_r1_8java_source.html#l00015">15</a> of file <a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -698,13 +554,19 @@ Private Attributes</h2></td></tr>
 <li>src/contextFree/parser/<a class="el" href="_l_a_l_r1_8java_source.html">LALR1.java</a></li>
 </ul>
 </div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>contextFree</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecontext_free_1_1parser.html">parser</a>      </li>
+      <li class="navelem"><a class="el" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html">LALR1</a>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:03 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

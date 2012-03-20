@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -74,12 +82,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('_indexed_production_8java.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">src/contextFree/parser/IndexedProduction.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_indexed_production_8java.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>contextFree.parser;
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>contextFree.parser;
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="keyword">import</span> java.util.HashSet;
@@ -103,102 +124,102 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 
 <a name="l00010"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">00010</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> <span class="keyword">extends</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>{
-<a name="l00011"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">00011</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>;
-<a name="l00012"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">00012</a>         <span class="keyword">private</span> Set&lt;String&gt; <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>;
+<a name="l00011"></a>00011         <span class="keyword">private</span> <span class="keywordtype">int</span> currentCharIndex;
+<a name="l00012"></a>00012         <span class="keyword">private</span> Set&lt;String&gt; lookahead;
 <a name="l00013"></a>00013         
-<a name="l00014"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a976a2127d6e44c5dd064107c1ad75153">00014</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a976a2127d6e44c5dd064107c1ad75153">IndexedProduction</a>(){
+<a name="l00014"></a>00014         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(){
 <a name="l00015"></a>00015                 super();
-<a name="l00016"></a>00016                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>=0;
-<a name="l00017"></a>00017                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a> = <span class="keyword">new</span> HashSet&lt;String&gt;();
+<a name="l00016"></a>00016                 currentCharIndex=0;
+<a name="l00017"></a>00017                 lookahead = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00018"></a>00018         }
 <a name="l00019"></a>00019         
 <a name="l00020"></a>00020         
-<a name="l00021"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a7c67c63baac69c30e9887c0234fd35d9">00021</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a7c67c63baac69c30e9887c0234fd35d9">IndexedProduction</a>(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> pro){
-<a name="l00022"></a>00022                 super(pro.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),pro.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>());
-<a name="l00023"></a>00023                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>=pro.<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aef48dbe23561cee5a0b744978d1ac2c7">getCurrentCharIndex</a>();
-<a name="l00024"></a>00024                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>=pro.<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a94e0e318a96518ee50607e682e7f0382">getLookahead</a>();
-<a name="l00025"></a>00025                 <span class="keywordflow">if</span> (<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>==null)
-<a name="l00026"></a>00026                         <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a> = <span class="keyword">new</span> HashSet&lt;String&gt;();
+<a name="l00021"></a>00021         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> pro){
+<a name="l00022"></a>00022                 super(pro.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),pro.getRight());
+<a name="l00023"></a>00023                 currentCharIndex=pro.getCurrentCharIndex();
+<a name="l00024"></a>00024                 lookahead=pro.<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a94e0e318a96518ee50607e682e7f0382">getLookahead</a>();
+<a name="l00025"></a>00025                 <span class="keywordflow">if</span> (lookahead==null)
+<a name="l00026"></a>00026                         lookahead = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028         }
 <a name="l00029"></a>00029         
-<a name="l00030"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a33ac7cade5d7f2a750e07f3b7f7983ac">00030</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a33ac7cade5d7f2a750e07f3b7f7983ac">IndexedProduction</a>(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p){
-<a name="l00031"></a>00031                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>());
-<a name="l00032"></a>00032                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>=0;
-<a name="l00033"></a>00033                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a> = <span class="keyword">new</span> HashSet&lt;String&gt;();
+<a name="l00030"></a>00030         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p){
+<a name="l00031"></a>00031                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.getRight());
+<a name="l00032"></a>00032                 currentCharIndex=0;
+<a name="l00033"></a>00033                 lookahead = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035         }
 <a name="l00036"></a>00036         
-<a name="l00037"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#ac1615174ca96db64a5adfdabd768f9d5">00037</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#ac1615174ca96db64a5adfdabd768f9d5">IndexedProduction</a>(<span class="keywordtype">int</span> i, <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p){
-<a name="l00038"></a>00038                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>());
-<a name="l00039"></a>00039                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>=i;
-<a name="l00040"></a>00040                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a> = <span class="keyword">new</span> HashSet&lt;String&gt;();
+<a name="l00037"></a>00037         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(<span class="keywordtype">int</span> i, <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p){
+<a name="l00038"></a>00038                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.getRight());
+<a name="l00039"></a>00039                 currentCharIndex=i;
+<a name="l00040"></a>00040                 lookahead = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00041"></a>00041         }
 <a name="l00042"></a>00042         
 <a name="l00043"></a>00043         
-<a name="l00044"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aa1754311192ad2f5c0332025dd162e5f">00044</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aa1754311192ad2f5c0332025dd162e5f">IndexedProduction</a>(<span class="keywordtype">int</span> i, <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p, String la){
-<a name="l00045"></a>00045                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>());
-<a name="l00046"></a>00046                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>=i;
+<a name="l00044"></a>00044         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(<span class="keywordtype">int</span> i, <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p, String la){
+<a name="l00045"></a>00045                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.getRight());
+<a name="l00046"></a>00046                 currentCharIndex=i;
 <a name="l00047"></a>00047                 <span class="comment">//controlliamo se Lookahead � vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementi</span>
-<a name="l00048"></a>00048                 <span class="keywordflow">if</span>(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>==null)
-<a name="l00049"></a>00049                         <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a> = <span class="keyword">new</span> HashSet&lt;String&gt;();
+<a name="l00048"></a>00048                 <span class="keywordflow">if</span>(lookahead==null)
+<a name="l00049"></a>00049                         lookahead = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00050"></a>00050                 <span class="comment">//aggiungo ttutti gli elementi conntenuti in la</span>
-<a name="l00051"></a>00051                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>.add(la);
+<a name="l00051"></a>00051                 lookahead.add(la);
 <a name="l00052"></a>00052         }
 <a name="l00053"></a>00053         
 <a name="l00054"></a>00054         
-<a name="l00055"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#af2e1718023e522ef94aac862ab72307b">00055</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#af2e1718023e522ef94aac862ab72307b">IndexedProduction</a>(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p, Set&lt;String&gt; la){
-<a name="l00056"></a>00056                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>());
-<a name="l00057"></a>00057                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>=0;
+<a name="l00055"></a>00055         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p, Set&lt;String&gt; la){
+<a name="l00056"></a>00056                 super(p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>(),p.getRight());
+<a name="l00057"></a>00057                 currentCharIndex=0;
 <a name="l00058"></a>00058                 <span class="comment">//controlliamo se Lookahead � vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementis</span>
-<a name="l00059"></a>00059                 <span class="keywordflow">if</span>(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>==null)
-<a name="l00060"></a>00060                         <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a> = <span class="keyword">new</span> HashSet&lt;String&gt;();
+<a name="l00059"></a>00059                 <span class="keywordflow">if</span>(lookahead==null)
+<a name="l00060"></a>00060                         lookahead = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00061"></a>00061                 <span class="comment">//aggiungo ttutti gli elementi conntenuti in la</span>
-<a name="l00062"></a>00062                 <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>.addAll(la);
+<a name="l00062"></a>00062                 lookahead.addAll(la);
 <a name="l00063"></a>00063         }
 <a name="l00064"></a>00064         
 <a name="l00065"></a>00065         
-<a name="l00066"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aef48dbe23561cee5a0b744978d1ac2c7">00066</a>         <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aef48dbe23561cee5a0b744978d1ac2c7">getCurrentCharIndex</a>() {
-<a name="l00067"></a>00067                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>;
+<a name="l00066"></a>00066         <span class="keyword">public</span> <span class="keywordtype">int</span> getCurrentCharIndex() {
+<a name="l00067"></a>00067                 <span class="keywordflow">return</span> currentCharIndex;
 <a name="l00068"></a>00068         }
 <a name="l00069"></a>00069         
 <a name="l00074"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a498db47a05e7f10e580d689e925193b4">00074</a>         <span class="keyword">public</span> String <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a498db47a05e7f10e580d689e925193b4" title="Return the next character that that will be read.">getCharAfter</a>(){
 <a name="l00075"></a>00075                 <span class="keywordflow">try</span>{
-<a name="l00076"></a>00076                         <span class="keywordflow">return</span> Character.toString(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>().charAt(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>));
+<a name="l00076"></a>00076                         <span class="keywordflow">return</span> Character.toString(getRight().charAt(currentCharIndex));
 <a name="l00077"></a>00077                 }<span class="keywordflow">catch</span> (Exception e) {
 <a name="l00078"></a>00078                         <span class="keywordflow">return</span> null;
 <a name="l00079"></a>00079                 }
 <a name="l00080"></a>00080         }
 <a name="l00081"></a>00081         
-<a name="l00082"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a143a99e7bf0e81789ee79f514aa3d575">00082</a>         <span class="keyword">public</span> String <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a143a99e7bf0e81789ee79f514aa3d575">getCharBefore</a>(){
+<a name="l00082"></a>00082         <span class="keyword">public</span> String getCharBefore(){
 <a name="l00083"></a>00083                 <span class="keywordflow">try</span>{
-<a name="l00084"></a>00084                         <span class="keywordflow">return</span> Character.toString(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>().charAt(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>-1));
+<a name="l00084"></a>00084                         <span class="keywordflow">return</span> Character.toString(getRight().charAt(currentCharIndex-1));
 <a name="l00085"></a>00085                 }<span class="keywordflow">catch</span> (Exception e) {
 <a name="l00086"></a>00086                         <span class="keywordflow">return</span> null;
 <a name="l00087"></a>00087                 }
 <a name="l00088"></a>00088                 
 <a name="l00089"></a>00089         }
 <a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a9673f863b315e7cff584048585906718">00091</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a9673f863b315e7cff584048585906718">setCurrentCharIndex</a>(<span class="keywordtype">int</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>) {
-<a name="l00092"></a>00092                 this.currentCharIndex = <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>;
+<a name="l00091"></a>00091         <span class="keyword">public</span> <span class="keywordtype">void</span> setCurrentCharIndex(<span class="keywordtype">int</span> currentCharIndex) {
+<a name="l00092"></a>00092                 this.currentCharIndex = currentCharIndex;
 <a name="l00093"></a>00093         }
 <a name="l00094"></a>00094 
 <a name="l00099"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a94e0e318a96518ee50607e682e7f0382">00099</a>         <span class="keyword">public</span> Set&lt;String&gt; <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a94e0e318a96518ee50607e682e7f0382">getLookahead</a>() {
-<a name="l00100"></a>00100                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>;
+<a name="l00100"></a>00100                 <span class="keywordflow">return</span> lookahead;
 <a name="l00101"></a>00101         }
 <a name="l00102"></a>00102 
 <a name="l00108"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aa79a2e2cbbc1f35d6416647d80daf3d8">00108</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#aa79a2e2cbbc1f35d6416647d80daf3d8" title="Compare to production without the dot.">compare</a>(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> p){
 <a name="l00109"></a>00109                 <span class="keywordflow">if</span>( p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>().equals(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a>())
 <a name="l00110"></a>00110                                         &amp;&amp; 
-<a name="l00111"></a>00111                         p.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>().equals(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a>())
+<a name="l00111"></a>00111                         p.getRight().equals(getRight())
 <a name="l00112"></a>00112                         ) <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00113"></a>00113                 <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00114"></a>00114         }
 <a name="l00115"></a>00115         
 <a name="l00116"></a>00116         @Override
 <a name="l00117"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a061cd84bd37e6111edcd52bcb5b9c749">00117</a>         <span class="keyword">public</span> String <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a061cd84bd37e6111edcd52bcb5b9c749" title="return a formatted string in the form axioms :: = expression">toString</a>(){
-<a name="l00118"></a>00118                 String <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">right</a> = super.getRight();
-<a name="l00119"></a>00119                 <span class="keywordflow">return</span> super.getLeft()+<span class="stringliteral">&quot;-&gt;&quot;</span>+ right.substring(0,<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>) + <span class="stringliteral">&quot;.&quot;</span> +right.substring(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a8ed426b66a378ce272cc13ae397e52cd">currentCharIndex</a>, right.length()) + <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>;
+<a name="l00118"></a>00118                 String right = super.getRight();
+<a name="l00119"></a>00119                 <span class="keywordflow">return</span> super.getLeft()+<span class="stringliteral">&quot;-&gt;&quot;</span>+ right.substring(0,currentCharIndex) + <span class="stringliteral">&quot;.&quot;</span> +right.substring(currentCharIndex, right.length()) + lookahead;
 <a name="l00120"></a>00120 <span class="comment">//              for(String l : lookahead){</span>
 <a name="l00121"></a>00121 <span class="comment">//                      result += l + &quot;  &quot;;</span>
 <a name="l00122"></a>00122 <span class="comment">//              }</span>
@@ -206,19 +227,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00124"></a>00124         }
 <a name="l00125"></a>00125 
 <a name="l00126"></a>00126 
-<a name="l00127"></a><a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#ae6af99251737ae274afc4028fa6eb13e">00127</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#ae6af99251737ae274afc4028fa6eb13e">addLookahead</a>(Set&lt;String&gt; lookahead2) {
-<a name="l00128"></a>00128                 <span class="keywordflow">return</span> this.<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a58e8935cd1c81a767b47b4d31c87b35c">lookahead</a>.addAll(lookahead2);
+<a name="l00127"></a>00127         <span class="keyword">public</span> <span class="keywordtype">boolean</span> addLookahead(Set&lt;String&gt; lookahead2) {
+<a name="l00128"></a>00128                 <span class="keywordflow">return</span> this.lookahead.addAll(lookahead2);
 <a name="l00129"></a>00129         }
 <a name="l00130"></a>00130         
 <a name="l00131"></a>00131 }
 </pre></div></div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>IndexedProduction.java</b>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

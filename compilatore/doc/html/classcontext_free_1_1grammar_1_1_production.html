@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -72,16 +80,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('classcontext_free_1_1grammar_1_1_production.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,14 +112,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespacecontext_free.html">contextFree</a>      </li>
-      <li class="navelem"><a class="el" href="namespacecontext_free_1_1grammar.html">grammar</a>      </li>
-      <li class="navelem"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>      </li>
-    </ul>
-  </div>
-</div>
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -106,66 +120,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">contextFree.grammar.Production Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for contextFree.grammar.Production:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classcontext_free_1_1grammar_1_1_production.png" usemap="#contextFree.grammar.Production_map" alt=""/>
-  <map id="contextFree.grammar.Production_map" name="contextFree.grammar.Production_map">
-<area href="classcontext_free_1_1parser_1_1_indexed_production.html" alt="contextFree.parser.IndexedProduction" shape="rect" coords="0,56,229,80"/>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for contextFree.grammar.Production:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_production__inherit__graph.png" border="0" usemap="#context_free_8grammar_8_production_inherit__map" alt="Inheritance graph"/></div>
+<map name="context_free_8grammar_8_production_inherit__map" id="context_free_8grammar_8_production_inherit__map">
 </map>
- </div></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for contextFree.grammar.Production:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_production__coll__graph.png" border="0" usemap="#context_free_8grammar_8_production_coll__map" alt="Collaboration graph"/></div>
+<map name="context_free_8grammar_8_production_coll__map" id="context_free_8grammar_8_production_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classcontext_free_1_1grammar_1_1_production-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a266aff6e67d35263dc262ea413eabefe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a266aff6e67d35263dc262ea413eabefe">Production</a> ()</td></tr>
 <tr class="memitem:a1db3c4e260abdcac50a8425cc9bd901f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a1db3c4e260abdcac50a8425cc9bd901f">Production</a> (String lt, String rt)</td></tr>
 <tr class="memdesc:a1db3c4e260abdcac50a8425cc9bd901f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an object production and initialize it's rightList.  <a href="#a1db3c4e260abdcac50a8425cc9bd901f"></a><br/></td></tr>
-<tr class="memitem:abc6df7181791245b8c3bf38871bc38b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#abc6df7181791245b8c3bf38871bc38b8">Production</a> (String lt, String rt, boolean flag)</td></tr>
+<tr class="memitem:abc6df7181791245b8c3bf38871bc38b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc6df7181791245b8c3bf38871bc38b8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Production</b> (String lt, String rt, boolean flag)</td></tr>
 <tr class="memitem:a6b42819c4b8af1aa759edf3ad5978f67"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67">getLeft</a> ()</td></tr>
-<tr class="memitem:a6a9e81d7a3445993afd077cfc4d21a12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a6a9e81d7a3445993afd077cfc4d21a12">setLeft</a> (String <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ad188a705cd57d55d32fd198e6af71f75">left</a>)</td></tr>
-<tr class="memitem:a0b6496bc60eefe88fd4652a6f01ec15e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">getRight</a> ()</td></tr>
-<tr class="memitem:aa36b86719aaccecb3c90a492c0d766e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#aa36b86719aaccecb3c90a492c0d766e3">setRight</a> (String <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">right</a>)</td></tr>
-<tr class="memitem:ae712218305325e3649fa26989db291de"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ae712218305325e3649fa26989db291de">getRightList</a> ()</td></tr>
-<tr class="memitem:a84c7fa859310c752fa76fb1ecc3fedba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a84c7fa859310c752fa76fb1ecc3fedba">setRightList</a> (List&lt; String &gt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a51394e602f57b3e2f9b07d14fd01adb9">rightList</a>)</td></tr>
-<tr class="memitem:a43d78cd85446efbbffe59a2278c410d1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1">toString</a> ()</td></tr>
-<tr class="memdesc:a43d78cd85446efbbffe59a2278c410d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a formatted string in the form axioms :: = expression  <a href="#a43d78cd85446efbbffe59a2278c410d1"></a><br/></td></tr>
+<tr class="memitem:a6a9e81d7a3445993afd077cfc4d21a12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a9e81d7a3445993afd077cfc4d21a12"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setLeft</b> (String left)</td></tr>
+<tr class="memitem:a0b6496bc60eefe88fd4652a6f01ec15e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b6496bc60eefe88fd4652a6f01ec15e"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>getRight</b> ()</td></tr>
+<tr class="memitem:aa36b86719aaccecb3c90a492c0d766e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa36b86719aaccecb3c90a492c0d766e3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setRight</b> (String right)</td></tr>
+<tr class="memitem:ae712218305325e3649fa26989db291de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae712218305325e3649fa26989db291de"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRightList</b> ()</td></tr>
+<tr class="memitem:a84c7fa859310c752fa76fb1ecc3fedba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84c7fa859310c752fa76fb1ecc3fedba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setRightList</b> (List&lt; String &gt; rightList)</td></tr>
+<tr class="memitem:a43d78cd85446efbbffe59a2278c410d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43d78cd85446efbbffe59a2278c410d1"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1">toString</a> ()</td></tr>
+<tr class="memdesc:a43d78cd85446efbbffe59a2278c410d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a formatted string in the form axioms :: = expression <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad188a705cd57d55d32fd198e6af71f75"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ad188a705cd57d55d32fd198e6af71f75">left</a></td></tr>
-<tr class="memitem:ab72c30da44fb1fbf41b9a70bf799ef58"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">right</a></td></tr>
-<tr class="memitem:a51394e602f57b3e2f9b07d14fd01adb9"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a51394e602f57b3e2f9b07d14fd01adb9">rightList</a></td></tr>
+<tr class="memitem:ad188a705cd57d55d32fd198e6af71f75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad188a705cd57d55d32fd198e6af71f75"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>left</b></td></tr>
+<tr class="memitem:ab72c30da44fb1fbf41b9a70bf799ef58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab72c30da44fb1fbf41b9a70bf799ef58"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>right</b></td></tr>
+<tr class="memitem:a51394e602f57b3e2f9b07d14fd01adb9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51394e602f57b3e2f9b07d14fd01adb9"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>rightList</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_production_8java_source.html#l00006">6</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a266aff6e67d35263dc262ea413eabefe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a266aff6e67d35263dc262ea413eabefe">contextFree.grammar.Production.Production</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00013">13</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a1db3c4e260abdcac50a8425cc9bd901f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a266aff6e67d35263dc262ea413eabefe">contextFree.grammar.Production.Production</a> </td>
+          <td class="memname">contextFree.grammar.Production.Production </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
           <td class="paramname"><em>lt</em>, </td>
@@ -200,41 +214,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abc6df7181791245b8c3bf38871bc38b8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a266aff6e67d35263dc262ea413eabefe">contextFree.grammar.Production.Production</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>lt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>rt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>flag</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00037">37</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a6b42819c4b8af1aa759edf3ad5978f67"></a>
 <div class="memitem">
@@ -253,166 +232,16 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_production_8java_source.html#l00046">46</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_production_a6b42819c4b8af1aa759edf3ad5978f67_icgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_production_a6b42819c4b8af1aa759edf3ad5978f67_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_production_a6b42819c4b8af1aa759edf3ad5978f67_icgraph" id="classcontext_free_1_1grammar_1_1_production_a6b42819c4b8af1aa759edf3ad5978f67_icgraph">
+</map>
 </div>
-<a class="anchor" id="a0b6496bc60eefe88fd4652a6f01ec15e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a0b6496bc60eefe88fd4652a6f01ec15e">contextFree.grammar.Production.getRight</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00054">54</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae712218305325e3649fa26989db291de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;String&gt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ae712218305325e3649fa26989db291de">contextFree.grammar.Production.getRightList</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00062">62</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a9e81d7a3445993afd077cfc4d21a12"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a6a9e81d7a3445993afd077cfc4d21a12">contextFree.grammar.Production.setLeft</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>left</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00050">50</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa36b86719aaccecb3c90a492c0d766e3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#aa36b86719aaccecb3c90a492c0d766e3">contextFree.grammar.Production.setRight</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>right</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00058">58</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a84c7fa859310c752fa76fb1ecc3fedba"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a84c7fa859310c752fa76fb1ecc3fedba">contextFree.grammar.Production.setRightList</a> </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; String &gt;&#160;</td>
-          <td class="paramname"><em>rightList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00066">66</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a43d78cd85446efbbffe59a2278c410d1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1">contextFree.grammar.Production.toString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>return a formatted string in the form axioms :: = expression </p>
-
-<p>Reimplemented in <a class="el" href="classcontext_free_1_1parser_1_1_indexed_production.html#a061cd84bd37e6111edcd52bcb5b9c749">contextFree.parser.IndexedProduction</a>.</p>
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00073">73</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ad188a705cd57d55d32fd198e6af71f75"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ad188a705cd57d55d32fd198e6af71f75">contextFree.grammar.Production.left</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00008">8</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab72c30da44fb1fbf41b9a70bf799ef58"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">contextFree.grammar.Production.right</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00009">9</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a51394e602f57b3e2f9b07d14fd01adb9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;String&gt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html#a51394e602f57b3e2f9b07d14fd01adb9">contextFree.grammar.Production.rightList</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_production_8java_source.html#l00010">10</a> of file <a class="el" href="_production_8java_source.html">Production.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -420,13 +249,19 @@ Private Attributes</h2></td></tr>
 <li>src/contextFree/grammar/<a class="el" href="_production_8java_source.html">Production.java</a></li>
 </ul>
 </div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>contextFree</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecontext_free_1_1grammar.html">grammar</a>      </li>
+      <li class="navelem"><a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:03 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

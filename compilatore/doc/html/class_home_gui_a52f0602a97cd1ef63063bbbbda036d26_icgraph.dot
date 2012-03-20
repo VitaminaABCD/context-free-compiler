@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="HomeGui.startProcess",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="HomeGui.HomeGui",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593",tooltip="Initialize GUI component and start the process."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="HomeGui.main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_home_gui.html#a241867731938068ae82ae7d5e7371fa3",tooltip="Launch the application."];
+}

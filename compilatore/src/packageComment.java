@@ -2,13 +2,13 @@
     \brief Contains the class for represent and manipulate a grammar.
 
 	USAGE:
-	You can obtain a Grammar instance through the static factory "GrammarFactor" {@link GrammarFactory#createGrammar(String, List<Production>,List<String>, List<String>) createGrammar};
+	You can obtain a Grammar instance through the static factory "GrammarFactor" (see createGrammar(String, List<Production>,List<String>, List<String>));
 	you must pass the quadruple Axiom, Productions, terminals, non-terminals that define a grammar.
 	
-	es: 
+	example: 
 	IGrammar grammar = GrammarFactory.createGrammar(A, P, V, T);
 	
-	If the grammar is context-free the factory return a ContextFreeGrammar instance {@link ContextFreeGrammar};
+	If the grammar is context-free the factory return a ContextFreeGrammar instance (see ContextFreeGrammar);
 */
 
 /*! \package contextFree.parser
@@ -16,17 +16,17 @@
 
 Have been implemented LALR(1) bottom-up parser (LALR1) (LR(0) and LR(1) closure and goto have been implemented in respective class)
 The LALR1 automaton is constructed through the LR0 automaton.
-The lookahead symbols are calculated using an algorithm of "spontaneous generation and propagation of symbols" (LALR1.calculateSymbol(Automa))
-When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the LALR1 instance (LALR1.tableCostruction()).\n
+The lookahead symbols are calculated using an algorithm of "spontaneous generation and propagation of symbols" (see LALR1.calculateSymbol(Automa))
+When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the LALR1 instance (see LALR1.tableCostruction()).\n
 
 USAGE:
 You can use the ParsingFactory class to obtain an instance:\n
-es:\n
+example:\n
 1)you can pass a IGrammar grammar...\n
 ParsingFactory factory = new ParsingFactory();\n
 IParsing lalr1 = factory.createParsing(IGrammar grammar);\n
 \n
-2)...or an InputParser instance (contains the path of grammar file, es."file.4l", and the grammar instance)\n 
+2)...or an InputParser instance (contains the path of grammar file, ex."file.4l", and the grammar instance)\n 
 
 InputParser parser = new GrammarParser(path);\n
 ParsingFactory factory = new ParsingFactory();\n
@@ -39,10 +39,10 @@ IParsing lalr1 = factory.createParsing(parser);\n
 Only 2 extension are allowed:\n
 1) *.4l - a file with 4 line that define a grammar:\n
 	 	first line -> axioms\n
-	 	second line -> non-terminlas\n
+	 	second line -> non-terminals\n
 	 	third line -> terminals\n
 	 	fourth line -> production\n
- 	es: \n
+ 	example: \n
  	//////////grammar.4l//////////\n
  	E\n
 	E, T, P\n
@@ -59,13 +59,29 @@ Only 2 extension are allowed:\n
  context-free grammar type.\n
  
 You can also parse ".txt" file through LRInputParser
-this tyoe of file may contain the action and goto table and the grammar (written like *.1l grammar).\n
+this type of file may contain the action and goto table and the grammar (written like *.1l grammar).\n
  
 USAGE:\n
 You can obtain the parsing result through the ParserFactory that return 
 a proper instance initialized with the result of parsing.\n
-\nes.
-\nInputParser parser = new GrammarParser(path); 	//return a parser for a grammar file (es. *.txt)
+\nexample:
+\nInputParser parser = new GrammarParser(path); 	//return a parser for a grammar file (ex. *.txt)
 \nParsingFactory p = new ParsingFactory();		//the factory
 \nIParsing lalr1 = p.createParsing(parser);		//return an lalr1 instance initialized  
+*/
+
+/*! \package inputParser
+\brief Contains the parser program's class that to create the AST of an input phrase.
+
+USAGE:\n
+\nexample:\n
+\nParser parserProgram = (Parser)parser.parse();
+\nparserProgram.setInput(input_string);                  
+\n		switch(parserProgram.parse()){
+\n			case ACCEPT:	
+\n				Ast ast = new Ast(parserProgram.getHistory());  //create the AST
+\n				ast.initFromHistory();
+\n				return ast.getRoot();
+\n			case ERROR:
+\n			return null;
 */

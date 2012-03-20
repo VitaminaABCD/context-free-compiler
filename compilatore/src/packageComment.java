@@ -1,14 +1,14 @@
 /*! \package contextFree.grammar
     \brief Contains the class for represent and manipulate a grammar.
 
-	USAGE:
+	USAGE:\n
 	You can obtain a Grammar instance through the static factory "GrammarFactor" (see createGrammar(String, List<Production>,List<String>, List<String>));
 	you must pass the quadruple Axiom, Productions, terminals, non-terminals that define a grammar.
-	
-	example: 
-	IGrammar grammar = GrammarFactory.createGrammar(A, P, V, T);
-	
-	If the grammar is context-free the factory return a ContextFreeGrammar instance (see ContextFreeGrammar);
+	\n
+	\nexample: 
+	\nIGrammar grammar = GrammarFactory.createGrammar(A, P, V, T);
+	\n
+	\nIf the grammar is context-free the factory return a ContextFreeGrammar instance (see ContextFreeGrammar);
 */
 
 /*! \package contextFree.parser

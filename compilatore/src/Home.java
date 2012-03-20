@@ -1,4 +1,4 @@
-import inputParser.GrammarParser;
+import inputParser.AbstractInputParser;
 import inputParser.InputParser;
 import inputParser.LRInputParser;
 
@@ -13,11 +13,11 @@ import org.apache.log4j.PropertyConfigurator;
 
 import parserProgram.Ast;
 import parserProgram.HistoryElement;
-import parserProgram.Parser;
+import parserProgram.ParserProgram;
 
 
-import contextFree.parser.IParsing;
-import contextFree.parser.ParsingFactory;
+import contextFree.parser.IParser;
+import contextFree.parser.ParserFactory;
 
 /**
  * 
@@ -62,14 +62,14 @@ public class Home{
 //								break;
 //				      }
 				    int scelta= Integer.parseInt(leggi.readLine());
-				    InputParser parser = null;
+				    AbstractInputParser parser = null;
 				    switch (scelta)
 				      {
 				        //the choices go here - print the details
 				        case 1:
 				      	  	System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
 				      	  	leggi = new BufferedReader(new InputStreamReader(System.in));
-				      	  	parser = new GrammarParser("file.4l");    //TODO: da rimuovere
+				      	  	parser = new InputParser("file.4l");    //TODO: da rimuovere
 //				      	  	parser = new GrammarParser(leggi.readLine());
 				      	  	analizer(parser);
 				      	  	break;
@@ -92,8 +92,8 @@ public class Home{
 	}
 	
 
-	private static void astMethod(InputParser parser) throws Exception {
-		Parser parserProgram = (Parser)parser.parse();
+	private static void astMethod(AbstractInputParser parser) throws Exception {
+		ParserProgram parserProgram = (ParserProgram)parser.parse();
 		System.out.println("\nDigitare la stringa in input: "); 
 //		BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		parserProgram.setInput("d=d$");                     //TODO: da rimuovere	
@@ -109,11 +109,9 @@ public class Home{
 	}
 
 
-	private static void analizer(InputParser parser)
+	private static void analizer(AbstractInputParser parser)
 			throws FileNotFoundException, Exception {
-		ParsingFactory p = new ParsingFactory();
-//		IParsing l = p.createParsing();
-		IParsing lalr1 = p.createParsing(parser);
+		IParser lalr1 = ParserFactory.createParser(parser);
 		
 		if(lalr1!=null){
 			System.out.println(lalr1.toString());

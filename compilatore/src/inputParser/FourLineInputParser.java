@@ -14,7 +14,7 @@ import contextFree.grammar.Production;
 import error.ERROR_TYPE;
 import error.ErrorManager;
 
-public class FourLineInputParser extends InputParser{
+public class FourLineInputParser extends AbstractInputParser{
 	String file;
 	String A_reader, V_reader, T_reader, P_reader;
 	String[] V_temp, T_temp, P_temp;

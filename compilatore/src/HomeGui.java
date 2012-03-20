@@ -1,6 +1,4 @@
-import inputParser.GrammarParser;
 import inputParser.InputParser;
-import inputParser.LRInputParser;
 
 import java.awt.EventQueue;
 
@@ -30,12 +28,13 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import parserProgram.Ast;
-import parserProgram.Parser;
+import parserProgram.ParserProgram;
 
 import com.thoughtworks.xstream.XStream;
 
-import contextFree.parser.IParsing;
-import contextFree.parser.ParsingFactory;
+import contextFree.grammar.IGrammar;
+import contextFree.parser.IParser;
+import contextFree.parser.ParserFactory;
 
 import javax.swing.JTree;
 import javax.swing.JTextField;
@@ -127,10 +126,9 @@ public class HomeGui extends JFrame{
      */
     private void startProcess(String path) throws FileNotFoundException, Exception {
         long startTime = System.currentTimeMillis();
-    	InputParser parser = new GrammarParser(path);
-        ParsingFactory p = new ParsingFactory();
+    	IGrammar grammar= (IGrammar) new InputParser(path).parse();
 //		IParsing l = p.createParsing();
-		IParsing lalr1 = p.createParsing(parser);
+		IParser lalr1 = ParserFactory.createParser(grammar);
 		
 		if(lalr1!=null){
 			leftPanel.setText(lalr1.toString());
@@ -263,13 +261,10 @@ public class HomeGui extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {        
 				long startTime = System.currentTimeMillis();
 				try {
-//					ParserFactory fc = new ConcreteParserFactory();
-//					InputParser parser =  (InputParser) fc.factoryMethod("Result.txt").parse();      //TODO: solleva eccezione [ClassCastException: parserProgram.Parser cannot be cast to inputParser.InputParser]
-		        	InputParser parser = new LRInputParser("Result.txt");
-		        	DefaultMutableTreeNode root = astMethod(parser);
+					ParserProgram parserProgram = (ParserProgram) new InputParser("Result.txt").parse();
+		        	DefaultMutableTreeNode root = astMethod(parserProgram);
 		        	if(root!=null){
-		        		tree.setModel(new JTree(astMethod(parser)).getModel());
-		        		
+		        		tree.setModel(new JTree(root).getModel());
 		        		tree.expandPath(new TreePath(root.getPath()));
 		        		DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
 		        	    renderer.setOpenIcon(null);
@@ -354,8 +349,7 @@ public class HomeGui extends JFrame{
 	 * @throws Exception
 	 * @author Paolo Pino
 	 */
-	private DefaultMutableTreeNode astMethod(InputParser parser) throws Exception {
-		Parser parserProgram = (Parser)parser.parse();
+	private DefaultMutableTreeNode astMethod(ParserProgram parserProgram) throws Exception {
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		String in = this.input.getText();
 		if(in.length()==0) throw new IOException("Nessuna stringa in ingresso");

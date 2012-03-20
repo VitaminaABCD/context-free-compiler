@@ -12,13 +12,13 @@ import org.apache.log4j.Logger;
 
 import contextFree.grammar.IGrammar;
 
-import parserProgram.Parser;
+import parserProgram.ParserProgram;
  
 /**	Parse a txt file with action table, goto table and grammar in one line format (*.1l).
  * @author Paolo Pino
  *
  */
-public class LRInputParser extends InputParser {
+public class LRInputParser extends AbstractInputParser {
 	static Logger logger = Logger.getLogger(LRInputParser.class.getName());
 	
 	private String input;
@@ -34,7 +34,7 @@ public class LRInputParser extends InputParser {
 	 * 
 	 */
 	@Override
-	public Parser parse() throws Exception {
+	public ParserProgram parse() throws Exception {
 		Hashtable<String,List<String>> actionTable = new Hashtable<String, List<String>>();
 		Hashtable<String,List<String>> gotoTable = new Hashtable<String, List<String>>();
 		IGrammar grammar = null;
@@ -55,7 +55,7 @@ public class LRInputParser extends InputParser {
 				}
 			}	
 			f.close();
-			return new Parser(grammar, actionTable,gotoTable);
+			return new ParserProgram(grammar, actionTable,gotoTable);
 			//es.     actionTable.get("*").get(8)); 		recupera lo stato 8 del simbolo "*" nella tabella action
 		}catch(IOException e){
 			logger.error("Error in file read operation",e);

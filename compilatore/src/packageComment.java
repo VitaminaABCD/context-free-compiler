@@ -20,17 +20,17 @@ The lookahead symbols are calculated using an algorithm of "spontaneous generati
 When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the LALR1 instance (see LALR1.tableCostruction()).\n
 
 USAGE:
-You can use the ParsingFactory class to obtain an instance:\n
+You can use the ParserFactory class to obtain an instance:\n
 example:\n
 1)you can pass a IGrammar grammar...\n
-ParsingFactory factory = new ParsingFactory();\n
-IParsing lalr1 = factory.createParsing(IGrammar grammar);\n
+ParserFactory factory = new ParserFactory();\n
+IParser lalr1 = factory.createParsing(IGrammar grammar);\n
 \n
 2)...or an InputParser instance (contains the path of grammar file, ex."file.4l", and the grammar instance)\n 
 
 InputParser parser = new GrammarParser(path);\n
-ParsingFactory factory = new ParsingFactory();\n
-IParsing lalr1 = factory.createParsing(parser);\n
+ParserFactory factory = new ParserFactory();\n
+IParser lalr1 = factory.createParser(parser);\n
 */
 
 
@@ -66,9 +66,11 @@ USAGE:\n
 You can obtain the parsing result through the ParserFactory that return 
 a proper instance initialized with the result of parsing.\n
 \nexample:
-\nInputParser parser = new GrammarParser(path); 	//return a parser for a grammar file (ex. *.txt)
-\nParsingFactory p = new ParsingFactory();		//the factory
-\nIParsing lalr1 = p.createParsing(parser);		//return an lalr1 instance initialized  
+\n- get a grammar instance from a grammar file:
+\n	IGrammar grammar = (IGrammar) new InputParser("grammar.4l").parse();
+\n
+\n- get an instance of parser program from a "Result.txt" file (contains action and goto table and the grammar in *.1l format):
+\n	ParserProgram parserProgram = (ParserProgram) new InputParser("Result.txt").parse();
 */
 
 /*! \package parserProgram

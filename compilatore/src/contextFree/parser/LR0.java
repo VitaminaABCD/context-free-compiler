@@ -10,7 +10,7 @@ import contextFree.grammar.IGrammar;
 import contextFree.grammar.Production;
 
 
-public abstract class LR0 implements IParsing{
+public abstract class LR0 implements IParser{
 
 	protected IGrammar grammatica;
 	

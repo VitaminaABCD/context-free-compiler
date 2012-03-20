@@ -20,7 +20,7 @@ import error.ErrorManager;
  * @author Paolo Pino
  *
  */
-public class SingleLineInputParser extends InputParser {
+public class SingleLineInputParser extends AbstractInputParser {
 
 	String S,file;
 	List<Production> P;

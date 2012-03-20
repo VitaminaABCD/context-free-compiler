@@ -4,11 +4,10 @@ import error.ERROR_TYPE;
 import error.ErrorManager;
 
 
-public class ConcreteParserFactory extends ParserFactory{
+public class ConcreteParserFactory extends InputParserFactory{
 
 	@Override
-	protected InputParser factoryMethod(String in) {
-		String[] input = in.split("/");
+	protected AbstractInputParser factoryMethod(String in) {		String[] input = in.split("/");
 		String[] type = input[input.length-1].split("\\.");
 		int index = type.length-1;
 		if(type[index].equals("4l"))

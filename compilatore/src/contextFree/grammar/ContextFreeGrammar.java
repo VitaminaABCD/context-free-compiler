@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Define a context-free grammar tyoe
+ * Define a context-free grammar type
  * @author Paolo Pino
  *
  */

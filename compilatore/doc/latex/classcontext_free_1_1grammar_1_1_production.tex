@@ -13,7 +13,7 @@ Inheritance diagram for context\-Free.\-grammar.\-Production\-:\begin{figure}[H]
 \hyperlink{classcontext_free_1_1grammar_1_1_production_a266aff6e67d35263dc262ea413eabefe}{Production} ()
 \item 
 \hyperlink{classcontext_free_1_1grammar_1_1_production_a1db3c4e260abdcac50a8425cc9bd901f}{Production} (String lt, String rt)
-\begin{DoxyCompactList}\small\item\em $\ast$creates an object Prodaction complete Right\-List $\ast$passing between the right and left, check if eps \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates an object production and initialize it's right\-List. \end{DoxyCompactList}\item 
 \hyperlink{classcontext_free_1_1grammar_1_1_production_abc6df7181791245b8c3bf38871bc38b8}{Production} (String lt, String rt, boolean flag)
 \item 
 String \hyperlink{classcontext_free_1_1grammar_1_1_production_a6b42819c4b8af1aa759edf3ad5978f67}{get\-Left} ()
@@ -29,7 +29,7 @@ List$<$ String $>$ \hyperlink{classcontext_free_1_1grammar_1_1_production_ae7122
 void \hyperlink{classcontext_free_1_1grammar_1_1_production_a84c7fa859310c752fa76fb1ecc3fedba}{set\-Right\-List} (List$<$ String $>$ \hyperlink{classcontext_free_1_1grammar_1_1_production_a51394e602f57b3e2f9b07d14fd01adb9}{right\-List})
 \item 
 String \hyperlink{classcontext_free_1_1grammar_1_1_production_a43d78cd85446efbbffe59a2278c410d1}{to\-String} ()
-\begin{DoxyCompactList}\small\item\em return a formatted string in the form ass \-:\-: = expr \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em return a formatted string in the form axioms \-:\-: = expression \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,13 +70,13 @@ Definition at line 13 of file Production.\-java.
 )}}\label{classcontext_free_1_1grammar_1_1_production_a1db3c4e260abdcac50a8425cc9bd901f}
 
 
-$\ast$creates an object Prodaction complete Right\-List $\ast$passing between the right and left, check if eps 
+Creates an object production and initialize it's right\-List. 
 
-
+passing between the right and left, check if is an empty string (epsilon) 
 \begin{DoxyParams}{Parameters}
-{\em left} & part of prodaction \\
+{\em left} & part of production \\
 \hline
-{\em right} & part of prodaction \\
+{\em right} & part of production \\
 \hline
 \end{DoxyParams}
 \begin{DoxyAuthor}{Author}
@@ -180,7 +180,7 @@ Definition at line 66 of file Production.\-java.
 )}}\label{classcontext_free_1_1grammar_1_1_production_a43d78cd85446efbbffe59a2278c410d1}
 
 
-return a formatted string in the form ass \-:\-: = expr 
+return a formatted string in the form axioms \-:\-: = expression 
 
 
 

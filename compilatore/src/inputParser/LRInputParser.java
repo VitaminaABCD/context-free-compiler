@@ -14,8 +14,7 @@ import contextFree.grammar.IGrammar;
 
 import parserProgram.Parser;
  
-/**	Parse a txt file with action table, goto table and grammar in 
- *  one line format (*.1l)
+/**	Parse a txt file with action table, goto table and grammar in one line format (*.1l).
  * @author Paolo Pino
  *
  */

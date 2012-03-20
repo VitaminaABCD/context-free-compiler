@@ -1,6 +1,11 @@
 \hypertarget{classinput_parser_1_1_l_r_input_parser}{\section{input\-Parser.\-L\-R\-Input\-Parser Class Reference}
 \label{classinput_parser_1_1_l_r_input_parser}\index{input\-Parser.\-L\-R\-Input\-Parser@{input\-Parser.\-L\-R\-Input\-Parser}}
 }
+
+
+Parse a txt file with action table, goto table and grammar in one line format ($\ast$.1l).  
+
+
 Inheritance diagram for input\-Parser.\-L\-R\-Input\-Parser\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +20,7 @@ Inheritance diagram for input\-Parser.\-L\-R\-Input\-Parser\-:\begin{figure}[H]
 \hyperlink{classinput_parser_1_1_l_r_input_parser_a42f9947db4e863a82e3a8ca89c655c2a}{L\-R\-Input\-Parser} (String in)
 \item 
 \hyperlink{classparser_program_1_1_parser}{Parser} \hyperlink{classinput_parser_1_1_l_r_input_parser_ab1fb2966ece506eead96dcededca86a6}{parse} ()  throws Exception 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Parse method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,7 +30,7 @@ static Logger \hyperlink{classinput_parser_1_1_l_r_input_parser_ae3d6e07ebb7d436
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96}{read\-Table} (Buffered\-Reader f, Hashtable$<$ String, List$<$ String $>$$>$ table)  throws I\-O\-Exception 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em read the table in the first part of the file and store it in an hashtable with simbol as key and a list with an element for each state \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,9 +39,14 @@ String \hyperlink{classinput_parser_1_1_l_r_input_parser_a7f407afa631516efdbaf3c
 
 
 \subsection{Detailed Description}
+Parse a txt file with action table, goto table and grammar in one line format ($\ast$.1l). 
+
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
 
 
-Definition at line 18 of file L\-R\-Input\-Parser.\-java.
+Definition at line 21 of file L\-R\-Input\-Parser.\-java.
 
 
 
@@ -50,7 +60,7 @@ Definition at line 18 of file L\-R\-Input\-Parser.\-java.
 )}}\label{classinput_parser_1_1_l_r_input_parser_a243ff5c225bbbe63bc64e615fed97ec4}
 
 
-Definition at line 23 of file L\-R\-Input\-Parser.\-java.
+Definition at line 26 of file L\-R\-Input\-Parser.\-java.
 
 \hypertarget{classinput_parser_1_1_l_r_input_parser_a42f9947db4e863a82e3a8ca89c655c2a}{\index{input\-Parser\-::\-L\-R\-Input\-Parser@{input\-Parser\-::\-L\-R\-Input\-Parser}!L\-R\-Input\-Parser@{L\-R\-Input\-Parser}}
 \index{L\-R\-Input\-Parser@{L\-R\-Input\-Parser}!inputParser::LRInputParser@{input\-Parser\-::\-L\-R\-Input\-Parser}}
@@ -61,7 +71,7 @@ Definition at line 23 of file L\-R\-Input\-Parser.\-java.
 )}}\label{classinput_parser_1_1_l_r_input_parser_a42f9947db4e863a82e3a8ca89c655c2a}
 
 
-Definition at line 26 of file L\-R\-Input\-Parser.\-java.
+Definition at line 29 of file L\-R\-Input\-Parser.\-java.
 
 
 
@@ -75,11 +85,16 @@ Definition at line 26 of file L\-R\-Input\-Parser.\-java.
 )  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classinput_parser_1_1_l_r_input_parser_ab1fb2966ece506eead96dcededca86a6}
 
 
+Parse method. 
+
+\begin{DoxyVerb}      \end{DoxyVerb}
+ 
+
 Implements \hyperlink{classinput_parser_1_1_input_parser_ab00c1fa5b5476e62889347018764fe96}{input\-Parser.\-Input\-Parser}.
 
 
 
-Definition at line 31 of file L\-R\-Input\-Parser.\-java.
+Definition at line 37 of file L\-R\-Input\-Parser.\-java.
 
 \hypertarget{classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96}{\index{input\-Parser\-::\-L\-R\-Input\-Parser@{input\-Parser\-::\-L\-R\-Input\-Parser}!read\-Table@{read\-Table}}
 \index{read\-Table@{read\-Table}!inputParser::LRInputParser@{input\-Parser\-::\-L\-R\-Input\-Parser}}
@@ -91,7 +106,23 @@ Definition at line 31 of file L\-R\-Input\-Parser.\-java.
 )  throws I\-O\-Exception \hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96}
 
 
-Definition at line 59 of file L\-R\-Input\-Parser.\-java.
+read the table in the first part of the file and store it in an hashtable with simbol as key and a list with an element for each state 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the input file buffer \\
+\hline
+{\em table} & the hashtable where the data is stored \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em I\-O\-Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 74 of file L\-R\-Input\-Parser.\-java.
 
 
 
@@ -101,14 +132,14 @@ Definition at line 59 of file L\-R\-Input\-Parser.\-java.
 \subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf input\-Parser.\-L\-R\-Input\-Parser.\-input}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classinput_parser_1_1_l_r_input_parser_a7f407afa631516efdbaf3cee992bb16f}
 
 
-Definition at line 21 of file L\-R\-Input\-Parser.\-java.
+Definition at line 24 of file L\-R\-Input\-Parser.\-java.
 
 \hypertarget{classinput_parser_1_1_l_r_input_parser_ae3d6e07ebb7d4368f1a2e2ad05dae6f7}{\index{input\-Parser\-::\-L\-R\-Input\-Parser@{input\-Parser\-::\-L\-R\-Input\-Parser}!logger@{logger}}
 \index{logger@{logger}!inputParser::LRInputParser@{input\-Parser\-::\-L\-R\-Input\-Parser}}
 \subsubsection[{logger}]{\setlength{\rightskip}{0pt plus 5cm}Logger {\bf input\-Parser.\-L\-R\-Input\-Parser.\-logger} = Logger.\-get\-Logger(L\-R\-Input\-Parser.\-class.\-get\-Name())\hspace{0.3cm}{\ttfamily  \mbox{[}static, package\mbox{]}}}}\label{classinput_parser_1_1_l_r_input_parser_ae3d6e07ebb7d4368f1a2e2ad05dae6f7}
 
 
-Definition at line 19 of file L\-R\-Input\-Parser.\-java.
+Definition at line 22 of file L\-R\-Input\-Parser.\-java.
 
 
 

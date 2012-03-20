@@ -10,20 +10,19 @@ Contains the class for represent and manipulate a grammar.
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}
-\item 
+\begin{DoxyCompactList}\small\item\em Define a context-\/free grammar type. \end{DoxyCompactList}\item 
 enum \hyperlink{enumcontext_free_1_1grammar_1_1_g_r_a_m_m_a_r___t_y_p_e}{G\-R\-A\-M\-M\-A\-R\-\_\-\-T\-Y\-P\-E}
-\item 
+\begin{DoxyCompactList}\small\item\em Specify the type of a grammar. \end{DoxyCompactList}\item 
 class \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory}{Grammar\-Factory}
-\item 
+\begin{DoxyCompactList}\small\item\em An object factory that create a correct instance of grammar. \end{DoxyCompactList}\item 
 interface \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar}
-\item 
+\begin{DoxyCompactList}\small\item\em Grammar Interface. \end{DoxyCompactList}\item 
 class \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Contains the class for represent and manipulate a grammar. U\-S\-A\-G\-E\-: You can obtain a Grammar instance through the static factory \char`\"{}\-Grammar\-Factor\char`\"{} \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25}{create\-Grammar}; you must pass the quadruple Axiom, Productions, terminals, non-\/terminals that define a grammar.
-
-es\-: \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} grammar = Grammar\-Factory.\-create\-Grammar(\-A, P, V, T);
-
-If the grammar is context-\/free the factory return a \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar} instance \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}; 
+Contains the class for represent and manipulate a grammar. U\-S\-A\-G\-E\-:\par
+ You can obtain a Grammar instance through the static factory \char`\"{}\-Grammar\-Factor\char`\"{} (see create\-Grammar(\-String, List$<$\-Production$>$,\-List$<$\-String$>$, List$<$\-String$>$)); you must pass the quadruple Axiom, Productions, terminals, non-\/terminals that define a grammar. \par
+ \-:  grammar = Grammar\-Factory.\-create\-Grammar(\-A, P, V, T); \par
+  the grammar is context-\/free the factory return a \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar} instance (see \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}); 

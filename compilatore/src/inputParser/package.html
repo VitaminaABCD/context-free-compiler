@@ -3,10 +3,10 @@ Contains the class for file parsing.
 Only 2 extension are allowed:
 1) *.4l - a file with 4 line that define a grammar:
 	 	first line -> axioms
-	 	second line -> non-terminlas
+	 	second line -> non-terminals
 	 	third line -> terminals
 	 	fourth line -> production
- 	es: 
+ 	ex: 
  	//////////grammar.4l//////////
  	E
 	E, T, P
@@ -24,16 +24,17 @@ Only 2 extension are allowed:
  
 
 You can also parse ".txt" file through LRInputParser
-this tyoe of file may contain the action and goto table and the grammar (written like *.1l grammar)
+this type of file may contain the action and goto table and the grammar (written like *.1l grammar)
  
 USAGE:
 You can obtain the parsing result through the ParserFactory that return 
 a proper instance initialized with the result of parsing.
-es.
- 
-InputParser parser = new GrammarParser(path); 	//return a parser for a grammar file (es. *.txt)
-ParsingFactory p = new ParsingFactory();		//the factory
-IParsing lalr1 = p.createParsing(parser);		//return an lalr1 instance initialized  
-  
+ex.
+- get a grammar instance from a grammar file:
+	IGrammar grammar = (IGrammar) new InputParser("grammar.4l").parse();
+
+- get an instance of parser program from a "Result.txt" file (contains action and goto table and the grammar in *.1l format):
+	ParserProgram parserProgram = (ParserProgram) new InputParser("Result.txt").parse();
+
 
 </body>

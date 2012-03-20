@@ -15,8 +15,8 @@ import contextFree.grammar.Production;
 
 
 
-public class Parser {
-	static Logger logger = Logger.getLogger(Parser.class.getName());
+public class ParserProgram {
+	static Logger logger = Logger.getLogger(ParserProgram.class.getName());
 	
 	private Stack<String> stack;
 	private String simbol;
@@ -28,7 +28,7 @@ public class Parser {
 	private Hashtable<String,List<String>> actionTable;
 	private Hashtable<String,List<String>> gotoTable;
 	
-	public Parser(){
+	public ParserProgram(){
 		this.stack = new Stack<String>();
 		this.stack.add("0");
 		this.input="";
@@ -39,7 +39,7 @@ public class Parser {
 		this.gotoTable = new Hashtable<String, List<String>>();
 	}
 
-	public Parser(String in){
+	public ParserProgram(String in){
 		this.stack = new Stack<String>();
 		this.stack.add("0");
 		this.input=in;
@@ -52,7 +52,7 @@ public class Parser {
 	
 	
 	
-	public Parser(IGrammar g,
+	public ParserProgram(IGrammar g,
 			Hashtable<String, List<String>> action,
 			Hashtable<String, List<String>> goTo) {
 		this.stack = new Stack<String>();

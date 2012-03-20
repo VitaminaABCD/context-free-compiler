@@ -4,19 +4,23 @@ package contextFree.grammar;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * An object factory that create a correct instance of grammar.
+ * @author Paolo Pino
+ */
 public class GrammarFactory {
 	public static IGrammar createContextFreeGrammar(String ass, List<Production> prod){
 		return new ContextFreeGrammar(ass,prod);
 	}
 	
 	/**
-	 * Check the type of grammar (eg Contex-free) and returns the correct instance
-	 * @param Assioma
-	 * @param List of Prodaction
-	 * @param List of Not Termianl Simbol
-	 * @param list of Termianl Simbol
-	 * @return 
-	 * @author Pierluigi Sottile
+	 * Check the type of grammar (ex. Context-free) and returns the correct instance.
+	 * @param Axioms
+	 * @param List of Production
+	 * @param List of Not Terminal Symbol
+	 * @param list of Terminal Symbol
+	 * @return The grammar instance if is context-free type, null otherwise.
+	 * @author Paolo Pino
 	 */
 	public static IGrammar createGrammar(String ass, List<Production> prod,List<String> V, List<String> T){
 		
@@ -30,11 +34,11 @@ public class GrammarFactory {
 	
 	
 	/**
-	 * controls that make up the grammar productions that are valid
-	 * @param List of prodaction
-	 * @param list of Not-terminal simbol
-	 * @param list of Terminal Simbol
-	 * @return
+	 * Controls that make up the grammar productions that are valid.
+	 * @param List of production
+	 * @param list of Not-terminal symbol
+	 * @param list of Terminal symbol
+	 * @return GRAMMAR_TYPE.NO_CONTEXT_FREE if the grammar isn't context-free, GRAMMAR_TYPE.CONTEXT_FREE otherwise;
 	 * @author Pierluigi Sottile
 	 */
 	private static GRAMMAR_TYPE checkType(List<Production> prod,List<String> V, List<String> T) {

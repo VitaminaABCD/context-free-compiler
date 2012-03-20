@@ -7,6 +7,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Define a context-free grammar tyoe
+ * @author Paolo Pino
+ *
+ */
 public class ContextFreeGrammar implements IGrammar {
 
 	private List<String> V; // insieme di simboli nn terminali

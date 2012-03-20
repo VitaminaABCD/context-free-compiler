@@ -22,6 +22,7 @@ public class LALR1 extends LR0{
 	private String[][] actionTable;
 	private String[][] gotoTable;
 	
+	
 	public LALR1(){
 		automa=new Automa();
 		grammatica=null;
@@ -139,7 +140,7 @@ public class LALR1 extends LR0{
 									if(p.compare(jItem)	&& 
 											p.getCurrentCharIndex() == (jItem.getCurrentCharIndex()+1)){
 										Set<String> kLook = K.getLookahead();
-										if(!kLook.contains(lookahead)){				//1.1.1.1.1.2 se non contiene il simbolo di lookahead corrente il simbolo viene generato per produzione che "segue" nello stato successivo
+										if(!kLook.contains(lookahead)){				//1.1.1.1.1.2 se non contiene il simbolo di lookahead corrente il simbolo viene generato per la produzione che "segue" nello stato successivo
 											if(p.getLookahead().add(lookahead)) flag = 1;
 											logger.debug("Simbolo [" + lookahead + "] generato per "+ p.toString());
 										}else{										//1.1.1.1.1.2 se contiene il simbolo di lookahead corrente i simboli della produzione in esame della chiusura vengono propagati alla produzione che "segue" nello stato successivo

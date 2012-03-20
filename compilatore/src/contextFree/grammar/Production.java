@@ -15,10 +15,10 @@ public class Production {
                 right="";
         }
         /**
-         *creates an object Prodaction complete RightList 
-         *passing between the right and left, check if eps
-         * @param left part of prodaction
-         * @param right part of prodaction
+         * Creates an object production and initialize it's rightList.
+         * passing between the right and left, check if is an empty string (epsilon)
+         * @param left part of production
+         * @param right part of production
          * @author Pierluigi Sottile
          */
         public Production(String lt, String rt){
@@ -67,7 +67,7 @@ public class Production {
                 this.rightList = rightList;
         }
         /**
-         * return a formatted string in the form ass :: = expr
+         * return a formatted string in the form axioms :: = expression
          */
         @Override
         public String toString() {

@@ -1,7 +1,6 @@
 var searchData=
 [
   ['s',['S',['../classcontext_free_1_1grammar_1_1_context_free_grammar.html#a516b9fb1183524ea3e7859b41f60ad32',1,'contextFree.grammar.ContextFreeGrammar.S()'],['../classinput_parser_1_1_single_line_input_parser.html#afaca00d01ba13c5fc39fe11309aba895',1,'inputParser.SingleLineInputParser.S()']]],
-  ['salvafilechooser',['salvaFileChooser',['../class_home_gui.html#ae91c33454848f18d29839444a30a5bd7',1,'HomeGui']]],
   ['serialversionuid',['serialVersionUID',['../class_file_chooser.html#a3cbd18488adfa238990fc2faf44a2931',1,'FileChooser.serialVersionUID()'],['../class_home_gui.html#a6a93dac6b8c89a59ca14536d6f5ad414',1,'HomeGui.serialVersionUID()']]],
   ['setactiontable',['setActionTable',['../classcontext_free_1_1parser_1_1_l_a_l_r1.html#a4bf6b83fddf359b6b0f6df26b1e58455',1,'contextFree.parser.LALR1.setActionTable()'],['../classparser_program_1_1_parser.html#a4c6568b8fe03468e34af986b75ee7738',1,'parserProgram.Parser.setActionTable()']]],
   ['setcurrentcharindex',['setCurrentCharIndex',['../classcontext_free_1_1parser_1_1_indexed_production.html#a9673f863b315e7cff584048585906718',1,'contextFree::parser::IndexedProduction']]],

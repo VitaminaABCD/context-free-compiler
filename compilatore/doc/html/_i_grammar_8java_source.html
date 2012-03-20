@@ -98,37 +98,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="keyword">import</span> java.util.List;
 <a name="l00004"></a>00004 <span class="keyword">import</span> java.util.Set;
 <a name="l00005"></a>00005 
-<a name="l00006"></a><a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">00006</a> <span class="keyword">public</span> <span class="keyword">interface </span><a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> {
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008         <span class="keyword">public</span> List&lt;String&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a4b1bc2134e63051dc37e693294aaeec6">getV</a>();
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#ae7bd17123ad7424af06a7da75a6bc745">setV</a>(List&lt;String&gt; v);
+<a name="l00010"></a><a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">00010</a> <span class="keyword">public</span> <span class="keyword">interface </span><a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> {
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012         <span class="keyword">public</span> List&lt;String&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a996f5e0bed5a6ac469b764f56d420fb1">getT</a>();
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a775125de1388036059da1860ae61a100">setT</a>(List&lt;String&gt; e);
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016         <span class="keyword">public</span> List&lt;Production&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a629ab4dc36a869b93fa239a3fee760f9">getP</a>();
+<a name="l00016"></a>00016         <span class="keyword">public</span> List&lt;String&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a4b1bc2134e63051dc37e693294aaeec6" title="Get non-terminal symbols list.">getV</a>();
 <a name="l00017"></a>00017 
-<a name="l00018"></a>00018         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#ac070229e5571e47032b5199c0bf2c354">setP</a>(List&lt;Production&gt; p);
-<a name="l00019"></a>00019         
-<a name="l00020"></a>00020         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a134f8b2183ec804eff78ac57b16a0ab9">setS</a>(String s);
-<a name="l00021"></a>00021         
-<a name="l00022"></a>00022         <span class="keyword">public</span> String <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#aceb36e584d26bd39a0f5186742cc9b5b">getS</a>();
-<a name="l00023"></a>00023         
-<a name="l00024"></a>00024         <span class="keyword">public</span> Set&lt;String&gt;[] <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a256e9280e008a7c709ccb80725ccc0f2">getFirst</a>();
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026         <span class="keyword">public</span> Set&lt;String&gt;[] <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#aad085d9f84a32ca1abe5fba0c9e5f20c">getFollow</a>();
-<a name="l00027"></a>00027         
-<a name="l00028"></a>00028         <span class="keyword">public</span> Set&lt;String&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a256e9280e008a7c709ccb80725ccc0f2">getFirst</a>(String A);
+<a name="l00022"></a>00022         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#ae7bd17123ad7424af06a7da75a6bc745" title="Set the list of non-terminal symbols.">setV</a>(List&lt;String&gt; v);
+<a name="l00023"></a>00023 
+<a name="l00028"></a>00028         <span class="keyword">public</span> List&lt;String&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a996f5e0bed5a6ac469b764f56d420fb1" title="Get terminal symbols list.">getT</a>();
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030         <span class="keyword">public</span> String <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a5fdeb5a6a9426b400c2fe805566a377c">toOneLineString</a>();
-<a name="l00031"></a>00031 }
+<a name="l00034"></a>00034         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a775125de1388036059da1860ae61a100" title="Set the list of terminal symbols.">setT</a>(List&lt;String&gt; e);
+<a name="l00035"></a>00035 
+<a name="l00040"></a>00040         <span class="keyword">public</span> List&lt;Production&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a629ab4dc36a869b93fa239a3fee760f9" title="Get production list.">getP</a>();
+<a name="l00041"></a>00041 
+<a name="l00046"></a>00046         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#ac070229e5571e47032b5199c0bf2c354" title="Set the produciton list.">setP</a>(List&lt;Production&gt; p);
+<a name="l00047"></a>00047         
+<a name="l00052"></a>00052         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a134f8b2183ec804eff78ac57b16a0ab9" title="Set the axioms for the grammar.">setS</a>(String s);
+<a name="l00053"></a>00053         
+<a name="l00058"></a>00058         <span class="keyword">public</span> String <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#aceb36e584d26bd39a0f5186742cc9b5b" title="Get the axioms.">getS</a>();
+<a name="l00059"></a>00059         
+<a name="l00064"></a>00064         <span class="keyword">public</span> Set&lt;String&gt;[] <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a256e9280e008a7c709ccb80725ccc0f2" title="Get the list of first for the grammar.">getFirst</a>();
+<a name="l00065"></a>00065 
+<a name="l00070"></a>00070         <span class="keyword">public</span> Set&lt;String&gt;[] <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#aad085d9f84a32ca1abe5fba0c9e5f20c" title="Get the list of follow for the grammar.">getFollow</a>();
+<a name="l00071"></a>00071         
+<a name="l00076"></a>00076         <span class="keyword">public</span> Set&lt;String&gt; <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a256e9280e008a7c709ccb80725ccc0f2" title="Get the list of first for the grammar.">getFirst</a>(String A);
+<a name="l00077"></a>00077 
+<a name="l00081"></a>00081         <span class="keyword">public</span> String <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a5fdeb5a6a9426b400c2fe805566a377c">toOneLineString</a>();
+<a name="l00082"></a>00082 }
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 19 2012 22:08:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2012 17:32:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

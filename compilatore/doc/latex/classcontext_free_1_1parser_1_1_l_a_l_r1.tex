@@ -29,7 +29,7 @@ void \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_a002ce309af59de1951007a
 void \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_a66f5fb1ac9aab089d3fa937acf3f63ce}{set\-Grammar} (\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} gram)
 \item 
 int \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf}{init} ()  throws Exception
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the L\-A\-L\-R(1) automaton from \hyperlink{classcontext_free_1_1parser_1_1_l_r0}{L\-R0} automaton. \end{DoxyCompactList}\item 
 List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e}{chiusura\-L\-R1} (List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ i)
 \begin{DoxyCompactList}\small\item\em Passed a list of production I that form the kernel of a state, return closing it, and the lookahead symbols associated. \end{DoxyCompactList}\item 
 int \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36}{table\-Costruction} ()  throws Exception
@@ -53,7 +53,7 @@ static Logger \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_a9684757c9b143
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804}{calculate\-Symbol} (\hyperlink{classcontext_free_1_1parser_1_1_automa}{Automa} atm)  throws Exception
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,7 +86,7 @@ Definition at line 14 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_a9b5c281089bfd06c95b3c61504352df2}
 
 
-Definition at line 25 of file L\-A\-L\-R1.\-java.
+Definition at line 26 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a38a0cedcd893b16f8207455f2287a7ad}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!L\-A\-L\-R1@{L\-A\-L\-R1}}
 \index{L\-A\-L\-R1@{L\-A\-L\-R1}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -97,7 +97,7 @@ Definition at line 25 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_a38a0cedcd893b16f8207455f2287a7ad}
 
 
-Definition at line 30 of file L\-A\-L\-R1.\-java.
+Definition at line 31 of file L\-A\-L\-R1.\-java.
 
 
 
@@ -135,7 +135,7 @@ Pierluigi Sottile
 \end{DoxyAuthor}
 
 
-Definition at line 359 of file L\-A\-L\-R1.\-java.
+Definition at line 369 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!calculate\-Symbol@{calculate\-Symbol}}
 \index{calculate\-Symbol@{calculate\-Symbol}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -145,12 +145,16 @@ Definition at line 359 of file L\-A\-L\-R1.\-java.
 \end{DoxyParamCaption}
 )  throws Exception\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_aeec32b5c83e031225114f46ac377f804}
 
+
+Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em atm} & \\
+{\em atm} & the automaton \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+0 if no symbol have created, 1 otherwise. -\/1 if error. 
 \end{DoxyReturn}
 
 \begin{DoxyExceptions}{Exceptions}
@@ -162,7 +166,7 @@ Paolo Pino
 \end{DoxyAuthor}
 Trasformo la singola produzione k in una list per poterla passare a chiusura \hyperlink{classcontext_free_1_1parser_1_1_l_r1}{L\-R1} 
 
-Definition at line 112 of file L\-A\-L\-R1.\-java.
+Definition at line 122 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_ac711dbbc2be25d15c1a8aade7579e94e}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!chiusura\-L\-R1@{chiusura\-L\-R1}}
 \index{chiusura\-L\-R1@{chiusura\-L\-R1}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -188,7 +192,7 @@ Pierluigi Sottile
 \end{DoxyAuthor}
 
 
-Definition at line 161 of file L\-A\-L\-R1.\-java.
+Definition at line 171 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a4dcd4a4ae0b77edc1dc8abffca59c80a}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!get\-Action\-Table@{get\-Action\-Table}}
 \index{get\-Action\-Table@{get\-Action\-Table}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -199,7 +203,7 @@ Definition at line 161 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_a4dcd4a4ae0b77edc1dc8abffca59c80a}
 
 
-Definition at line 35 of file L\-A\-L\-R1.\-java.
+Definition at line 36 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a27ddf376aef3ff22758c44017b37c63d}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!get\-Automa@{get\-Automa}}
 \index{get\-Automa@{get\-Automa}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -214,7 +218,7 @@ Implements \hyperlink{interfacecontext_free_1_1parser_1_1_i_parsing_ae7681a63983
 
 
 
-Definition at line 52 of file L\-A\-L\-R1.\-java.
+Definition at line 53 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_af87607068fe2d41d8abbdb49fdeefcc0}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!get\-Goto\-Table@{get\-Goto\-Table}}
 \index{get\-Goto\-Table@{get\-Goto\-Table}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -225,7 +229,7 @@ Definition at line 52 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_af87607068fe2d41d8abbdb49fdeefcc0}
 
 
-Definition at line 43 of file L\-A\-L\-R1.\-java.
+Definition at line 44 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_ab1127f78e9b15a062f6bf344f1117327}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!get\-Grammar@{get\-Grammar}}
 \index{get\-Grammar@{get\-Grammar}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -240,7 +244,7 @@ Implements \hyperlink{interfacecontext_free_1_1parser_1_1_i_parsing_a518dbeee837
 
 
 
-Definition at line 57 of file L\-A\-L\-R1.\-java.
+Definition at line 58 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!init@{init}}
 \index{init@{init}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -251,11 +255,18 @@ Definition at line 57 of file L\-A\-L\-R1.\-java.
 )  throws Exception\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_a7618cff4af4edfffb9a538a7cb1e79cf}
 
 
+Initialize the L\-A\-L\-R(1) automaton from \hyperlink{classcontext_free_1_1parser_1_1_l_r0}{L\-R0} automaton. 
+
+If the grammar is L\-A\-L\-R(1) then initialize action and goto table. \begin{DoxyReturn}{Returns}
+0 if the grammar is ambiguous, 1 otherwise. -\/1 if error 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{classcontext_free_1_1parser_1_1_l_r0_a1936c0d9c7c80de80a5b3913f8f710b7}{context\-Free.\-parser.\-L\-R0}.
 
 
 
-Definition at line 67 of file L\-A\-L\-R1.\-java.
+Definition at line 76 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a9c19be71fc16e04343eb3c23b6eac9da}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!is\-Ambiguos@{is\-Ambiguos}}
 \index{is\-Ambiguos@{is\-Ambiguos}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -270,7 +281,7 @@ Implements \hyperlink{interfacecontext_free_1_1parser_1_1_i_parsing_a5022486813a
 
 
 
-Definition at line 382 of file L\-A\-L\-R1.\-java.
+Definition at line 392 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_ad7628eb817b4a8efff71f6e22cc1659f}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!print\-Table@{print\-Table}}
 \index{print\-Table@{print\-Table}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -288,7 +299,7 @@ Return a string with tables Goto Action.
 \end{DoxyReturn}
 
 
-Definition at line 391 of file L\-A\-L\-R1.\-java.
+Definition at line 401 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a2281981b3043c0150c1b3d3967572b1f}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!reduce@{reduce}}
 \index{reduce@{reduce}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -314,7 +325,7 @@ Pierluigi Sottile
 \end{DoxyAuthor}
 
 
-Definition at line 321 of file L\-A\-L\-R1.\-java.
+Definition at line 331 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a4bf6b83fddf359b6b0f6df26b1e58455}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!set\-Action\-Table@{set\-Action\-Table}}
 \index{set\-Action\-Table@{set\-Action\-Table}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -325,7 +336,7 @@ Definition at line 321 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_a4bf6b83fddf359b6b0f6df26b1e58455}
 
 
-Definition at line 39 of file L\-A\-L\-R1.\-java.
+Definition at line 40 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a002ce309af59de1951007a27d86b53b7}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!set\-Goto\-Table@{set\-Goto\-Table}}
 \index{set\-Goto\-Table@{set\-Goto\-Table}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -336,7 +347,7 @@ Definition at line 39 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_a002ce309af59de1951007a27d86b53b7}
 
 
-Definition at line 47 of file L\-A\-L\-R1.\-java.
+Definition at line 48 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a66f5fb1ac9aab089d3fa937acf3f63ce}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!set\-Grammar@{set\-Grammar}}
 \index{set\-Grammar@{set\-Grammar}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -351,7 +362,7 @@ Implements \hyperlink{classcontext_free_1_1parser_1_1_l_r0_ab87079bb387c26bad40d
 
 
 
-Definition at line 62 of file L\-A\-L\-R1.\-java.
+Definition at line 64 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_a79576626b3b59b832faecc986b293b36}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!table\-Costruction@{table\-Costruction}}
 \index{table\-Costruction@{table\-Costruction}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -382,7 +393,7 @@ Pierluigi Sottile
 \end{DoxyAuthor}
 
 
-Definition at line 270 of file L\-A\-L\-R1.\-java.
+Definition at line 280 of file L\-A\-L\-R1.\-java.
 
 \hypertarget{classcontext_free_1_1parser_1_1_l_a_l_r1_afa3cc07b08ecbe69486105beb311eb69}{\index{context\-Free\-::parser\-::\-L\-A\-L\-R1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}!to\-String@{to\-String}}
 \index{to\-String@{to\-String}!contextFree::parser::LALR1@{context\-Free\-::parser\-::\-L\-A\-L\-R1}}
@@ -393,7 +404,7 @@ Definition at line 270 of file L\-A\-L\-R1.\-java.
 )}}\label{classcontext_free_1_1parser_1_1_l_a_l_r1_afa3cc07b08ecbe69486105beb311eb69}
 
 
-Definition at line 418 of file L\-A\-L\-R1.\-java.
+Definition at line 428 of file L\-A\-L\-R1.\-java.
 
 
 

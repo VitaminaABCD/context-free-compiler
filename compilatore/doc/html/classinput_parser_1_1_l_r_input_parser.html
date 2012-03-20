@@ -107,6 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">inputParser.LRInputParser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Parse a txt file with action table, goto table and grammar in one line format (*.1l).  
+ <a href="classinput_parser_1_1_l_r_input_parser.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for inputParser.LRInputParser:</div>
 <div class="dyncontent">
@@ -124,19 +127,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a243ff5c225bbbe63bc64e615fed97ec4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#a243ff5c225bbbe63bc64e615fed97ec4">LRInputParser</a> ()</td></tr>
 <tr class="memitem:a42f9947db4e863a82e3a8ca89c655c2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#a42f9947db4e863a82e3a8ca89c655c2a">LRInputParser</a> (String in)</td></tr>
 <tr class="memitem:ab1fb2966ece506eead96dcededca86a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classparser_program_1_1_parser.html">Parser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#ab1fb2966ece506eead96dcededca86a6">parse</a> ()  throws Exception </td></tr>
+<tr class="memdesc:ab1fb2966ece506eead96dcededca86a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse method.  <a href="#ab1fb2966ece506eead96dcededca86a6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-static-attribs"></a>
 Static Package Attributes</h2></td></tr>
 <tr class="memitem:ae3d6e07ebb7d4368f1a2e2ad05dae6f7"><td class="memItemLeft" align="right" valign="top">static Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#ae3d6e07ebb7d4368f1a2e2ad05dae6f7">logger</a> = Logger.getLogger(LRInputParser.class.getName())</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1ade16089652dc354434e1ddb1769e96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96">readTable</a> (BufferedReader f, Hashtable&lt; String, List&lt; String &gt;&gt; table)  throws IOException </td></tr>
+<tr class="memdesc:a1ade16089652dc354434e1ddb1769e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">read the table in the first part of the file and store it in an hashtable with simbol as key and a list with an element for each state  <a href="#a1ade16089652dc354434e1ddb1769e96"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7f407afa631516efdbaf3cee992bb16f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#a7f407afa631516efdbaf3cee992bb16f">input</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00018">18</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<div class="textblock"><p>Parse a txt file with action table, goto table and grammar in one line format (*.1l). </p>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
+
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00021">21</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a243ff5c225bbbe63bc64e615fed97ec4"></a>
 <div class="memitem">
@@ -152,7 +159,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00023">23</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00026">26</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 </div>
 </div>
@@ -171,7 +178,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00026">26</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00029">29</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 </div>
 </div>
@@ -190,9 +197,11 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Parse method. </p>
+<div class="fragment"><pre class="fragment">      </pre></div> 
 <p>Implements <a class="el" href="classinput_parser_1_1_input_parser.html#ab00c1fa5b5476e62889347018764fe96">inputParser.InputParser</a>.</p>
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00031">31</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00037">37</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 </div>
 </div>
@@ -221,7 +230,22 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00059">59</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>read the table in the first part of the file and store it in an hashtable with simbol as key and a list with an element for each state </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>the input file buffer </td></tr>
+    <tr><td class="paramname">table</td><td>the hashtable where the data is stored </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00074">74</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 </div>
 </div>
@@ -237,7 +261,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00021">21</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00024">24</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 </div>
 </div>
@@ -252,7 +276,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00019">19</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00022">22</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 </div>
 </div>
@@ -263,7 +287,7 @@ Private Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 19 2012 22:08:04 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2012 17:32:03 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

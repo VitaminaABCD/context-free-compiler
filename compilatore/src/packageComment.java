@@ -36,6 +36,7 @@ IParsing lalr1 = factory.createParsing(parser);\n
 
 /*! \package inputParser
 \brief Contains the class for file parsing. 
+
 Only 2 extension are allowed:\n
 1) *.4l - a file with 4 line that define a grammar:\n
 	 	first line -> axioms\n
@@ -70,7 +71,7 @@ a proper instance initialized with the result of parsing.\n
 \nIParsing lalr1 = p.createParsing(parser);		//return an lalr1 instance initialized  
 */
 
-/*! \package inputParser
+/*! \package parserProgram
 \brief Contains the parser program's class that to create the AST of an input phrase.
 
 USAGE:\n

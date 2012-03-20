@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014                 <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ad188a705cd57d55d32fd198e6af71f75">left</a>=<span class="stringliteral">&quot;&quot;</span>;
 <a name="l00015"></a>00015                 <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">right</a>=<span class="stringliteral">&quot;&quot;</span>;
 <a name="l00016"></a>00016         }
-<a name="l00024"></a><a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a1db3c4e260abdcac50a8425cc9bd901f">00024</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a1db3c4e260abdcac50a8425cc9bd901f" title="*creates an object Prodaction complete RightList *passing between the right and left, check if eps">Production</a>(String lt, String rt){
+<a name="l00024"></a><a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a1db3c4e260abdcac50a8425cc9bd901f">00024</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a1db3c4e260abdcac50a8425cc9bd901f" title="Creates an object production and initialize it&#39;s rightList.">Production</a>(String lt, String rt){
 <a name="l00025"></a>00025                 <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ad188a705cd57d55d32fd198e6af71f75">left</a>=lt;
 <a name="l00026"></a>00026                 <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">right</a>=rt;
 <a name="l00027"></a>00027                 <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a51394e602f57b3e2f9b07d14fd01adb9">rightList</a> = <span class="keyword">new</span> ArrayList&lt;String&gt;();
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00067"></a>00067                 this.rightList = <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a51394e602f57b3e2f9b07d14fd01adb9">rightList</a>;
 <a name="l00068"></a>00068         }
 <a name="l00072"></a>00072         @Override
-<a name="l00073"></a><a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1">00073</a>         <span class="keyword">public</span> String <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1" title="return a formatted string in the form ass :: = expr">toString</a>() {
+<a name="l00073"></a><a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1">00073</a>         <span class="keyword">public</span> String <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1" title="return a formatted string in the form axioms :: = expression">toString</a>() {
 <a name="l00074"></a>00074                 <span class="keywordflow">if</span> (<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ab72c30da44fb1fbf41b9a70bf799ef58">right</a>.equals(<span class="stringliteral">&quot; &quot;</span>))
 <a name="l00075"></a>00075                         <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html#ad188a705cd57d55d32fd198e6af71f75">left</a> + <span class="stringliteral">&quot;::=&quot;</span> + <span class="stringliteral">&quot;eps&quot;</span>;
 <a name="l00076"></a>00076                 <span class="keywordflow">else</span>{
@@ -163,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 19 2012 22:08:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 20 2012 17:32:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

@@ -19,6 +19,11 @@ import parserProgram.Parser;
 import contextFree.parser.IParsing;
 import contextFree.parser.ParsingFactory;
 
+/**
+ * 
+ * @author Paolo Pino
+ *
+ */
 public class Home{
 
 

@@ -1,6 +1,12 @@
 import java.io.File;
 import javax.swing.filechooser.FileFilter;
 
+
+/**
+ * Filter the file type for the file chooser.
+ * @author Paolo Pino
+ *
+ */
 public class GenericFileFilter extends FileFilter {
     private String descrizione;
     private String finale;

@@ -44,7 +44,11 @@ import java.awt.Font;
 import javax.swing.SpringLayout;
 import java.awt.FlowLayout;
 
-
+/**
+ * The gui access.
+ * @author Paolo Pino
+ *
+ */
 public class HomeGui extends JFrame{
 	private static final long serialVersionUID = 1L;
 
@@ -75,9 +79,10 @@ public class HomeGui extends JFrame{
 	}
 
 	/**
-	 * Create the application.
+	 * Initialize GUI component and start the process.
 	 * @throws Exception 
 	 * @throws FileNotFoundException 
+	 * @author Paolo Pino
 	 */
 	public HomeGui() throws FileNotFoundException, Exception {
 		filePath="esempioLibro.4l";
@@ -86,7 +91,7 @@ public class HomeGui extends JFrame{
 	}
 	
 	private JFileChooser apriFileChooser;
-    private JFileChooser salvaFileChooser;
+//  private JFileChooser salvaFileChooser;
 
     private FileFilter txtFileFilter;
     private FileFilter onelineFileFilter,fourlineFileFilter;
@@ -113,6 +118,13 @@ public class HomeGui extends JFrame{
         }
     }
 
+    /**
+     * Start the parsing of grammar file and create result file.
+     * @param path the path of grammar file (ex. grammar.4l)
+     * @throws FileNotFoundException
+     * @throws Exception
+     * @author Paolo Pino
+     */
     private void startProcess(String path) throws FileNotFoundException, Exception {
         long startTime = System.currentTimeMillis();
     	InputParser parser = new GrammarParser(path);
@@ -138,23 +150,26 @@ public class HomeGui extends JFrame{
 		logger.info("Total elapsed time in execution of grammar parsing and \n\t\t\t\tAction e Goto table is :"+ (endTime-startTime));
 	}
 
-	private void operazioneSalvaConNome() {
-        if (salvaFileChooser == null) {
-            salvaFileChooser = new JFileChooser();
-
-            salvaFileChooser.addChoosableFileFilter(txtFileFilter);
-            salvaFileChooser.addChoosableFileFilter(onelineFileFilter);
-            salvaFileChooser.addChoosableFileFilter(fourlineFileFilter);
-        }
-        
-        int stato = salvaFileChooser.showSaveDialog(this);
-
-        if (stato == JFileChooser.APPROVE_OPTION) {
-            File fileSelezionato = salvaFileChooser.getSelectedFile();
-          
-            JOptionPane.showMessageDialog(this, "Hai selezionato per il salvataggio:\n\n" + fileSelezionato);
-        }
-    }
+//    /**
+//     * Save operation.
+//     */
+//	private void operazioneSalvaConNome() {
+//        if (salvaFileChooser == null) {
+//            salvaFileChooser = new JFileChooser();
+//
+//            salvaFileChooser.addChoosableFileFilter(txtFileFilter);
+//            salvaFileChooser.addChoosableFileFilter(onelineFileFilter);
+//            salvaFileChooser.addChoosableFileFilter(fourlineFileFilter);
+//        }
+//        
+//        int stato = salvaFileChooser.showSaveDialog(this);
+//
+//        if (stato == JFileChooser.APPROVE_OPTION) {
+//            File fileSelezionato = salvaFileChooser.getSelectedFile();
+//          
+//            JOptionPane.showMessageDialog(this, "Hai selezionato per il salvataggio:\n\n" + fileSelezionato);
+//        }
+//    }
     
 
 	/**
@@ -211,10 +226,10 @@ public class HomeGui extends JFrame{
         JMenu menu = new JMenu("File");
 
         JMenuItem apriMenuItem = new JMenuItem("Apri...");
-        JMenuItem salvaConNomeMenuItem = new JMenuItem("Salva con nome...");
+//        JMenuItem salvaConNomeMenuItem = new JMenuItem("Salva con nome...");
 
         menu.add(apriMenuItem);
-        menu.add(salvaConNomeMenuItem);
+//        menu.add(salvaConNomeMenuItem);
 
         menuBar.add(menu);
 
@@ -234,17 +249,22 @@ public class HomeGui extends JFrame{
             }
         });
 
-        salvaConNomeMenuItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                operazioneSalvaConNome();
-            }
-        });
+//        salvaConNomeMenuItem.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                operazioneSalvaConNome();
+//            }
+//        });
         
-        
+        /**
+         * When clicked parse "Result.txt" file and create the Ast.
+         * @author Paolo Pino
+         */
 		startParsing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {        
 				long startTime = System.currentTimeMillis();
 				try {
+//					ParserFactory fc = new ConcreteParserFactory();
+//					InputParser parser =  (InputParser) fc.factoryMethod("Result.txt").parse();      //TODO: solleva eccezione [ClassCastException: parserProgram.Parser cannot be cast to inputParser.InputParser]
 		        	InputParser parser = new LRInputParser("Result.txt");
 		        	DefaultMutableTreeNode root = astMethod(parser);
 		        	if(root!=null){
@@ -266,10 +286,10 @@ public class HomeGui extends JFrame{
 		        	}
 				} catch (IOException e) {
 					JOptionPane.showMessageDialog(frame.getContentPane(), "Insert input");
-//					e.printStackTrace();
+					e.printStackTrace();
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(frame.getContentPane(), "Uno o piï¿½ caratteri tra quelli inseriti\nnon sono ammessi dalla grammatica corrente");
-//					e.printStackTrace();
+					JOptionPane.showMessageDialog(frame.getContentPane(), "Uno o più caratteri tra quelli inseriti\nnon sono ammessi dalla grammatica corrente");
+					e.printStackTrace();
 //					logger.error("Parsing Result.txt fallito",e);
 				}
 		        long endTime = System.currentTimeMillis();
@@ -327,6 +347,13 @@ public class HomeGui extends JFrame{
 		frame.getContentPane().add(automaText);
 	}
 
+	/**
+	 * Create the AST.
+	 * @param parser the object that rappresent "Result.txt"
+	 * @return DefaultMutableTreeNode root of AST
+	 * @throws Exception
+	 * @author Paolo Pino
+	 */
 	private DefaultMutableTreeNode astMethod(InputParser parser) throws Exception {
 		Parser parserProgram = (Parser)parser.parse();
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
@@ -350,7 +377,12 @@ public class HomeGui extends JFrame{
 		return null;	
 	}
 
-	//Scrive l'AST nel file "AST.xml"
+	/**
+	 * Store an AST into xml file named "AST.xml"
+	 * @param root the root of AST
+	 * @throws FileNotFoundException
+	 * @author Paolo Pino
+	 */
 	private void writeToXml(DefaultMutableTreeNode root) throws FileNotFoundException { 
 		XStream xstream = new XStream();
 		String xml = xstream.toXML(root);

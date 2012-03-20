@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -72,16 +80,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('classcontext_free_1_1parser_1_1_automa.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,14 +112,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespacecontext_free.html">contextFree</a>      </li>
-      <li class="navelem"><a class="el" href="namespacecontext_free_1_1parser.html">parser</a>      </li>
-      <li class="navelem"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a>      </li>
-    </ul>
-  </div>
-</div>
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -106,69 +120,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">contextFree.parser.Automa Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for contextFree.parser.Automa:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_automa__coll__graph.png" border="0" usemap="#context_free_8parser_8_automa_coll__map" alt="Collaboration graph"/></div>
+<map name="context_free_8parser_8_automa_coll__map" id="context_free_8parser_8_automa_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classcontext_free_1_1parser_1_1_automa-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6163f4f4b71c0bbd11cb883c7a3265a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a6163f4f4b71c0bbd11cb883c7a3265a6">Automa</a> ()</td></tr>
-<tr class="memitem:a6a030d3a01bf7ef99b437fcf14727bad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a6a030d3a01bf7ef99b437fcf14727bad">Automa</a> (List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt; <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a5b71afafd71dfa903e36c786618b556d">states</a>)</td></tr>
-<tr class="memitem:a0a2be97fe40e3035c579b83535649c2e"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a0a2be97fe40e3035c579b83535649c2e">getStates</a> ()</td></tr>
-<tr class="memitem:a16f74867e919ccddf13441295c80295b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a16f74867e919ccddf13441295c80295b">setStates</a> (List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt; <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a5b71afafd71dfa903e36c786618b556d">states</a>)</td></tr>
+<tr class="memitem:a6a030d3a01bf7ef99b437fcf14727bad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a030d3a01bf7ef99b437fcf14727bad"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Automa</b> (List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt; states)</td></tr>
+<tr class="memitem:a0a2be97fe40e3035c579b83535649c2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a2be97fe40e3035c579b83535649c2e"></a>
+List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStates</b> ()</td></tr>
+<tr class="memitem:a16f74867e919ccddf13441295c80295b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16f74867e919ccddf13441295c80295b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStates</b> (List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt; states)</td></tr>
 <tr class="memitem:ad82cfb3bb6b22d084ef18a95350828b3"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#ad82cfb3bb6b22d084ef18a95350828b3">newItemsFromKernels</a> ()</td></tr>
 <tr class="memdesc:ad82cfb3bb6b22d084ef18a95350828b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get kernels element for each states into automa.  <a href="#ad82cfb3bb6b22d084ef18a95350828b3"></a><br/></td></tr>
 <tr class="memitem:a08b46ef04492599b98660a5e55f356bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a08b46ef04492599b98660a5e55f356bd">getState</a> (int i)</td></tr>
 <tr class="memdesc:a08b46ef04492599b98660a5e55f356bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a state with a specific state index.  <a href="#a08b46ef04492599b98660a5e55f356bd"></a><br/></td></tr>
-<tr class="memitem:a816d25575a45d9a0bbc415a6e0a71a2e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a816d25575a45d9a0bbc415a6e0a71a2e">toString</a> ()</td></tr>
+<tr class="memitem:a816d25575a45d9a0bbc415a6e0a71a2e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a816d25575a45d9a0bbc415a6e0a71a2e"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
 <tr class="memitem:ad94ecd3a9f8850220f86b6c54b751f78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#ad94ecd3a9f8850220f86b6c54b751f78">removeDollarLookahed</a> ()</td></tr>
 <tr class="memdesc:ad94ecd3a9f8850220f86b6c54b751f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove dollar simbol lookahed  <a href="#ad94ecd3a9f8850220f86b6c54b751f78"></a><br/></td></tr>
-<tr class="memitem:aa3e53614ea757f72b87144aa6b5b2282"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#aa3e53614ea757f72b87144aa6b5b2282">size</a> ()</td></tr>
+<tr class="memitem:aa3e53614ea757f72b87144aa6b5b2282"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3e53614ea757f72b87144aa6b5b2282"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5b71afafd71dfa903e36c786618b556d"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a5b71afafd71dfa903e36c786618b556d">states</a></td></tr>
+<tr class="memitem:a5b71afafd71dfa903e36c786618b556d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b71afafd71dfa903e36c786618b556d"></a>
+List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>states</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_automa_8java_source.html#l00006">6</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6163f4f4b71c0bbd11cb883c7a3265a6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a6163f4f4b71c0bbd11cb883c7a3265a6">contextFree.parser.Automa.Automa</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00009">9</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a030d3a01bf7ef99b437fcf14727bad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a6163f4f4b71c0bbd11cb883c7a3265a6">contextFree.parser.Automa.Automa</a> </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td>
-          <td class="paramname"><em>states</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00013">13</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a08b46ef04492599b98660a5e55f356bd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -192,24 +182,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0a2be97fe40e3035c579b83535649c2e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a>&gt; <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a0a2be97fe40e3035c579b83535649c2e">contextFree.parser.Automa.getStates</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00017">17</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ad82cfb3bb6b22d084ef18a95350828b3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -228,6 +200,17 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>new <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> list with shift value and kernel item only </dd></dl>
 
 <p>Definition at line <a class="el" href="_automa_8java_source.html#l00028">28</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3_icgraph" id="classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -250,76 +233,16 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_automa_8java_source.html#l00060">60</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78_icgraph.png" border="0" usemap="#classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78_icgraph" id="classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78_icgraph">
+</map>
 </div>
-<a class="anchor" id="a16f74867e919ccddf13441295c80295b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a16f74867e919ccddf13441295c80295b">contextFree.parser.Automa.setStates</a> </td>
-          <td>(</td>
-          <td class="paramtype">List&lt; <a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a> &gt;&#160;</td>
-          <td class="paramname"><em>states</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00021">21</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa3e53614ea757f72b87144aa6b5b2282"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#aa3e53614ea757f72b87144aa6b5b2282">contextFree.parser.Automa.size</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00069">69</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a816d25575a45d9a0bbc415a6e0a71a2e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a816d25575a45d9a0bbc415a6e0a71a2e">contextFree.parser.Automa.toString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00050">50</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a5b71afafd71dfa903e36c786618b556d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="classcontext_free_1_1parser_1_1_state.html">State</a>&gt; <a class="el" href="classcontext_free_1_1parser_1_1_automa.html#a5b71afafd71dfa903e36c786618b556d">contextFree.parser.Automa.states</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_automa_8java_source.html#l00007">7</a> of file <a class="el" href="_automa_8java_source.html">Automa.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -327,13 +250,19 @@ Private Attributes</h2></td></tr>
 <li>src/contextFree/parser/<a class="el" href="_automa_8java_source.html">Automa.java</a></li>
 </ul>
 </div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>contextFree</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecontext_free_1_1parser.html">parser</a>      </li>
+      <li class="navelem"><a class="el" href="classcontext_free_1_1parser_1_1_automa.html">Automa</a>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:03 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -72,16 +80,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('classcontext_free_1_1grammar_1_1_context_free_grammar.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,14 +112,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespacecontext_free.html">contextFree</a>      </li>
-      <li class="navelem"><a class="el" href="namespacecontext_free_1_1grammar.html">grammar</a>      </li>
-      <li class="navelem"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html">ContextFreeGrammar</a>      </li>
-    </ul>
-  </div>
-</div>
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -109,23 +123,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Define a context-free grammar type.  
  <a href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for contextFree.grammar.ContextFreeGrammar:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classcontext_free_1_1grammar_1_1_context_free_grammar.png" usemap="#contextFree.grammar.ContextFreeGrammar_map" alt=""/>
-  <map id="contextFree.grammar.ContextFreeGrammar_map" name="contextFree.grammar.ContextFreeGrammar_map">
-<area href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface." alt="contextFree.grammar.IGrammar" shape="rect" coords="0,0,256,24"/>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for contextFree.grammar.ContextFreeGrammar:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar__inherit__graph.png" border="0" usemap="#context_free_8grammar_8_context_free_grammar_inherit__map" alt="Inheritance graph"/></div>
+<map name="context_free_8grammar_8_context_free_grammar_inherit__map" id="context_free_8grammar_8_context_free_grammar_inherit__map">
 </map>
- </div></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for contextFree.grammar.ContextFreeGrammar:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar__coll__graph.png" border="0" usemap="#context_free_8grammar_8_context_free_grammar_coll__map" alt="Collaboration graph"/></div>
+<map name="context_free_8grammar_8_context_free_grammar_coll__map" id="context_free_8grammar_8_context_free_grammar_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classcontext_free_1_1grammar_1_1_context_free_grammar-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab78c5e13de642ff84db424e6fb4a5aa1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ab78c5e13de642ff84db424e6fb4a5aa1">ContextFreeGrammar</a> ()</td></tr>
-<tr class="memitem:ad4871f790005d3582e0f4d50aceac810"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ad4871f790005d3582e0f4d50aceac810">ContextFreeGrammar</a> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod)</td></tr>
-<tr class="memitem:aa29c85cc857ff390f50efc82d7c959e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#aa29c85cc857ff390f50efc82d7c959e9">ContextFreeGrammar</a> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod, List&lt; String &gt; <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a8cecf8ee3fe6ca01f58aacf390720746">V</a>, List&lt; String &gt; <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5e6072d2c2f11703160c3c39c2968489">T</a>)</td></tr>
+<tr class="memitem:ad4871f790005d3582e0f4d50aceac810"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4871f790005d3582e0f4d50aceac810"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ContextFreeGrammar</b> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod)</td></tr>
+<tr class="memitem:aa29c85cc857ff390f50efc82d7c959e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa29c85cc857ff390f50efc82d7c959e9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ContextFreeGrammar</b> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod, List&lt; String &gt; V, List&lt; String &gt; T)</td></tr>
 <tr class="memitem:a664b69a446100c7c4e7a390fb2ee5ebc"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a664b69a446100c7c4e7a390fb2ee5ebc">getV</a> ()</td></tr>
 <tr class="memdesc:a664b69a446100c7c4e7a390fb2ee5ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get non-terminal symbols list.  <a href="#a664b69a446100c7c4e7a390fb2ee5ebc"></a><br/></td></tr>
 <tr class="memitem:ad3d3e1efadeb4cc6ed252342fd52c76c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ad3d3e1efadeb4cc6ed252342fd52c76c">setV</a> (List&lt; String &gt; v)</td></tr>
@@ -154,119 +178,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9c3bfe0b038204420b470fab326ce7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set to avoid duplication.  <a href="#a9c3bfe0b038204420b470fab326ce7bb"></a><br/></td></tr>
 <tr class="memitem:aca5cad8fa908f908d38e0e7e0aa181ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#aca5cad8fa908f908d38e0e7e0aa181ed">follow</a> ()</td></tr>
 <tr class="memdesc:aca5cad8fa908f908d38e0e7e0aa181ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set to avoid duplication.  <a href="#aca5cad8fa908f908d38e0e7e0aa181ed"></a><br/></td></tr>
-<tr class="memitem:afd242bd888b53c20465c0bd3675d29d4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#afd242bd888b53c20465c0bd3675d29d4">toString</a> ()</td></tr>
+<tr class="memitem:afd242bd888b53c20465c0bd3675d29d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd242bd888b53c20465c0bd3675d29d4"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
 <tr class="memitem:a922203e2db862d2a8ab31e8e7736273b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a922203e2db862d2a8ab31e8e7736273b">toOneLineString</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a8cecf8ee3fe6ca01f58aacf390720746"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a8cecf8ee3fe6ca01f58aacf390720746">V</a></td></tr>
-<tr class="memitem:a5e6072d2c2f11703160c3c39c2968489"><td class="memItemLeft" align="right" valign="top">List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5e6072d2c2f11703160c3c39c2968489">T</a></td></tr>
-<tr class="memitem:ae1f4363ca57c34622cdca5175aef6b6c"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ae1f4363ca57c34622cdca5175aef6b6c">P</a></td></tr>
-<tr class="memitem:a516b9fb1183524ea3e7859b41f60ad32"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a516b9fb1183524ea3e7859b41f60ad32">S</a></td></tr>
-<tr class="memitem:a5a9f69817c82b19b21adb85326d60f3b"><td class="memItemLeft" align="right" valign="top">boolean[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5a9f69817c82b19b21adb85326d60f3b">nullo</a></td></tr>
-<tr class="memitem:a670c2e35761e57add4c2f3ae29131325"><td class="memItemLeft" align="right" valign="top">Set&lt; String &gt;[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a670c2e35761e57add4c2f3ae29131325">first</a></td></tr>
-<tr class="memitem:a56137caac336fd26652d4c21252fd95f"><td class="memItemLeft" align="right" valign="top">Set&lt; String &gt;[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a56137caac336fd26652d4c21252fd95f">follow</a></td></tr>
+<tr class="memitem:a8cecf8ee3fe6ca01f58aacf390720746"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cecf8ee3fe6ca01f58aacf390720746"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>V</b></td></tr>
+<tr class="memitem:a5e6072d2c2f11703160c3c39c2968489"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e6072d2c2f11703160c3c39c2968489"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>T</b></td></tr>
+<tr class="memitem:ae1f4363ca57c34622cdca5175aef6b6c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1f4363ca57c34622cdca5175aef6b6c"></a>
+List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>P</b></td></tr>
+<tr class="memitem:a516b9fb1183524ea3e7859b41f60ad32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a516b9fb1183524ea3e7859b41f60ad32"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>S</b></td></tr>
+<tr class="memitem:a5a9f69817c82b19b21adb85326d60f3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a9f69817c82b19b21adb85326d60f3b"></a>
+boolean[]&#160;</td><td class="memItemRight" valign="bottom"><b>nullo</b></td></tr>
+<tr class="memitem:a670c2e35761e57add4c2f3ae29131325"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a670c2e35761e57add4c2f3ae29131325"></a>
+Set&lt; String &gt;[]&#160;</td><td class="memItemRight" valign="bottom"><b>first</b></td></tr>
+<tr class="memitem:a56137caac336fd26652d4c21252fd95f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56137caac336fd26652d4c21252fd95f"></a>
+Set&lt; String &gt;[]&#160;</td><td class="memItemRight" valign="bottom"><b>follow</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Define a context-free grammar type. </p>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00015">15</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab78c5e13de642ff84db424e6fb4a5aa1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ab78c5e13de642ff84db424e6fb4a5aa1">contextFree.grammar.ContextFreeGrammar.ContextFreeGrammar</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00025">25</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad4871f790005d3582e0f4d50aceac810"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ab78c5e13de642ff84db424e6fb4a5aa1">contextFree.grammar.ContextFreeGrammar.ContextFreeGrammar</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>ass</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt;&#160;</td>
-          <td class="paramname"><em>prod</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00032">32</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa29c85cc857ff390f50efc82d7c959e9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ab78c5e13de642ff84db424e6fb4a5aa1">contextFree.grammar.ContextFreeGrammar.ContextFreeGrammar</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>ass</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt;&#160;</td>
-          <td class="paramname"><em>prod</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; String &gt;&#160;</td>
-          <td class="paramname"><em>V</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; String &gt;&#160;</td>
-          <td class="paramname"><em>T</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00039">39</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a9c3bfe0b038204420b470fab326ce7bb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a670c2e35761e57add4c2f3ae29131325">contextFree.grammar.ContextFreeGrammar.first</a> </td>
+          <td class="memname">void contextFree.grammar.ContextFreeGrammar.first </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -280,6 +223,28 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00181">181</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_cgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_icgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_icgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_icgraph">
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="aca5cad8fa908f908d38e0e7e0aa181ed"></a>
@@ -287,7 +252,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a56137caac336fd26652d4c21252fd95f">contextFree.grammar.ContextFreeGrammar.follow</a> </td>
+          <td class="memname">void contextFree.grammar.ContextFreeGrammar.follow </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -300,6 +265,28 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author:</dt><dd>Pierluigi Sottile </dd></dl>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00249">249</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_cgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_icgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_icgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -323,6 +310,17 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a256e9280e008a7c709ccb80725ccc0f2">contextFree.grammar.IGrammar</a>.</p>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00090">90</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9_cgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9_cgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -354,6 +352,17 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00101">101</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
 
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5_cgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5_cgraph">
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a5dae0e5de95349d310869fb5941cb5be"></a>
@@ -382,6 +391,17 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#aad085d9f84a32ca1abe5fba0c9e5f20c">contextFree.grammar.IGrammar</a>.</p>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00110">110</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be_cgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be_cgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -482,7 +502,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5a9f69817c82b19b21adb85326d60f3b">contextFree.grammar.ContextFreeGrammar.nullo</a> </td>
+          <td class="memname">void contextFree.grammar.ContextFreeGrammar.nullo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -496,6 +516,28 @@ Private Attributes</h2></td></tr>
 <dl class="section author"><dt>Author:</dt><dd>Pierluigi Sottile </dd></dl>
 
 <p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00121">121</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_cgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_icgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_icgraph" id="classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -636,141 +678,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afd242bd888b53c20465c0bd3675d29d4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#afd242bd888b53c20465c0bd3675d29d4">contextFree.grammar.ContextFreeGrammar.toString</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00331">331</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a670c2e35761e57add4c2f3ae29131325"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Set&lt;String&gt; [] <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a670c2e35761e57add4c2f3ae29131325">contextFree.grammar.ContextFreeGrammar.first</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00022">22</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a56137caac336fd26652d4c21252fd95f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Set&lt;String&gt; [] <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a56137caac336fd26652d4c21252fd95f">contextFree.grammar.ContextFreeGrammar.follow</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00023">23</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5a9f69817c82b19b21adb85326d60f3b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean [] <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5a9f69817c82b19b21adb85326d60f3b">contextFree.grammar.ContextFreeGrammar.nullo</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00021">21</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae1f4363ca57c34622cdca5175aef6b6c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>&gt; <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ae1f4363ca57c34622cdca5175aef6b6c">contextFree.grammar.ContextFreeGrammar.P</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00019">19</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a516b9fb1183524ea3e7859b41f60ad32"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a516b9fb1183524ea3e7859b41f60ad32">contextFree.grammar.ContextFreeGrammar.S</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00020">20</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5e6072d2c2f11703160c3c39c2968489"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;String&gt; <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5e6072d2c2f11703160c3c39c2968489">contextFree.grammar.ContextFreeGrammar.T</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00018">18</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8cecf8ee3fe6ca01f58aacf390720746"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;String&gt; <a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a8cecf8ee3fe6ca01f58aacf390720746">contextFree.grammar.ContextFreeGrammar.V</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_context_free_grammar_8java_source.html#l00017">17</a> of file <a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/contextFree/grammar/<a class="el" href="_context_free_grammar_8java_source.html">ContextFreeGrammar.java</a></li>
 </ul>
 </div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>contextFree</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecontext_free_1_1grammar.html">grammar</a>      </li>
+      <li class="navelem"><a class="el" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html">ContextFreeGrammar</a>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:03 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -72,16 +80,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('class_home_gui.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +112,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div>
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -107,8 +128,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>The gui access.  
  <a href="class_home_gui.html#details">More...</a></p>
-
-<p>Inherits JFrame.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for HomeGui:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui__inherit__graph.png" border="0" usemap="#_home_gui_inherit__map" alt="Inheritance graph"/></div>
+<map name="_home_gui_inherit__map" id="_home_gui_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for HomeGui:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui__coll__graph.png" border="0" usemap="#_home_gui_coll__map" alt="Collaboration graph"/></div>
+<map name="_home_gui_coll__map" id="_home_gui_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_home_gui-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -118,47 +155,63 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:add92e1cf71983b9cc6f70f040d3ea593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize GUI component and start the process.  <a href="#add92e1cf71983b9cc6f70f040d3ea593"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a241867731938068ae82ae7d5e7371fa3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a241867731938068ae82ae7d5e7371fa3">main</a> (String[] args)</td></tr>
-<tr class="memdesc:a241867731938068ae82ae7d5e7371fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch the application.  <a href="#a241867731938068ae82ae7d5e7371fa3"></a><br/></td></tr>
+<tr class="memitem:a241867731938068ae82ae7d5e7371fa3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a241867731938068ae82ae7d5e7371fa3"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a241867731938068ae82ae7d5e7371fa3">main</a> (String[] args)</td></tr>
+<tr class="memdesc:a241867731938068ae82ae7d5e7371fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Launch the application. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-attribs"></a>
 Package Attributes</h2></td></tr>
-<tr class="memitem:a6b00edbcb893105ddc5e3b2beb4c2dca"><td class="memItemLeft" align="right" valign="top">TextArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a6b00edbcb893105ddc5e3b2beb4c2dca">automaText</a></td></tr>
-<tr class="memitem:a7f56e390a2982689b92cee117f50e987"><td class="memItemLeft" align="right" valign="top">FileFilter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a7f56e390a2982689b92cee117f50e987">fourlineFileFilter</a></td></tr>
+<tr class="memitem:a6b00edbcb893105ddc5e3b2beb4c2dca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b00edbcb893105ddc5e3b2beb4c2dca"></a>
+TextArea&#160;</td><td class="memItemRight" valign="bottom"><b>automaText</b></td></tr>
+<tr class="memitem:a7f56e390a2982689b92cee117f50e987"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f56e390a2982689b92cee117f50e987"></a>
+FileFilter&#160;</td><td class="memItemRight" valign="bottom"><b>fourlineFileFilter</b></td></tr>
 <tr><td colspan="2"><h2><a name="pac-static-attribs"></a>
 Static Package Attributes</h2></td></tr>
-<tr class="memitem:a6eef831dc2ff4533740f3395c4b9067a"><td class="memItemLeft" align="right" valign="top">static Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a6eef831dc2ff4533740f3395c4b9067a">logger</a> = Logger.getLogger(HomeGui.class.getName())</td></tr>
+<tr class="memitem:a6eef831dc2ff4533740f3395c4b9067a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6eef831dc2ff4533740f3395c4b9067a"></a>
+static Logger&#160;</td><td class="memItemRight" valign="bottom"><b>logger</b> = Logger.getLogger(HomeGui.class.getName())</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a8a91bfb188035012962b468a651f73a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a8a91bfb188035012962b468a651f73a5">operazioneApri</a> ()  throws FileNotFoundException, Exception </td></tr>
+<tr class="memitem:a8a91bfb188035012962b468a651f73a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a91bfb188035012962b468a651f73a5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operazioneApri</b> ()  throws FileNotFoundException, Exception </td></tr>
 <tr class="memitem:a52f0602a97cd1ef63063bbbbda036d26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a52f0602a97cd1ef63063bbbbda036d26">startProcess</a> (String path)  throws FileNotFoundException, Exception </td></tr>
 <tr class="memdesc:a52f0602a97cd1ef63063bbbbda036d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the parsing of grammar file and create result file.  <a href="#a52f0602a97cd1ef63063bbbbda036d26"></a><br/></td></tr>
 <tr class="memitem:a5e935834d62fe14dfda2c9884f1f7010"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010">initialize</a> ()</td></tr>
 <tr class="memdesc:a5e935834d62fe14dfda2c9884f1f7010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save operation.  <a href="#a5e935834d62fe14dfda2c9884f1f7010"></a><br/></td></tr>
-<tr class="memitem:a98af3aa80619748a678edae77b231bef"><td class="memItemLeft" align="right" valign="top">DefaultMutableTreeNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a98af3aa80619748a678edae77b231bef">astMethod</a> (<a class="el" href="classinput_parser_1_1_input_parser.html">InputParser</a> parser)  throws Exception </td></tr>
-<tr class="memdesc:a98af3aa80619748a678edae77b231bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the AST.  <a href="#a98af3aa80619748a678edae77b231bef"></a><br/></td></tr>
+<tr class="memitem:ac44ac869c6c437c200139d79f9f9b027"><td class="memItemLeft" align="right" valign="top">DefaultMutableTreeNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027">astMethod</a> (<a class="el" href="classparser_program_1_1_parser_program.html">ParserProgram</a> parserProgram)  throws Exception </td></tr>
+<tr class="memdesc:ac44ac869c6c437c200139d79f9f9b027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the AST.  <a href="#ac44ac869c6c437c200139d79f9f9b027"></a><br/></td></tr>
 <tr class="memitem:a0428d3c56abfafc769684835c1581f38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38">writeToXml</a> (DefaultMutableTreeNode root)  throws FileNotFoundException </td></tr>
 <tr class="memdesc:a0428d3c56abfafc769684835c1581f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store an AST into xml file named "AST.xml".  <a href="#a0428d3c56abfafc769684835c1581f38"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a0b1781db25b8fdacc8970aa6166b11ad"><td class="memItemLeft" align="right" valign="top">JFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a0b1781db25b8fdacc8970aa6166b11ad">frame</a></td></tr>
-<tr class="memitem:adb0131b6ea64353bf6b0c5993468341c"><td class="memItemLeft" align="right" valign="top">Panel&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#adb0131b6ea64353bf6b0c5993468341c">rightPanel</a></td></tr>
-<tr class="memitem:a1f9226407f1c2c6ff8d62f84dfcebfbe"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a1f9226407f1c2c6ff8d62f84dfcebfbe">filePath</a></td></tr>
-<tr class="memitem:aedb975e31137435a02772599392bf195"><td class="memItemLeft" align="right" valign="top">JButton&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#aedb975e31137435a02772599392bf195">startParsing</a></td></tr>
-<tr class="memitem:ac6ba89ab2c3204e87ec00b9b4962f327"><td class="memItemLeft" align="right" valign="top">TextArea&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#ac6ba89ab2c3204e87ec00b9b4962f327">leftPanel</a></td></tr>
-<tr class="memitem:ab4af4f54e925eedcab3cb87da41410e1"><td class="memItemLeft" align="right" valign="top">JTree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#ab4af4f54e925eedcab3cb87da41410e1">tree</a></td></tr>
-<tr class="memitem:a7b615d195d8208fab52fd9db85082d46"><td class="memItemLeft" align="right" valign="top">JFileChooser&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a7b615d195d8208fab52fd9db85082d46">apriFileChooser</a></td></tr>
-<tr class="memitem:af20bf1a94a96e4f53e1f66337a257ce3"><td class="memItemLeft" align="right" valign="top">FileFilter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#af20bf1a94a96e4f53e1f66337a257ce3">txtFileFilter</a></td></tr>
-<tr class="memitem:a8b0192c597368a34c855abe70a8a80ec"><td class="memItemLeft" align="right" valign="top">FileFilter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a8b0192c597368a34c855abe70a8a80ec">onelineFileFilter</a></td></tr>
-<tr class="memitem:ab33ea273ae2f2c5bde32041076af630c"><td class="memItemLeft" align="right" valign="top">JTextField&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#ab33ea273ae2f2c5bde32041076af630c">input</a></td></tr>
+<tr class="memitem:a0b1781db25b8fdacc8970aa6166b11ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b1781db25b8fdacc8970aa6166b11ad"></a>
+JFrame&#160;</td><td class="memItemRight" valign="bottom"><b>frame</b></td></tr>
+<tr class="memitem:adb0131b6ea64353bf6b0c5993468341c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb0131b6ea64353bf6b0c5993468341c"></a>
+Panel&#160;</td><td class="memItemRight" valign="bottom"><b>rightPanel</b></td></tr>
+<tr class="memitem:a1f9226407f1c2c6ff8d62f84dfcebfbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f9226407f1c2c6ff8d62f84dfcebfbe"></a>
+String&#160;</td><td class="memItemRight" valign="bottom"><b>filePath</b></td></tr>
+<tr class="memitem:aedb975e31137435a02772599392bf195"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedb975e31137435a02772599392bf195"></a>
+JButton&#160;</td><td class="memItemRight" valign="bottom"><b>startParsing</b></td></tr>
+<tr class="memitem:ac6ba89ab2c3204e87ec00b9b4962f327"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6ba89ab2c3204e87ec00b9b4962f327"></a>
+TextArea&#160;</td><td class="memItemRight" valign="bottom"><b>leftPanel</b></td></tr>
+<tr class="memitem:ab4af4f54e925eedcab3cb87da41410e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4af4f54e925eedcab3cb87da41410e1"></a>
+JTree&#160;</td><td class="memItemRight" valign="bottom"><b>tree</b></td></tr>
+<tr class="memitem:a7b615d195d8208fab52fd9db85082d46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b615d195d8208fab52fd9db85082d46"></a>
+JFileChooser&#160;</td><td class="memItemRight" valign="bottom"><b>apriFileChooser</b></td></tr>
+<tr class="memitem:af20bf1a94a96e4f53e1f66337a257ce3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af20bf1a94a96e4f53e1f66337a257ce3"></a>
+FileFilter&#160;</td><td class="memItemRight" valign="bottom"><b>txtFileFilter</b></td></tr>
+<tr class="memitem:a8b0192c597368a34c855abe70a8a80ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b0192c597368a34c855abe70a8a80ec"></a>
+FileFilter&#160;</td><td class="memItemRight" valign="bottom"><b>onelineFileFilter</b></td></tr>
+<tr class="memitem:ab33ea273ae2f2c5bde32041076af630c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab33ea273ae2f2c5bde32041076af630c"></a>
+JTextField&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a6a93dac6b8c89a59ca14536d6f5ad414"><td class="memItemLeft" align="right" valign="top">static final long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_home_gui.html#a6a93dac6b8c89a59ca14536d6f5ad414">serialVersionUID</a> = 1L</td></tr>
+<tr class="memitem:a6a93dac6b8c89a59ca14536d6f5ad414"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a93dac6b8c89a59ca14536d6f5ad414"></a>
+static final long&#160;</td><td class="memItemRight" valign="bottom"><b>serialVersionUID</b> = 1L</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The gui access. </p>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00052">52</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00051">51</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="add92e1cf71983b9cc6f70f040d3ea593"></a>
 <div class="memitem">
@@ -184,20 +237,42 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00087">87</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00086">86</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_cgraph.png" border="0" usemap="#class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_cgraph" alt=""/></div>
+<map name="class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_cgraph" id="class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_icgraph.png" border="0" usemap="#class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_icgraph" alt=""/></div>
+<map name="class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_icgraph" id="class_home_gui_add92e1cf71983b9cc6f70f040d3ea593_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a98af3aa80619748a678edae77b231bef"></a>
+<a class="anchor" id="ac44ac869c6c437c200139d79f9f9b027"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DefaultMutableTreeNode <a class="el" href="class_home_gui.html#a98af3aa80619748a678edae77b231bef">HomeGui.astMethod</a> </td>
+          <td class="memname">DefaultMutableTreeNode <a class="el" href="class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027">HomeGui.astMethod</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classinput_parser_1_1_input_parser.html">InputParser</a>&#160;</td>
-          <td class="paramname"><em>parser</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classparser_program_1_1_parser_program.html">ParserProgram</a>&#160;</td>
+          <td class="paramname"><em>parserProgram</em></td><td>)</td>
           <td>  throws Exception <code> [private]</code></td>
         </tr>
       </table>
@@ -220,7 +295,29 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00357">357</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00352">352</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_ac44ac869c6c437c200139d79f9f9b027_cgraph.png" border="0" usemap="#class_home_gui_ac44ac869c6c437c200139d79f9f9b027_cgraph" alt=""/></div>
+<map name="class_home_gui_ac44ac869c6c437c200139d79f9f9b027_cgraph" id="class_home_gui_ac44ac869c6c437c200139d79f9f9b027_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_ac44ac869c6c437c200139d79f9f9b027_icgraph.png" border="0" usemap="#class_home_gui_ac44ac869c6c437c200139d79f9f9b027_icgraph" alt=""/></div>
+<map name="class_home_gui_ac44ac869c6c437c200139d79f9f9b027_icgraph" id="class_home_gui_ac44ac869c6c437c200139d79f9f9b027_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -243,46 +340,29 @@ Static Private Attributes</h2></td></tr>
 <p>When clicked parse "Result.txt" file and create the Ast. </p>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino</dd></dl>
 
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00178">178</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00176">176</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
 
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_cgraph.png" border="0" usemap="#class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_cgraph" alt=""/></div>
+<map name="class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_cgraph" id="class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_cgraph">
+</map>
 </div>
-<a class="anchor" id="a241867731938068ae82ae7d5e7371fa3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void <a class="el" href="class_home_gui.html#a241867731938068ae82ae7d5e7371fa3">HomeGui.main</a> </td>
-          <td>(</td>
-          <td class="paramtype">String[]&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+</p>
 
-<p>Launch the application. </p>
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00065">65</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_icgraph.png" border="0" usemap="#class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_icgraph" alt=""/></div>
+<map name="class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_icgraph" id="class_home_gui_a5e935834d62fe14dfda2c9884f1f7010_icgraph">
+</map>
 </div>
-<a class="anchor" id="a8a91bfb188035012962b468a651f73a5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_home_gui.html#a8a91bfb188035012962b468a651f73a5">HomeGui.operazioneApri</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>  throws FileNotFoundException, Exception <code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00100">100</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -317,7 +397,29 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00128">128</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00127">127</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_cgraph.png" border="0" usemap="#class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_cgraph" alt=""/></div>
+<map name="class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_cgraph" id="class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_icgraph.png" border="0" usemap="#class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_icgraph" alt=""/></div>
+<map name="class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_icgraph" id="class_home_gui_a52f0602a97cd1ef63063bbbbda036d26_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -351,218 +453,18 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00386">386</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00380">380</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
 
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_home_gui_a0428d3c56abfafc769684835c1581f38_icgraph.png" border="0" usemap="#class_home_gui_a0428d3c56abfafc769684835c1581f38_icgraph" alt=""/></div>
+<map name="class_home_gui_a0428d3c56abfafc769684835c1581f38_icgraph" id="class_home_gui_a0428d3c56abfafc769684835c1581f38_icgraph">
+</map>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a7b615d195d8208fab52fd9db85082d46"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">JFileChooser <a class="el" href="class_home_gui.html#a7b615d195d8208fab52fd9db85082d46">HomeGui.apriFileChooser</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00093">93</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6b00edbcb893105ddc5e3b2beb4c2dca"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TextArea <a class="el" href="class_home_gui.html#a6b00edbcb893105ddc5e3b2beb4c2dca">HomeGui.automaText</a><code> [package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00060">60</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1f9226407f1c2c6ff8d62f84dfcebfbe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String <a class="el" href="class_home_gui.html#a1f9226407f1c2c6ff8d62f84dfcebfbe">HomeGui.filePath</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00058">58</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7f56e390a2982689b92cee117f50e987"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FileFilter <a class="el" href="class_home_gui.html#a7f56e390a2982689b92cee117f50e987">HomeGui.fourlineFileFilter</a><code> [package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00097">97</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0b1781db25b8fdacc8970aa6166b11ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">JFrame <a class="el" href="class_home_gui.html#a0b1781db25b8fdacc8970aa6166b11ad">HomeGui.frame</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00056">56</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab33ea273ae2f2c5bde32041076af630c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">JTextField <a class="el" href="class_home_gui.html#ab33ea273ae2f2c5bde32041076af630c">HomeGui.input</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00098">98</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac6ba89ab2c3204e87ec00b9b4962f327"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TextArea <a class="el" href="class_home_gui.html#ac6ba89ab2c3204e87ec00b9b4962f327">HomeGui.leftPanel</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00060">60</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6eef831dc2ff4533740f3395c4b9067a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Logger <a class="el" href="class_home_gui.html#a6eef831dc2ff4533740f3395c4b9067a">HomeGui.logger</a> = Logger.getLogger(HomeGui.class.getName())<code> [static, package]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00055">55</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8b0192c597368a34c855abe70a8a80ec"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FileFilter <a class="el" href="class_home_gui.html#a8b0192c597368a34c855abe70a8a80ec">HomeGui.onelineFileFilter</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00097">97</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adb0131b6ea64353bf6b0c5993468341c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Panel <a class="el" href="class_home_gui.html#adb0131b6ea64353bf6b0c5993468341c">HomeGui.rightPanel</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00057">57</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6a93dac6b8c89a59ca14536d6f5ad414"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">final long <a class="el" href="class_home_gui.html#a6a93dac6b8c89a59ca14536d6f5ad414">HomeGui.serialVersionUID</a> = 1L<code> [static, private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00053">53</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aedb975e31137435a02772599392bf195"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">JButton <a class="el" href="class_home_gui.html#aedb975e31137435a02772599392bf195">HomeGui.startParsing</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00059">59</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab4af4f54e925eedcab3cb87da41410e1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">JTree <a class="el" href="class_home_gui.html#ab4af4f54e925eedcab3cb87da41410e1">HomeGui.tree</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00061">61</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af20bf1a94a96e4f53e1f66337a257ce3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FileFilter <a class="el" href="class_home_gui.html#af20bf1a94a96e4f53e1f66337a257ce3">HomeGui.txtFileFilter</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_home_gui_8java_source.html#l00096">96</a> of file <a class="el" href="_home_gui_8java_source.html">HomeGui.java</a>.</p>
+</p>
 
 </div>
 </div>
@@ -570,13 +472,17 @@ Static Private Attributes</h2></td></tr>
 <li>src/<a class="el" href="_home_gui_8java_source.html">HomeGui.java</a></li>
 </ul>
 </div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="class_home_gui.html">HomeGui</a>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:02 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

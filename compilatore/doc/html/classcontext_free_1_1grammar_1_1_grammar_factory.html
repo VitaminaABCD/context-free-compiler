@@ -7,9 +7,14 @@
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -25,10 +30,12 @@
  <tbody>
  <tr style="height: 56px;">
   
+  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
+  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
-   
+   &#160;<span id="projectnumber">1.1</span>
    </div>
    
   </td>
@@ -44,6 +51,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
@@ -72,16 +80,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('classcontext_free_1_1grammar_1_1_grammar_factory.html','');
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,14 +112,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="namespacecontext_free.html">contextFree</a>      </li>
-      <li class="navelem"><a class="el" href="namespacecontext_free_1_1grammar.html">grammar</a>      </li>
-      <li class="navelem"><a class="el" href="classcontext_free_1_1grammar_1_1_grammar_factory.html">GrammarFactory</a>      </li>
-    </ul>
-  </div>
-</div>
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
@@ -114,7 +128,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6829a8d168584b20ac594fae87de591a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_grammar_factory.html#a6829a8d168584b20ac594fae87de591a">createContextFreeGrammar</a> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod)</td></tr>
+<tr class="memitem:a6829a8d168584b20ac594fae87de591a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6829a8d168584b20ac594fae87de591a"></a>
+static <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><b>createContextFreeGrammar</b> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod)</td></tr>
 <tr class="memitem:a25d4e5bf4a9a452efca5dd6518e16c25"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontext_free_1_1grammar_1_1_grammar_factory.html#a25d4e5bf4a9a452efca5dd6518e16c25">createGrammar</a> (String ass, List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt; prod, List&lt; String &gt; V, List&lt; String &gt; T)</td></tr>
 <tr class="memdesc:a25d4e5bf4a9a452efca5dd6518e16c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the type of grammar (ex.  <a href="#a25d4e5bf4a9a452efca5dd6518e16c25"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-methods"></a>
@@ -168,39 +183,32 @@ Static Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd>GRAMMAR_TYPE.NO_CONTEXT_FREE if the grammar isn't context-free, <a class="el" href="enumcontext_free_1_1grammar_1_1_g_r_a_m_m_a_r___t_y_p_e.html#a1716ccff248a4c662919f646073266e2">GRAMMAR_TYPE.CONTEXT_FREE</a> otherwise; </dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd>GRAMMAR_TYPE.NO_CONTEXT_FREE if the grammar isn't context-free, GRAMMAR_TYPE.CONTEXT_FREE otherwise; </dd></dl>
 <dl class="section author"><dt>Author:</dt><dd>Pierluigi Sottile </dd></dl>
 
 <p>Definition at line <a class="el" href="_grammar_factory_8java_source.html#l00044">44</a> of file <a class="el" href="_grammar_factory_8java_source.html">GrammarFactory.java</a>.</p>
 
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_cgraph" id="classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_cgraph">
+</map>
 </div>
-<a class="anchor" id="a6829a8d168584b20ac594fae87de591a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> <a class="el" href="classcontext_free_1_1grammar_1_1_grammar_factory.html#a6829a8d168584b20ac594fae87de591a">contextFree.grammar.GrammarFactory.createContextFreeGrammar</a> </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>ass</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt;&#160;</td>
-          <td class="paramname"><em>prod</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+</p>
 
-<p>Definition at line <a class="el" href="_grammar_factory_8java_source.html#l00012">12</a> of file <a class="el" href="_grammar_factory_8java_source.html">GrammarFactory.java</a>.</p>
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_icgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_icgraph" id="classcontext_free_1_1grammar_1_1_grammar_factory_a513482168bb15e55211bc4f04e276711_icgraph">
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -257,19 +265,47 @@ Static Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_grammar_factory_8java_source.html#l00025">25</a> of file <a class="el" href="_grammar_factory_8java_source.html">GrammarFactory.java</a>.</p>
 
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_cgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_cgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_cgraph" id="classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_cgraph">
+</map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_icgraph.png" border="0" usemap="#classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_icgraph" alt=""/></div>
+<map name="classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_icgraph" id="classcontext_free_1_1grammar_1_1_grammar_factory_a25d4e5bf4a9a452efca5dd6518e16c25_icgraph">
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/contextFree/grammar/<a class="el" href="_grammar_factory_8java_source.html">GrammarFactory.java</a></li>
 </ul>
 </div><!-- contents -->
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>contextFree</b>      </li>
+      <li class="navelem"><a class="el" href="namespacecontext_free_1_1grammar.html">grammar</a>      </li>
+      <li class="navelem"><a class="el" href="classcontext_free_1_1grammar_1_1_grammar_factory.html">GrammarFactory</a>      </li>
 
+    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
+   </ul>
+ </div>
 
-<hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 20 2012 17:32:03 for Context Free LALR1 compiler by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.0
-</small></address>
 
 </body>
 </html>

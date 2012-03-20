@@ -9,18 +9,18 @@ Contains the class for file parsing.
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \hyperlink{classinput_parser_1_1_abstract_input_parser}{Abstract\-Input\-Parser}
+\item 
 class \hyperlink{classinput_parser_1_1_concrete_parser_factory}{Concrete\-Parser\-Factory}
 \item 
 class \hyperlink{classinput_parser_1_1_four_line_input_parser}{Four\-Line\-Input\-Parser}
 \item 
-class \hyperlink{classinput_parser_1_1_grammar_parser}{Grammar\-Parser}
-\item 
 class \hyperlink{classinput_parser_1_1_input_parser}{Input\-Parser}
+\item 
+class \hyperlink{classinput_parser_1_1_input_parser_factory}{Input\-Parser\-Factory}
 \item 
 class \hyperlink{classinput_parser_1_1_l_r_input_parser}{L\-R\-Input\-Parser}
 \begin{DoxyCompactList}\small\item\em Parse a txt file with action table, goto table and grammar in one line format ($\ast$.1l). \end{DoxyCompactList}\item 
-class \hyperlink{classinput_parser_1_1_parser_factory}{Parser\-Factory}
-\item 
 class \hyperlink{classinput_parser_1_1_single_line_input_parser}{Single\-Line\-Input\-Parser}
 \begin{DoxyCompactList}\small\item\em Parse a single line grammar format. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -53,5 +53,10 @@ You can also parse \char`\"{}.\-txt\char`\"{} file through \hyperlink{classinput
 
 
 U\-S\-A\-G\-E\-:\par
- You can obtain the parsing result through the \hyperlink{classinput_parser_1_1_parser_factory}{Parser\-Factory} that return a proper instance initialized with the result of parsing.\par
- \-:  parser = new Grammar\-Parser(path); //return a parser for a grammar file (ex. $\ast$.txt)  p = new Parsing\-Factory(); //the factory  lalr1 = p.\-create\-Parsing(parser); //return an lalr1 instance initialized 
+ You can obtain the parsing result through the Parser\-Factory that return a proper instance initialized with the result of parsing.\par
+ \-: \par
+-\/ get a grammar instance from a grammar file\-: \par
+ I\-Grammar grammar = (I\-Grammar) new \hyperlink{classinput_parser_1_1_input_parser}{Input\-Parser}(\char`\"{}grammar.\-4l\char`\"{}).parse(); \par
+ \par
+-\/ get an instance of parser program from a \char`\"{}\-Result.\-txt\char`\"{} file (contains action and goto table and the grammar in $\ast$.1l format)\-: \par
+ Parser\-Program \hyperlink{namespaceparser_program}{parser\-Program} = (Parser\-Program) new \hyperlink{classinput_parser_1_1_input_parser}{Input\-Parser}(\char`\"{}\-Result.\-txt\char`\"{}).parse(); 

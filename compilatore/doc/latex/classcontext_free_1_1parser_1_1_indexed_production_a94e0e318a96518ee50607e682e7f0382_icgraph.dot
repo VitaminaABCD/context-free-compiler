@@ -1,0 +1,21 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="contextFree.parser.IndexedProduction.getLookahead",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="contextFree.parser.LALR1.chiusuraLR1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#ac711dbbc2be25d15c1a8aade7579e94e",tooltip="Passed a list of production I that form the kernel of a state, return closing it, and the lookahead s..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="contextFree.parser.LALR1.init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf",tooltip="Initialize the LALR(1) automaton from LR0 automaton."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="contextFree.parser.LALR1.calculateSymbol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#aeec32b5c83e031225114f46ac377f804",tooltip="Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="contextFree.parser.State.getKernels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcontext_free_1_1parser_1_1_state.html#a1afb2f9faa5ec548897e44cc863389ba",tooltip="return one list&lt;IndexedProduction&gt; with the kernel of a state"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="contextFree.parser.LALR1.reduce",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a2281981b3043c0150c1b3d3967572b1f",tooltip="if the point is in the last position he wrote the reduces in the action table."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="contextFree.parser.LALR1.tableCostruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a79576626b3b59b832faecc986b293b36",tooltip="builds the Action table GoTo from an automa LALR1 and tells us if it is or not type of LALR1..."];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

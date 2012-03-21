@@ -42,5 +42,6 @@ var NAVTREEINDEX =
 "hierarchy.html":[1,2],
 "functions.html":[1,3,0],
 "functions_func.html":[1,3,1],
+"functions_vars.html":[1,3,2],
 "files.html":[2,0]
 };

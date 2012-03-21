@@ -1,0 +1,102 @@
+.TH "contextFree.grammar.GrammarFactory" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.grammar.GrammarFactory \- 
+.PP
+An object factory that create a correct instance of grammar\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBIGrammar\fP \fBcreateContextFreeGrammar\fP (String ass, List< \fBProduction\fP > prod)"
+.br
+.ti -1c
+.RI "static \fBIGrammar\fP \fBcreateGrammar\fP (String ass, List< \fBProduction\fP > prod, List< String > V, List< String > T)"
+.br
+.RI "\fICheck the type of grammar (ex\&. \fP"
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBGRAMMAR_TYPE\fP \fBcheckType\fP (List< \fBProduction\fP > prod, List< String > V, List< String > T)"
+.br
+.RI "\fIControls that make up the grammar productions that are valid\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An object factory that create a correct instance of grammar\&. 
+
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file GrammarFactory\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBGRAMMAR_TYPE\fP \fBcontextFree\&.grammar\&.GrammarFactory\&.checkType\fP (List< \fBProduction\fP >prod, List< String >V, List< String >T)\fC [static, private]\fP"
+
+.PP
+Controls that make up the grammar productions that are valid\&. \fBParameters:\fP
+.RS 4
+\fIList\fP of production 
+.br
+\fIlist\fP of Not-terminal symbol 
+.br
+\fIlist\fP of Terminal symbol 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+GRAMMAR_TYPE\&.NO_CONTEXT_FREE if the grammar isn't context-free, GRAMMAR_TYPE\&.CONTEXT_FREE otherwise; 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file GrammarFactory\&.java\&.
+.SS "static \fBIGrammar\fP \fBcontextFree\&.grammar\&.GrammarFactory\&.createGrammar\fP (Stringass, List< \fBProduction\fP >prod, List< String >V, List< String >T)\fC [static]\fP"
+
+.PP
+Check the type of grammar (ex\&. Context-free) and returns the correct instance\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIAxioms\fP 
+.br
+\fIList\fP of \fBProduction\fP 
+.br
+\fIList\fP of Not Terminal Symbol 
+.br
+\fIlist\fP of Terminal Symbol 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The grammar instance if is context-free type, null otherwise\&. 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file GrammarFactory\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

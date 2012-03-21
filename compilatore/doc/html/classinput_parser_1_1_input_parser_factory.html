@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,6 +119,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">inputParser.InputParserFactory Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract <a class="el" href="classinput_parser_1_1_input_parser_factory.html" title="Abstract InputParserFactory.">InputParserFactory</a>.  
+ <a href="classinput_parser_1_1_input_parser_factory.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for inputParser.InputParserFactory:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -126,20 +129,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_input_parser_factory__inherit__graph.png" border="0" usemap="#input_parser_8_input_parser_factory_inherit__map" alt="Inheritance graph"/></div>
 <map name="input_parser_8_input_parser_factory_inherit__map" id="input_parser_8_input_parser_factory_inherit__map">
-</map>
+<area shape="rect" id="node3" href="classinput_parser_1_1_concrete_parser_factory.html" title="Concrete class that implement the factoryMethod of InputParserFactory." alt="" coords="5,131,232,208"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classinput_parser_1_1_input_parser_factory-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a48971c2679b589f34a7051e795d48c49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48971c2679b589f34a7051e795d48c49"></a>
-abstract <a class="el" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a>&#160;</td><td class="memItemRight" valign="bottom"><b>factoryMethod</b> (String in)</td></tr>
+<tr class="memitem:a48971c2679b589f34a7051e795d48c49"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser_factory.html#a48971c2679b589f34a7051e795d48c49">factoryMethod</a> (String in)</td></tr>
+<tr class="memdesc:a48971c2679b589f34a7051e795d48c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return different object instance based on the extension.  <a href="#a48971c2679b589f34a7051e795d48c49"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_input_parser_factory_8java_source.html#l00003">3</a> of file <a class="el" href="_input_parser_factory_8java_source.html">InputParserFactory.java</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Abstract <a class="el" href="classinput_parser_1_1_input_parser_factory.html" title="Abstract InputParserFactory.">InputParserFactory</a>. </p>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
+
+<p>Definition at line <a class="el" href="_input_parser_factory_8java_source.html#l00008">8</a> of file <a class="el" href="_input_parser_factory_8java_source.html">InputParserFactory.java</a>.</p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a48971c2679b589f34a7051e795d48c49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> <a class="el" href="classinput_parser_1_1_input_parser_factory.html#a48971c2679b589f34a7051e795d48c49">inputParser.InputParserFactory.factoryMethod</a> </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td><code> [protected, pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return different object instance based on the extension. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>path of file to parse. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>FourLineInputParser(input) instance if the file extension is ".4l",<br/>
+ SingleLineInputParser(input) instance if the file extension is ".1l",<br/>
+ LRInputParser(in) instance if the file extension is ".txt", null otherwise. </dd></dl>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
+
+<p>Implemented in <a class="el" href="classinput_parser_1_1_concrete_parser_factory.html#a6fdfbfef9e48417903f60faf67640d1e">inputParser.ConcreteParserFactory</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classinput_parser_1_1_input_parser_factory_a48971c2679b589f34a7051e795d48c49_icgraph.png" border="0" usemap="#classinput_parser_1_1_input_parser_factory_a48971c2679b589f34a7051e795d48c49_icgraph" alt=""/></div>
+<map name="classinput_parser_1_1_input_parser_factory_a48971c2679b589f34a7051e795d48c49_icgraph" id="classinput_parser_1_1_input_parser_factory_a48971c2679b589f34a7051e795d48c49_icgraph">
+<area shape="rect" id="node3" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object." alt="" coords="341,31,536,57"/><area shape="rect" id="node5" href="class_home_gui.html#a52f0602a97cd1ef63063bbbbda036d26" title="Start the parsing of grammar file and create result file." alt="" coords="584,5,739,32"/><area shape="rect" id="node11" href="class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010" title="Save operation." alt="" coords="598,56,725,83"/><area shape="rect" id="node7" href="class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593" title="Initialize GUI component and start the process." alt="" coords="787,31,922,57"/><area shape="rect" id="node9" href="class_home_gui.html#a241867731938068ae82ae7d5e7371fa3" title="Launch the application." alt="" coords="971,31,1079,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/inputParser/<a class="el" href="_input_parser_factory_8java_source.html">InputParserFactory.java</a></li>
 </ul>
 </div><!-- contents -->
@@ -149,7 +197,7 @@ abstract <a class="el" href="classinput_parser_1_1_abstract_input_parser.html">A
       <li class="navelem"><a class="el" href="namespaceinput_parser.html">inputParser</a>      </li>
       <li class="navelem"><a class="el" href="classinput_parser_1_1_input_parser_factory.html">InputParserFactory</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:06:01 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

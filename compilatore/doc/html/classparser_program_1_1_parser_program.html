@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -122,6 +122,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">parserProgram.ParserProgram Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is responsible of the parsing of input string, and stack parsing creation.  
+ <a href="classparser_program_1_1_parser_program.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for parserProgram.ParserProgram:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -129,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classparser_program_1_1_parser_program__coll__graph.png" border="0" usemap="#parser_program_8_parser_program_coll__map" alt="Collaboration graph"/></div>
 <map name="parser_program_8_parser_program_coll__map" id="parser_program_8_parser_program_coll__map">
-</map>
+<area shape="rect" id="node2" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface." alt="" coords="5,147,211,386"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classparser_program_1_1_parser_program-members.html">List of all members.</a></p>
@@ -159,6 +162,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setGrammar</b> (<a cl
 <tr class="memitem:ade596abd5eb6e01c6be4e9da8d71b39d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade596abd5eb6e01c6be4e9da8d71b39d"></a>
 List&lt; <a class="el" href="classparser_program_1_1_history_element.html">HistoryElement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getHistory</b> ()</td></tr>
 <tr class="memitem:ac8e01a54887a9c9f0a9d277d5cbb0c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumparser_program_1_1_r_e_s_u_l_t.html">RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61">parse</a> ()</td></tr>
+<tr class="memdesc:ac8e01a54887a9c9f0a9d277d5cbb0c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation.  <a href="#ac8e01a54887a9c9f0a9d277d5cbb0c61"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-static-attribs"></a>
 Static Package Attributes</h2></td></tr>
 <tr class="memitem:a345c2f7b22b455b824b68058e2dc1a83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a345c2f7b22b455b824b68058e2dc1a83"></a>
@@ -185,8 +189,11 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
 Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>gotoTable</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00018">18</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
+<div class="textblock"><p>This class is responsible of the parsing of input string, and stack parsing creation. </p>
+<p>It also save the parsing chronology. It use a Grammar and its Action and Goto table. All this operation are executed with <a class="el" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61" title="The leading method of the class, responsible of the parsing of input string and consequent stack pars...">parse()</a> method. </p>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
+
+<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00023">23</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ac8e01a54887a9c9f0a9d277d5cbb0c61"></a>
 <div class="memitem">
@@ -201,9 +208,11 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
       </table>
 </div>
 <div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00104">104</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
+<p>The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. </p>
+<dl class="section return"><dt>Returns:</dt><dd>RESULT.ACCEPT if the string has been accepted, RESULT.ERROR if not, RESULT.INVALID_ID if the input string is invalid </dd></dl>
+
+<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00109">109</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
 
 </div>
 </div>
@@ -217,7 +226,7 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
       <li class="navelem"><a class="el" href="namespaceparser_program.html">parserProgram</a>      </li>
       <li class="navelem"><a class="el" href="classparser_program_1_1_parser_program.html">ParserProgram</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:20 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:06:01 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

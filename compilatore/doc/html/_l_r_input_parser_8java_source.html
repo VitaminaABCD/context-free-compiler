@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -142,56 +142,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a>00030                 this.input=in;
 <a name="l00031"></a>00031         }
 <a name="l00032"></a>00032 
-<a name="l00036"></a>00036         @Override
-<a name="l00037"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1">00037</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_parser_program.html">ParserProgram</a> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1" title="Parse method.">parse</a>() throws Exception {
-<a name="l00038"></a>00038                 Hashtable&lt;String,List&lt;String&gt;&gt; actionTable = <span class="keyword">new</span> Hashtable&lt;String, List&lt;String&gt;&gt;();
-<a name="l00039"></a>00039                 Hashtable&lt;String,List&lt;String&gt;&gt; gotoTable = <span class="keyword">new</span> Hashtable&lt;String, List&lt;String&gt;&gt;();
-<a name="l00040"></a>00040                 <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> grammar = null;
-<a name="l00041"></a>00041                 <span class="keywordflow">try</span>{
-<a name="l00042"></a>00042                         BufferedReader f
-<a name="l00043"></a>00043                            = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(this.input));
-<a name="l00044"></a>00044                         String in;
-<a name="l00045"></a>00045                         <span class="keywordflow">while</span>((in=f.readLine())!=null){
-<a name="l00046"></a>00046                                 <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Tabella ACTION&quot;</span>)){
-<a name="l00047"></a>00047                                         <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li...">readTable</a>(f,actionTable);
-<a name="l00048"></a>00048                                 }
-<a name="l00049"></a>00049                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Tabella GOTO&quot;</span>)){
-<a name="l00050"></a>00050                                         <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li...">readTable</a>(f,gotoTable);
-<a name="l00051"></a>00051                                 }
-<a name="l00052"></a>00052                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Grammatica&quot;</span>)){
-<a name="l00053"></a>00053                                         in=f.readLine();
-<a name="l00054"></a>00054                                         grammar = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>().parseString(in);
-<a name="l00055"></a>00055                                 }
-<a name="l00056"></a>00056                         }       
-<a name="l00057"></a>00057                         f.close();
-<a name="l00058"></a>00058                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_parser_program.html">ParserProgram</a>(grammar, actionTable,gotoTable);
-<a name="l00059"></a>00059                         <span class="comment">//es.     actionTable.get(&quot;*&quot;).get(8));                 recupera lo stato 8 del simbolo &quot;*&quot; nella tabella action</span>
-<a name="l00060"></a>00060                 }<span class="keywordflow">catch</span>(IOException e){
-<a name="l00061"></a>00061                         logger.error(<span class="stringliteral">&quot;Error in file read operation&quot;</span>,e);
-<a name="l00062"></a>00062                 }
-<a name="l00063"></a>00063                 <span class="keywordflow">return</span> null;
-<a name="l00064"></a>00064         }
-<a name="l00065"></a>00065         
-<a name="l00074"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96">00074</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li...">readTable</a>(BufferedReader f, Hashtable&lt;String, List&lt;String&gt;&gt; table) throws IOException {
-<a name="l00075"></a>00075                 String in=f.readLine();
-<a name="l00076"></a>00076                 String []simbol =  in.split(<span class="stringliteral">&quot;\t&quot;</span>);
-<a name="l00077"></a>00077                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;simbol.length;i++) table.put(simbol[i], <span class="keyword">new</span> LinkedList&lt;String&gt;());
-<a name="l00078"></a>00078                 <span class="keywordflow">while</span>(<span class="keyword">true</span>){
-<a name="l00079"></a>00079                         in = f.readLine();
-<a name="l00080"></a>00080                         String[] temp =  in.split(<span class="stringliteral">&quot;\t&quot;</span>);
-<a name="l00081"></a>00081                         <span class="keywordflow">if</span>(temp.length!=simbol.length) <span class="keywordflow">break</span>;
-<a name="l00082"></a>00082                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i&lt;temp.length;i++)
-<a name="l00083"></a>00083                                 table.get(simbol[i]).add(temp[i]);
-<a name="l00084"></a>00084                 }       
-<a name="l00085"></a>00085         }
-<a name="l00086"></a>00086 }
+<a name="l00038"></a>00038         @Override
+<a name="l00039"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1">00039</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1">parse</a>() throws Exception {
+<a name="l00040"></a>00040                 Hashtable&lt;String,List&lt;String&gt;&gt; actionTable = <span class="keyword">new</span> Hashtable&lt;String, List&lt;String&gt;&gt;();
+<a name="l00041"></a>00041                 Hashtable&lt;String,List&lt;String&gt;&gt; gotoTable = <span class="keyword">new</span> Hashtable&lt;String, List&lt;String&gt;&gt;();
+<a name="l00042"></a>00042                 <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> grammar = null;
+<a name="l00043"></a>00043                 <span class="keywordflow">try</span>{
+<a name="l00044"></a>00044                         BufferedReader f
+<a name="l00045"></a>00045                            = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(this.input));
+<a name="l00046"></a>00046                         String in;
+<a name="l00047"></a>00047                         <span class="keywordflow">while</span>((in=f.readLine())!=null){
+<a name="l00048"></a>00048                                 <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Tabella ACTION&quot;</span>)){
+<a name="l00049"></a>00049                                         <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li...">readTable</a>(f,actionTable);
+<a name="l00050"></a>00050                                 }
+<a name="l00051"></a>00051                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Tabella GOTO&quot;</span>)){
+<a name="l00052"></a>00052                                         <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li...">readTable</a>(f,gotoTable);
+<a name="l00053"></a>00053                                 }
+<a name="l00054"></a>00054                                 <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in.contains(<span class="stringliteral">&quot;Grammatica&quot;</span>)){
+<a name="l00055"></a>00055                                         in=f.readLine();
+<a name="l00056"></a>00056                                         grammar = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>().<a class="code" href="classinput_parser_1_1_single_line_input_parser.html#a90641140f8686fc97fd40b72beccf0a3" title="Execute the parse operation on the object.">parseString</a>(in);
+<a name="l00057"></a>00057                                 }
+<a name="l00058"></a>00058                         }       
+<a name="l00059"></a>00059                         f.close();
+<a name="l00060"></a>00060                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a>(grammar, actionTable,gotoTable);
+<a name="l00061"></a>00061                         <span class="comment">//es.     actionTable.get(&quot;*&quot;).get(8));                 recupera lo stato 8 del simbolo &quot;*&quot; nella tabella action</span>
+<a name="l00062"></a>00062                 }<span class="keywordflow">catch</span>(IOException e){
+<a name="l00063"></a>00063                         logger.error(<span class="stringliteral">&quot;Error in file read operation&quot;</span>,e);
+<a name="l00064"></a>00064                 }
+<a name="l00065"></a>00065                 <span class="keywordflow">return</span> null;
+<a name="l00066"></a>00066         }
+<a name="l00067"></a>00067         
+<a name="l00077"></a><a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96">00077</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li...">readTable</a>(BufferedReader f, Hashtable&lt;String, List&lt;String&gt;&gt; table) throws IOException {
+<a name="l00078"></a>00078                 String in=f.readLine();
+<a name="l00079"></a>00079                 String []simbol =  in.split(<span class="stringliteral">&quot;\t&quot;</span>);
+<a name="l00080"></a>00080                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;simbol.length;i++) table.put(simbol[i], <span class="keyword">new</span> LinkedList&lt;String&gt;());
+<a name="l00081"></a>00081                 <span class="keywordflow">while</span>(<span class="keyword">true</span>){
+<a name="l00082"></a>00082                         in = f.readLine();
+<a name="l00083"></a>00083                         String[] temp =  in.split(<span class="stringliteral">&quot;\t&quot;</span>);
+<a name="l00084"></a>00084                         <span class="keywordflow">if</span>(temp.length!=simbol.length) <span class="keywordflow">break</span>;
+<a name="l00085"></a>00085                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i&lt;temp.length;i++)
+<a name="l00086"></a>00086                                 table.get(simbol[i]).add(temp[i]);
+<a name="l00087"></a>00087                 }       
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>LRInputParser.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

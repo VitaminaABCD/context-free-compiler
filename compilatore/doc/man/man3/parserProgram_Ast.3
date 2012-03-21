@@ -1,0 +1,96 @@
+.TH "parserProgram.Ast" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+parserProgram.Ast \- 
+.PP
+Abstract Syntax Three class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAst\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBAst\fP (List< \fBHistoryElement\fP > h)"
+.br
+.RI "\fIConstruct the object with specified history\&. \fP"
+.ti -1c
+.RI "DefaultMutableTreeNode \fBgetRoot\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitFromHistory\fP ()  throws Exception"
+.br
+.RI "\fIInitialize the three from the parsing history\&. \fP"
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBHistoryElement\fP > \fBhistory\fP"
+.br
+.RI "\fIthe chronology of parsing \fP"
+.ti -1c
+.RI "DefaultMutableTreeNode \fBroot\fP"
+.br
+.RI "\fIthe root of the three \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract Syntax Three class\&. 
+
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Ast\&.java\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBparserProgram\&.Ast\&.Ast\fP (List< \fBHistoryElement\fP >h)"
+
+.PP
+Construct the object with specified history\&. \fBParameters:\fP
+.RS 4
+\fIh\fP history 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file Ast\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "DefaultMutableTreeNode \fBparserProgram\&.Ast\&.getRoot\fP ()"
+\fBReturns:\fP
+.RS 4
+the root of the three\&. 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file Ast\&.java\&.
+.SS "void \fBparserProgram\&.Ast\&.initFromHistory\fP ()  throws Exception"
+
+.PP
+Initialize the three from the parsing history\&. \fBExceptions:\fP
+.RS 4
+\fIException\fP if error\&. 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file Ast\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

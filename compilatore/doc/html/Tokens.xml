@@ -274,7 +274,7 @@
     </TokenIdentifier>
     <Path>classcontext_free_1_1grammar_1_1_context_free_grammar.html</Path>
     <Anchor>a9c3bfe0b038204420b470fab326ce7bb</Anchor>
-    <Abstract>Population structure in Set &amp;lt;String&amp;gt; [] first for each non-terminal V, using a structure of type Set ...</Abstract>
+    <Abstract>Populate structure in Set&amp;lt;String&amp;gt;[]first for each non-terminal V, using a structure of type Set to av...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -916,12 +916,35 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>parse</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.AbstractInputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_abstract_input_parser.html</Path>
+    <Anchor>a548b0f6fa44b7954b79bdd964336bafe</Anchor>
+    <Abstract>Execute the parse operation on the object.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>inputParser::ConcreteParserFactory</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
       <Scope>inputParser.ConcreteParserFactory</Scope>
     </TokenIdentifier>
     <Path>classinput_parser_1_1_concrete_parser_factory.html</Path>
+    <Abstract>Concrete class that implement the factoryMethod of InputParserFactory.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>factoryMethod</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.ConcreteParserFactory</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_concrete_parser_factory.html</Path>
+    <Anchor>a6fdfbfef9e48417903f60faf67640d1e</Anchor>
+    <Abstract>Return different object instance based on the extension.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -931,6 +954,7 @@
       <Scope>inputParser.FourLineInputParser</Scope>
     </TokenIdentifier>
     <Path>classinput_parser_1_1_four_line_input_parser.html</Path>
+    <Abstract>Parse a four line grammar format.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -941,7 +965,7 @@
     </TokenIdentifier>
     <Path>classinput_parser_1_1_four_line_input_parser.html</Path>
     <Anchor>a99c37488d66cfeecb33e13d573b4a81a</Anchor>
-    <Abstract>reads the file .4l and creates the object grammar</Abstract>
+    <Abstract>Read the file .4l and creates the object grammar.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -951,6 +975,83 @@
       <Scope>inputParser.InputParser</Scope>
     </TokenIdentifier>
     <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Abstract>An object rappresentation of input file parsing result.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InputParser</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>aaf865808d98a84af1505caa5a2f61cc4</Anchor>
+    <Abstract>Default constructor.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>InputParser</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>a483b176df94134a641628e8856ce994a</Anchor>
+    <Abstract>Constructor.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getInput</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>aad5d11e151df9b0ede3250d08fc00dfd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setInput</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>a9b7d170996964400a619bb3e66253a93</Anchor>
+    <Abstract>Set input file path.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getGrammar</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>a48376a4919241160cab692fa0001974f</Anchor>
+    <Abstract>Return grammar.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setGrammar</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>a63e2fa344a4ace430bc7ad7218bc3a37</Anchor>
+    <Abstract>Set a grammar.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parse</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser.html</Path>
+    <Anchor>a08cd69f3dbb1be117c45b4ccf5d861e6</Anchor>
+    <Abstract>Execute the parse operation on the object.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -960,6 +1061,18 @@
       <Scope>inputParser.InputParserFactory</Scope>
     </TokenIdentifier>
     <Path>classinput_parser_1_1_input_parser_factory.html</Path>
+    <Abstract>Abstract InputParserFactory.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>factoryMethod</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.InputParserFactory</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_input_parser_factory.html</Path>
+    <Anchor>a48971c2679b589f34a7051e795d48c49</Anchor>
+    <Abstract>Return different object instance based on the extension.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -980,7 +1093,6 @@
     </TokenIdentifier>
     <Path>classinput_parser_1_1_l_r_input_parser.html</Path>
     <Anchor>ad81d1510d9b12b4b8b2dedbe117e88c1</Anchor>
-    <Abstract>Parse method.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1005,6 +1117,27 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>parse</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.SingleLineInputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_single_line_input_parser.html</Path>
+    <Anchor>ad822676b0d3182a591e2004c3bcc79d5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parseString</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.SingleLineInputParser</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_single_line_input_parser.html</Path>
+    <Anchor>a90641140f8686fc97fd40b72beccf0a3</Anchor>
+    <Abstract>Execute the parse operation on the object.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>parserProgram</Name>
       <APILanguage>java</APILanguage>
       <Type>ns</Type>
@@ -1021,6 +1154,72 @@
       <Scope>parserProgram.Ast</Scope>
     </TokenIdentifier>
     <Path>classparser_program_1_1_ast.html</Path>
+    <Abstract>Abstract Syntax Three class.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Ast</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.Ast</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_ast.html</Path>
+    <Anchor>ae717a4491faf02f3753ad055eec6d5dd</Anchor>
+    <Abstract>Default constructor.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Ast</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.Ast</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_ast.html</Path>
+    <Anchor>a0dd9cc520a52069ec8d2bcccf7567799</Anchor>
+    <Abstract>Construct the object with specified history.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRoot</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.Ast</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_ast.html</Path>
+    <Anchor>af586bb4da64c79d9259c87757456d685</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initFromHistory</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.Ast</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_ast.html</Path>
+    <Anchor>a9ad5f3d77935440489df31131b18bf8e</Anchor>
+    <Abstract>Initialize the three from the parsing history.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>history</Name>
+      <APILanguage>java</APILanguage>
+      <Type>data</Type>
+      <Scope>parserProgram.Ast</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_ast.html</Path>
+    <Anchor>a565a13f94f478e998401f7abc25643aa</Anchor>
+    <Abstract>the chronology of parsing</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>root</Name>
+      <APILanguage>java</APILanguage>
+      <Type>data</Type>
+      <Scope>parserProgram.Ast</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_ast.html</Path>
+    <Anchor>a004223ce41eed0c97a6fb63449b4b836</Anchor>
+    <Abstract>the root of the three</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1030,7 +1229,61 @@
       <Scope>parserProgram.HistoryElement</Scope>
     </TokenIdentifier>
     <Path>classparser_program_1_1_history_element.html</Path>
-    <Abstract>This class rappresent an element of the history.</Abstract>
+    <Abstract>This class represent an element of the parsing history.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HistoryElement</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a45f360f314f688585844a62592bdb5c5</Anchor>
+    <Abstract>Default constructor.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HistoryElement</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>ae6d3bdd3606301f0b08d4e9258b5c5cf</Anchor>
+    <Abstract>Construct the object with specified parsing stack.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HistoryElement</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a0cd8852d35a48856c6e893ae33cbde30</Anchor>
+    <Abstract>Construct the object with specified parsing stack, production and step.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getStack</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a8f20a699af1fa68f114acef0f72117b5</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setStack</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a640ecb265a57f1b084fe99cf2a2a9a35</Anchor>
+    <Abstract>Set the stack.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1044,12 +1297,55 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>setProduction</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a2311f48be369f4d0e6be47c2a7ac7546</Anchor>
+    <Abstract>Set the production.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getSimbol</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>ab64610fe65f58bca7d542244378ac030</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setSimbol</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a54ecd254d7abd49d0d10230892dfc35b</Anchor>
+    <Abstract>Set the parsing step.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isShift</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.HistoryElement</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_history_element.html</Path>
+    <Anchor>a233c9c55643f4d6bc8103c4e2c8bd038</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>parserProgram::ParserProgram</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
       <Scope>parserProgram.ParserProgram</Scope>
     </TokenIdentifier>
     <Path>classparser_program_1_1_parser_program.html</Path>
+    <Abstract>This class is responsible of the parsing of input string, and stack parsing creation.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1060,6 +1356,7 @@
     </TokenIdentifier>
     <Path>classparser_program_1_1_parser_program.html</Path>
     <Anchor>ac8e01a54887a9c9f0a9d277d5cbb0c61</Anchor>
+    <Abstract>The leading method of the class, responsible of the parsing of input string and consequent stack pars...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1069,5 +1366,6 @@
       <Scope>parserProgram.RESULT</Scope>
     </TokenIdentifier>
     <Path>enumparser_program_1_1_r_e_s_u_l_t.html</Path>
+    <Abstract>The string parsing result.</Abstract>
   </Token>
 </Tokens>

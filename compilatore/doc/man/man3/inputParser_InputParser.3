@@ -1,0 +1,150 @@
+.TH "inputParser.InputParser" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+inputParser.InputParser \- 
+.PP
+An object rappresentation of input file parsing result\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBinputParser\&.AbstractInputParser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInputParser\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBInputParser\fP (String in)"
+.br
+.RI "\fIConstructor\&. \fP"
+.ti -1c
+.RI "String \fBgetInput\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInput\fP (String in)"
+.br
+.RI "\fISet input file path\&. \fP"
+.ti -1c
+.RI "\fBIGrammar\fP \fBgetGrammar\fP ()"
+.br
+.RI "\fIReturn grammar\&. \fP"
+.ti -1c
+.RI "void \fBsetGrammar\fP (\fBIGrammar\fP gr)"
+.br
+.RI "\fISet a grammar\&. \fP"
+.ti -1c
+.RI "Object \fBparse\fP ()  throws Exception"
+.br
+.RI "\fIExecute the parse operation on the object\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "String \fBinput\fP"
+.br
+.ti -1c
+.RI "\fBIGrammar\fP \fBgrammar\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An object rappresentation of input file parsing result\&. 
+
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file InputParser\&.java\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBinputParser\&.InputParser\&.InputParser\fP (Stringin)"
+
+.PP
+Constructor\&. \fBParameters:\fP
+.RS 4
+\fIin\fP the input file path\&. 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file InputParser\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBIGrammar\fP \fBinputParser\&.InputParser\&.getGrammar\fP ()"
+
+.PP
+Return grammar\&. \fBReturns:\fP
+.RS 4
+the grammar field\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file InputParser\&.java\&.
+.SS "String \fBinputParser\&.InputParser\&.getInput\fP ()"
+\fBReturns:\fP
+.RS 4
+the input file path\&. 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file InputParser\&.java\&.
+.SS "Object \fBinputParser\&.InputParser\&.parse\fP ()  throws Exception\fC [virtual]\fP"
+
+.PP
+Execute the parse operation on the object\&. \fBReturns:\fP
+.RS 4
+the parsing result 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Implements \fBinputParser\&.AbstractInputParser\fP\&.
+.PP
+Definition at line 64 of file InputParser\&.java\&.
+.SS "void \fBinputParser\&.InputParser\&.setGrammar\fP (\fBIGrammar\fPgr)"
+
+.PP
+Set a grammar\&. \fBParameters:\fP
+.RS 4
+\fIgr\fP the grammar to set\&. 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file InputParser\&.java\&.
+.SS "void \fBinputParser\&.InputParser\&.setInput\fP (Stringin)"
+
+.PP
+Set input file path\&. \fBParameters:\fP
+.RS 4
+\fIin\fP the input file path\&. 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file InputParser\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,30 +119,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="keyword">import</span> error.ERROR_TYPE;
 <a name="l00004"></a>00004 <span class="keyword">import</span> error.ErrorManager;
 <a name="l00005"></a>00005 
-<a name="l00006"></a>00006 
-<a name="l00007"></a><a class="code" href="classinput_parser_1_1_concrete_parser_factory.html">00007</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classinput_parser_1_1_concrete_parser_factory.html">ConcreteParserFactory</a> <span class="keyword">extends</span> <a class="code" href="classinput_parser_1_1_input_parser_factory.html">InputParserFactory</a>{
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009         @Override
-<a name="l00010"></a>00010         <span class="keyword">protected</span> <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> factoryMethod(String in) {                String[] input = in.split(<span class="stringliteral">&quot;/&quot;</span>);
-<a name="l00011"></a>00011                 String[] type = input[input.length-1].split(<span class="stringliteral">&quot;\\.&quot;</span>);
-<a name="l00012"></a>00012                 <span class="keywordtype">int</span> index = type.length-1;
-<a name="l00013"></a>00013                 <span class="keywordflow">if</span>(type[index].equals(<span class="stringliteral">&quot;4l&quot;</span>))
-<a name="l00014"></a>00014                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_four_line_input_parser.html">FourLineInputParser</a>(in);
-<a name="l00015"></a>00015                 <span class="keywordflow">if</span>(type[index].equals(<span class="stringliteral">&quot;1l&quot;</span>))
-<a name="l00016"></a>00016                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>(in);
-<a name="l00017"></a>00017                 <span class="keywordflow">if</span>(type[index].equals(<span class="stringliteral">&quot;txt&quot;</span>))
-<a name="l00018"></a>00018                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(in);
-<a name="l00019"></a>00019                 <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.FILE_EXTENSION);
-<a name="l00020"></a>00020         <span class="keywordflow">return</span> null;
-<a name="l00021"></a>00021         }
-<a name="l00022"></a>00022 }
+<a name="l00011"></a><a class="code" href="classinput_parser_1_1_concrete_parser_factory.html">00011</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classinput_parser_1_1_concrete_parser_factory.html" title="Concrete class that implement the factoryMethod of InputParserFactory.">ConcreteParserFactory</a> <span class="keyword">extends</span> <a class="code" href="classinput_parser_1_1_input_parser_factory.html" title="Abstract InputParserFactory.">InputParserFactory</a>{
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013         @Override
+<a name="l00014"></a><a class="code" href="classinput_parser_1_1_concrete_parser_factory.html#a6fdfbfef9e48417903f60faf67640d1e">00014</a>         <span class="keyword">protected</span> <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> <a class="code" href="classinput_parser_1_1_concrete_parser_factory.html#a6fdfbfef9e48417903f60faf67640d1e" title="Return different object instance based on the extension.">factoryMethod</a>(String in) {                
+<a name="l00015"></a>00015                 String[] input = in.split(<span class="stringliteral">&quot;/&quot;</span>);
+<a name="l00016"></a>00016                 String[] type = input[input.length-1].split(<span class="stringliteral">&quot;\\.&quot;</span>);
+<a name="l00017"></a>00017                 <span class="keywordtype">int</span> index = type.length-1;
+<a name="l00018"></a>00018                 <span class="keywordflow">if</span>(type[index].equals(<span class="stringliteral">&quot;4l&quot;</span>))
+<a name="l00019"></a>00019                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_four_line_input_parser.html" title="Parse a four line grammar format.">FourLineInputParser</a>(in);
+<a name="l00020"></a>00020                 <span class="keywordflow">if</span>(type[index].equals(<span class="stringliteral">&quot;1l&quot;</span>))
+<a name="l00021"></a>00021                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>(in);
+<a name="l00022"></a>00022                 <span class="keywordflow">if</span>(type[index].equals(<span class="stringliteral">&quot;txt&quot;</span>))
+<a name="l00023"></a>00023                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(in);
+<a name="l00024"></a>00024                 <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.FILE_EXTENSION);
+<a name="l00025"></a>00025         <span class="keywordflow">return</span> null;
+<a name="l00026"></a>00026         }
+<a name="l00027"></a>00027 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>ConcreteParserFactory.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

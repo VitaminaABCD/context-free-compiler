@@ -3,7 +3,18 @@
 }
 
 
-Collaboration diagram for parser\-Program.\-Parser\-Program\-:
+This class is responsible of the parsing of input string, and stack parsing creation.  
+
+
+
+
+Collaboration diagram for parser\-Program.\-Parser\-Program\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classparser_program_1_1_parser_program__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,7 +52,7 @@ Collaboration diagram for parser\-Program.\-Parser\-Program\-:
 
 \item 
 \hyperlink{enumparser_program_1_1_r_e_s_u_l_t}{R\-E\-S\-U\-L\-T} \hyperlink{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}{parse} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -81,9 +92,14 @@ Collaboration diagram for parser\-Program.\-Parser\-Program\-:
 
 
 \subsection{Detailed Description}
+This class is responsible of the parsing of input string, and stack parsing creation. 
+
+It also save the parsing chronology. It use a Grammar and its Action and Goto table. All this operation are executed with \hyperlink{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}{parse()} method. \begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
 
 
-Definition at line 18 of file Parser\-Program.\-java.
+Definition at line 23 of file Parser\-Program.\-java.
 
 
 
@@ -95,12 +111,16 @@ Definition at line 18 of file Parser\-Program.\-java.
 {}
 \end{DoxyParamCaption}
 )}}\label{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}
-\begin{DoxyReturn}{Returns}
 
+
+The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. 
+
+\begin{DoxyReturn}{Returns}
+R\-E\-S\-U\-L\-T.\-A\-C\-C\-E\-P\-T if the string has been accepted, R\-E\-S\-U\-L\-T.\-E\-R\-R\-O\-R if not, R\-E\-S\-U\-L\-T.\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-D if the input string is invalid 
 \end{DoxyReturn}
 
 
-Definition at line 104 of file Parser\-Program.\-java.
+Definition at line 109 of file Parser\-Program.\-java.
 
 
 

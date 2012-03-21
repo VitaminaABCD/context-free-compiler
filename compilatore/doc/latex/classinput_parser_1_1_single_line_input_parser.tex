@@ -8,22 +8,32 @@ Parse a single line grammar format.
 
 
 
-Inheritance diagram for input\-Parser.\-Single\-Line\-Input\-Parser\-:
+Inheritance diagram for input\-Parser.\-Single\-Line\-Input\-Parser\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classinput_parser_1_1_single_line_input_parser__inherit__graph}
+\end{center}
+\end{figure}
 
 
-Collaboration diagram for input\-Parser.\-Single\-Line\-Input\-Parser\-:
+Collaboration diagram for input\-Parser.\-Single\-Line\-Input\-Parser\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classinput_parser_1_1_single_line_input_parser__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classinput_parser_1_1_single_line_input_parser_a3efb0396347ec7ed7376dbd37eb4d28c}{{\bfseries Single\-Line\-Input\-Parser} (String in)}\label{classinput_parser_1_1_single_line_input_parser_a3efb0396347ec7ed7376dbd37eb4d28c}
 
 \item 
-\hypertarget{classinput_parser_1_1_single_line_input_parser_ad822676b0d3182a591e2004c3bcc79d5}{\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} {\bfseries parse} ()  throws Exception }\label{classinput_parser_1_1_single_line_input_parser_ad822676b0d3182a591e2004c3bcc79d5}
-
+\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classinput_parser_1_1_single_line_input_parser_ad822676b0d3182a591e2004c3bcc79d5}{parse} ()  throws Exception 
 \item 
-\hypertarget{classinput_parser_1_1_single_line_input_parser_a90641140f8686fc97fd40b72beccf0a3}{\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} {\bfseries parse\-String} (String input)  throws Exception }\label{classinput_parser_1_1_single_line_input_parser_a90641140f8686fc97fd40b72beccf0a3}
-
-\end{DoxyCompactItemize}
+\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classinput_parser_1_1_single_line_input_parser_a90641140f8686fc97fd40b72beccf0a3}{parse\-String} (String input)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Execute the parse operation on the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,12 +51,88 @@ Collaboration diagram for input\-Parser.\-Single\-Line\-Input\-Parser\-:
 \subsection{Detailed Description}
 Parse a single line grammar format. 
 
-es. S\-:\-:= \{ S\-: T\-E $|$ +\-T\-E; T\-: F\-T $|$ x\-F\-T; E \-: eps; F\-: a $|$ (E)\} \begin{DoxyAuthor}{Author}
+ex (file.\-1l)\-: S\-:\-:= \{ S\-: T\-E $|$ +\-T\-E; T\-: F\-T $|$ x\-F\-T; E \-: eps; F\-: a $|$ (E)\} \begin{DoxyAuthor}{Author}
 Paolo Pino 
 \end{DoxyAuthor}
 
 
 Definition at line 23 of file Single\-Line\-Input\-Parser.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classinput_parser_1_1_single_line_input_parser_ad822676b0d3182a591e2004c3bcc79d5}{\index{input\-Parser\-::\-Single\-Line\-Input\-Parser@{input\-Parser\-::\-Single\-Line\-Input\-Parser}!parse@{parse}}
+\index{parse@{parse}!inputParser::SingleLineInputParser@{input\-Parser\-::\-Single\-Line\-Input\-Parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Grammar} {\bf input\-Parser.\-Single\-Line\-Input\-Parser.\-parse} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws Exception \hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classinput_parser_1_1_single_line_input_parser_ad822676b0d3182a591e2004c3bcc79d5}
+\begin{DoxyReturn}{Returns}
+Context\-Free\-Grammar instance if the string is correctly formatted, null otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{classinput_parser_1_1_abstract_input_parser_a548b0f6fa44b7954b79bdd964336bafe}{input\-Parser.\-Abstract\-Input\-Parser}.
+
+
+
+Definition at line 45 of file Single\-Line\-Input\-Parser.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classinput_parser_1_1_single_line_input_parser_ad822676b0d3182a591e2004c3bcc79d5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classinput_parser_1_1_single_line_input_parser_a90641140f8686fc97fd40b72beccf0a3}{\index{input\-Parser\-::\-Single\-Line\-Input\-Parser@{input\-Parser\-::\-Single\-Line\-Input\-Parser}!parse\-String@{parse\-String}}
+\index{parse\-String@{parse\-String}!inputParser::SingleLineInputParser@{input\-Parser\-::\-Single\-Line\-Input\-Parser}}
+\subsubsection[{parse\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Grammar} {\bf input\-Parser.\-Single\-Line\-Input\-Parser.\-parse\-String} (
+\begin{DoxyParamCaption}
+\item[{String}]{input}
+\end{DoxyParamCaption}
+)  throws Exception }}\label{classinput_parser_1_1_single_line_input_parser_a90641140f8686fc97fd40b72beccf0a3}
+
+
+Execute the parse operation on the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & grammar file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Context\-Free\-Grammar instance if the string is correctly formatted, null otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 66 of file Single\-Line\-Input\-Parser.\-java.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classinput_parser_1_1_single_line_input_parser_a90641140f8686fc97fd40b72beccf0a3_icgraph}
+\end{center}
+\end{figure}
+
 
 
 

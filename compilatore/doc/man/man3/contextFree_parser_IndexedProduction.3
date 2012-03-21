@@ -1,0 +1,111 @@
+.TH "contextFree.parser.IndexedProduction" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.parser.IndexedProduction \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBcontextFree\&.grammar\&.Production\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIndexedProduction\fP (\fBIndexedProduction\fP pro)"
+.br
+.ti -1c
+.RI "\fBIndexedProduction\fP (\fBProduction\fP p)"
+.br
+.ti -1c
+.RI "\fBIndexedProduction\fP (int i, \fBProduction\fP p)"
+.br
+.ti -1c
+.RI "\fBIndexedProduction\fP (int i, \fBProduction\fP p, String la)"
+.br
+.ti -1c
+.RI "\fBIndexedProduction\fP (\fBProduction\fP p, Set< String > la)"
+.br
+.ti -1c
+.RI "int \fBgetCurrentCharIndex\fP ()"
+.br
+.ti -1c
+.RI "String \fBgetCharAfter\fP ()"
+.br
+.RI "\fIReturn the next character that that will be read\&. \fP"
+.ti -1c
+.RI "String \fBgetCharBefore\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCurrentCharIndex\fP (int currentCharIndex)"
+.br
+.ti -1c
+.RI "Set< String > \fBgetLookahead\fP ()"
+.br
+.ti -1c
+.RI "boolean \fBcompare\fP (\fBIndexedProduction\fP p)"
+.br
+.RI "\fICompare to production without the dot\&. \fP"
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.RI "\fIreturn a formatted string in the form axioms :: = expression \fP"
+.ti -1c
+.RI "boolean \fBaddLookahead\fP (Set< String > lookahead2)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBcurrentCharIndex\fP"
+.br
+.ti -1c
+.RI "Set< String > \fBlookahead\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file IndexedProduction\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "boolean \fBcontextFree\&.parser\&.IndexedProduction\&.compare\fP (\fBIndexedProduction\fPp)"
+
+.PP
+Compare to production without the dot\&. \fBParameters:\fP
+.RS 4
+\fIp\fP production to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if they are equal, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file IndexedProduction\&.java\&.
+.SS "String \fBcontextFree\&.parser\&.IndexedProduction\&.getCharAfter\fP ()"
+
+.PP
+Return the next character that that will be read\&. \fBReturns:\fP
+.RS 4
+the character after dot in the production 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file IndexedProduction\&.java\&.
+.SS "Set<String> \fBcontextFree\&.parser\&.IndexedProduction\&.getLookahead\fP ()"
+\fBReturns:\fP
+.RS 4
+a reference to the lookahead list 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file IndexedProduction\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

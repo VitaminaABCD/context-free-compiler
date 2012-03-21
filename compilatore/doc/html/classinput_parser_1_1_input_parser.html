@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,6 +120,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">inputParser.InputParser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An object rappresentation of input file parsing result.  
+ <a href="classinput_parser_1_1_input_parser.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for inputParser.InputParser:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -127,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_input_parser__inherit__graph.png" border="0" usemap="#input_parser_8_input_parser_inherit__map" alt="Inheritance graph"/></div>
 <map name="input_parser_8_input_parser_inherit__map" id="input_parser_8_input_parser_inherit__map">
-</map>
+<area shape="rect" id="node2" href="classinput_parser_1_1_abstract_input_parser.html" title="{inputParser.AbstractInputParser\n||+ parse()\l}" alt="" coords="5,5,211,83"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for inputParser.InputParser:</div>
@@ -136,25 +139,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_input_parser__coll__graph.png" border="0" usemap="#input_parser_8_input_parser_coll__map" alt="Collaboration graph"/></div>
 <map name="input_parser_8_input_parser_coll__map" id="input_parser_8_input_parser_coll__map">
-</map>
+<area shape="rect" id="node2" href="classinput_parser_1_1_abstract_input_parser.html" title="{inputParser.AbstractInputParser\n||+ parse()\l}" alt="" coords="5,87,211,164"/><area shape="rect" id="node4" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface." alt="" coords="235,6,441,245"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classinput_parser_1_1_input_parser-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a483b176df94134a641628e8856ce994a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a483b176df94134a641628e8856ce994a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>InputParser</b> (String in)</td></tr>
-<tr class="memitem:aad5d11e151df9b0ede3250d08fc00dfd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad5d11e151df9b0ede3250d08fc00dfd"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>getInput</b> ()</td></tr>
-<tr class="memitem:a9b7d170996964400a619bb3e66253a93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b7d170996964400a619bb3e66253a93"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setInput</b> (String in)</td></tr>
-<tr class="memitem:a48376a4919241160cab692fa0001974f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48376a4919241160cab692fa0001974f"></a>
-<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getGrammar</b> ()</td></tr>
-<tr class="memitem:a63e2fa344a4ace430bc7ad7218bc3a37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63e2fa344a4ace430bc7ad7218bc3a37"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setGrammar</b> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> gr)</td></tr>
-<tr class="memitem:a08cd69f3dbb1be117c45b4ccf5d861e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08cd69f3dbb1be117c45b4ccf5d861e6"></a>
-Object&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> ()  throws Exception</td></tr>
+<tr class="memitem:aaf865808d98a84af1505caa5a2f61cc4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf865808d98a84af1505caa5a2f61cc4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#aaf865808d98a84af1505caa5a2f61cc4">InputParser</a> ()</td></tr>
+<tr class="memdesc:aaf865808d98a84af1505caa5a2f61cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br/></td></tr>
+<tr class="memitem:a483b176df94134a641628e8856ce994a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#a483b176df94134a641628e8856ce994a">InputParser</a> (String in)</td></tr>
+<tr class="memdesc:a483b176df94134a641628e8856ce994a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a483b176df94134a641628e8856ce994a"></a><br/></td></tr>
+<tr class="memitem:aad5d11e151df9b0ede3250d08fc00dfd"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#aad5d11e151df9b0ede3250d08fc00dfd">getInput</a> ()</td></tr>
+<tr class="memitem:a9b7d170996964400a619bb3e66253a93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#a9b7d170996964400a619bb3e66253a93">setInput</a> (String in)</td></tr>
+<tr class="memdesc:a9b7d170996964400a619bb3e66253a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set input file path.  <a href="#a9b7d170996964400a619bb3e66253a93"></a><br/></td></tr>
+<tr class="memitem:a48376a4919241160cab692fa0001974f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#a48376a4919241160cab692fa0001974f">getGrammar</a> ()</td></tr>
+<tr class="memdesc:a48376a4919241160cab692fa0001974f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return grammar.  <a href="#a48376a4919241160cab692fa0001974f"></a><br/></td></tr>
+<tr class="memitem:a63e2fa344a4ace430bc7ad7218bc3a37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#a63e2fa344a4ace430bc7ad7218bc3a37">setGrammar</a> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> gr)</td></tr>
+<tr class="memdesc:a63e2fa344a4ace430bc7ad7218bc3a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a grammar.  <a href="#a63e2fa344a4ace430bc7ad7218bc3a37"></a><br/></td></tr>
+<tr class="memitem:a08cd69f3dbb1be117c45b4ccf5d861e6"><td class="memItemLeft" align="right" valign="top">Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6">parse</a> ()  throws Exception</td></tr>
+<tr class="memdesc:a08cd69f3dbb1be117c45b4ccf5d861e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the parse operation on the object.  <a href="#a08cd69f3dbb1be117c45b4ccf5d861e6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a956d0bb2dd83992416c9a53725f725a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a956d0bb2dd83992416c9a53725f725a4"></a>
@@ -163,9 +168,186 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 <a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><b>grammar</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00006">6</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>An object rappresentation of input file parsing result. </p>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00010">10</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a483b176df94134a641628e8856ce994a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classinput_parser_1_1_input_parser.html#aaf865808d98a84af1505caa5a2f61cc4">inputParser.InputParser.InputParser</a> </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>the input file path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00027">27</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a48376a4919241160cab692fa0001974f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> <a class="el" href="classinput_parser_1_1_input_parser.html#a48376a4919241160cab692fa0001974f">inputParser.InputParser.getGrammar</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return grammar. </p>
+<dl class="section return"><dt>Returns:</dt><dd>the grammar field. </dd></dl>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00051">51</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad5d11e151df9b0ede3250d08fc00dfd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String <a class="el" href="classinput_parser_1_1_input_parser.html#aad5d11e151df9b0ede3250d08fc00dfd">inputParser.InputParser.getInput</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>the input file path. </dd></dl>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00035">35</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08cd69f3dbb1be117c45b4ccf5d861e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Object <a class="el" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6">inputParser.InputParser.parse</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throws Exception<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Execute the parse operation on the object. </p>
+<dl class="section return"><dt>Returns:</dt><dd>the parsing result </dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
+
+<p>Implements <a class="el" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe">inputParser.AbstractInputParser</a>.</p>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00064">64</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_cgraph.png" border="0" usemap="#classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_cgraph" alt=""/></div>
+<map name="classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_cgraph" id="classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_cgraph">
+<area shape="rect" id="node3" href="classinput_parser_1_1_input_parser_factory.html#a48971c2679b589f34a7051e795d48c49" title="Return different object instance based on the extension." alt="" coords="248,5,536,32"/><area shape="rect" id="node5" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object." alt="" coords="271,56,513,83"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_icgraph.png" border="0" usemap="#classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_icgraph" alt=""/></div>
+<map name="classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_icgraph" id="classinput_parser_1_1_input_parser_a08cd69f3dbb1be117c45b4ccf5d861e6_icgraph">
+<area shape="rect" id="node3" href="class_home_gui.html#a52f0602a97cd1ef63063bbbbda036d26" title="Start the parsing of grammar file and create result file." alt="" coords="248,5,403,32"/><area shape="rect" id="node9" href="class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010" title="Save operation." alt="" coords="262,56,389,83"/><area shape="rect" id="node5" href="class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593" title="Initialize GUI component and start the process." alt="" coords="451,31,586,57"/><area shape="rect" id="node7" href="class_home_gui.html#a241867731938068ae82ae7d5e7371fa3" title="Launch the application." alt="" coords="635,31,743,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a63e2fa344a4ace430bc7ad7218bc3a37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classinput_parser_1_1_input_parser.html#a63e2fa344a4ace430bc7ad7218bc3a37">inputParser.InputParser.setGrammar</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td>
+          <td class="paramname"><em>gr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set a grammar. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gr</td><td>the grammar to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00059">59</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b7d170996964400a619bb3e66253a93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classinput_parser_1_1_input_parser.html#a9b7d170996964400a619bb3e66253a93">inputParser.InputParser.setInput</a> </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set input file path. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>the input file path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_input_parser_8java_source.html#l00043">43</a> of file <a class="el" href="_input_parser_8java_source.html">InputParser.java</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/inputParser/<a class="el" href="_input_parser_8java_source.html">InputParser.java</a></li>
 </ul>
 </div><!-- contents -->
@@ -175,7 +357,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
       <li class="navelem"><a class="el" href="namespaceinput_parser.html">inputParser</a>      </li>
       <li class="navelem"><a class="el" href="classinput_parser_1_1_input_parser.html">InputParser</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:06:01 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

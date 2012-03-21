@@ -1,0 +1,257 @@
+.TH "contextFree.parser.LALR1" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.parser.LALR1 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBcontextFree\&.parser\&.LR0\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLALR1\fP (\fBIGrammar\fP gram)"
+.br
+.ti -1c
+.RI "String[][] \fBgetActionTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetActionTable\fP (String[][] actionTable)"
+.br
+.ti -1c
+.RI "String[][] \fBgetGotoTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetGotoTable\fP (String[][] gotoTable)"
+.br
+.ti -1c
+.RI "\fBAutoma\fP \fBgetAutoma\fP ()"
+.br
+.ti -1c
+.RI "\fBIGrammar\fP \fBgetGrammar\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetGrammar\fP (\fBIGrammar\fP gram)"
+.br
+.ti -1c
+.RI "int \fBinit\fP ()  throws Exception"
+.br
+.RI "\fIInitialize the LALR(1) automaton from \fBLR0\fP automaton\&. \fP"
+.ti -1c
+.RI "List< \fBIndexedProduction\fP > \fBchiusuraLR1\fP (List< \fBIndexedProduction\fP > i)"
+.br
+.RI "\fIPassed a list of production I that form the kernel of a state, return closing it, and the lookahead symbols associated\&. \fP"
+.ti -1c
+.RI "int \fBtableCostruction\fP ()  throws Exception"
+.br
+.RI "\fIbuilds the Action table GoTo from an automa \fBLALR1\fP and tells us if it is or not type of \fBLALR1\fP \fP"
+.ti -1c
+.RI "boolean \fBreduce\fP (\fBState\fP stato)"
+.br
+.RI "\fIif the point is in the last position he wrote the reduces in the action table\&. \fP"
+.ti -1c
+.RI "boolean \fBactionWrite\fP (int i, int j, int x, String action)"
+.br
+.RI "\fIWrites the action Reduce or Scift in the Action table\&. \fP"
+.ti -1c
+.RI "boolean \fBisAmbiguos\fP ()"
+.br
+.ti -1c
+.RI "String \fBprintTable\fP ()"
+.br
+.RI "\fIReturn a string with tables Goto Action\&. \fP"
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.in -1c
+.SS "Static Package Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Logger \fBlogger\fP = Logger\&.getLogger(LALR1\&.class\&.getName())"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBcalculateSymbol\fP (\fBAutoma\fP atm)  throws Exception"
+.br
+.RI "\fICalculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "boolean \fBisAmbiguous\fP = false"
+.br
+.ti -1c
+.RI "String \fBambiguo\fP = ''"
+.br
+.ti -1c
+.RI "\fBAutoma\fP \fBautoma\fP"
+.br
+.ti -1c
+.RI "String[][] \fBactionTable\fP"
+.br
+.ti -1c
+.RI "String[][] \fBgotoTable\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file LALR1\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "boolean \fBcontextFree\&.parser\&.LALR1\&.actionWrite\fP (inti, intj, intx, Stringaction)"
+
+.PP
+Writes the action Reduce or Scift in the Action table\&. \fBParameters:\fP
+.RS 4
+\fIcurrent\fP state 
+.br
+\fI-1\fP If it reduces, else the destination state of the shift 
+.br
+\fIsymbol\fP for which you go write in the Action table 
+.br
+\fIaction\fP 's' if it is shift, else the production for which reduce 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+false case of ambiguity 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 369 of file LALR1\&.java\&.
+.SS "int \fBcontextFree\&.parser\&.LALR1\&.calculateSymbol\fP (\fBAutoma\fPatm)  throws Exception\fC [private]\fP"
+
+.PP
+Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol\&. \fBParameters:\fP
+.RS 4
+\fIatm\fP the automaton 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 if no symbol have created, 1 otherwise\&. -1 if error\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+Trasformo la singola produzione k in una list per poterla passare a chiusura \fBLR1\fP 
+.PP
+Definition at line 122 of file LALR1\&.java\&.
+.SS "List<\fBIndexedProduction\fP> \fBcontextFree\&.parser\&.LALR1\&.chiusuraLR1\fP (List< \fBIndexedProduction\fP >i)"
+
+.PP
+Passed a list of production I that form the kernel of a state, return closing it, and the lookahead symbols associated\&. \fBParameters:\fP
+.RS 4
+\fIthe\fP kernels of the state 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+list of products forming the state 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file LALR1\&.java\&.
+.SS "int \fBcontextFree\&.parser\&.LALR1\&.init\fP ()  throws Exception\fC [virtual]\fP"
+
+.PP
+Initialize the LALR(1) automaton from \fBLR0\fP automaton\&. If the grammar is LALR(1) then initialize action and goto table\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+0 if the grammar is ambiguous, 1 otherwise\&. -1 if error 
+.RE
+.PP
+
+.PP
+Implements \fBcontextFree\&.parser\&.LR0\fP\&.
+.PP
+Definition at line 76 of file LALR1\&.java\&.
+.SS "String \fBcontextFree\&.parser\&.LALR1\&.printTable\fP ()"
+
+.PP
+Return a string with tables Goto Action\&. \fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.PP
+Definition at line 401 of file LALR1\&.java\&.
+.SS "boolean \fBcontextFree\&.parser\&.LALR1\&.reduce\fP (\fBState\fPstato)"
+
+.PP
+if the point is in the last position he wrote the reduces in the action table\&. \fBParameters:\fP
+.RS 4
+\fIstate\fP to control 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+false if there are conflicts 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 331 of file LALR1\&.java\&.
+.SS "int \fBcontextFree\&.parser\&.LALR1\&.tableCostruction\fP ()  throws Exception"
+
+.PP
+builds the Action table GoTo from an automa \fBLALR1\fP and tells us if it is or not type of \fBLALR1\fP \fBParameters:\fP
+.RS 4
+\fIautoma\fP to control 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+1 if the type of grammar is LALR (1), 0 otherwise 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 280 of file LALR1\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019         <span class="keyword">private</span> List&lt;Production&gt; P; <span class="comment">// Insieme di produzioni</span>
 <a name="l00020"></a>00020         <span class="keyword">private</span> String S; <span class="comment">// Assioma</span>
 <a name="l00021"></a>00021         <span class="keyword">private</span> <span class="keywordtype">boolean</span>[] <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ac880ed3ca36ddcd8e20d8279af08244d" title="population structure Bolean [] null defined in class grammar, it has the same size of V...">nullo</a>; <span class="comment">// Insieme dei null</span>
-<a name="l00022"></a>00022         <span class="keyword">private</span> Set&lt;String&gt;[] <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>; <span class="comment">// Insieme dei first</span>
+<a name="l00022"></a>00022         <span class="keyword">private</span> Set&lt;String&gt;[] <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>; <span class="comment">// Insieme dei first</span>
 <a name="l00023"></a>00023         <span class="keyword">private</span> Set&lt;String&gt;[] <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#aca5cad8fa908f908d38e0e7e0aa181ed" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">follow</a>; <span class="comment">// Insieme dei follow</span>
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html" title="Define a context-free grammar type.">ContextFreeGrammar</a>() {
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a>00043                 this.P = prod;
 <a name="l00044"></a>00044                 this.S = ass;
 <a name="l00045"></a>00045                 <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ac880ed3ca36ddcd8e20d8279af08244d" title="population structure Bolean [] null defined in class grammar, it has the same size of V...">nullo</a>();
-<a name="l00046"></a>00046                 <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>();
+<a name="l00046"></a>00046                 <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>();
 <a name="l00047"></a>00047                 <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#aca5cad8fa908f908d38e0e7e0aa181ed" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">follow</a>();
 <a name="l00048"></a>00048         }
 <a name="l00049"></a>00049 
@@ -199,13 +199,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00088"></a>00088         }
 <a name="l00089"></a>00089 
 <a name="l00090"></a><a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#adc3a25917132474960be34329cdaead9">00090</a>         <span class="keyword">public</span> Set&lt;String&gt;[] <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#adc3a25917132474960be34329cdaead9" title="Get the list of first for the grammar.">getFirst</a>() {
-<a name="l00091"></a>00091                 <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>();
-<a name="l00092"></a>00092                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>;
+<a name="l00091"></a>00091                 <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>();
+<a name="l00092"></a>00092                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>;
 <a name="l00093"></a>00093         }
 <a name="l00094"></a>00094         
 <a name="l00095"></a>00095         
 <a name="l00101"></a><a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a2140cdc636585e9714e8dc42c936eee5">00101</a>         <span class="keyword">public</span> Set&lt;String&gt; <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a2140cdc636585e9714e8dc42c936eee5" title="I spent a character returns the first list associated to it.">getFirst</a>(String A){
-<a name="l00102"></a>00102                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>[V.indexOf(A)];
+<a name="l00102"></a>00102                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>[V.indexOf(A)];
 <a name="l00103"></a>00103         }
 <a name="l00104"></a>00104         
 <a name="l00110"></a><a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5dae0e5de95349d310869fb5941cb5be">00110</a>         <span class="keyword">public</span> Set&lt;String&gt;[] <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a5dae0e5de95349d310869fb5941cb5be" title="I spent a character returns the Follow list associated to it.">getFollow</a>() {
@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00173"></a>00173         }
 <a name="l00174"></a>00174 
 <a name="l00180"></a>00180          @SuppressWarnings(<span class="stringliteral">&quot;unchecked&quot;</span>)
-<a name="l00181"></a><a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb">00181</a>         public <span class="keywordtype">void</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>() {
+<a name="l00181"></a><a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb">00181</a>         public <span class="keywordtype">void</span> <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>() {
 <a name="l00182"></a>00182                 <span class="keywordtype">boolean</span> flag = <span class="keyword">true</span>; <span class="comment">// serve per controllare se sono stati fatti</span>
 <a name="l00183"></a>00183                                                         <span class="comment">// cambiamenti, inquanto essi influenzerebbero gli altri</span>
 <a name="l00184"></a>00184                                                         <span class="comment">// first</span>
@@ -342,7 +342,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00257"></a>00257                 <span class="keywordtype">boolean</span> tuttinull;
 <a name="l00258"></a>00258                 follow = <span class="keyword">new</span> Set[V.size()];
 <a name="l00259"></a>00259 
-<a name="l00260"></a>00260                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>.length; i++) {
+<a name="l00260"></a>00260                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>.length; i++) {
 <a name="l00261"></a>00261                         follow[i] = <span class="keyword">new</span> HashSet&lt;String&gt;();
 <a name="l00262"></a>00262                 }
 <a name="l00263"></a>00263                 <span class="comment">// Il follow dell&#39;assioma contiene $ per definizione quindi lo possiamo</span>
@@ -383,7 +383,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00298"></a>00298                                                         <span class="comment">// ai follow(termine), controllo se Simbolo � nullo</span>
 <a name="l00299"></a>00299                                                         <span class="comment">// e in caso positivo esco perch� ho finito</span>
 <a name="l00300"></a>00300                                                         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (V.contains(simbolo)) {
-<a name="l00301"></a>00301                                                                 followTermine.addAll(<a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Population structure in Set &lt;String&gt; [] first for each non-terminal V, using a structure of type Set ...">first</a>[V.indexOf(simbolo)]);
+<a name="l00301"></a>00301                                                                 followTermine.addAll(<a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#a9c3bfe0b038204420b470fab326ce7bb" title="Populate structure in Set&lt;String&gt;[]first for each non-terminal V, using a structure of type Set to av...">first</a>[V.indexOf(simbolo)]);
 <a name="l00302"></a>00302                                                                 <span class="keywordflow">if</span> (!<a class="code" href="classcontext_free_1_1grammar_1_1_context_free_grammar.html#ac880ed3ca36ddcd8e20d8279af08244d" title="population structure Bolean [] null defined in class grammar, it has the same size of V...">nullo</a>[V.indexOf(simbolo)]) {
 <a name="l00303"></a>00303                                                                         tuttinull = <span class="keyword">false</span>;
 <a name="l00304"></a>00304                                                                         <span class="keywordflow">break</span>;
@@ -439,7 +439,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><b>ContextFreeGrammar.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

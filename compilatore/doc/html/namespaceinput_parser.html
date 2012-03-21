@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -124,9 +124,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_concrete_parser_factory.html">ConcreteParserFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concrete class that implement the factoryMethod of <a class="el" href="classinput_parser_1_1_input_parser_factory.html" title="Abstract InputParserFactory.">InputParserFactory</a>.  <a href="classinput_parser_1_1_concrete_parser_factory.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_four_line_input_parser.html">FourLineInputParser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a four line grammar format.  <a href="classinput_parser_1_1_four_line_input_parser.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser.html">InputParser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object rappresentation of input file parsing result.  <a href="classinput_parser_1_1_input_parser.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_input_parser_factory.html">InputParserFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract <a class="el" href="classinput_parser_1_1_input_parser_factory.html" title="Abstract InputParserFactory.">InputParserFactory</a>.  <a href="classinput_parser_1_1_input_parser_factory.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html">LRInputParser</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a txt file with action table, goto table and grammar in one line format (*.1l).  <a href="classinput_parser_1_1_l_r_input_parser.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_single_line_input_parser.html">SingleLineInputParser</a></td></tr>
@@ -161,17 +165,17 @@ Classes</h2></td></tr>
  You can obtain the parsing result through the ParserFactory that return a proper instance initialized with the result of parsing.<br/>
  : <br/>
 - get a grammar instance from a grammar file: <br/>
- IGrammar grammar = (IGrammar) new <a class="el" href="classinput_parser_1_1_input_parser.html">InputParser</a>("grammar.4l").parse(); <br/>
+ IGrammar grammar = (IGrammar) new <a class="el" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>("grammar.4l").parse(); <br/>
  <br/>
 - get an instance of parser program from a "Result.txt" file (contains action and goto table and the grammar in *.1l format): <br/>
- ParserProgram <a class="el" href="namespaceparser_program.html" title="Contains the parser program&#39;s class that to create the AST of an input phrase.">parserProgram</a> = (ParserProgram) new <a class="el" href="classinput_parser_1_1_input_parser.html">InputParser</a>("Result.txt").parse(); </p>
+ ParserProgram <a class="el" href="namespaceparser_program.html" title="Contains the parser program&#39;s class that to create the AST of an input phrase.">parserProgram</a> = (ParserProgram) new <a class="el" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>("Result.txt").parse(); </p>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="namespaceinput_parser.html">inputParser</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:06:00 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

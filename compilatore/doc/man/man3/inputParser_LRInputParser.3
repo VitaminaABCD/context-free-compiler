@@ -1,0 +1,107 @@
+.TH "inputParser.LRInputParser" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+inputParser.LRInputParser \- 
+.PP
+Parse a txt file with action table, goto table and grammar in one line format (*\&.1l)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBinputParser\&.AbstractInputParser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLRInputParser\fP (String in)"
+.br
+.ti -1c
+.RI "\fBParserProgram\fP \fBparse\fP ()  throws Exception "
+.br
+.in -1c
+.SS "Static Package Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Logger \fBlogger\fP = Logger\&.getLogger(LRInputParser\&.class\&.getName())"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadTable\fP (BufferedReader f, Hashtable< String, List< String >> table)  throws IOException "
+.br
+.RI "\fIread the table in the first part of the file and store it in an hashtable with simbol as key and a list with an element for each state \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "String \fBinput\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Parse a txt file with action table, goto table and grammar in one line format (*\&.1l)\&. 
+
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file LRInputParser\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBParserProgram\fP \fBinputParser\&.LRInputParser\&.parse\fP ()  throws Exception \fC [virtual]\fP"
+\fBReturns:\fP
+.RS 4
+ParserProgram initialized instance\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Implements \fBinputParser\&.AbstractInputParser\fP\&.
+.PP
+Definition at line 39 of file LRInputParser\&.java\&.
+.SS "void \fBinputParser\&.LRInputParser\&.readTable\fP (BufferedReaderf, Hashtable< String, List< String >>table)  throws IOException \fC [private]\fP"
+
+.PP
+read the table in the first part of the file and store it in an hashtable with simbol as key and a list with an element for each state \fBParameters:\fP
+.RS 4
+\fIf\fP the input file buffer 
+.br
+\fItable\fP the hashtable where the data is stored 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIIOException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file LRInputParser\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

@@ -1,7 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node1 [label="parserProgram.HistoryElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classparser_program_1_1_history_element.html",tooltip="This class rappresent an element of the history."];
-}

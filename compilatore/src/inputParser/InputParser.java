@@ -38,6 +38,4 @@ public class InputParser extends AbstractInputParser {
 		InputParserFactory fc = new ConcreteParserFactory();
 		return fc.factoryMethod(input).parse();
 	}
-	
-	
 }

@@ -298,7 +298,7 @@ public class HomeGui extends JFrame{
         //-- Filtro per .rtf con la implementazione pi� generica --
         fourlineFileFilter= new GenericFileFilter("File context-free-gramar format (*.4l)", "4l");
 
-        onelineFileFilter = new GenericFileFilter("File context-free-gramar format (*.1l)", "1l");
+        //onelineFileFilter = new GenericFileFilter("File context-free-gramar format (*.1l)", "1l");
 		
 		JTextPane txtpnFraseDiInput = new JTextPane();
 		springLayout.putConstraint(SpringLayout.NORTH, txtpnFraseDiInput, 4, SpringLayout.SOUTH, txtpnDss);

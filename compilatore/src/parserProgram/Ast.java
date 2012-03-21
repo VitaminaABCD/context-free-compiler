@@ -11,8 +11,6 @@ public class Ast {
 		return root;
 	}
 
-
-
 	private DefaultMutableTreeNode root;
 	
 	public Ast(){

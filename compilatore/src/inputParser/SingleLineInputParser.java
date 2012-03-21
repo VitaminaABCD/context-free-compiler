@@ -16,9 +16,8 @@ import error.ErrorManager;
 
 /**
  * Parse a single line grammar format.
- * es. S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)} 
+ * ex: S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)} 
  * @author Paolo Pino
- *
  */
 public class SingleLineInputParser extends AbstractInputParser {
 

@@ -14,6 +14,15 @@ import contextFree.grammar.Production;
 import error.ERROR_TYPE;
 import error.ErrorManager;
 
+/**
+ * Parse a four line grammar format.
+ * ex (file.4l): 
+ * 		E
+ * 		E, T, P
+ *		a, +, x, (, ), $
+ * 		E::=E+T, E::=T, T::=TxP, T::=P, P::=a, P::=(E)
+ * @author Pierluigi Sottile
+ */
 public class FourLineInputParser extends AbstractInputParser{
 	String file;
 	String A_reader, V_reader, T_reader, P_reader;
@@ -37,7 +46,7 @@ public class FourLineInputParser extends AbstractInputParser{
 	}
 	
 	/**
-	 * reads the file .4l and creates the object grammar
+	 * Read the file .4l and creates the object grammar.
 	 * @return the grammar
 	 * @author Pierluigi Sottile
 	 */

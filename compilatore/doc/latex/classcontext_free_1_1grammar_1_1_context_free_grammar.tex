@@ -1,0 +1,554 @@
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar}{\section{context\-Free.\-grammar.\-Context\-Free\-Grammar Class Reference}
+\label{classcontext_free_1_1grammar_1_1_context_free_grammar}\index{context\-Free.\-grammar.\-Context\-Free\-Grammar@{context\-Free.\-grammar.\-Context\-Free\-Grammar}}
+}
+
+
+Define a context-\/free grammar type.  
+
+
+
+
+Inheritance diagram for context\-Free.\-grammar.\-Context\-Free\-Grammar\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classcontext_free_1_1grammar_1_1_context_free_grammar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for context\-Free.\-grammar.\-Context\-Free\-Grammar\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_ad4871f790005d3582e0f4d50aceac810}{{\bfseries Context\-Free\-Grammar} (String ass, List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ prod)}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_ad4871f790005d3582e0f4d50aceac810}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_aa29c85cc857ff390f50efc82d7c959e9}{{\bfseries Context\-Free\-Grammar} (String ass, List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ prod, List$<$ String $>$ V, List$<$ String $>$ T)}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_aa29c85cc857ff390f50efc82d7c959e9}
+
+\item 
+List$<$ String $>$ \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a664b69a446100c7c4e7a390fb2ee5ebc}{get\-V} ()
+\begin{DoxyCompactList}\small\item\em Get non-\/terminal symbols list. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_ad3d3e1efadeb4cc6ed252342fd52c76c}{set\-V} (List$<$ String $>$ v)
+\begin{DoxyCompactList}\small\item\em Set the list of non-\/terminal symbols. \end{DoxyCompactList}\item 
+List$<$ String $>$ \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a75f1bbf1e0d1d1350032c628779fcffd}{get\-T} ()
+\begin{DoxyCompactList}\small\item\em Get terminal symbols list. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_aa1c9a277d660b2ba8443f47cb9543811}{set\-T} (List$<$ String $>$ e)
+\begin{DoxyCompactList}\small\item\em Set the list of terminal symbols. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_ad00a00b018844cf2acb0c1c5f5d97468}{get\-P} ()
+\begin{DoxyCompactList}\small\item\em Get production list. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a2a66695521702040224c23898b579c92}{set\-P} (List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ p)
+\begin{DoxyCompactList}\small\item\em Set the produciton list. \end{DoxyCompactList}\item 
+String \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_ad278c4f5e2bdec1d011d11a3008d8754}{get\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the axioms. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a2f4c3ec7270d799ed127cb162e0213b3}{set\-S} (String s)
+\begin{DoxyCompactList}\small\item\em Set the axioms for the grammar. \end{DoxyCompactList}\item 
+Set$<$ String $>$\mbox{[}$\,$\mbox{]} \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9}{get\-First} ()
+\begin{DoxyCompactList}\small\item\em Get the list of first for the grammar. \end{DoxyCompactList}\item 
+Set$<$ String $>$ \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5}{get\-First} (String A)
+\begin{DoxyCompactList}\small\item\em I spent a character returns the first list associated to it. \end{DoxyCompactList}\item 
+Set$<$ String $>$\mbox{[}$\,$\mbox{]} \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be}{get\-Follow} ()
+\begin{DoxyCompactList}\small\item\em I spent a character returns the Follow list associated to it. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d}{nullo} ()
+\begin{DoxyCompactList}\small\item\em population structure Bolean \mbox{[}\mbox{]} null defined in class grammar, it has the same size of V. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb}{first} ()
+\begin{DoxyCompactList}\small\item\em Populate structure in Set$<$\-String$>$\mbox{[}\mbox{]}first for each non-\/terminal V, using a structure of type Set to avoid duplication. \end{DoxyCompactList}\item 
+void \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed}{follow} ()
+\begin{DoxyCompactList}\small\item\em Population structure in Set $<$\-String$>$ \mbox{[}\mbox{]} first for each non-\/terminal V, using a structure of type Set to avoid duplication. \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_afd242bd888b53c20465c0bd3675d29d4}{String {\bfseries to\-String} ()}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_afd242bd888b53c20465c0bd3675d29d4}
+
+\item 
+String \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar_a922203e2db862d2a8ab31e8e7736273b}{to\-One\-Line\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a8cecf8ee3fe6ca01f58aacf390720746}{List$<$ String $>$ {\bfseries V}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a8cecf8ee3fe6ca01f58aacf390720746}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a5e6072d2c2f11703160c3c39c2968489}{List$<$ String $>$ {\bfseries T}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a5e6072d2c2f11703160c3c39c2968489}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_ae1f4363ca57c34622cdca5175aef6b6c}{List$<$ \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} $>$ {\bfseries P}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_ae1f4363ca57c34622cdca5175aef6b6c}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a516b9fb1183524ea3e7859b41f60ad32}{String {\bfseries S}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a516b9fb1183524ea3e7859b41f60ad32}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a5a9f69817c82b19b21adb85326d60f3b}{boolean\mbox{[}$\,$\mbox{]} {\bfseries nullo}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a5a9f69817c82b19b21adb85326d60f3b}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a670c2e35761e57add4c2f3ae29131325}{Set$<$ String $>$\mbox{[}$\,$\mbox{]} {\bfseries first}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a670c2e35761e57add4c2f3ae29131325}
+
+\item 
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a56137caac336fd26652d4c21252fd95f}{Set$<$ String $>$\mbox{[}$\,$\mbox{]} {\bfseries follow}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a56137caac336fd26652d4c21252fd95f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define a context-\/free grammar type. 
+
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
+
+
+Definition at line 15 of file Context\-Free\-Grammar.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!first@{first}}
+\index{first@{first}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{first}]{\setlength{\rightskip}{0pt plus 5cm}void context\-Free.\-grammar.\-Context\-Free\-Grammar.\-first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb}
+
+
+Populate structure in Set$<$\-String$>$\mbox{[}\mbox{]}first for each non-\/terminal V, using a structure of type Set to avoid duplication. 
+
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 181 of file Context\-Free\-Grammar.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_a9c3bfe0b038204420b470fab326ce7bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!follow@{follow}}
+\index{follow@{follow}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{follow}]{\setlength{\rightskip}{0pt plus 5cm}void context\-Free.\-grammar.\-Context\-Free\-Grammar.\-follow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed}
+
+
+Population structure in Set $<$\-String$>$ \mbox{[}\mbox{]} first for each non-\/terminal V, using a structure of type Set to avoid duplication. 
+
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 249 of file Context\-Free\-Grammar.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_aca5cad8fa908f908d38e0e7e0aa181ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-First@{get\-First}}
+\index{get\-First@{get\-First}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-First}]{\setlength{\rightskip}{0pt plus 5cm}Set$<$String$>$ \mbox{[}$\,$\mbox{]} {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-First} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9}
+
+
+Get the list of first for the grammar. 
+
+\begin{DoxyReturn}{Returns}
+the first list. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a256e9280e008a7c709ccb80725ccc0f2}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 90 of file Context\-Free\-Grammar.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_adc3a25917132474960be34329cdaead9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-First@{get\-First}}
+\index{get\-First@{get\-First}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-First}]{\setlength{\rightskip}{0pt plus 5cm}Set$<$String$>$ {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-First} (
+\begin{DoxyParamCaption}
+\item[{String}]{A}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5}
+
+
+I spent a character returns the first list associated to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Simbol} & not-\/\-Terminal A \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+First(\-A) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a7a05f11e88cdbe29db1849541592e272}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 101 of file Context\-Free\-Grammar.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_a2140cdc636585e9714e8dc42c936eee5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-Follow@{get\-Follow}}
+\index{get\-Follow@{get\-Follow}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-Follow}]{\setlength{\rightskip}{0pt plus 5cm}Set$<$String$>$ \mbox{[}$\,$\mbox{]} {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-Follow} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be}
+
+
+I spent a character returns the Follow list associated to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Simbol} & not-\/terminal A \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Follow(\-A) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_aad085d9f84a32ca1abe5fba0c9e5f20c}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 110 of file Context\-Free\-Grammar.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_a5dae0e5de95349d310869fb5941cb5be_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_ad00a00b018844cf2acb0c1c5f5d97468}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-P@{get\-P}}
+\index{get\-P@{get\-P}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-P}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Production}$>$ {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-P} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_ad00a00b018844cf2acb0c1c5f5d97468}
+
+
+Get production list. 
+
+\begin{DoxyReturn}{Returns}
+a list of production objects. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a629ab4dc36a869b93fa239a3fee760f9}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 71 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_ad278c4f5e2bdec1d011d11a3008d8754}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-S@{get\-S}}
+\index{get\-S@{get\-S}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-S}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-S} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_ad278c4f5e2bdec1d011d11a3008d8754}
+
+
+Get the axioms. 
+
+\begin{DoxyReturn}{Returns}
+the axioms 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_aceb36e584d26bd39a0f5186742cc9b5b}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 81 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a75f1bbf1e0d1d1350032c628779fcffd}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-T@{get\-T}}
+\index{get\-T@{get\-T}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-T}]{\setlength{\rightskip}{0pt plus 5cm}List$<$String$>$ {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-T} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a75f1bbf1e0d1d1350032c628779fcffd}
+
+
+Get terminal symbols list. 
+
+\begin{DoxyReturn}{Returns}
+a list of string with terminal symbol 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a996f5e0bed5a6ac469b764f56d420fb1}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 61 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a664b69a446100c7c4e7a390fb2ee5ebc}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!get\-V@{get\-V}}
+\index{get\-V@{get\-V}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{get\-V}]{\setlength{\rightskip}{0pt plus 5cm}List$<$String$>$ {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-get\-V} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a664b69a446100c7c4e7a390fb2ee5ebc}
+
+
+Get non-\/terminal symbols list. 
+
+\begin{DoxyReturn}{Returns}
+a list of string with non-\/terminal symbol 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a4b1bc2134e63051dc37e693294aaeec6}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 51 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!nullo@{nullo}}
+\index{nullo@{nullo}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{nullo}]{\setlength{\rightskip}{0pt plus 5cm}void context\-Free.\-grammar.\-Context\-Free\-Grammar.\-nullo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d}
+
+
+population structure Bolean \mbox{[}\mbox{]} null defined in class grammar, it has the same size of V. 
+
+one element is said to null if every component of the expression of the production will be 'null. \begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 121 of file Context\-Free\-Grammar.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1grammar_1_1_context_free_grammar_ac880ed3ca36ddcd8e20d8279af08244d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a2a66695521702040224c23898b579c92}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!set\-P@{set\-P}}
+\index{set\-P@{set\-P}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{set\-P}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-set\-P} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Production} $>$}]{p}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a2a66695521702040224c23898b579c92}
+
+
+Set the produciton list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the list of productions that must be setted. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_ac070229e5571e47032b5199c0bf2c354}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 76 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a2f4c3ec7270d799ed127cb162e0213b3}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!set\-S@{set\-S}}
+\index{set\-S@{set\-S}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{set\-S}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-set\-S} (
+\begin{DoxyParamCaption}
+\item[{String}]{s}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a2f4c3ec7270d799ed127cb162e0213b3}
+
+
+Set the axioms for the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the axioms. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a134f8b2183ec804eff78ac57b16a0ab9}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 86 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_aa1c9a277d660b2ba8443f47cb9543811}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!set\-T@{set\-T}}
+\index{set\-T@{set\-T}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{set\-T}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-set\-T} (
+\begin{DoxyParamCaption}
+\item[{List$<$ String $>$}]{e}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_aa1c9a277d660b2ba8443f47cb9543811}
+
+
+Set the list of terminal symbols. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the list of terminal \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a775125de1388036059da1860ae61a100}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 66 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_ad3d3e1efadeb4cc6ed252342fd52c76c}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!set\-V@{set\-V}}
+\index{set\-V@{set\-V}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{set\-V}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-set\-V} (
+\begin{DoxyParamCaption}
+\item[{List$<$ String $>$}]{v}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_ad3d3e1efadeb4cc6ed252342fd52c76c}
+
+
+Set the list of non-\/terminal symbols. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & the list of non-\/terminal \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_ae7bd17123ad7424af06a7da75a6bc745}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 56 of file Context\-Free\-Grammar.\-java.
+
+\hypertarget{classcontext_free_1_1grammar_1_1_context_free_grammar_a922203e2db862d2a8ab31e8e7736273b}{\index{context\-Free\-::grammar\-::\-Context\-Free\-Grammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}!to\-One\-Line\-String@{to\-One\-Line\-String}}
+\index{to\-One\-Line\-String@{to\-One\-Line\-String}!contextFree::grammar::ContextFreeGrammar@{context\-Free\-::grammar\-::\-Context\-Free\-Grammar}}
+\subsubsection[{to\-One\-Line\-String}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf context\-Free.\-grammar.\-Context\-Free\-Grammar.\-to\-One\-Line\-String} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1grammar_1_1_context_free_grammar_a922203e2db862d2a8ab31e8e7736273b}
+\begin{DoxyReturn}{Returns}
+the grammar string formatted in one line. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar_a5fdeb5a6a9426b400c2fe805566a377c}{context\-Free.\-grammar.\-I\-Grammar}.
+
+
+
+Definition at line 337 of file Context\-Free\-Grammar.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/context\-Free/grammar/Context\-Free\-Grammar.\-java\end{DoxyCompactItemize}

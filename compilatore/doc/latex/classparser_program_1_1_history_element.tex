@@ -1,0 +1,242 @@
+\hypertarget{classparser_program_1_1_history_element}{\section{parser\-Program.\-History\-Element Class Reference}
+\label{classparser_program_1_1_history_element}\index{parser\-Program.\-History\-Element@{parser\-Program.\-History\-Element}}
+}
+
+
+This class represent an element of the parsing history.  
+
+
+
+
+Collaboration diagram for parser\-Program.\-History\-Element\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classparser_program_1_1_history_element__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classparser_program_1_1_history_element_a45f360f314f688585844a62592bdb5c5}{\hyperlink{classparser_program_1_1_history_element_a45f360f314f688585844a62592bdb5c5}{History\-Element} ()}\label{classparser_program_1_1_history_element_a45f360f314f688585844a62592bdb5c5}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classparser_program_1_1_history_element_ae6d3bdd3606301f0b08d4e9258b5c5cf}{History\-Element} (String\mbox{[}$\,$\mbox{]} stk)
+\begin{DoxyCompactList}\small\item\em Construct the object with specified parsing stack. \end{DoxyCompactList}\item 
+\hyperlink{classparser_program_1_1_history_element_a0cd8852d35a48856c6e893ae33cbde30}{History\-Element} (String\mbox{[}$\,$\mbox{]} stk, \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} p, String s)
+\begin{DoxyCompactList}\small\item\em Construct the object with specified parsing stack, production and step. \end{DoxyCompactList}\item 
+String\mbox{[}$\,$\mbox{]} \hyperlink{classparser_program_1_1_history_element_a8f20a699af1fa68f114acef0f72117b5}{get\-Stack} ()
+\item 
+void \hyperlink{classparser_program_1_1_history_element_a640ecb265a57f1b084fe99cf2a2a9a35}{set\-Stack} (String\mbox{[}$\,$\mbox{]} stack)
+\begin{DoxyCompactList}\small\item\em Set the stack. \end{DoxyCompactList}\item 
+\hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} \hyperlink{classparser_program_1_1_history_element_a1e3354d1bc805c952c4ed9a35ddac0dd}{get\-Production} ()
+\item 
+void \hyperlink{classparser_program_1_1_history_element_a2311f48be369f4d0e6be47c2a7ac7546}{set\-Production} (\hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} production)
+\begin{DoxyCompactList}\small\item\em Set the production. \end{DoxyCompactList}\item 
+String \hyperlink{classparser_program_1_1_history_element_ab64610fe65f58bca7d542244378ac030}{get\-Simbol} ()
+\item 
+void \hyperlink{classparser_program_1_1_history_element_a54ecd254d7abd49d0d10230892dfc35b}{set\-Simbol} (String simbol)
+\begin{DoxyCompactList}\small\item\em Set the parsing step. \end{DoxyCompactList}\item 
+boolean \hyperlink{classparser_program_1_1_history_element_a233c9c55643f4d6bc8103c4e2c8bd038}{is\-Shift} ()
+\item 
+\hypertarget{classparser_program_1_1_history_element_aa0ddd25dd8d27e59d63123b2f50e1cb4}{String {\bfseries to\-String} ()}\label{classparser_program_1_1_history_element_aa0ddd25dd8d27e59d63123b2f50e1cb4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classparser_program_1_1_history_element_a3ab04c9be50cda70dcfd9ee134884d9f}{String\mbox{[}$\,$\mbox{]} {\bfseries stack}}\label{classparser_program_1_1_history_element_a3ab04c9be50cda70dcfd9ee134884d9f}
+
+\item 
+\hypertarget{classparser_program_1_1_history_element_a93323e030ba302f08564c7d6cd021a15}{\hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} {\bfseries production}}\label{classparser_program_1_1_history_element_a93323e030ba302f08564c7d6cd021a15}
+
+\item 
+\hypertarget{classparser_program_1_1_history_element_a3c9ad24a6a0f33ac5d1cbc95ff1e82de}{String {\bfseries simbol}}\label{classparser_program_1_1_history_element_a3c9ad24a6a0f33ac5d1cbc95ff1e82de}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represent an element of the parsing history. 
+
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
+
+
+Definition at line 11 of file History\-Element.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classparser_program_1_1_history_element_ae6d3bdd3606301f0b08d4e9258b5c5cf}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!History\-Element@{History\-Element}}
+\index{History\-Element@{History\-Element}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{History\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parser\-Program.\-History\-Element.\-History\-Element} (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{stk}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_ae6d3bdd3606301f0b08d4e9258b5c5cf}
+
+
+Construct the object with specified parsing stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stk} & the stack to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_a0cd8852d35a48856c6e893ae33cbde30}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!History\-Element@{History\-Element}}
+\index{History\-Element@{History\-Element}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{History\-Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parser\-Program.\-History\-Element.\-History\-Element} (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{stk, }
+\item[{{\bf Production}}]{p, }
+\item[{String}]{s}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a0cd8852d35a48856c6e893ae33cbde30}
+
+
+Construct the object with specified parsing stack, production and step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the production. \\
+\hline
+{\em s} & the step. \\
+\hline
+{\em stk} & the stack to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file History\-Element.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classparser_program_1_1_history_element_a1e3354d1bc805c952c4ed9a35ddac0dd}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!get\-Production@{get\-Production}}
+\index{get\-Production@{get\-Production}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{get\-Production}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Production} {\bf parser\-Program.\-History\-Element.\-get\-Production} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a1e3354d1bc805c952c4ed9a35ddac0dd}
+\begin{DoxyReturn}{Returns}
+the production in the history element 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_ab64610fe65f58bca7d542244378ac030}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!get\-Simbol@{get\-Simbol}}
+\index{get\-Simbol@{get\-Simbol}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{get\-Simbol}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf parser\-Program.\-History\-Element.\-get\-Simbol} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_ab64610fe65f58bca7d542244378ac030}
+\begin{DoxyReturn}{Returns}
+the history step. 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_a8f20a699af1fa68f114acef0f72117b5}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!get\-Stack@{get\-Stack}}
+\index{get\-Stack@{get\-Stack}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{get\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}String \mbox{[}$\,$\mbox{]} {\bf parser\-Program.\-History\-Element.\-get\-Stack} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a8f20a699af1fa68f114acef0f72117b5}
+\begin{DoxyReturn}{Returns}
+the stack 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_a233c9c55643f4d6bc8103c4e2c8bd038}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!is\-Shift@{is\-Shift}}
+\index{is\-Shift@{is\-Shift}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{is\-Shift}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf parser\-Program.\-History\-Element.\-is\-Shift} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a233c9c55643f4d6bc8103c4e2c8bd038}
+\begin{DoxyReturn}{Returns}
+true if the history element execute a shift. 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_a2311f48be369f4d0e6be47c2a7ac7546}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!set\-Production@{set\-Production}}
+\index{set\-Production@{set\-Production}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{set\-Production}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-History\-Element.\-set\-Production} (
+\begin{DoxyParamCaption}
+\item[{{\bf Production}}]{production}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a2311f48be369f4d0e6be47c2a7ac7546}
+
+
+Set the production. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em production} & the production to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_a54ecd254d7abd49d0d10230892dfc35b}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!set\-Simbol@{set\-Simbol}}
+\index{set\-Simbol@{set\-Simbol}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{set\-Simbol}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-History\-Element.\-set\-Simbol} (
+\begin{DoxyParamCaption}
+\item[{String}]{simbol}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a54ecd254d7abd49d0d10230892dfc35b}
+
+
+Set the parsing step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em simbol} & the parsing step. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file History\-Element.\-java.
+
+\hypertarget{classparser_program_1_1_history_element_a640ecb265a57f1b084fe99cf2a2a9a35}{\index{parser\-Program\-::\-History\-Element@{parser\-Program\-::\-History\-Element}!set\-Stack@{set\-Stack}}
+\index{set\-Stack@{set\-Stack}!parserProgram::HistoryElement@{parser\-Program\-::\-History\-Element}}
+\subsubsection[{set\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-History\-Element.\-set\-Stack} (
+\begin{DoxyParamCaption}
+\item[{String\mbox{[}$\,$\mbox{]}}]{stack}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_history_element_a640ecb265a57f1b084fe99cf2a2a9a35}
+
+
+Set the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & the stack. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file History\-Element.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/parser\-Program/History\-Element.\-java\end{DoxyCompactItemize}

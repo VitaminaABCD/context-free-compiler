@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classcontext_free_1_1parser_1_1_l_r0.html" title="{contextFree.parser.LR0\n|# grammatica\l|+ setGrammar()\l+ init()\l+ chiusura()\l+ GoTo()\l+ Item()\l+ uguale()\l+ prodPresente()\l}" alt="" coords="31,189,189,355"/>
+<area shape="rect" id="node4" href="$interfacecontext_free_1_1parser_1_1_i_parser.html" title="{contextFree.parser.IParser\n||+ setGrammar()\l+ init()\l+ getGrammar()\l+ isAmbiguos()\l+ getAutoma()\l}" alt="" coords="23,5,199,141"/>
+</map>

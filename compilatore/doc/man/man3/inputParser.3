@@ -1,0 +1,107 @@
+.TH "inputParser" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+inputParser \- 
+.PP
+Contains the class for file parsing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAbstractInputParser\fP"
+.br
+.ti -1c
+.RI "class \fBConcreteParserFactory\fP"
+.br
+.RI "\fIConcrete class that implement the factoryMethod of \fBInputParserFactory\fP\&. \fP"
+.ti -1c
+.RI "class \fBFourLineInputParser\fP"
+.br
+.RI "\fIParse a four line grammar format\&. \fP"
+.ti -1c
+.RI "class \fBInputParser\fP"
+.br
+.RI "\fIAn object rappresentation of input file parsing result\&. \fP"
+.ti -1c
+.RI "class \fBInputParserFactory\fP"
+.br
+.RI "\fIAbstract \fBInputParserFactory\fP\&. \fP"
+.ti -1c
+.RI "class \fBLRInputParser\fP"
+.br
+.RI "\fIParse a txt file with action table, goto table and grammar in one line format (*\&.1l)\&. \fP"
+.ti -1c
+.RI "class \fBSingleLineInputParser\fP"
+.br
+.RI "\fIParse a single line grammar format\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains the class for file parsing\&. 
+
+Only 2 extension are allowed:
+.br
+ 1) *\&.4l - a file with 4 line that define a grammar:
+.br
+ first line -> axioms
+.br
+ second line -> non-terminals
+.br
+ third line -> terminals
+.br
+ fourth line -> production
+.br
+ example: 
+.br
+ ////////grammar\&.4l//////////
+.br
+ E
+.br
+ E, T, P
+.br
+ a, +, x, (, ), $
+.br
+ E::=E+T, E::=T, T::=TxP, T::=P, P::=a, P::=(E)
+.br
+ ///////////////////////////
+.br
+.PP
+2) *\&.1l - a file with 1 line that define a grammar\&.
+.br
+ the structure may look like this\&.\&.\&.
+.br
+ S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)}
+.br
+ \&.\&.\&.where the first element is the axioms and all the element between
+.br
+ the bracket are the production\&.
+.br
+ This format is pretty convenient associated with Action and Goto table for context-free grammar type\&.
+.br
+.PP
+You can also parse '\&.txt' file through \fBLRInputParser\fP this type of file may contain the action and goto table and the grammar (written like *\&.1l grammar)\&.
+.br
+.PP
+USAGE:
+.br
+ You can obtain the parsing result through the ParserFactory that return a proper instance initialized with the result of parsing\&.
+.br
+ : 
+.br
+- get a grammar instance from a grammar file: 
+.br
+ IGrammar grammar = (IGrammar) new \fBInputParser\fP('grammar\&.4l')\&.parse(); 
+.br
+ 
+.br
+- get an instance of parser program from a 'Result\&.txt' file (contains action and goto table and the grammar in *\&.1l format): 
+.br
+ ParserProgram \fBparserProgram\fP = (ParserProgram) new \fBInputParser\fP('Result\&.txt')\&.parse(); 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

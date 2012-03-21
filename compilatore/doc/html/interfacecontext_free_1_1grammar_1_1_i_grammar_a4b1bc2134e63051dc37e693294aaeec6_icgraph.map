@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a79576626b3b59b832faecc986b293b36" title="builds the Action table GoTo from an automa LALR1 and tells us if it is or not type of LALR1..." alt="" coords="293,5,565,32"/>
+<area shape="rect" id="node7" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#ad7628eb817b4a8efff71f6e22cc1659f" title="Return a string with tables Goto Action." alt="" coords="312,56,547,83"/>
+<area shape="rect" id="node9" href="$classcontext_free_1_1parser_1_1_l_r0.html#aa96d752420b690ccbbc9fad67691f36a" title="given a grammar G we calculate the associated grammar augmented by adding the production S &#39;:: =..." alt="" coords="336,107,523,133"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="613,56,808,83"/>
+</map>

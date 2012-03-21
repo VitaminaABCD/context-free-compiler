@@ -1,0 +1,143 @@
+\hypertarget{classparser_program_1_1_ast}{\section{parser\-Program.\-Ast Class Reference}
+\label{classparser_program_1_1_ast}\index{parser\-Program.\-Ast@{parser\-Program.\-Ast}}
+}
+
+
+Abstract Syntax Three class.  
+
+
+
+
+Collaboration diagram for parser\-Program.\-Ast\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classparser_program_1_1_ast__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classparser_program_1_1_ast_ae717a4491faf02f3753ad055eec6d5dd}{\hyperlink{classparser_program_1_1_ast_ae717a4491faf02f3753ad055eec6d5dd}{Ast} ()}\label{classparser_program_1_1_ast_ae717a4491faf02f3753ad055eec6d5dd}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classparser_program_1_1_ast_a0dd9cc520a52069ec8d2bcccf7567799}{Ast} (List$<$ \hyperlink{classparser_program_1_1_history_element}{History\-Element} $>$ h)
+\begin{DoxyCompactList}\small\item\em Construct the object with specified history. \end{DoxyCompactList}\item 
+Default\-Mutable\-Tree\-Node \hyperlink{classparser_program_1_1_ast_af586bb4da64c79d9259c87757456d685}{get\-Root} ()
+\item 
+void \hyperlink{classparser_program_1_1_ast_a9ad5f3d77935440489df31131b18bf8e}{init\-From\-History} ()  throws Exception
+\begin{DoxyCompactList}\small\item\em Initialize the three from the parsing history. \end{DoxyCompactList}\item 
+\hypertarget{classparser_program_1_1_ast_a58d8cf855d692e96d5af5d49a8bca4b9}{String {\bfseries to\-String} ()}\label{classparser_program_1_1_ast_a58d8cf855d692e96d5af5d49a8bca4b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classparser_program_1_1_ast_a565a13f94f478e998401f7abc25643aa}{List$<$ \hyperlink{classparser_program_1_1_history_element}{History\-Element} $>$ \hyperlink{classparser_program_1_1_ast_a565a13f94f478e998401f7abc25643aa}{history}}\label{classparser_program_1_1_ast_a565a13f94f478e998401f7abc25643aa}
+
+\begin{DoxyCompactList}\small\item\em the chronology of parsing \end{DoxyCompactList}\item 
+\hypertarget{classparser_program_1_1_ast_a004223ce41eed0c97a6fb63449b4b836}{Default\-Mutable\-Tree\-Node \hyperlink{classparser_program_1_1_ast_a004223ce41eed0c97a6fb63449b4b836}{root}}\label{classparser_program_1_1_ast_a004223ce41eed0c97a6fb63449b4b836}
+
+\begin{DoxyCompactList}\small\item\em the root of the three \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Syntax Three class. 
+
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
+
+
+Definition at line 11 of file Ast.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classparser_program_1_1_ast_a0dd9cc520a52069ec8d2bcccf7567799}{\index{parser\-Program\-::\-Ast@{parser\-Program\-::\-Ast}!Ast@{Ast}}
+\index{Ast@{Ast}!parserProgram::Ast@{parser\-Program\-::\-Ast}}
+\subsubsection[{Ast}]{\setlength{\rightskip}{0pt plus 5cm}{\bf parser\-Program.\-Ast.\-Ast} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf History\-Element} $>$}]{h}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_ast_a0dd9cc520a52069ec8d2bcccf7567799}
+
+
+Construct the object with specified history. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & history \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file Ast.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classparser_program_1_1_ast_af586bb4da64c79d9259c87757456d685}{\index{parser\-Program\-::\-Ast@{parser\-Program\-::\-Ast}!get\-Root@{get\-Root}}
+\index{get\-Root@{get\-Root}!parserProgram::Ast@{parser\-Program\-::\-Ast}}
+\subsubsection[{get\-Root}]{\setlength{\rightskip}{0pt plus 5cm}Default\-Mutable\-Tree\-Node {\bf parser\-Program.\-Ast.\-get\-Root} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classparser_program_1_1_ast_af586bb4da64c79d9259c87757456d685}
+\begin{DoxyReturn}{Returns}
+the root of the three. 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Ast.\-java.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classparser_program_1_1_ast_af586bb4da64c79d9259c87757456d685_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classparser_program_1_1_ast_a9ad5f3d77935440489df31131b18bf8e}{\index{parser\-Program\-::\-Ast@{parser\-Program\-::\-Ast}!init\-From\-History@{init\-From\-History}}
+\index{init\-From\-History@{init\-From\-History}!parserProgram::Ast@{parser\-Program\-::\-Ast}}
+\subsubsection[{init\-From\-History}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf parser\-Program.\-Ast.\-init\-From\-History} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws Exception}}\label{classparser_program_1_1_ast_a9ad5f3d77935440489df31131b18bf8e}
+
+
+Initialize the three from the parsing history. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if error. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 46 of file Ast.\-java.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classparser_program_1_1_ast_a9ad5f3d77935440489df31131b18bf8e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/parser\-Program/Ast.\-java\end{DoxyCompactItemize}

@@ -1,0 +1,138 @@
+\hypertarget{classcontext_free_1_1parser_1_1_automa}{\section{context\-Free.\-parser.\-Automa Class Reference}
+\label{classcontext_free_1_1parser_1_1_automa}\index{context\-Free.\-parser.\-Automa@{context\-Free.\-parser.\-Automa}}
+}
+
+
+Collaboration diagram for context\-Free.\-parser.\-Automa\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classcontext_free_1_1parser_1_1_automa__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_automa_a6a030d3a01bf7ef99b437fcf14727bad}{{\bfseries Automa} (List$<$ \hyperlink{classcontext_free_1_1parser_1_1_state}{State} $>$ states)}\label{classcontext_free_1_1parser_1_1_automa_a6a030d3a01bf7ef99b437fcf14727bad}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_automa_a0a2be97fe40e3035c579b83535649c2e}{List$<$ \hyperlink{classcontext_free_1_1parser_1_1_state}{State} $>$ {\bfseries get\-States} ()}\label{classcontext_free_1_1parser_1_1_automa_a0a2be97fe40e3035c579b83535649c2e}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_automa_a16f74867e919ccddf13441295c80295b}{void {\bfseries set\-States} (List$<$ \hyperlink{classcontext_free_1_1parser_1_1_state}{State} $>$ states)}\label{classcontext_free_1_1parser_1_1_automa_a16f74867e919ccddf13441295c80295b}
+
+\item 
+List$<$ \hyperlink{classcontext_free_1_1parser_1_1_state}{State} $>$ \hyperlink{classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3}{new\-Items\-From\-Kernels} ()
+\begin{DoxyCompactList}\small\item\em Get kernels element for each states into automa. \end{DoxyCompactList}\item 
+\hyperlink{classcontext_free_1_1parser_1_1_state}{State} \hyperlink{classcontext_free_1_1parser_1_1_automa_a08b46ef04492599b98660a5e55f356bd}{get\-State} (int i)
+\begin{DoxyCompactList}\small\item\em Return a state with a specific state index. \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1parser_1_1_automa_a816d25575a45d9a0bbc415a6e0a71a2e}{String {\bfseries to\-String} ()}\label{classcontext_free_1_1parser_1_1_automa_a816d25575a45d9a0bbc415a6e0a71a2e}
+
+\item 
+void \hyperlink{classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78}{remove\-Dollar\-Lookahed} ()
+\begin{DoxyCompactList}\small\item\em remove dollar simbol lookahed \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1parser_1_1_automa_aa3e53614ea757f72b87144aa6b5b2282}{int {\bfseries size} ()}\label{classcontext_free_1_1parser_1_1_automa_aa3e53614ea757f72b87144aa6b5b2282}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_automa_a5b71afafd71dfa903e36c786618b556d}{List$<$ \hyperlink{classcontext_free_1_1parser_1_1_state}{State} $>$ {\bfseries states}}\label{classcontext_free_1_1parser_1_1_automa_a5b71afafd71dfa903e36c786618b556d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Automa.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcontext_free_1_1parser_1_1_automa_a08b46ef04492599b98660a5e55f356bd}{\index{context\-Free\-::parser\-::\-Automa@{context\-Free\-::parser\-::\-Automa}!get\-State@{get\-State}}
+\index{get\-State@{get\-State}!contextFree::parser::Automa@{context\-Free\-::parser\-::\-Automa}}
+\subsubsection[{get\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} {\bf context\-Free.\-parser.\-Automa.\-get\-State} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_automa_a08b46ef04492599b98660a5e55f356bd}
+
+
+Return a state with a specific state index. 
+
+\begin{DoxyVerb}  @param i the index of desired state
+\end{DoxyVerb}
+ \begin{DoxyReturn}{Returns}
+the \hyperlink{classcontext_free_1_1parser_1_1_state}{State} reference if the state exist else null; 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file Automa.\-java.
+
+\hypertarget{classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3}{\index{context\-Free\-::parser\-::\-Automa@{context\-Free\-::parser\-::\-Automa}!new\-Items\-From\-Kernels@{new\-Items\-From\-Kernels}}
+\index{new\-Items\-From\-Kernels@{new\-Items\-From\-Kernels}!contextFree::parser::Automa@{context\-Free\-::parser\-::\-Automa}}
+\subsubsection[{new\-Items\-From\-Kernels}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf State}$>$ {\bf context\-Free.\-parser.\-Automa.\-new\-Items\-From\-Kernels} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3}
+
+
+Get kernels element for each states into automa. 
+
+\begin{DoxyReturn}{Returns}
+new \hyperlink{classcontext_free_1_1parser_1_1_state}{State} list with shift value and kernel item only 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Automa.\-java.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1parser_1_1_automa_ad82cfb3bb6b22d084ef18a95350828b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78}{\index{context\-Free\-::parser\-::\-Automa@{context\-Free\-::parser\-::\-Automa}!remove\-Dollar\-Lookahed@{remove\-Dollar\-Lookahed}}
+\index{remove\-Dollar\-Lookahed@{remove\-Dollar\-Lookahed}!contextFree::parser::Automa@{context\-Free\-::parser\-::\-Automa}}
+\subsubsection[{remove\-Dollar\-Lookahed}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf context\-Free.\-parser.\-Automa.\-remove\-Dollar\-Lookahed} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78}
+
+
+remove dollar simbol lookahed 
+
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
+
+
+Definition at line 60 of file Automa.\-java.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1parser_1_1_automa_ad94ecd3a9f8850220f86b6c54b751f78_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/context\-Free/parser/Automa.\-java\end{DoxyCompactItemize}

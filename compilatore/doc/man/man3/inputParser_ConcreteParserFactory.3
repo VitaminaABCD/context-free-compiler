@@ -1,0 +1,66 @@
+.TH "inputParser.ConcreteParserFactory" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+inputParser.ConcreteParserFactory \- 
+.PP
+Concrete class that implement the factoryMethod of \fBInputParserFactory\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBinputParser\&.InputParserFactory\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractInputParser\fP \fBfactoryMethod\fP (String in)"
+.br
+.RI "\fIReturn different object instance based on the extension\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Concrete class that implement the factoryMethod of \fBInputParserFactory\fP\&. 
+
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file ConcreteParserFactory\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAbstractInputParser\fP \fBinputParser\&.ConcreteParserFactory\&.factoryMethod\fP (Stringin)\fC [protected, virtual]\fP"
+
+.PP
+Return different object instance based on the extension\&. \fBParameters:\fP
+.RS 4
+\fIthe\fP path of file to parse\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+FourLineInputParser(input) instance if the file extension is '\&.4l',
+.br
+ SingleLineInputParser(input) instance if the file extension is '\&.1l',
+.br
+ LRInputParser(in) instance if the file extension is '\&.txt', null otherwise\&. 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Implements \fBinputParser\&.InputParserFactory\fP\&.
+.PP
+Definition at line 14 of file ConcreteParserFactory\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

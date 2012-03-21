@@ -254,7 +254,7 @@ public class HomeGui extends JFrame{
 //        });
         
         /**
-         * When clicked parse "Result.txt" file and create the Ast.
+         * When clicked parse "Result.txt" file and create the AST.
          * @author Paolo Pino
          */
 		startParsing.addActionListener(new ActionListener() {
@@ -356,14 +356,14 @@ public class HomeGui extends JFrame{
 		parserProgram.setInput(in);                  
 		switch(parserProgram.parse()){
 			case ACCEPT:
-				logger.debug("ACCEPT");		
+				logger.info("ACCEPT");		
 				Ast ast = new Ast(parserProgram.getHistory());
 				ast.initFromHistory();
 //				this.tree.setModel(ast.getRoot());	
 				writeToXml(ast.getRoot());
 				return ast.getRoot();
 			case ERROR:
-				logger.debug("ERROR");
+				logger.info("ERROR");
 				return null;
 			case INVALID_IN:
 				throw new Exception("Uno o pi� caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");

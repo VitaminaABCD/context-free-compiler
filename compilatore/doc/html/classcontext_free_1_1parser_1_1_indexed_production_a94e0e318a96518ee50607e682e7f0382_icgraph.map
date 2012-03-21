@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#ac711dbbc2be25d15c1a8aade7579e94e" title="Passed a list of production I that form the kernel of a state, return closing it, and the lookahead s..." alt="" coords="661,25,912,52"/>
+<area shape="rect" id="node10" href="$classcontext_free_1_1parser_1_1_state.html#a1afb2f9faa5ec548897e44cc863389ba" title="return one list&lt;IndexedProduction&gt; with the kernel of a state" alt="" coords="381,76,613,102"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="1283,25,1477,52"/>
+<area shape="rect" id="node7" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#aeec32b5c83e031225114f46ac377f804" title="Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation..." alt="" coords="960,25,1235,52"/>
+<area shape="rect" id="node12" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a2281981b3043c0150c1b3d3967572b1f" title="if the point is in the last position he wrote the reduces in the action table." alt="" coords="678,76,895,102"/>
+<area shape="rect" id="node14" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a79576626b3b59b832faecc986b293b36" title="builds the Action table GoTo from an automa LALR1 and tells us if it is or not type of LALR1..." alt="" coords="961,76,1233,102"/>
+</map>

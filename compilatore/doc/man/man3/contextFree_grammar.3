@@ -1,0 +1,48 @@
+.TH "contextFree.grammar" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.grammar \- 
+.PP
+Contains the class for represent and manipulate a grammar\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBContextFreeGrammar\fP"
+.br
+.RI "\fIDefine a context-free grammar type\&. \fP"
+.ti -1c
+.RI "enum \fBGRAMMAR_TYPE\fP"
+.br
+.RI "\fISpecify the type of a grammar\&. \fP"
+.ti -1c
+.RI "class \fBGrammarFactory\fP"
+.br
+.RI "\fIAn object factory that create a correct instance of grammar\&. \fP"
+.ti -1c
+.RI "interface \fBIGrammar\fP"
+.br
+.RI "\fIGrammar Interface\&. \fP"
+.ti -1c
+.RI "class \fBProduction\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains the class for represent and manipulate a grammar\&. 
+
+USAGE:
+.br
+ You can obtain a Grammar instance through the static factory 'GrammarFactor' (see createGrammar(String, List<Production>,List<String>, List<String>)); you must pass the quadruple Axiom, Productions, terminals, non-terminals that define a grammar\&. 
+.br
+ :  grammar = GrammarFactory\&.createGrammar(A, P, V, T); 
+.br
+  the grammar is context-free the factory return a \fBContextFreeGrammar\fP instance (see \fBContextFreeGrammar\fP); 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

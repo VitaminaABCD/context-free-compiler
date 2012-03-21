@@ -1,0 +1,57 @@
+.TH "parserProgram" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+parserProgram \- 
+.PP
+Contains the parser program's class that to create the AST of an input phrase\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAst\fP"
+.br
+.RI "\fIAbstract Syntax Three class\&. \fP"
+.ti -1c
+.RI "class \fBHistoryElement\fP"
+.br
+.RI "\fIThis class represent an element of the parsing history\&. \fP"
+.ti -1c
+.RI "class \fBParserProgram\fP"
+.br
+.RI "\fIThis class is responsible of the parsing of input string, and stack parsing creation\&. \fP"
+.ti -1c
+.RI "enum \fBRESULT\fP"
+.br
+.RI "\fIThe string parsing result\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains the parser program's class that to create the AST of an input phrase\&. 
+
+USAGE:
+.br
+ :
+.br
+  \fBparserProgram\fP = (Parser)parser\&.parse(); \&.setInput(input_string); 
+.br
+ switch(parserProgram\&.parse()){ 
+.br
+ case ACCEPT: 
+.br
+ \fBAst\fP ast = new \fBAst\fP(parserProgram\&.getHistory()); //create the AST 
+.br
+ ast\&.initFromHistory(); 
+.br
+ return ast\&.getRoot(); 
+.br
+ case ERROR: 
+.br
+ return null; 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

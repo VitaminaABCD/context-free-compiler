@@ -1,0 +1,28 @@
+\hypertarget{namespacecontext_free_1_1grammar}{\section{Package context\-Free.\-grammar}
+\label{namespacecontext_free_1_1grammar}\index{context\-Free.\-grammar@{context\-Free.\-grammar}}
+}
+
+
+Contains the class for represent and manipulate a grammar.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}
+\begin{DoxyCompactList}\small\item\em Define a context-\/free grammar type. \end{DoxyCompactList}\item 
+enum \hyperlink{enumcontext_free_1_1grammar_1_1_g_r_a_m_m_a_r___t_y_p_e}{G\-R\-A\-M\-M\-A\-R\-\_\-\-T\-Y\-P\-E}
+\begin{DoxyCompactList}\small\item\em Specify the type of a grammar. \end{DoxyCompactList}\item 
+class \hyperlink{classcontext_free_1_1grammar_1_1_grammar_factory}{Grammar\-Factory}
+\begin{DoxyCompactList}\small\item\em An object factory that create a correct instance of grammar. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar}
+\begin{DoxyCompactList}\small\item\em Grammar Interface. \end{DoxyCompactList}\item 
+class \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the class for represent and manipulate a grammar. U\-S\-A\-G\-E\-:\par
+ You can obtain a Grammar instance through the static factory \char`\"{}\-Grammar\-Factor\char`\"{} (see create\-Grammar(\-String, List$<$\-Production$>$,\-List$<$\-String$>$, List$<$\-String$>$)); you must pass the quadruple Axiom, Productions, terminals, non-\/terminals that define a grammar. \par
+ \-:  grammar = Grammar\-Factory.\-create\-Grammar(\-A, P, V, T); \par
+  the grammar is context-\/free the factory return a \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar} instance (see \hyperlink{classcontext_free_1_1grammar_1_1_context_free_grammar}{Context\-Free\-Grammar}); 

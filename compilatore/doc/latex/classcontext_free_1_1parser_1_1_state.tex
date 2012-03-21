@@ -1,0 +1,217 @@
+\hypertarget{classcontext_free_1_1parser_1_1_state}{\section{context\-Free.\-parser.\-State Class Reference}
+\label{classcontext_free_1_1parser_1_1_state}\index{context\-Free.\-parser.\-State@{context\-Free.\-parser.\-State}}
+}
+
+
+Collaboration diagram for context\-Free.\-parser.\-State\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1parser_1_1_state__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a755084c050a72d0186cd27a8f78df9a6}{\hyperlink{classcontext_free_1_1parser_1_1_state_a755084c050a72d0186cd27a8f78df9a6}{State} ()}\label{classcontext_free_1_1parser_1_1_state_a755084c050a72d0186cd27a8f78df9a6}
+
+\begin{DoxyCompactList}\small\item\em constructor state 0 \end{DoxyCompactList}\item 
+\hyperlink{classcontext_free_1_1parser_1_1_state_aa31409b43285d446a6dc1e8423ed8f65}{State} (int i)
+\begin{DoxyCompactList}\small\item\em constructor state i-\/th, with empty list productions \end{DoxyCompactList}\item 
+\hyperlink{classcontext_free_1_1parser_1_1_state_a7267946f249aada006c55e3c47a3772b}{State} (int i, List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ c)
+\begin{DoxyCompactList}\small\item\em constructor state i-\/th, whit list production c \end{DoxyCompactList}\item 
+\hyperlink{classcontext_free_1_1parser_1_1_state_ab2b42f6581c76d56a2a6b31b8f9b5961}{State} (int i, List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ c, Hashtable$<$ String, Integer $>$ table)
+\begin{DoxyCompactList}\small\item\em constructor state i-\/th, whit list production c and list of lookahead \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_af1362b89e4973fd940a1a6ba440e9c9e}{List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ {\bfseries get\-Items} ()}\label{classcontext_free_1_1parser_1_1_state_af1362b89e4973fd940a1a6ba440e9c9e}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_ac5d2c09a67b8bba054456a652964735e}{void {\bfseries set\-Items} (List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ Items)}\label{classcontext_free_1_1parser_1_1_state_ac5d2c09a67b8bba054456a652964735e}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a0a46dd3cf055c0aa7951b4df93daf23e}{Hashtable$<$ String, Integer $>$ {\bfseries get\-Shift} ()}\label{classcontext_free_1_1parser_1_1_state_a0a46dd3cf055c0aa7951b4df93daf23e}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a391213320b8ca96be1ede02b449662c7}{void {\bfseries set\-Shift} (Hashtable$<$ String, Integer $>$ shift)}\label{classcontext_free_1_1parser_1_1_state_a391213320b8ca96be1ede02b449662c7}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a2548bf6b7febee3cf305edb33cac19ca}{int {\bfseries get\-Index} ()}\label{classcontext_free_1_1parser_1_1_state_a2548bf6b7febee3cf305edb33cac19ca}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a5ae06a15397a64125c28fd64f5985008}{void {\bfseries set\-Index} (int index)}\label{classcontext_free_1_1parser_1_1_state_a5ae06a15397a64125c28fd64f5985008}
+
+\item 
+Integer \hyperlink{classcontext_free_1_1parser_1_1_state_abaac15576397224a4495d8198cfe2f1d}{goto\-State\-Index} (String simbol)
+\begin{DoxyCompactList}\small\item\em Return the index of the state shifted with a specific simbol. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ \hyperlink{classcontext_free_1_1parser_1_1_state_a1afb2f9faa5ec548897e44cc863389ba}{get\-Kernels} ()
+\begin{DoxyCompactList}\small\item\em return one list$<$\-Indexed\-Production$>$ with the kernel of a state \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_aa480857783a31a4b8ab22f6a92b0f142}{String {\bfseries to\-String} ()}\label{classcontext_free_1_1parser_1_1_state_aa480857783a31a4b8ab22f6a92b0f142}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a6a9e16086ce29535a3e63caadb35a532}{int {\bfseries size} ()}\label{classcontext_free_1_1parser_1_1_state_a6a9e16086ce29535a3e63caadb35a532}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_ade54fdccdfdced9a3b03c886dbd4bf9e}{int {\bfseries index}}\label{classcontext_free_1_1parser_1_1_state_ade54fdccdfdced9a3b03c886dbd4bf9e}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_ac62b4e843a6a61d6166f1aae98171854}{List$<$ \hyperlink{classcontext_free_1_1parser_1_1_indexed_production}{Indexed\-Production} $>$ {\bfseries items}}\label{classcontext_free_1_1parser_1_1_state_ac62b4e843a6a61d6166f1aae98171854}
+
+\item 
+\hypertarget{classcontext_free_1_1parser_1_1_state_a7448df2a60c1a493b1305d6d46ceecc6}{Hashtable$<$ String, Integer $>$ {\bfseries shift}}\label{classcontext_free_1_1parser_1_1_state_a7448df2a60c1a493b1305d6d46ceecc6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file State.\-java.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcontext_free_1_1parser_1_1_state_aa31409b43285d446a6dc1e8423ed8f65}{\index{context\-Free\-::parser\-::\-State@{context\-Free\-::parser\-::\-State}!State@{State}}
+\index{State@{State}!contextFree::parser::State@{context\-Free\-::parser\-::\-State}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf context\-Free.\-parser.\-State.\-State} (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_state_aa31409b43285d446a6dc1e8423ed8f65}
+
+
+constructor state i-\/th, with empty list productions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of state \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file State.\-java.
+
+\hypertarget{classcontext_free_1_1parser_1_1_state_a7267946f249aada006c55e3c47a3772b}{\index{context\-Free\-::parser\-::\-State@{context\-Free\-::parser\-::\-State}!State@{State}}
+\index{State@{State}!contextFree::parser::State@{context\-Free\-::parser\-::\-State}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf context\-Free.\-parser.\-State.\-State} (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{c}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_state_a7267946f249aada006c55e3c47a3772b}
+
+
+constructor state i-\/th, whit list production c 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of state \\
+\hline
+{\em List} & production \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file State.\-java.
+
+\hypertarget{classcontext_free_1_1parser_1_1_state_ab2b42f6581c76d56a2a6b31b8f9b5961}{\index{context\-Free\-::parser\-::\-State@{context\-Free\-::parser\-::\-State}!State@{State}}
+\index{State@{State}!contextFree::parser::State@{context\-Free\-::parser\-::\-State}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf context\-Free.\-parser.\-State.\-State} (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{c, }
+\item[{Hashtable$<$ String, Integer $>$}]{table}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_state_ab2b42f6581c76d56a2a6b31b8f9b5961}
+
+
+constructor state i-\/th, whit list production c and list of lookahead 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of state \\
+\hline
+{\em List} & production \\
+\hline
+{\em List} & of lookahead \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file State.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcontext_free_1_1parser_1_1_state_a1afb2f9faa5ec548897e44cc863389ba}{\index{context\-Free\-::parser\-::\-State@{context\-Free\-::parser\-::\-State}!get\-Kernels@{get\-Kernels}}
+\index{get\-Kernels@{get\-Kernels}!contextFree::parser::State@{context\-Free\-::parser\-::\-State}}
+\subsubsection[{get\-Kernels}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Indexed\-Production}$>$ {\bf context\-Free.\-parser.\-State.\-get\-Kernels} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_state_a1afb2f9faa5ec548897e44cc863389ba}
+
+
+return one list$<$\-Indexed\-Production$>$ with the kernel of a state 
+
+\begin{DoxyReturn}{Returns}
+the kernels prodaction 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 97 of file State.\-java.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1parser_1_1_state_a1afb2f9faa5ec548897e44cc863389ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1parser_1_1_state_a1afb2f9faa5ec548897e44cc863389ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1parser_1_1_state_abaac15576397224a4495d8198cfe2f1d}{\index{context\-Free\-::parser\-::\-State@{context\-Free\-::parser\-::\-State}!goto\-State\-Index@{goto\-State\-Index}}
+\index{goto\-State\-Index@{goto\-State\-Index}!contextFree::parser::State@{context\-Free\-::parser\-::\-State}}
+\subsubsection[{goto\-State\-Index}]{\setlength{\rightskip}{0pt plus 5cm}Integer {\bf context\-Free.\-parser.\-State.\-goto\-State\-Index} (
+\begin{DoxyParamCaption}
+\item[{String}]{simbol}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1parser_1_1_state_abaac15576397224a4495d8198cfe2f1d}
+
+
+Return the index of the state shifted with a specific simbol. 
+
+\begin{DoxyVerb}  @param simbol the shift simbol
+\end{DoxyVerb}
+ \begin{DoxyReturn}{Returns}
+the index of the state or null 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file State.\-java.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/context\-Free/parser/State.\-java\end{DoxyCompactItemize}

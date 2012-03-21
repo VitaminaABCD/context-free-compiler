@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_r0.html#aea1ecb06a1880a8bc5eeb4efcca0ecea" title="Passed a state and the symbol that follows the point, returns the kernel of the new state with the re..." alt="" coords="265,5,458,32"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1parser_1_1_l_r0.html#aa96d752420b690ccbbc9fad67691f36a" title="given a grammar G we calculate the associated grammar augmented by adding the production S &#39;:: =..." alt="" coords="507,31,693,57"/>
+<area shape="rect" id="node7" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="741,31,936,57"/>
+</map>

@@ -14,7 +14,6 @@ import contextFree.grammar.IGrammar;
 import contextFree.grammar.Production;
 
 
-
 public class ParserProgram {
 	static Logger logger = Logger.getLogger(ParserProgram.class.getName());
 	

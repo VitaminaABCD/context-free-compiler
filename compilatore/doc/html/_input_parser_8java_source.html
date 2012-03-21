@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,51 +119,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="keyword">import</span> contextFree.grammar.IGrammar;
 <a name="l00005"></a>00005 
-<a name="l00006"></a><a class="code" href="classinput_parser_1_1_input_parser.html">00006</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classinput_parser_1_1_input_parser.html">InputParser</a> <span class="keyword">extends</span> <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> {
-<a name="l00007"></a>00007 
-<a name="l00008"></a>00008         <span class="keyword">private</span> String input;
-<a name="l00009"></a>00009         <span class="keyword">private</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> grammar;
-<a name="l00010"></a>00010         
-<a name="l00011"></a>00011         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_input_parser.html">InputParser</a>(){
-<a name="l00012"></a>00012                 input=<span class="stringliteral">&quot;&quot;</span>;
-<a name="l00013"></a>00013                 grammar=null; 
-<a name="l00014"></a>00014         }
-<a name="l00015"></a>00015         
-<a name="l00016"></a>00016         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_input_parser.html">InputParser</a>(String in){
-<a name="l00017"></a>00017                 input = in;
-<a name="l00018"></a>00018         }
-<a name="l00019"></a>00019         
-<a name="l00020"></a>00020         <span class="keyword">public</span> String getInput(){
-<a name="l00021"></a>00021                 <span class="keywordflow">return</span> input;
-<a name="l00022"></a>00022         }
-<a name="l00023"></a>00023         
-<a name="l00024"></a>00024         <span class="keyword">public</span> <span class="keywordtype">void</span> setInput(String in){
-<a name="l00025"></a>00025                 input=in;
-<a name="l00026"></a>00026         }
-<a name="l00027"></a>00027         
-<a name="l00028"></a>00028         <span class="keyword">public</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> getGrammar(){
-<a name="l00029"></a>00029                 <span class="keywordflow">return</span> grammar;
+<a name="l00010"></a><a class="code" href="classinput_parser_1_1_input_parser.html">00010</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a> <span class="keyword">extends</span> <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> {
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012         <span class="keyword">private</span> String input;
+<a name="l00013"></a>00013         <span class="keyword">private</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> grammar;
+<a name="l00014"></a>00014         
+<a name="l00018"></a><a class="code" href="classinput_parser_1_1_input_parser.html#aaf865808d98a84af1505caa5a2f61cc4">00018</a>         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_input_parser.html#aaf865808d98a84af1505caa5a2f61cc4" title="Default constructor.">InputParser</a>(){
+<a name="l00019"></a>00019                 this.input=null;
+<a name="l00020"></a>00020                 this.grammar=null; 
+<a name="l00021"></a>00021         }
+<a name="l00022"></a>00022         
+<a name="l00027"></a><a class="code" href="classinput_parser_1_1_input_parser.html#a483b176df94134a641628e8856ce994a">00027</a>         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_input_parser.html#a483b176df94134a641628e8856ce994a" title="Constructor.">InputParser</a>(String in){
+<a name="l00028"></a>00028                 this.input = in;
+<a name="l00029"></a>00029                 this.grammar=null;
 <a name="l00030"></a>00030         }
 <a name="l00031"></a>00031         
-<a name="l00032"></a>00032         <span class="keyword">public</span> <span class="keywordtype">void</span> setGrammar(<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> gr){
-<a name="l00033"></a>00033                 grammar=gr;
-<a name="l00034"></a>00034         }
-<a name="l00035"></a>00035         
-<a name="l00036"></a>00036         @Override
-<a name="l00037"></a>00037         <span class="keyword">public</span> Object parse() <span class="keywordflow">throws</span> Exception{
-<a name="l00038"></a>00038                 <a class="code" href="classinput_parser_1_1_input_parser_factory.html">InputParserFactory</a> fc = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_concrete_parser_factory.html">ConcreteParserFactory</a>();
-<a name="l00039"></a>00039                 <span class="keywordflow">return</span> fc.factoryMethod(input).parse();
-<a name="l00040"></a>00040         }
-<a name="l00041"></a>00041         
-<a name="l00042"></a>00042         
-<a name="l00043"></a>00043 }
+<a name="l00035"></a><a class="code" href="classinput_parser_1_1_input_parser.html#aad5d11e151df9b0ede3250d08fc00dfd">00035</a>         <span class="keyword">public</span> String <a class="code" href="classinput_parser_1_1_input_parser.html#aad5d11e151df9b0ede3250d08fc00dfd">getInput</a>(){
+<a name="l00036"></a>00036                 <span class="keywordflow">return</span> this.input;
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038         
+<a name="l00043"></a><a class="code" href="classinput_parser_1_1_input_parser.html#a9b7d170996964400a619bb3e66253a93">00043</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classinput_parser_1_1_input_parser.html#a9b7d170996964400a619bb3e66253a93" title="Set input file path.">setInput</a>(String in){
+<a name="l00044"></a>00044                 this.input=in;
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046         
+<a name="l00051"></a><a class="code" href="classinput_parser_1_1_input_parser.html#a48376a4919241160cab692fa0001974f">00051</a>         <span class="keyword">public</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> <a class="code" href="classinput_parser_1_1_input_parser.html#a48376a4919241160cab692fa0001974f" title="Return grammar.">getGrammar</a>(){
+<a name="l00052"></a>00052                 <span class="keywordflow">return</span> this.grammar;
+<a name="l00053"></a>00053         }
+<a name="l00054"></a>00054         
+<a name="l00059"></a><a class="code" href="classinput_parser_1_1_input_parser.html#a63e2fa344a4ace430bc7ad7218bc3a37">00059</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classinput_parser_1_1_input_parser.html#a63e2fa344a4ace430bc7ad7218bc3a37" title="Set a grammar.">setGrammar</a>(<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> gr){
+<a name="l00060"></a>00060                 this.grammar=gr;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062         
+<a name="l00063"></a>00063         @Override
+<a name="l00064"></a><a class="code" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6">00064</a>         <span class="keyword">public</span> Object <a class="code" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object.">parse</a>() throws Exception{
+<a name="l00065"></a>00065                 <a class="code" href="classinput_parser_1_1_input_parser_factory.html" title="Abstract InputParserFactory.">InputParserFactory</a> fc = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_concrete_parser_factory.html" title="Concrete class that implement the factoryMethod of InputParserFactory.">ConcreteParserFactory</a>();
+<a name="l00066"></a>00066                 <span class="keywordflow">return</span> fc.<a class="code" href="classinput_parser_1_1_input_parser_factory.html#a48971c2679b589f34a7051e795d48c49" title="Return different object instance based on the extension.">factoryMethod</a>(input).<a class="code" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object.">parse</a>();
+<a name="l00067"></a>00067         }
+<a name="l00068"></a>00068 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>InputParser.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

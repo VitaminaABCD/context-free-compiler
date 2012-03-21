@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_l_r_input_parser__inherit__graph.png" border="0" usemap="#input_parser_8_l_r_input_parser_inherit__map" alt="Inheritance graph"/></div>
 <map name="input_parser_8_l_r_input_parser_inherit__map" id="input_parser_8_l_r_input_parser_inherit__map">
-</map>
+<area shape="rect" id="node2" href="classinput_parser_1_1_abstract_input_parser.html" title="{inputParser.AbstractInputParser\n||+ parse()\l}" alt="" coords="5,5,211,83"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for inputParser.LRInputParser:</div>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_l_r_input_parser__coll__graph.png" border="0" usemap="#input_parser_8_l_r_input_parser_coll__map" alt="Collaboration graph"/></div>
 <map name="input_parser_8_l_r_input_parser_coll__map" id="input_parser_8_l_r_input_parser_coll__map">
-</map>
+<area shape="rect" id="node2" href="classinput_parser_1_1_abstract_input_parser.html" title="{inputParser.AbstractInputParser\n||+ parse()\l}" alt="" coords="5,5,211,83"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classinput_parser_1_1_l_r_input_parser-members.html">List of all members.</a></p>
@@ -151,7 +151,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42f9947db4e863a82e3a8ca89c655c2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42f9947db4e863a82e3a8ca89c655c2a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>LRInputParser</b> (String in)</td></tr>
 <tr class="memitem:ad81d1510d9b12b4b8b2dedbe117e88c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classparser_program_1_1_parser_program.html">ParserProgram</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1">parse</a> ()  throws Exception </td></tr>
-<tr class="memdesc:ad81d1510d9b12b4b8b2dedbe117e88c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse method.  <a href="#ad81d1510d9b12b4b8b2dedbe117e88c1"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-static-attribs"></a>
 Static Package Attributes</h2></td></tr>
 <tr class="memitem:ae3d6e07ebb7d4368f1a2e2ad05dae6f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3d6e07ebb7d4368f1a2e2ad05dae6f7"></a>
@@ -184,12 +183,18 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>ParserProgram initialized instance. </dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Parse method. </p>
-<div class="fragment"><pre class="fragment">      </pre></div> 
-<p>Implements <a class="el" href="classinput_parser_1_1_abstract_input_parser.html">inputParser.AbstractInputParser</a>.</p>
+<p>Implements <a class="el" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe">inputParser.AbstractInputParser</a>.</p>
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00037">37</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00039">39</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -198,7 +203,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_l_r_input_parser_ad81d1510d9b12b4b8b2dedbe117e88c1_cgraph.png" border="0" usemap="#classinput_parser_1_1_l_r_input_parser_ad81d1510d9b12b4b8b2dedbe117e88c1_cgraph" alt=""/></div>
 <map name="classinput_parser_1_1_l_r_input_parser_ad81d1510d9b12b4b8b2dedbe117e88c1_cgraph" id="classinput_parser_1_1_l_r_input_parser_ad81d1510d9b12b4b8b2dedbe117e88c1_cgraph">
-</map>
+<area shape="rect" id="node3" href="classinput_parser_1_1_l_r_input_parser.html#a1ade16089652dc354434e1ddb1769e96" title="read the table in the first part of the file and store it in an hashtable with simbol as key and a li..." alt="" coords="291,5,525,32"/><area shape="rect" id="node5" href="classinput_parser_1_1_single_line_input_parser.html#a90641140f8686fc97fd40b72beccf0a3" title="Execute the parse operation on the object." alt="" coords="264,56,552,83"/></map>
 </div>
 </p>
 
@@ -243,8 +248,9 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00074">74</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_l_r_input_parser_8java_source.html#l00077">77</a> of file <a class="el" href="_l_r_input_parser_8java_source.html">LRInputParser.java</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -253,7 +259,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96_icgraph.png" border="0" usemap="#classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96_icgraph" alt=""/></div>
 <map name="classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96_icgraph" id="classinput_parser_1_1_l_r_input_parser_a1ade16089652dc354434e1ddb1769e96_icgraph">
-</map>
+<area shape="rect" id="node3" href="classinput_parser_1_1_l_r_input_parser.html#ad81d1510d9b12b4b8b2dedbe117e88c1" title="inputParser.LRInputParser.parse" alt="" coords="288,5,499,32"/></map>
 </div>
 </p>
 
@@ -269,7 +275,7 @@ String&#160;</td><td class="memItemRight" valign="bottom"><b>input</b></td></tr>
       <li class="navelem"><a class="el" href="namespaceinput_parser.html">inputParser</a>      </li>
       <li class="navelem"><a class="el" href="classinput_parser_1_1_l_r_input_parser.html">LRInputParser</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:06:01 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

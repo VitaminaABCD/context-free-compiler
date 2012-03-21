@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,84 +120,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 
 <a name="l00005"></a>00005 <span class="keyword">import</span> javax.swing.tree.DefaultMutableTreeNode;
 <a name="l00006"></a>00006 
-<a name="l00007"></a><a class="code" href="classparser_program_1_1_ast.html">00007</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classparser_program_1_1_ast.html">Ast</a> {
-<a name="l00008"></a>00008         
-<a name="l00009"></a>00009         <span class="keyword">private</span> List&lt;HistoryElement&gt; history;
-<a name="l00010"></a>00010         <span class="keyword">public</span> DefaultMutableTreeNode getRoot() {
-<a name="l00011"></a>00011                 <span class="keywordflow">return</span> root;
-<a name="l00012"></a>00012         }
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016         <span class="keyword">private</span> DefaultMutableTreeNode root;
-<a name="l00017"></a>00017         
-<a name="l00018"></a>00018         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_ast.html">Ast</a>(){
-<a name="l00019"></a>00019                 this.history=null;
-<a name="l00020"></a>00020                 this.root=null;
-<a name="l00021"></a>00021         }
-<a name="l00022"></a>00022         
-<a name="l00023"></a>00023         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_ast.html">Ast</a>(List&lt;HistoryElement&gt; h){
-<a name="l00024"></a>00024                 this.history=h;
-<a name="l00025"></a>00025                 this.root = null;
-<a name="l00026"></a>00026         }       
-<a name="l00027"></a>00027         
-<a name="l00028"></a>00028         <span class="keyword">public</span> <span class="keywordtype">boolean</span> initFromHistory(){
-<a name="l00029"></a>00029                 <span class="keywordtype">int</span> size = this.history.size();
-<a name="l00030"></a>00030                 <span class="keywordtype">int</span> index=size-1;
-<a name="l00031"></a>00031                 <span class="comment">//ROOT INIT//</span>
-<a name="l00032"></a>00032                 <span class="keywordflow">try</span>{
-<a name="l00033"></a>00033                         this.root = <span class="keyword">new</span> DefaultMutableTreeNode(this.history.get(index).getProduction().getLeft());
-<a name="l00034"></a>00034                         <a class="code" href="classparser_program_1_1_history_element.html" title="This class rappresent an element of the history.">HistoryElement</a> current = this.history.get(index);
-<a name="l00035"></a>00035                         <span class="keywordtype">char</span> temp[] = current.getProduction().getRight().toCharArray();
-<a name="l00036"></a>00036                         <span class="keywordflow">for</span>(<span class="keywordtype">char</span> c : temp){                                                                                                     
-<a name="l00037"></a>00037                                 this.root.add(<span class="keyword">new</span> DefaultMutableTreeNode(c));                                   
-<a name="l00038"></a>00038                         }
-<a name="l00039"></a>00039                         <span class="comment">//END//</span>
-<a name="l00040"></a>00040                         <span class="keywordflow">if</span>(size &lt; 2) <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">//TODO:</span>
-<a name="l00041"></a>00041                         DefaultMutableTreeNode currentLevel = root;
-<a name="l00042"></a>00042                         index--;
-<a name="l00043"></a>00043                         <span class="keywordflow">while</span>(index&gt;=0){                                                                                                                        <span class="comment">//scorre la cronologia del parsing</span>
-<a name="l00044"></a>00044                                 current = this.history.get(index);                                                                              
-<a name="l00045"></a>00045                                 <span class="keywordflow">if</span>(!current.isShift()){                                                                                                 <span class="comment">//se ï¿½ stata fatta una reduce</span>
-<a name="l00046"></a>00046                                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;currentLevel.getChildCount();j++){                                       <span class="comment">//cerca un figlio nel nodo puntato con UserObject(valore) uguale alla parte  sinistra della produzione</span>
-<a name="l00047"></a>00047                                                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) currentLevel.getChildAt(j);
-<a name="l00048"></a>00048                                                 <span class="keywordflow">if</span>(node.getUserObject().toString().equals(current.getProduction().getLeft())){          <span class="comment">//se trova il nodo cercato</span>
-<a name="l00049"></a>00049                                                         temp = current.getProduction().getRight().toCharArray();
-<a name="l00050"></a>00050                                                         <span class="keywordflow">for</span>(<span class="keywordtype">char</span> c : temp){                                                                                                     <span class="comment">//aggiunge i figli al livello corrente</span>
-<a name="l00051"></a>00051                                                                 node.add(<span class="keyword">new</span> DefaultMutableTreeNode(c));                                        
-<a name="l00052"></a>00052                                                         }
-<a name="l00053"></a>00053                                                         currentLevel=node;                                                                                                      <span class="comment">//avanza il current level e ferma il ciclo</span>
-<a name="l00054"></a>00054                                                         <span class="keywordflow">break</span>;
-<a name="l00055"></a>00055                                                 }
-<a name="l00056"></a>00056                                         }       
-<a name="l00057"></a>00057                                 }<span class="keywordflow">else</span>{
-<a name="l00058"></a>00058                                         currentLevel=(DefaultMutableTreeNode) currentLevel.getParent();         <span class="comment">//se ï¿½ uno shift sale di un livello</span>
-<a name="l00059"></a>00059                                 }
-<a name="l00060"></a>00060                                 index--;
-<a name="l00061"></a>00061                         }
-<a name="l00062"></a>00062                         
-<a name="l00063"></a>00063                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00064"></a>00064                 }<span class="keywordflow">catch</span> (Exception e) {
-<a name="l00065"></a>00065                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00066"></a>00066                         
-<a name="l00067"></a>00067                 }
-<a name="l00068"></a>00068         }       
-<a name="l00069"></a>00069         
-<a name="l00070"></a>00070         
-<a name="l00071"></a>00071         
-<a name="l00072"></a>00072         @Override
-<a name="l00073"></a>00073         <span class="keyword">public</span> String toString(){       
-<a name="l00074"></a>00074                 String result=root.getLastLeaf().toString();
-<a name="l00075"></a>00075                 <span class="keywordflow">return</span> result;
-<a name="l00076"></a>00076         }
-<a name="l00077"></a>00077 }
+<a name="l00011"></a><a class="code" href="classparser_program_1_1_ast.html">00011</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classparser_program_1_1_ast.html" title="Abstract Syntax Three class.">Ast</a> {
+<a name="l00013"></a><a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa">00013</a>         <span class="keyword">private</span> List&lt;HistoryElement&gt; <a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>;
+<a name="l00015"></a><a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836">00015</a>         <span class="keyword">private</span> DefaultMutableTreeNode <a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a>;
+<a name="l00016"></a>00016 
+<a name="l00020"></a><a class="code" href="classparser_program_1_1_ast.html#ae717a4491faf02f3753ad055eec6d5dd">00020</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_ast.html#ae717a4491faf02f3753ad055eec6d5dd" title="Default constructor.">Ast</a>(){
+<a name="l00021"></a>00021                 this.<a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>=null;
+<a name="l00022"></a>00022                 this.<a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a>=null;
+<a name="l00023"></a>00023         }
+<a name="l00024"></a>00024         
+<a name="l00029"></a><a class="code" href="classparser_program_1_1_ast.html#a0dd9cc520a52069ec8d2bcccf7567799">00029</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_ast.html#a0dd9cc520a52069ec8d2bcccf7567799" title="Construct the object with specified history.">Ast</a>(List&lt;HistoryElement&gt; h){
+<a name="l00030"></a>00030                 this.<a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>=h;
+<a name="l00031"></a>00031                 this.<a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a> = null;
+<a name="l00032"></a>00032         }       
+<a name="l00033"></a>00033 
+<a name="l00038"></a><a class="code" href="classparser_program_1_1_ast.html#af586bb4da64c79d9259c87757456d685">00038</a>         <span class="keyword">public</span> DefaultMutableTreeNode <a class="code" href="classparser_program_1_1_ast.html#af586bb4da64c79d9259c87757456d685">getRoot</a>() {
+<a name="l00039"></a>00039                 <span class="keywordflow">return</span> <a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a>;
+<a name="l00040"></a>00040         }
+<a name="l00041"></a>00041         
+<a name="l00046"></a><a class="code" href="classparser_program_1_1_ast.html#a9ad5f3d77935440489df31131b18bf8e">00046</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classparser_program_1_1_ast.html#a9ad5f3d77935440489df31131b18bf8e" title="Initialize the three from the parsing history.">initFromHistory</a>() throws Exception{
+<a name="l00047"></a>00047                 <span class="keywordtype">int</span> size = this.<a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>.size();
+<a name="l00048"></a>00048                 <span class="keywordtype">int</span> index=size-1;
+<a name="l00049"></a>00049                 <span class="comment">//ROOT INIT//</span>
+<a name="l00050"></a>00050                 <span class="keywordflow">try</span>{
+<a name="l00051"></a>00051                         this.<a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a> = <span class="keyword">new</span> DefaultMutableTreeNode(this.<a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>.get(index).getProduction().getLeft());
+<a name="l00052"></a>00052                         <a class="code" href="classparser_program_1_1_history_element.html" title="This class represent an element of the parsing history.">HistoryElement</a> current = this.<a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>.get(index);
+<a name="l00053"></a>00053                         <span class="keywordtype">char</span> temp[] = current.getProduction().getRight().toCharArray();
+<a name="l00054"></a>00054                         <span class="keywordflow">for</span>(<span class="keywordtype">char</span> c : temp){                                                                                                     
+<a name="l00055"></a>00055                                 this.<a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a>.add(<span class="keyword">new</span> DefaultMutableTreeNode(c));                                   
+<a name="l00056"></a>00056                         }
+<a name="l00057"></a>00057                         <span class="comment">//END//</span>
+<a name="l00058"></a>00058                         <span class="keywordflow">if</span>(size &lt; 2) <span class="keywordflow">return</span>;  <span class="comment">//TODO:</span>
+<a name="l00059"></a>00059                         DefaultMutableTreeNode currentLevel = <a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a>;
+<a name="l00060"></a>00060                         index--;
+<a name="l00061"></a>00061                         <span class="keywordflow">while</span>(index&gt;=0){                                                                                                                        <span class="comment">//scorre la cronologia del parsing</span>
+<a name="l00062"></a>00062                                 current = this.<a class="code" href="classparser_program_1_1_ast.html#a565a13f94f478e998401f7abc25643aa" title="the chronology of parsing">history</a>.get(index);                                                                              
+<a name="l00063"></a>00063                                 <span class="keywordflow">if</span>(!current.isShift()){                                                                                                 <span class="comment">//se è stata fatta una reduce</span>
+<a name="l00064"></a>00064                                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;currentLevel.getChildCount();j++){                                       <span class="comment">//cerca un figlio nel nodo puntato con UserObject(valore) uguale alla parte  sinistra della produzione</span>
+<a name="l00065"></a>00065                                                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) currentLevel.getChildAt(j);
+<a name="l00066"></a>00066                                                 <span class="keywordflow">if</span>(node.getUserObject().toString().equals(current.getProduction().getLeft())){          <span class="comment">//se trova il nodo cercato</span>
+<a name="l00067"></a>00067                                                         temp = current.getProduction().getRight().toCharArray();
+<a name="l00068"></a>00068                                                         <span class="keywordflow">for</span>(<span class="keywordtype">char</span> c : temp){                                                                                                     <span class="comment">//aggiunge i figli al livello corrente</span>
+<a name="l00069"></a>00069                                                                 node.add(<span class="keyword">new</span> DefaultMutableTreeNode(c));                                        
+<a name="l00070"></a>00070                                                         }
+<a name="l00071"></a>00071                                                         currentLevel=node;                                                                                                      <span class="comment">//avanza il current level e ferma il ciclo</span>
+<a name="l00072"></a>00072                                                         <span class="keywordflow">break</span>;
+<a name="l00073"></a>00073                                                 }
+<a name="l00074"></a>00074                                         }       
+<a name="l00075"></a>00075                                 }<span class="keywordflow">else</span>{
+<a name="l00076"></a>00076                                         currentLevel=(DefaultMutableTreeNode) currentLevel.getParent();         <span class="comment">//se è uno shift sale di un livello</span>
+<a name="l00077"></a>00077                                 }
+<a name="l00078"></a>00078                                 index--;
+<a name="l00079"></a>00079                         }
+<a name="l00080"></a>00080                 }<span class="keywordflow">catch</span> (Exception e) {
+<a name="l00081"></a>00081                         <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(e);
+<a name="l00082"></a>00082                 }
+<a name="l00083"></a>00083         }       
+<a name="l00084"></a>00084         
+<a name="l00085"></a>00085         
+<a name="l00086"></a>00086         
+<a name="l00087"></a>00087         @Override
+<a name="l00088"></a>00088         <span class="keyword">public</span> String toString(){       
+<a name="l00089"></a>00089                 String result=<a class="code" href="classparser_program_1_1_ast.html#a004223ce41eed0c97a6fb63449b4b836" title="the root of the three">root</a>.getLastLeaf().toString();
+<a name="l00090"></a>00090                 <span class="keywordflow">return</span> result;
+<a name="l00091"></a>00091         }
+<a name="l00092"></a>00092 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>Ast.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

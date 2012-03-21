@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,78 +120,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="keyword">import</span> contextFree.grammar.Production;
 <a name="l00005"></a>00005 
 <a name="l00006"></a>00006 
-<a name="l00012"></a><a class="code" href="classparser_program_1_1_history_element.html">00012</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classparser_program_1_1_history_element.html" title="This class rappresent an element of the history.">HistoryElement</a> {
-<a name="l00013"></a>00013         <span class="keyword">private</span> String[] stack;
-<a name="l00014"></a>00014         <span class="keyword">private</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> production;
-<a name="l00015"></a>00015         <span class="keyword">private</span> String simbol;
-<a name="l00016"></a>00016         
-<a name="l00017"></a>00017         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_history_element.html" title="This class rappresent an element of the history.">HistoryElement</a>(){
-<a name="l00018"></a>00018                 this.stack=null;
-<a name="l00019"></a>00019                 this.simbol=null;
-<a name="l00020"></a>00020                 this.production=null;
-<a name="l00021"></a>00021         }
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_history_element.html" title="This class rappresent an element of the history.">HistoryElement</a>(String[] stk) {
-<a name="l00024"></a>00024                 this.stack= stk;
-<a name="l00025"></a>00025                 this.simbol=null;
-<a name="l00026"></a>00026                 production=null;
-<a name="l00027"></a>00027         }
-<a name="l00028"></a>00028         
-<a name="l00029"></a>00029         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_history_element.html" title="This class rappresent an element of the history.">HistoryElement</a>(String[] stk,<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p, String s) {
+<a name="l00011"></a><a class="code" href="classparser_program_1_1_history_element.html">00011</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classparser_program_1_1_history_element.html" title="This class represent an element of the parsing history.">HistoryElement</a> {
+<a name="l00012"></a>00012         <span class="keyword">private</span> String[] stack;
+<a name="l00013"></a>00013         <span class="keyword">private</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> production;
+<a name="l00014"></a>00014         <span class="keyword">private</span> String simbol;
+<a name="l00015"></a>00015         
+<a name="l00019"></a><a class="code" href="classparser_program_1_1_history_element.html#a45f360f314f688585844a62592bdb5c5">00019</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_history_element.html#a45f360f314f688585844a62592bdb5c5" title="Default constructor.">HistoryElement</a>(){
+<a name="l00020"></a>00020                 this.stack=null;
+<a name="l00021"></a>00021                 this.simbol=null;
+<a name="l00022"></a>00022                 this.production=null;
+<a name="l00023"></a>00023         }
+<a name="l00024"></a>00024 
+<a name="l00029"></a><a class="code" href="classparser_program_1_1_history_element.html#ae6d3bdd3606301f0b08d4e9258b5c5cf">00029</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_history_element.html#ae6d3bdd3606301f0b08d4e9258b5c5cf" title="Construct the object with specified parsing stack.">HistoryElement</a>(String[] stk) {
 <a name="l00030"></a>00030                 this.stack= stk;
-<a name="l00031"></a>00031                 production=p;
-<a name="l00032"></a>00032                 this.simbol= s;
-<a name="l00033"></a>00033         }       
+<a name="l00031"></a>00031                 this.simbol=null;
+<a name="l00032"></a>00032                 this.production=null;
+<a name="l00033"></a>00033         }
 <a name="l00034"></a>00034         
-<a name="l00035"></a>00035         <span class="keyword">public</span> String[] getStack() {
-<a name="l00036"></a>00036                 <span class="keywordflow">return</span> stack;
-<a name="l00037"></a>00037         }
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keyword">public</span> <span class="keywordtype">void</span> setStack(String[] stack) {
-<a name="l00040"></a>00040                 this.stack = stack;
-<a name="l00041"></a>00041         }
-<a name="l00042"></a>00042 
-<a name="l00047"></a><a class="code" href="classparser_program_1_1_history_element.html#a1e3354d1bc805c952c4ed9a35ddac0dd">00047</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> <a class="code" href="classparser_program_1_1_history_element.html#a1e3354d1bc805c952c4ed9a35ddac0dd">getProduction</a>() {
-<a name="l00048"></a>00048                 <span class="keywordflow">return</span> production;
-<a name="l00049"></a>00049         }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="keyword">public</span> <span class="keywordtype">void</span> setProduction(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> production) {
-<a name="l00052"></a>00052                 this.production = production;
-<a name="l00053"></a>00053         }
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055         <span class="keyword">public</span> String getSimbol() {
-<a name="l00056"></a>00056                 <span class="keywordflow">return</span> simbol;
-<a name="l00057"></a>00057         }
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059         <span class="keyword">public</span> <span class="keywordtype">void</span> setSimbol(String simbol) {
-<a name="l00060"></a>00060                 this.simbol = simbol;
-<a name="l00061"></a>00061         }
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="keyword">public</span> <span class="keywordtype">boolean</span> isShift(){
-<a name="l00064"></a>00064                 <span class="keywordflow">if</span>(production==null) <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00065"></a>00065                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00066"></a>00066         }
-<a name="l00067"></a>00067         
-<a name="l00068"></a>00068         
-<a name="l00069"></a>00069         @Override
-<a name="l00070"></a>00070         <span class="keyword">public</span> String toString(){
-<a name="l00071"></a>00071                 String result= <span class="stringliteral">&quot;[ &quot;</span>;
-<a name="l00072"></a>00072                         <span class="keywordflow">for</span>(String simbolo : this.stack){
-<a name="l00073"></a>00073                                 result+=simbolo+<span class="stringliteral">&quot; &quot;</span>;
-<a name="l00074"></a>00074                         }
-<a name="l00075"></a>00075                         result+=<span class="stringliteral">&quot;]&quot;</span>;
-<a name="l00076"></a>00076                 <span class="keywordflow">if</span>(production!=null) result+=<span class="stringliteral">&quot; | reduce for &quot;</span>+production.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1" title="return a formatted string in the form axioms :: = expression">toString</a>() + <span class="stringliteral">&quot; | &quot;</span> + simbol;
-<a name="l00077"></a>00077                 <span class="keywordflow">else</span> result+= <span class="stringliteral">&quot; | shift | &quot;</span> + simbol;
-<a name="l00078"></a>00078                 <span class="keywordflow">return</span> result;
-<a name="l00079"></a>00079         }       
-<a name="l00080"></a>00080 }
+<a name="l00041"></a><a class="code" href="classparser_program_1_1_history_element.html#a0cd8852d35a48856c6e893ae33cbde30">00041</a>         <span class="keyword">public</span> <a class="code" href="classparser_program_1_1_history_element.html#a0cd8852d35a48856c6e893ae33cbde30" title="Construct the object with specified parsing stack, production and step.">HistoryElement</a>(String[] stk,<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> p, String s) {
+<a name="l00042"></a>00042                 this.stack= stk;
+<a name="l00043"></a>00043                 this.production=p;
+<a name="l00044"></a>00044                 this.simbol= s;
+<a name="l00045"></a>00045         }       
+<a name="l00046"></a>00046         
+<a name="l00050"></a><a class="code" href="classparser_program_1_1_history_element.html#a8f20a699af1fa68f114acef0f72117b5">00050</a>         <span class="keyword">public</span> String[] <a class="code" href="classparser_program_1_1_history_element.html#a8f20a699af1fa68f114acef0f72117b5">getStack</a>() {
+<a name="l00051"></a>00051                 <span class="keywordflow">return</span> stack;
+<a name="l00052"></a>00052         }
+<a name="l00053"></a>00053 
+<a name="l00058"></a><a class="code" href="classparser_program_1_1_history_element.html#a640ecb265a57f1b084fe99cf2a2a9a35">00058</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classparser_program_1_1_history_element.html#a640ecb265a57f1b084fe99cf2a2a9a35" title="Set the stack.">setStack</a>(String[] stack) {
+<a name="l00059"></a>00059                 this.stack = stack;
+<a name="l00060"></a>00060         }
+<a name="l00061"></a>00061 
+<a name="l00065"></a><a class="code" href="classparser_program_1_1_history_element.html#a1e3354d1bc805c952c4ed9a35ddac0dd">00065</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> <a class="code" href="classparser_program_1_1_history_element.html#a1e3354d1bc805c952c4ed9a35ddac0dd">getProduction</a>() {
+<a name="l00066"></a>00066                 <span class="keywordflow">return</span> production;
+<a name="l00067"></a>00067         }
+<a name="l00068"></a>00068 
+<a name="l00073"></a><a class="code" href="classparser_program_1_1_history_element.html#a2311f48be369f4d0e6be47c2a7ac7546">00073</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classparser_program_1_1_history_element.html#a2311f48be369f4d0e6be47c2a7ac7546" title="Set the production.">setProduction</a>(<a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> production) {
+<a name="l00074"></a>00074                 this.production = production;
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076 
+<a name="l00080"></a><a class="code" href="classparser_program_1_1_history_element.html#ab64610fe65f58bca7d542244378ac030">00080</a>         <span class="keyword">public</span> String <a class="code" href="classparser_program_1_1_history_element.html#ab64610fe65f58bca7d542244378ac030">getSimbol</a>() {
+<a name="l00081"></a>00081                 <span class="keywordflow">return</span> simbol;
+<a name="l00082"></a>00082         }
+<a name="l00083"></a>00083 
+<a name="l00087"></a><a class="code" href="classparser_program_1_1_history_element.html#a54ecd254d7abd49d0d10230892dfc35b">00087</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classparser_program_1_1_history_element.html#a54ecd254d7abd49d0d10230892dfc35b" title="Set the parsing step.">setSimbol</a>(String simbol) {
+<a name="l00088"></a>00088                 this.simbol = simbol;
+<a name="l00089"></a>00089         }
+<a name="l00090"></a>00090 
+<a name="l00094"></a><a class="code" href="classparser_program_1_1_history_element.html#a233c9c55643f4d6bc8103c4e2c8bd038">00094</a>         <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code" href="classparser_program_1_1_history_element.html#a233c9c55643f4d6bc8103c4e2c8bd038">isShift</a>(){
+<a name="l00095"></a>00095                 <span class="keywordflow">if</span>(production==null) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00096"></a>00096                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00097"></a>00097         }
+<a name="l00098"></a>00098         
+<a name="l00099"></a>00099         
+<a name="l00100"></a>00100         @Override
+<a name="l00101"></a>00101         <span class="keyword">public</span> String toString(){
+<a name="l00102"></a>00102                 String result= <span class="stringliteral">&quot;[ &quot;</span>;
+<a name="l00103"></a>00103                         <span class="keywordflow">for</span>(String simbolo : this.stack){
+<a name="l00104"></a>00104                                 result+=simbolo+<span class="stringliteral">&quot; &quot;</span>;
+<a name="l00105"></a>00105                         }
+<a name="l00106"></a>00106                         result+=<span class="stringliteral">&quot;]&quot;</span>;
+<a name="l00107"></a>00107                 <span class="keywordflow">if</span>(production!=null) result+=<span class="stringliteral">&quot; | reduce for &quot;</span>+production.<a class="code" href="classcontext_free_1_1grammar_1_1_production.html#a43d78cd85446efbbffe59a2278c410d1" title="return a formatted string in the form axioms :: = expression">toString</a>() + <span class="stringliteral">&quot; | &quot;</span> + simbol;
+<a name="l00108"></a>00108                 <span class="keywordflow">else</span> result+= <span class="stringliteral">&quot; | shift | &quot;</span> + simbol;
+<a name="l00109"></a>00109                 <span class="keywordflow">return</span> result;
+<a name="l00110"></a>00110         }       
+<a name="l00111"></a>00111 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>HistoryElement.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

@@ -1,0 +1,166 @@
+.TH "contextFree.parser.LR0" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.parser.LR0 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBcontextFree\&.parser\&.IParser\fP\&.
+.PP
+Inherited by \fBcontextFree\&.parser\&.LALR1\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "abstract void \fBsetGrammar\fP (\fBIGrammar\fP gram)"
+.br
+.ti -1c
+.RI "abstract int \fBinit\fP ()  throws Exception"
+.br
+.ti -1c
+.RI "List< \fBIndexedProduction\fP > \fBchiusura\fP (List< \fBIndexedProduction\fP > i)"
+.br
+.RI "\fI*I passed a list of production that form the kernel of a state, return closing it \fP"
+.ti -1c
+.RI "List< \fBIndexedProduction\fP > \fBGoTo\fP (List< \fBIndexedProduction\fP > i, String X)"
+.br
+.RI "\fIPassed a state and the symbol that follows the point, returns the kernel of the new state with the relative closure\&. \fP"
+.ti -1c
+.RI "List< \fBState\fP > \fBItem\fP ()"
+.br
+.RI "\fIgiven a grammar G we calculate the associated grammar augmented by adding the production S ':: =\&. \fP"
+.ti -1c
+.RI "int \fBuguale\fP (List< \fBState\fP > automa, List< \fBIndexedProduction\fP > stato)"
+.br
+.RI "\fIchecks if a state is present in an automaton \fP"
+.ti -1c
+.RI "boolean \fBprodPresente\fP (List< \fBIndexedProduction\fP >j, \fBProduction\fP corrente)"
+.br
+.RI "\fIchecks if a production is already in a list of productions\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBIGrammar\fP \fBgrammatica\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file LR0\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "List<\fBIndexedProduction\fP> \fBcontextFree\&.parser\&.LR0\&.chiusura\fP (List< \fBIndexedProduction\fP >i)"
+
+.PP
+*I passed a list of production that form the kernel of a state, return closing it \fBParameters:\fP
+.RS 4
+\fIthe\fP kernels of the state 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+list of products forming the state 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file LR0\&.java\&.
+.SS "List<\fBIndexedProduction\fP> \fBcontextFree\&.parser\&.LR0\&.GoTo\fP (List< \fBIndexedProduction\fP >i, StringX)"
+
+.PP
+Passed a state and the symbol that follows the point, returns the kernel of the new state with the relative closure\&. \fBParameters:\fP
+.RS 4
+\fI\fBState\fP\fP which calculated to be the new kernel 
+.br
+\fIX\fP symbol that moves the point 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+closure of new state 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file LR0\&.java\&.
+.SS "List<\fBState\fP> \fBcontextFree\&.parser\&.LR0\&.Item\fP ()"
+
+.PP
+given a grammar G we calculate the associated grammar augmented by adding the production S ':: =\&. S, where S is the assiom\&. We calculate the closure of it and so associated GoTo 'to have the finite state autom\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+the autom LR(0) 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file LR0\&.java\&.
+.SS "boolean \fBcontextFree\&.parser\&.LR0\&.prodPresente\fP (List< \fBIndexedProduction\fP >j, \fBProduction\fPcorrente)"
+
+.PP
+checks if a production is already in a list of productions\&. \fBParameters:\fP
+.RS 4
+\fIthe\fP state in which control 
+.br
+\fIprodaction\fP to search 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if there is false if it is not 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 247 of file LR0\&.java\&.
+.SS "int \fBcontextFree\&.parser\&.LR0\&.uguale\fP (List< \fBState\fP >automa, List< \fBIndexedProduction\fP >stato)"
+
+.PP
+checks if a state is present in an automaton \fBParameters:\fP
+.RS 4
+\fIautom\fP 
+.br
+\fIstate\fP to search 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+-1 If not present, otherwise returns the number state equal to the past 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Pierluigi Sottile 
+.RE
+.PP
+
+.PP
+Definition at line 198 of file LR0\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,6 +120,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">inputParser.FourLineInputParser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Parse a four line grammar format.  
+ <a href="classinput_parser_1_1_four_line_input_parser.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for inputParser.FourLineInputParser:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -127,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_four_line_input_parser__inherit__graph.png" border="0" usemap="#input_parser_8_four_line_input_parser_inherit__map" alt="Inheritance graph"/></div>
 <map name="input_parser_8_four_line_input_parser_inherit__map" id="input_parser_8_four_line_input_parser_inherit__map">
-</map>
+<area shape="rect" id="node2" href="classinput_parser_1_1_abstract_input_parser.html" title="{inputParser.AbstractInputParser\n||+ parse()\l}" alt="" coords="6,5,212,83"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for inputParser.FourLineInputParser:</div>
@@ -136,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_four_line_input_parser__coll__graph.png" border="0" usemap="#input_parser_8_four_line_input_parser_coll__map" alt="Collaboration graph"/></div>
 <map name="input_parser_8_four_line_input_parser_coll__map" id="input_parser_8_four_line_input_parser_coll__map">
-</map>
+<area shape="rect" id="node2" href="classinput_parser_1_1_abstract_input_parser.html" title="{inputParser.AbstractInputParser\n||+ parse()\l}" alt="" coords="5,423,211,500"/><area shape="rect" id="node8" href="classcontext_free_1_1grammar_1_1_production.html" title="{contextFree.grammar.Production\n|&#45; left\l&#45; right\l|+ Production()\l+ Production()\l+ Production()\l+ getLeft()\l+ setLeft()\l+ getRight()\l+ setRight()\l+ getRightList()\l+ setRightList()\l+ toString()\l}" alt="" coords="298,349,509,573"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classinput_parser_1_1_four_line_input_parser-members.html">List of all members.</a></p>
@@ -146,7 +149,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab60c07b777f5edc493d0d71abcfdc840"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab60c07b777f5edc493d0d71abcfdc840"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FourLineInputParser</b> (String input)</td></tr>
 <tr class="memitem:a99c37488d66cfeecb33e13d573b4a81a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput_parser_1_1_four_line_input_parser.html#a99c37488d66cfeecb33e13d573b4a81a">parse</a> ()  throws Exception</td></tr>
-<tr class="memdesc:a99c37488d66cfeecb33e13d573b4a81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads the file .4l and creates the object grammar  <a href="#a99c37488d66cfeecb33e13d573b4a81a"></a><br/></td></tr>
+<tr class="memdesc:a99c37488d66cfeecb33e13d573b4a81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the file .4l and creates the object grammar.  <a href="#a99c37488d66cfeecb33e13d573b4a81a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pac-attribs"></a>
 Package Attributes</h2></td></tr>
 <tr class="memitem:ab974828c70b8a1335c806d6d3cf83da7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab974828c70b8a1335c806d6d3cf83da7"></a>
@@ -181,8 +184,11 @@ List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>T</b>
 List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">Production</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>P</b> = null</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_four_line_input_parser_8java_source.html#l00017">17</a> of file <a class="el" href="_four_line_input_parser_8java_source.html">FourLineInputParser.java</a>.</p>
+<div class="textblock"><p>Parse a four line grammar format. </p>
+<p>ex (file.4l): E E, T, P a, +, x, (, ), $ E::=E+T, E::=T, T::=TxP, T::=P, P::=a, P::=(E) </p>
+<dl class="section author"><dt>Author:</dt><dd>Pierluigi Sottile </dd></dl>
+
+<p>Definition at line <a class="el" href="_four_line_input_parser_8java_source.html#l00026">26</a> of file <a class="el" href="_four_line_input_parser_8java_source.html">FourLineInputParser.java</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a99c37488d66cfeecb33e13d573b4a81a"></a>
 <div class="memitem">
@@ -198,13 +204,13 @@ List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">P
 </div>
 <div class="memdoc">
 
-<p>reads the file .4l and creates the object grammar </p>
+<p>Read the file .4l and creates the object grammar. </p>
 <dl class="section return"><dt>Returns:</dt><dd>the grammar </dd></dl>
 <dl class="section author"><dt>Author:</dt><dd>Pierluigi Sottile </dd></dl>
 
-<p>Implements <a class="el" href="classinput_parser_1_1_abstract_input_parser.html">inputParser.AbstractInputParser</a>.</p>
+<p>Implements <a class="el" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe">inputParser.AbstractInputParser</a>.</p>
 
-<p>Definition at line <a class="el" href="_four_line_input_parser_8java_source.html#l00045">45</a> of file <a class="el" href="_four_line_input_parser_8java_source.html">FourLineInputParser.java</a>.</p>
+<p>Definition at line <a class="el" href="_four_line_input_parser_8java_source.html#l00054">54</a> of file <a class="el" href="_four_line_input_parser_8java_source.html">FourLineInputParser.java</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -213,7 +219,7 @@ List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">P
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a_cgraph.png" border="0" usemap="#classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a_cgraph" alt=""/></div>
 <map name="classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a_cgraph" id="classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a_cgraph">
-</map>
+<area shape="rect" id="node3" href="classcontext_free_1_1grammar_1_1_grammar_factory.html#a25d4e5bf4a9a452efca5dd6518e16c25" title="Check the type of grammar (ex." alt="" coords="299,5,642,32"/><area shape="rect" id="node5" href="classcontext_free_1_1grammar_1_1_grammar_factory.html#a513482168bb15e55211bc4f04e276711" title="Controls that make up the grammar productions that are valid." alt="" coords="691,5,1005,32"/><area shape="rect" id="node7" href="classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67" title="contextFree.grammar.Production.getLeft" alt="" coords="1054,5,1309,32"/></map>
 </div>
 </p>
 
@@ -229,7 +235,7 @@ List&lt; <a class="el" href="classcontext_free_1_1grammar_1_1_production.html">P
       <li class="navelem"><a class="el" href="namespaceinput_parser.html">inputParser</a>      </li>
       <li class="navelem"><a class="el" href="classinput_parser_1_1_four_line_input_parser.html">FourLineInputParser</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:19 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:06:01 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

@@ -3,10 +3,27 @@
 }
 
 
-Inheritance diagram for input\-Parser.\-Four\-Line\-Input\-Parser\-:
+Parse a four line grammar format.  
 
 
-Collaboration diagram for input\-Parser.\-Four\-Line\-Input\-Parser\-:
+
+
+Inheritance diagram for input\-Parser.\-Four\-Line\-Input\-Parser\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classinput_parser_1_1_four_line_input_parser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for input\-Parser.\-Four\-Line\-Input\-Parser\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classinput_parser_1_1_four_line_input_parser__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,7 +31,7 @@ Collaboration diagram for input\-Parser.\-Four\-Line\-Input\-Parser\-:
 
 \item 
 \hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} \hyperlink{classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a}{parse} ()  throws Exception
-\begin{DoxyCompactList}\small\item\em reads the file .4l and creates the object grammar \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Read the file .4l and creates the object grammar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,9 +83,14 @@ Collaboration diagram for input\-Parser.\-Four\-Line\-Input\-Parser\-:
 
 
 \subsection{Detailed Description}
+Parse a four line grammar format. 
+
+ex (file.\-4l)\-: E E, T, P a, +, x, (, ), \$ E\-:\-:=E+\-T, E\-:\-:=T, T\-:\-:=Tx\-P, T\-:\-:=P, P\-:\-:=a, P\-:\-:=(E) \begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
 
 
-Definition at line 17 of file Four\-Line\-Input\-Parser.\-java.
+Definition at line 26 of file Four\-Line\-Input\-Parser.\-java.
 
 
 
@@ -82,7 +104,7 @@ Definition at line 17 of file Four\-Line\-Input\-Parser.\-java.
 )  throws Exception\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a}
 
 
-reads the file .4l and creates the object grammar 
+Read the file .4l and creates the object grammar. 
 
 \begin{DoxyReturn}{Returns}
 the grammar 
@@ -92,15 +114,21 @@ Pierluigi Sottile
 \end{DoxyAuthor}
 
 
-Implements \hyperlink{classinput_parser_1_1_abstract_input_parser}{input\-Parser.\-Abstract\-Input\-Parser}.
+Implements \hyperlink{classinput_parser_1_1_abstract_input_parser_a548b0f6fa44b7954b79bdd964336bafe}{input\-Parser.\-Abstract\-Input\-Parser}.
 
 
 
-Definition at line 45 of file Four\-Line\-Input\-Parser.\-java.
+Definition at line 54 of file Four\-Line\-Input\-Parser.\-java.
 
 
 
-Here is the call graph for this function\-:
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classinput_parser_1_1_four_line_input_parser_a99c37488d66cfeecb33e13d573b4a81a_cgraph}
+\end{center}
+\end{figure}
 
 
 

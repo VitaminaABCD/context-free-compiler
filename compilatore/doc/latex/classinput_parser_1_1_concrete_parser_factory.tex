@@ -3,22 +3,78 @@
 }
 
 
-Inheritance diagram for input\-Parser.\-Concrete\-Parser\-Factory\-:
+Concrete class that implement the factory\-Method of \hyperlink{classinput_parser_1_1_input_parser_factory}{Input\-Parser\-Factory}.  
 
 
-Collaboration diagram for input\-Parser.\-Concrete\-Parser\-Factory\-:
+
+
+Inheritance diagram for input\-Parser.\-Concrete\-Parser\-Factory\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classinput_parser_1_1_concrete_parser_factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for input\-Parser.\-Concrete\-Parser\-Factory\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classinput_parser_1_1_concrete_parser_factory__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classinput_parser_1_1_concrete_parser_factory_a6fdfbfef9e48417903f60faf67640d1e}{\hyperlink{classinput_parser_1_1_abstract_input_parser}{Abstract\-Input\-Parser} {\bfseries factory\-Method} (String in)}\label{classinput_parser_1_1_concrete_parser_factory_a6fdfbfef9e48417903f60faf67640d1e}
-
-\end{DoxyCompactItemize}
+\hyperlink{classinput_parser_1_1_abstract_input_parser}{Abstract\-Input\-Parser} \hyperlink{classinput_parser_1_1_concrete_parser_factory_a6fdfbfef9e48417903f60faf67640d1e}{factory\-Method} (String in)
+\begin{DoxyCompactList}\small\item\em Return different object instance based on the extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Concrete class that implement the factory\-Method of \hyperlink{classinput_parser_1_1_input_parser_factory}{Input\-Parser\-Factory}. 
+
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
 
 
-Definition at line 7 of file Concrete\-Parser\-Factory.\-java.
+Definition at line 11 of file Concrete\-Parser\-Factory.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classinput_parser_1_1_concrete_parser_factory_a6fdfbfef9e48417903f60faf67640d1e}{\index{input\-Parser\-::\-Concrete\-Parser\-Factory@{input\-Parser\-::\-Concrete\-Parser\-Factory}!factory\-Method@{factory\-Method}}
+\index{factory\-Method@{factory\-Method}!inputParser::ConcreteParserFactory@{input\-Parser\-::\-Concrete\-Parser\-Factory}}
+\subsubsection[{factory\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\-Input\-Parser} {\bf input\-Parser.\-Concrete\-Parser\-Factory.\-factory\-Method} (
+\begin{DoxyParamCaption}
+\item[{String}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}\label{classinput_parser_1_1_concrete_parser_factory_a6fdfbfef9e48417903f60faf67640d1e}
+
+
+Return different object instance based on the extension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & path of file to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Four\-Line\-Input\-Parser(input) instance if the file extension is \char`\"{}.\-4l\char`\"{},\par
+ Single\-Line\-Input\-Parser(input) instance if the file extension is \char`\"{}.\-1l\char`\"{},\par
+ L\-R\-Input\-Parser(in) instance if the file extension is \char`\"{}.\-txt\char`\"{}, null otherwise. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
+
+
+Implements \hyperlink{classinput_parser_1_1_input_parser_factory_a48971c2679b589f34a7051e795d48c49}{input\-Parser.\-Input\-Parser\-Factory}.
+
+
+
+Definition at line 14 of file Concrete\-Parser\-Factory.\-java.
 
 
 

@@ -1,0 +1,212 @@
+.TH "contextFree.grammar.IGrammar" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.grammar.IGrammar \- 
+.PP
+Grammar Interface\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "List< String > \fBgetV\fP ()"
+.br
+.RI "\fIGet non-terminal symbols list\&. \fP"
+.ti -1c
+.RI "void \fBsetV\fP (List< String > v)"
+.br
+.RI "\fISet the list of non-terminal symbols\&. \fP"
+.ti -1c
+.RI "List< String > \fBgetT\fP ()"
+.br
+.RI "\fIGet terminal symbols list\&. \fP"
+.ti -1c
+.RI "void \fBsetT\fP (List< String > e)"
+.br
+.RI "\fISet the list of terminal symbols\&. \fP"
+.ti -1c
+.RI "List< \fBProduction\fP > \fBgetP\fP ()"
+.br
+.RI "\fIGet production list\&. \fP"
+.ti -1c
+.RI "void \fBsetP\fP (List< \fBProduction\fP > p)"
+.br
+.RI "\fISet the produciton list\&. \fP"
+.ti -1c
+.RI "void \fBsetS\fP (String s)"
+.br
+.RI "\fISet the axioms for the grammar\&. \fP"
+.ti -1c
+.RI "String \fBgetS\fP ()"
+.br
+.RI "\fIGet the axioms\&. \fP"
+.ti -1c
+.RI "Set< String >[] \fBgetFirst\fP ()"
+.br
+.RI "\fIGet the list of first for the grammar\&. \fP"
+.ti -1c
+.RI "Set< String >[] \fBgetFollow\fP ()"
+.br
+.RI "\fIGet the list of follow for the grammar\&. \fP"
+.ti -1c
+.RI "Set< String > \fBgetFirst\fP (String A)"
+.br
+.RI "\fIGet the list of follow for the grammarfor a specific symbol\&. \fP"
+.ti -1c
+.RI "String \fBtoOneLineString\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Grammar Interface\&. 
+
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file IGrammar\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "Set<String> [] \fBcontextFree\&.grammar\&.IGrammar\&.getFirst\fP ()"
+
+.PP
+Get the list of first for the grammar\&. \fBReturns:\fP
+.RS 4
+the first list\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "Set<String> \fBcontextFree\&.grammar\&.IGrammar\&.getFirst\fP (StringA)"
+
+.PP
+Get the list of follow for the grammarfor a specific symbol\&. \fBReturns:\fP
+.RS 4
+the follow list\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "Set<String> [] \fBcontextFree\&.grammar\&.IGrammar\&.getFollow\fP ()"
+
+.PP
+Get the list of follow for the grammar\&. \fBReturns:\fP
+.RS 4
+the follow list\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "List<\fBProduction\fP> \fBcontextFree\&.grammar\&.IGrammar\&.getP\fP ()"
+
+.PP
+Get production list\&. \fBReturns:\fP
+.RS 4
+a list of production objects\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "String \fBcontextFree\&.grammar\&.IGrammar\&.getS\fP ()"
+
+.PP
+Get the axioms\&. \fBReturns:\fP
+.RS 4
+the axioms 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "List<String> \fBcontextFree\&.grammar\&.IGrammar\&.getT\fP ()"
+
+.PP
+Get terminal symbols list\&. \fBReturns:\fP
+.RS 4
+a list of string with terminal symbol 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "List<String> \fBcontextFree\&.grammar\&.IGrammar\&.getV\fP ()"
+
+.PP
+Get non-terminal symbols list\&. \fBReturns:\fP
+.RS 4
+a list of string with non-terminal symbol 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "void \fBcontextFree\&.grammar\&.IGrammar\&.setP\fP (List< \fBProduction\fP >p)"
+
+.PP
+Set the produciton list\&. \fBParameters:\fP
+.RS 4
+\fIp\fP the list of productions that must be setted\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "void \fBcontextFree\&.grammar\&.IGrammar\&.setS\fP (Strings)"
+
+.PP
+Set the axioms for the grammar\&. \fBParameters:\fP
+.RS 4
+\fIs\fP the axioms\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "void \fBcontextFree\&.grammar\&.IGrammar\&.setT\fP (List< String >e)"
+
+.PP
+Set the list of terminal symbols\&. \fBParameters:\fP
+.RS 4
+\fIe\fP the list of terminal 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "void \fBcontextFree\&.grammar\&.IGrammar\&.setV\fP (List< String >v)"
+
+.PP
+Set the list of non-terminal symbols\&. \fBParameters:\fP
+.RS 4
+\fIv\fP the list of non-terminal 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+.SS "String \fBcontextFree\&.grammar\&.IGrammar\&.toOneLineString\fP ()"
+\fBReturns:\fP
+.RS 4
+the grammar string formatted in one line\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBcontextFree\&.grammar\&.ContextFreeGrammar\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

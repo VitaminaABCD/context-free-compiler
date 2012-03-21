@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -137,8 +137,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027         
 <a name="l00028"></a>00028         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>() {
 <a name="l00029"></a>00029                 file= null;
-<a name="l00030"></a>00030                 S=<span class="stringliteral">&quot;&quot;</span>;
-<a name="l00031"></a>00031                 P=<span class="keyword">new</span> ArrayList&lt;Production&gt;();
+<a name="l00030"></a>00030                 S=null;
+<a name="l00031"></a>00031                 P=null;
 <a name="l00032"></a>00032         }
 <a name="l00033"></a>00033         
 <a name="l00034"></a>00034         <span class="keyword">public</span> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format.">SingleLineInputParser</a>(String in) {
@@ -147,76 +147,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037                 P=<span class="keyword">new</span> ArrayList&lt;Production&gt;();
 <a name="l00038"></a>00038         }
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040         @Override
-<a name="l00041"></a>00041         <span class="keyword">public</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> parse() <span class="keywordflow">throws</span> Exception {
-<a name="l00042"></a>00042                 String input=<span class="stringliteral">&quot;&quot;</span>;
-<a name="l00043"></a>00043                 <span class="keywordflow">try</span> {
-<a name="l00044"></a>00044                         BufferedReader f = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));
-<a name="l00045"></a>00045                         input = f.readLine();
-<a name="l00046"></a>00046                         f.close();
-<a name="l00047"></a>00047                         input=input.replaceAll(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
-<a name="l00048"></a>00048                         input=input.replaceAll(<span class="stringliteral">&quot;\\{&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
-<a name="l00049"></a>00049                         input=input.replaceAll(<span class="stringliteral">&quot;\\}&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);
-<a name="l00050"></a>00050                 } <span class="keywordflow">catch</span> (IOException e) {
-<a name="l00051"></a>00051                         <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.INPUT_FILE,e);
-<a name="l00052"></a>00052                 }
-<a name="l00053"></a>00053                         
-<a name="l00054"></a>00054                 
-<a name="l00055"></a>00055                 String[] assioma_set = input.split(<span class="stringliteral">&quot;::=&quot;</span>);
-<a name="l00056"></a>00056                 S = assioma_set[0];
-<a name="l00057"></a>00057                 
-<a name="l00058"></a>00058                 String[] production = assioma_set[1].split(<span class="stringliteral">&quot;\\;&quot;</span>);
-<a name="l00059"></a>00059                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;production.length;i++){
-<a name="l00060"></a>00060                         String[] temp = production[i].split(<span class="stringliteral">&quot;\\:&quot;</span>);
-<a name="l00061"></a>00061                         <span class="keywordflow">if</span>(temp.length!=2){
-<a name="l00062"></a>00062                                 <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.FILE_FORMAT);
-<a name="l00063"></a>00063                                 <span class="keywordflow">return</span> null;
-<a name="l00064"></a>00064                         }
-<a name="l00065"></a>00065                         
-<a name="l00066"></a>00066                         String[] tempP = temp[1].split(<span class="stringliteral">&quot;\\|&quot;</span>);
-<a name="l00067"></a>00067                         
-<a name="l00068"></a>00068                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;tempP.length;j++){
-<a name="l00069"></a>00069                                 P.add(<span class="keyword">new</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>(temp[0],tempP[j]));
-<a name="l00070"></a>00070                         }
-<a name="l00071"></a>00071                 }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_grammar_factory.html" title="An object factory that create a correct instance of grammar.">GrammarFactory</a>.createContextFreeGrammar(S,P);
-<a name="l00074"></a>00074         }
-<a name="l00075"></a>00075         
-<a name="l00076"></a>00076         <span class="keyword">public</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> parseString(String input) <span class="keywordflow">throws</span> Exception {
-<a name="l00077"></a>00077                         input=input.replaceAll(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
-<a name="l00078"></a>00078                         input=input.replaceAll(<span class="stringliteral">&quot;\\{&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
-<a name="l00079"></a>00079                         input=input.replaceAll(<span class="stringliteral">&quot;\\}&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081                 String[] assioma_set = input.split(<span class="stringliteral">&quot;::=&quot;</span>);
-<a name="l00082"></a>00082                 S = assioma_set[0];
-<a name="l00083"></a>00083                 
-<a name="l00084"></a>00084                 String[] production = assioma_set[1].split(<span class="stringliteral">&quot;\\;&quot;</span>);
-<a name="l00085"></a>00085                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;production.length;i++){
-<a name="l00086"></a>00086                         String[] temp = production[i].split(<span class="stringliteral">&quot;\\:&quot;</span>);
-<a name="l00087"></a>00087                         <span class="keywordflow">if</span>(temp.length!=2){
-<a name="l00088"></a>00088                                 <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.FILE_FORMAT);
-<a name="l00089"></a>00089                                 <span class="keywordflow">return</span> null;
-<a name="l00090"></a>00090                         }
-<a name="l00091"></a>00091                         
-<a name="l00092"></a>00092                         String[] tempP = temp[1].split(<span class="stringliteral">&quot;\\|&quot;</span>);
-<a name="l00093"></a>00093                         
-<a name="l00094"></a>00094                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;tempP.length;j++){
-<a name="l00095"></a>00095                                 P.add(<span class="keyword">new</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>(temp[0],tempP[j]));
-<a name="l00096"></a>00096                         }
-<a name="l00097"></a>00097                 }
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_grammar_factory.html" title="An object factory that create a correct instance of grammar.">GrammarFactory</a>.createContextFreeGrammar(S,P);
-<a name="l00100"></a>00100         }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 }
+<a name="l00044"></a>00044         @Override
+<a name="l00045"></a><a class="code" href="classinput_parser_1_1_single_line_input_parser.html#ad822676b0d3182a591e2004c3bcc79d5">00045</a>         <span class="keyword">public</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html#ad822676b0d3182a591e2004c3bcc79d5">parse</a>() throws Exception {
+<a name="l00046"></a>00046                 String input=<span class="stringliteral">&quot;&quot;</span>;
+<a name="l00047"></a>00047                 <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> result=null;
+<a name="l00048"></a>00048                 <span class="keywordflow">try</span> {
+<a name="l00049"></a>00049                         BufferedReader f = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));
+<a name="l00050"></a>00050                         input = f.readLine();
+<a name="l00051"></a>00051                         f.close();
+<a name="l00052"></a>00052                         result = <a class="code" href="classinput_parser_1_1_single_line_input_parser.html#a90641140f8686fc97fd40b72beccf0a3" title="Execute the parse operation on the object.">parseString</a>(input);
+<a name="l00053"></a>00053                 } <span class="keywordflow">catch</span> (IOException e) {
+<a name="l00054"></a>00054                         <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.INPUT_FILE,e);
+<a name="l00055"></a>00055                 }
+<a name="l00056"></a>00056                 
+<a name="l00057"></a>00057                 <span class="keywordflow">return</span> result;
+<a name="l00058"></a>00058         }
+<a name="l00059"></a>00059         
+<a name="l00066"></a><a class="code" href="classinput_parser_1_1_single_line_input_parser.html#a90641140f8686fc97fd40b72beccf0a3">00066</a>         <span class="keyword">public</span> <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> <a class="code" href="classinput_parser_1_1_single_line_input_parser.html#a90641140f8686fc97fd40b72beccf0a3" title="Execute the parse operation on the object.">parseString</a>(String input) <span class="keywordflow">throws</span> Exception {
+<a name="l00067"></a>00067                         input=input.replaceAll(<span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00068"></a>00068                         input=input.replaceAll(<span class="stringliteral">&quot;\\{&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00069"></a>00069                         input=input.replaceAll(<span class="stringliteral">&quot;\\}&quot;</span>,<span class="stringliteral">&quot;&quot;</span>);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071                 String[] assioma_set = input.split(<span class="stringliteral">&quot;::=&quot;</span>);
+<a name="l00072"></a>00072                 S = assioma_set[0];
+<a name="l00073"></a>00073                 P = <span class="keyword">new</span> ArrayList&lt;Production&gt;(); 
+<a name="l00074"></a>00074         
+<a name="l00075"></a>00075                 String[] production = assioma_set[1].split(<span class="stringliteral">&quot;\\;&quot;</span>);
+<a name="l00076"></a>00076                 <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;production.length;i++){
+<a name="l00077"></a>00077                         String[] temp = production[i].split(<span class="stringliteral">&quot;\\:&quot;</span>);
+<a name="l00078"></a>00078                         <span class="keywordflow">if</span>(temp.length!=2){
+<a name="l00079"></a>00079                                 <a class="code" href="classerror_1_1_error_manager.html">ErrorManager</a>.manage(<a class="code" href="enumerror_1_1_e_r_r_o_r___t_y_p_e.html">ERROR_TYPE</a>.FILE_FORMAT);
+<a name="l00080"></a>00080                                 <span class="keywordflow">return</span> null;
+<a name="l00081"></a>00081                         }
+<a name="l00082"></a>00082                         
+<a name="l00083"></a>00083                         String[] tempP = temp[1].split(<span class="stringliteral">&quot;\\|&quot;</span>);
+<a name="l00084"></a>00084                         
+<a name="l00085"></a>00085                         <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0;j&lt;tempP.length;j++){
+<a name="l00086"></a>00086                                 P.add(<span class="keyword">new</span> <a class="code" href="classcontext_free_1_1grammar_1_1_production.html">Production</a>(temp[0],tempP[j]));
+<a name="l00087"></a>00087                         }
+<a name="l00088"></a>00088                 }
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090                 <span class="keywordflow">return</span> <a class="code" href="classcontext_free_1_1grammar_1_1_grammar_factory.html" title="An object factory that create a correct instance of grammar.">GrammarFactory</a>.createContextFreeGrammar(S,P);
+<a name="l00091"></a>00091         }
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>SingleLineInputParser.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

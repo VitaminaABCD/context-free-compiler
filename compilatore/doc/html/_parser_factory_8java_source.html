@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -135,8 +135,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00019"></a>00019         <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="interfacecontext_free_1_1parser_1_1_i_parser.html">IParser</a> createParser(){
 <a name="l00020"></a>00020                 System.out.println(<span class="stringliteral">&quot;E&#39; necessario inserire una grammatica[indicare il file]:&quot;</span>);
 <a name="l00021"></a>00021                 <span class="keywordflow">try</span> {
-<a name="l00022"></a>00022                         <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html">InputParser</a>(<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in)).readLine());
-<a name="l00023"></a>00023                         <a class="code" href="interfacecontext_free_1_1parser_1_1_i_parser.html">IParser</a> l = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html">LALR1</a>((<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a>)parser.parse());
+<a name="l00022"></a>00022                         <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>(<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in)).readLine());
+<a name="l00023"></a>00023                         <a class="code" href="interfacecontext_free_1_1parser_1_1_i_parser.html">IParser</a> l = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html">LALR1</a>((<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a>)parser.<a class="code" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object.">parse</a>());
 <a name="l00024"></a>00024                         <span class="keywordflow">if</span>(l.init()==1) {
 <a name="l00025"></a>00025                                 logger.debug(<span class="stringliteral">&quot;Grammar created and initialized correctly&quot;</span>);
 <a name="l00026"></a>00026                         }
@@ -158,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042                 <a class="code" href="interfacecontext_free_1_1parser_1_1_i_parser.html">IParser</a> l;
 <a name="l00043"></a>00043                 <span class="keywordflow">try</span> {
 <a name="l00044"></a>00044                         logger.debug(<span class="stringliteral">&quot;Grammar type init...&quot;</span>);
-<a name="l00045"></a>00045                         l = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html">LALR1</a>((<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a>)parser.parse());
+<a name="l00045"></a>00045                         l = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1parser_1_1_l_a_l_r1.html">LALR1</a>((<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a>)parser.<a class="code" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object.">parse</a>());
 <a name="l00046"></a>00046                         <span class="keywordflow">if</span>(l.init()==1) {
 <a name="l00047"></a>00047                                 logger.debug(<span class="stringliteral">&quot;Grammar created and initialized correctly&quot;</span>);
 <a name="l00048"></a>00048                         }
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><b>ParserFactory.java</b>      </li>
 
-    <li class="footer">Generated on Tue Mar 20 2012 20:47:18 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Wed Mar 21 2012 19:05:57 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

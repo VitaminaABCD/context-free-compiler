@@ -171,7 +171,7 @@
              <Node>
               <Name>initFromHistory</Name>
               <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>ad959cf65d00f25b4645d9ade0fb60410</Anchor>
+              <Anchor>a9ad5f3d77935440489df31131b18bf8e</Anchor>
              </Node>
              <Node>
               <Name>toString</Name>
@@ -1843,6 +1843,10 @@
            <Node>
             <Name>Functions</Name>
             <Path>functions_func.html</Path>
+           </Node>
+           <Node>
+            <Name>Variables</Name>
+            <Path>functions_vars.html</Path>
            </Node>
           </Subnodes>
          </Node>

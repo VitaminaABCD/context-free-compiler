@@ -16,7 +16,8 @@ import error.ErrorManager;
 
 /**
  * Parse a single line grammar format.
- * ex: S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)} 
+ * ex (file.1l):
+ * 		S::= { S: TE | +TE; T: FT | xFT; E : eps; F: a | (E)} 
  * @author Paolo Pino
  */
 public class SingleLineInputParser extends AbstractInputParser {
@@ -26,8 +27,8 @@ public class SingleLineInputParser extends AbstractInputParser {
 	
 	public SingleLineInputParser() {
 		file= null;
-		S="";
-		P=new ArrayList<Production>();
+		S=null;
+		P=null;
 	}
 	
 	public SingleLineInputParser(String in) {
@@ -36,42 +37,32 @@ public class SingleLineInputParser extends AbstractInputParser {
 		P=new ArrayList<Production>();
 	}
 
+	/**
+	 * @return ContextFreeGrammar instance if the string is correctly formatted, null otherwise.
+	 * @throws Exception
+	 */
 	@Override
 	public IGrammar parse() throws Exception {
 		String input="";
+		IGrammar result=null;
 		try {
 			BufferedReader f = new BufferedReader(new FileReader(file));
 			input = f.readLine();
 			f.close();
-			input=input.replaceAll(" ", "");
-			input=input.replaceAll("\\{", "");
-			input=input.replaceAll("\\}","");
+			result = parseString(input);
 		} catch (IOException e) {
 			ErrorManager.manage(ERROR_TYPE.INPUT_FILE,e);
 		}
-			
 		
-		String[] assioma_set = input.split("::=");
-		S = assioma_set[0];
-		
-		String[] production = assioma_set[1].split("\\;");
-		for(int i=0;i<production.length;i++){
-			String[] temp = production[i].split("\\:");
-			if(temp.length!=2){
-				ErrorManager.manage(ERROR_TYPE.FILE_FORMAT);
-				return null;
-			}
-			
-			String[] tempP = temp[1].split("\\|");
-			
-			for(int j=0;j<tempP.length;j++){
-				P.add(new Production(temp[0],tempP[j]));
-			}
-		}
-
-		return GrammarFactory.createContextFreeGrammar(S,P);
+		return result;
 	}
 	
+	/**
+	 * Execute the parse operation on the object.
+	 * @param input grammar file
+	 * @return ContextFreeGrammar instance if the string is correctly formatted, null otherwise.
+	 * @throws Exception
+	 */
 	public IGrammar parseString(String input) throws Exception {
 			input=input.replaceAll(" ", "");
 			input=input.replaceAll("\\{", "");
@@ -79,7 +70,8 @@ public class SingleLineInputParser extends AbstractInputParser {
 
 		String[] assioma_set = input.split("::=");
 		S = assioma_set[0];
-		
+		P = new ArrayList<Production>(); 
+	
 		String[] production = assioma_set[1].split("\\;");
 		for(int i=0;i<production.length;i++){
 			String[] temp = production[i].split("\\:");

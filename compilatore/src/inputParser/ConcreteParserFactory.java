@@ -10,12 +10,6 @@ import error.ErrorManager;
  */
 public class ConcreteParserFactory extends InputParserFactory{
 
-	/**
-	 * Return different object instance based on the extension.
-	 * @param the path of file to parse.
-	 * @return FourLineInputParser(input) instance if the file extension is ".4l",\n SingleLineInputParser(input) instance if the file extension is ".1l",\n LRInputParser(in) instance if the file extension is ".txt", null otherwise.
-	 * @author Paolo Pino
-	 */
 	@Override
 	protected AbstractInputParser factoryMethod(String in) {		
 		String[] input = in.split("/");

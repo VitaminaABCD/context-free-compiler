@@ -30,8 +30,10 @@ public class LRInputParser extends AbstractInputParser {
 		this.input=in;
 	}
 
-	/** Parse method
-	 * 
+	/** 
+	 * @result ParserProgram initialized instance.
+	 * @throws Exception
+	 * @author Paolo Pino
 	 */
 	@Override
 	public ParserProgram parse() throws Exception {
@@ -70,6 +72,7 @@ public class LRInputParser extends AbstractInputParser {
 	 * @param f the input file buffer
 	 * @param table the hashtable where the data is stored
 	 * @throws IOException
+	 * @author Paolo Pino
 	 */
 	private void readTable(BufferedReader f, Hashtable<String, List<String>> table) throws IOException {
 		String in=f.readLine();

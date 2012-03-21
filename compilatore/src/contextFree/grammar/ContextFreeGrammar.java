@@ -173,7 +173,7 @@ public class ContextFreeGrammar implements IGrammar {
 	}
 
 	/**
-	 * Population structure in Set <String> [] first for each non-terminal V, 
+	 * Populate structure in Set<String>[]first for each non-terminal V, 
 	 * using a structure of type Set to avoid duplication. 
 	 * @author Pierluigi Sottile
 	 */

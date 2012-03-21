@@ -13,7 +13,13 @@ import org.apache.log4j.Logger;
 import contextFree.grammar.IGrammar;
 import contextFree.grammar.Production;
 
-
+/**
+ * This class is responsible of the parsing of input string, and stack parsing creation.
+ * It also save the parsing chronology.
+ * It use a Grammar and its Action and Goto table.
+ * All this operation are executed with parse() method.
+ * @author Paolo Pino
+ */
 public class ParserProgram {
 	static Logger logger = Logger.getLogger(ParserProgram.class.getName());
 	
@@ -97,8 +103,8 @@ public class ParserProgram {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. 
+	 * @return RESULT.ACCEPT if the string has been accepted, RESULT.ERROR if not, RESULT.INVALID_ID if the input string is invalid 
 	 */
 	public RESULT parse(){
 		Integer state;

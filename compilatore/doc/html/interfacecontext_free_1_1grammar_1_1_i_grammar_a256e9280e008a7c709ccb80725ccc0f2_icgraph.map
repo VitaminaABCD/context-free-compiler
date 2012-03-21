@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#ac711dbbc2be25d15c1a8aade7579e94e" title="Passed a list of production I that form the kernel of a state, return closing it, and the lookahead s..." alt="" coords="309,5,560,32"/>
-<area shape="rect" id="node5" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="931,5,1125,32"/>
-<area shape="rect" id="node7" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#aeec32b5c83e031225114f46ac377f804" title="Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation..." alt="" coords="608,31,883,57"/>
-</map>

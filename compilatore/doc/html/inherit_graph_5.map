@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$interfacecontext_free_1_1parser_1_1_i_parser.html" title="contextFree.parser.IParser" alt="" coords="5,5,181,32"/>
-<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_r0.html" title="contextFree.parser.LR0" alt="" coords="230,5,389,32"/>
-<area shape="rect" id="node5" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html" title="contextFree.parser.LALR1" alt="" coords="438,5,613,32"/>
-</map>

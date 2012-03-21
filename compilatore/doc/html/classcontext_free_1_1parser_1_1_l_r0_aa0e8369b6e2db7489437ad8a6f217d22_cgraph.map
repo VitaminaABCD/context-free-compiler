@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_r0.html#a8de929e041a5a1a273e6ddd05dc7e0ca" title="checks if a state is present in an automaton" alt="" coords="552,26,752,53"/>
-<area shape="rect" id="node5" href="$classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67" title="contextFree.grammar.Production.getLeft" alt="" coords="801,26,1055,53"/>
-<area shape="rect" id="node7" href="$interfacecontext_free_1_1grammar_1_1_i_grammar.html#a629ab4dc36a869b93fa239a3fee760f9" title="Get production list." alt="" coords="265,65,503,92"/>
-<area shape="rect" id="node10" href="$classcontext_free_1_1parser_1_1_l_r0.html#a242530010547a830ad1b9c35a724a7e6" title="checks if a production is already in a list of productions." alt="" coords="265,116,503,142"/>
-</map>

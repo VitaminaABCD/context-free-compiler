@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classinput_parser_1_1_four_line_input_parser.html" title="Parse a four line grammar format." alt="" coords="5,131,213,384"/>
-<area shape="rect" id="node5" href="$classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result." alt="" coords="238,167,396,347"/>
-<area shape="rect" id="node7" href="$classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l)." alt="" coords="421,189,595,325"/>
-<area shape="rect" id="node9" href="$classinput_parser_1_1_single_line_input_parser.html" title="Parse a single line grammar format." alt="" coords="620,182,839,333"/>
-</map>

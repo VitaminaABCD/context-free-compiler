@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object." alt="" coords="263,31,457,57"/>
-<area shape="rect" id="node9" href="$interfacecontext_free_1_1grammar_1_1_i_grammar.html#a5fdeb5a6a9426b400c2fe805566a377c" title="contextFree.grammar.IGrammar.toOneLineString" alt="" coords="208,81,512,108"/>
-<area shape="rect" id="node5" href="$classinput_parser_1_1_input_parser_factory.html#a48971c2679b589f34a7051e795d48c49" title="Return different object instance based on the extension." alt="" coords="560,5,848,32"/>
-<area shape="rect" id="node7" href="$classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object." alt="" coords="583,56,825,83"/>
-</map>

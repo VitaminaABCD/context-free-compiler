@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object." alt="" coords="296,31,491,57"/>
-<area shape="rect" id="node5" href="$class_home_gui.html#a52f0602a97cd1ef63063bbbbda036d26" title="Start the parsing of grammar file and create result file." alt="" coords="539,5,693,32"/>
-<area shape="rect" id="node11" href="$class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010" title="Save operation." alt="" coords="553,56,679,83"/>
-<area shape="rect" id="node7" href="$class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593" title="Initialize GUI component and start the process." alt="" coords="742,31,877,57"/>
-<area shape="rect" id="node9" href="$class_home_gui.html#a241867731938068ae82ae7d5e7371fa3" title="Launch the application." alt="" coords="926,31,1034,57"/>
-</map>

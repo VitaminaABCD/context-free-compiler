@@ -143,6 +143,8 @@ public class HomeGui extends JFrame{
 				output.println(lalr1.getGrammar().toOneLineString());
 				output.close();
 			}
+			else 
+				automaText.setText(lalr1.getAutoma().toString());
 		}	
         long endTime = System.currentTimeMillis();
 		logger.info("Total elapsed time in execution of grammar parsing and \n\t\t\t\tAction e Goto table is :"+ (endTime-startTime));

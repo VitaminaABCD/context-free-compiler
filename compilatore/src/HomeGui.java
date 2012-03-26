@@ -290,7 +290,7 @@ public class HomeGui extends JFrame{
 //					logger.error("Parsing Result.txt fallito",e);
 				}
 		        long endTime = System.currentTimeMillis();
-				logger.info("Total elapsed time in parsing grammar and table\n\t\t\t\tand fot creation of AST is :"+ (endTime-startTime));
+				logger.info("Total elapsed time in parsing grammar and table\n\t\t\t\tand fot creation of ST is :"+ (endTime-startTime));
 			}
 		});
 
@@ -382,7 +382,7 @@ public class HomeGui extends JFrame{
 	private void writeToXml(DefaultMutableTreeNode root) throws FileNotFoundException { 
 		XStream xstream = new XStream();
 		String xml = xstream.toXML(root);
-		PrintStream output = new PrintStream(new FileOutputStream("AST.xml"));
+		PrintStream output = new PrintStream(new FileOutputStream("ST.xml"));
 		String [] temp = xml.split("\\n");
 		for(String o : temp)
 			output.println(o);

@@ -1,4 +1,4 @@
-package contextFree.parser;
+package contextFree.scanner;
 
 
 import inputParser.AbstractInputParser;
@@ -13,14 +13,14 @@ import org.apache.log4j.Logger;
 
 import contextFree.grammar.IGrammar;
 
-public class ParserFactory {
-	static Logger logger = Logger.getLogger(ParserFactory.class.getName());
+public class ScannerFactory {
+	static Logger logger = Logger.getLogger(ScannerFactory.class.getName());
 	
-	public static IParser createParser(){
+	public static IScanner createScanner(){
 		System.out.println("E' necessario inserire una grammatica[indicare il file]:");
 		try {
 			AbstractInputParser parser = new InputParser(new BufferedReader(new InputStreamReader(System.in)).readLine());
-			IParser l = new LALR1((IGrammar)parser.parse());
+			IScanner l = new LALR1((IGrammar)parser.parse());
 			if(l.init()==1) {
 				logger.debug("Grammar created and initialized correctly");
 			}
@@ -38,8 +38,8 @@ public class ParserFactory {
 		}
 	}
 	
-	public static IParser createParser(AbstractInputParser parser){
-		IParser l;
+	public static IScanner createScanner(AbstractInputParser parser){
+		IScanner l;
 		try {
 			logger.debug("Grammar type init...");
 			l = new LALR1((IGrammar)parser.parse());
@@ -57,8 +57,8 @@ public class ParserFactory {
 		}
 	}
 
-	public static IParser createParser(IGrammar grammar) {
-		IParser l;
+	public static IScanner createScanner(IGrammar grammar) {
+		IScanner l;
 		try {
 			logger.debug("Grammar type init...");
 			l = new LALR1(grammar);

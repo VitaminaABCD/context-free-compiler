@@ -27,14 +27,14 @@ import javax.swing.tree.TreePath;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import parserProgram.Ast;
+import parserProgram.St;
 import parserProgram.ParserProgram;
 
 import com.thoughtworks.xstream.XStream;
 
 import contextFree.grammar.IGrammar;
-import contextFree.parser.IParser;
-import contextFree.parser.ParserFactory;
+import contextFree.scanner.IScanner;
+import contextFree.scanner.ScannerFactory;
 
 import javax.swing.JTree;
 import javax.swing.JTextField;
@@ -128,7 +128,7 @@ public class HomeGui extends JFrame{
         long startTime = System.currentTimeMillis();
     	IGrammar grammar= (IGrammar) new InputParser(path).parse();
 //		IParsing l = p.createParsing();
-		IParser lalr1 = ParserFactory.createParser(grammar);
+		IScanner lalr1 = ScannerFactory.createScanner(grammar);
 		
 		if(lalr1!=null){
 			leftPanel.setText(lalr1.toString());
@@ -359,7 +359,7 @@ public class HomeGui extends JFrame{
 		switch(parserProgram.parse()){
 			case ACCEPT:
 				logger.info("ACCEPT");		
-				Ast ast = new Ast(parserProgram.getHistory());
+				St ast = new St(parserProgram.getHistory());
 				ast.initFromHistory();
 //				this.tree.setModel(ast.getRoot());	
 				writeToXml(ast.getRoot());

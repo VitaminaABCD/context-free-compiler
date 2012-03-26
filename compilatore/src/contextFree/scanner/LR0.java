@@ -1,4 +1,4 @@
-package contextFree.parser;
+package contextFree.scanner;
 
 
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import contextFree.grammar.IGrammar;
 import contextFree.grammar.Production;
 
 
-public abstract class LR0 implements IParser{
+public abstract class LR0 implements IScanner{
 
 	protected IGrammar grammatica;
 	

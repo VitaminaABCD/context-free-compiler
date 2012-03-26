@@ -11,26 +11,26 @@
 	\nIf the grammar is context-free the factory return a ContextFreeGrammar instance (see ContextFreeGrammar);
 */
 
-/*! \package contextFree.parser
+/*! \package contextFree.scanner
 \brief Contains class and method for create and initialize grammar parser.
 
-Have been implemented LALR(1) bottom-up parser (LALR1) (LR(0) and LR(1) closure and goto have been implemented in respective class)
+Have been implemented LALR(1) bottom-up parser {LALR1} (LR(0) and LR(1) closure and goto have been implemented in respective class)
 The LALR1 automaton is constructed through the LR0 automaton.
-The lookahead symbols are calculated using an algorithm of "spontaneous generation and propagation of symbols" (see LALR1.calculateSymbol(Automa))
-When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the LALR1 instance (see LALR1.tableCostruction()).\n
-
-USAGE:
-You can use the ParserFactory class to obtain an instance:\n
-example:\n
-1)you can pass a IGrammar grammar...\n
-ParserFactory factory = new ParserFactory();\n
-IParser lalr1 = factory.createParsing(IGrammar grammar);\n
+The lookahead symbols are calculated using an algorithm of "spontaneous generation and propagation of symbols" {LALR1#calculateSymbol(Automa)}
+When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the LALR1 instance {LALR1#tableCostruction()}.
 \n
-2)...or an InputParser instance (contains the path of grammar file, ex."file.4l", and the grammar instance)\n 
-
-InputParser parser = new GrammarParser(path);\n
-ParserFactory factory = new ParserFactory();\n
-IParser lalr1 = factory.createParser(parser);\n
+\nUSAGE:
+\nYou can use the ScannerFactory class to obtain an instance:
+\nex:
+\n1)you can pass a IGrammar grammar...
+\nScannerFactory factory = new ScannerFactory();
+\nIScanner lalr1 = factory.createScanner(IGrammar grammar);
+\n
+\n2)...or an InputParser instance (contains the path of grammar file, es."file.4l", and the grammar instance) 
+\n
+\nInputParser parser = new GrammarParser(path);		
+\nScannerFactory factory = new ScannerFactory();
+\nIScanner lalr1 = factory.createScanner(parser);
 */
 
 
@@ -74,7 +74,7 @@ a proper instance initialized with the result of parsing.\n
 */
 
 /*! \package parserProgram
-\brief Contains the parser program's class that to create the AST of an input phrase.
+\brief Contains the parser program's class that to create the ST of an input phrase.
 
 USAGE:\n
 \nexample:\n
@@ -82,9 +82,9 @@ USAGE:\n
 \nparserProgram.setInput(input_string);                  
 \n		switch(parserProgram.parse()){
 \n			case ACCEPT:	
-\n				Ast ast = new Ast(parserProgram.getHistory());  //create the AST
-\n				ast.initFromHistory();
-\n				return ast.getRoot();
+\n				St st = new St(parserProgram.getHistory());  //create the ST
+\n				st.initFromHistory();
+\n				return st.getRoot();
 \n			case ERROR:
 \n			return null;
 */

@@ -11,13 +11,13 @@ import java.io.PrintStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import parserProgram.Ast;
+import parserProgram.St;
 import parserProgram.HistoryElement;
 import parserProgram.ParserProgram;
 
 
-import contextFree.parser.IParser;
-import contextFree.parser.ParserFactory;
+import contextFree.scanner.IScanner;
+import contextFree.scanner.ScannerFactory;
 
 /**
  * 
@@ -103,7 +103,7 @@ public class Home{
 		System.out.println("\nCRONOLOGIA:\n");
 		for(HistoryElement e : parserProgram.getHistory()) System.out.println(e.toString()+"\n");
 		
-		Ast ast = new Ast(parserProgram.getHistory());
+		St ast = new St(parserProgram.getHistory());
 		ast.initFromHistory();
 		System.out.println(ast.toString());
 	}
@@ -111,7 +111,7 @@ public class Home{
 
 	private static void analizer(AbstractInputParser parser)
 			throws FileNotFoundException, Exception {
-		IParser lalr1 = ParserFactory.createParser(parser);
+		IScanner lalr1 = ScannerFactory.createScanner(parser);
 		
 		if(lalr1!=null){
 			System.out.println(lalr1.toString());

@@ -8,7 +8,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  * Abstract Syntax Three class.
  * @author Paolo Pino
  */
-public class Ast {
+public class St {
 	/**the chronology of parsing*/
 	private List<HistoryElement> history;
 	/**the root of the three*/
@@ -17,7 +17,7 @@ public class Ast {
 	/**
 	 * Default constructor.
 	 */
-	public Ast(){
+	public St(){
 		this.history=null;
 		this.root=null;
 	}
@@ -26,7 +26,7 @@ public class Ast {
 	 * Construct the object with specified history.
 	 * @param h history 
 	 */
-	public Ast(List<HistoryElement> h){
+	public St(List<HistoryElement> h){
 		this.history=h;
 		this.root = null;
 	}	

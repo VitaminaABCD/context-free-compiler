@@ -1,4 +1,4 @@
-package contextFree.parser;
+package contextFree.scanner;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -46,6 +46,7 @@ public class GrammarFactory {
 		Iterator <Production> i = prod.iterator();
 		String right=null;
 		Production p= null;
+		String [] righttemp;
 		
 			while(i.hasNext()){
 				p = i.next();
@@ -54,28 +55,30 @@ public class GrammarFactory {
 				if(!V.contains(p.getLeft())){
 					return GRAMMAR_TYPE.NO_CONTEXT_FREE;
 				}
-				for (int j = 0; j < right.length(); j++) {
+				//for (int j = 0; j < right.length(); j++) {
 					// controllo che sia presente eps simbolo di stringa
 					// vuota che deve occupare una sola posizione...
 					if (!right.equals("eps")){
+						righttemp=right.split(" ");
 						// prendo il carattere j-esimo della espressione
 						// per assegnarlo a una singola posizioe dellaList<String>
 						// prima pero controllo che esso appartenga alla grammatica
-						String carattereCorrente = Character.toString(right.charAt(j));
-						if(!V.contains(carattereCorrente) && !T.contains(carattereCorrente)){
+						//String carattereCorrente = Character.toString(right.charAt(j));
+						for(int j=0;j<righttemp.length;j++){
+								if(!V.contains(righttemp[j]) && !T.contains(righttemp[j])){
 							//se non è ne un terminale ne un Non Terminale vuol dire che il carattere 
 							//non appartiene alla grammatica inquanto già abbiamo controlato che non sia 
 							//il carattere di stringa vuota epslon
-							return GRAMMAR_TYPE.NO_CONTEXT_FREE;
+							//return GRAMMAR_TYPE.NO_CONTEXT_FREE;
 						}
-						p.getRightList().add(carattereCorrente);
+						p.getRightList().add(righttemp[j]);}
 					}
 					else{
 						//inseriamo un carattere di stringa vuota per dire che è il carattere nullo
 						p.getRightList().add(" ");
-						break;
+						//break;
 					}
-				}
+				//}
 			}
 			
 			return GRAMMAR_TYPE.CONTEXT_FREE;

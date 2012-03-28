@@ -71,7 +71,7 @@ public class FourLineInputParser extends AbstractInputParser{
 		
 			V_temp = V_reader.replaceAll(" ","").split(",");
 			T_temp = T_reader.replaceAll(" ","").split(",");
-			P_temp = P_reader.replaceAll(" ","").split(",");
+			P_temp = P_reader.split(",");
 			
 			try{
 				//inserisco innanzi tutto l'assioma tra i non Termianli

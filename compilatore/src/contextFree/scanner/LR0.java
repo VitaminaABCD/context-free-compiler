@@ -217,9 +217,9 @@ public abstract class LR0 implements IScanner{
 				leng++;
 				//controllo se la produzione dello stato1 � presente nello stato che stiamo controllando, in caso incrementa il contatore
 				for(IndexedProduction prodStato : stato)
-				if (prodStato.getLeft().equalsIgnoreCase(prod.getLeft())
+				if (prodStato.getLeft().equals(prod.getLeft())
 						&
-					prodStato.getRight().equalsIgnoreCase(prod.getRight())
+					prodStato.getRight().equals(prod.getRight())
 						&
 						prodStato.getCurrentCharIndex()==prod.getCurrentCharIndex())
 					proUguali++;

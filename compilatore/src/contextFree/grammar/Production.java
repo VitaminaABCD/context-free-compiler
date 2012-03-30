@@ -57,7 +57,7 @@ public class Production {
         public Production(String lt, String rt,List<String> V,List<String> T) throws InterruptedException{
         	leftSimbols=new LinkedList<String>();
         	rightSimbols=new LinkedList<String>();
-        	
+
         	List<String> symbols = new LinkedList<String>();
         	symbols.addAll(T);
         	symbols.addAll(V);

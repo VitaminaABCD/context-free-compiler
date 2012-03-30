@@ -115,8 +115,8 @@ public class IndexedProduction extends Production{
 	
 	@Override
 	public String toString(){
-		String right = super.getRightSimbols().toString();
-		return super.getLeftSimbols()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + lookahead;
+		String right = super.getRight();
+		return super.getLeft()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + lookahead;
 //		for(String l : lookahead){
 //			result += l + "  ";
 //		}

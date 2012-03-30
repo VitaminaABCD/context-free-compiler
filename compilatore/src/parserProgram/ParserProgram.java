@@ -30,7 +30,6 @@ public class ParserProgram {
 	private String simbol;
 	private String input;
 	private IGrammar grammar;
-	private List<String> V,T;
 	private List<HistoryElement> history;
 	
 	

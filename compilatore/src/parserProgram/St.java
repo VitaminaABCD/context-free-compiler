@@ -13,8 +13,6 @@ public class St {
 	private List<HistoryElement> history;
 	/**the root of the three*/
 	private DefaultMutableTreeNode root;
-	
-	private List<String> V,T;
 	/**
 	 * Default constructor.
 	 */

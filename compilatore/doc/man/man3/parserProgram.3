@@ -1,10 +1,10 @@
-.TH "parserProgram" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.TH "parserProgram" 3 "Fri Mar 30 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 parserProgram \- 
 .PP
-Contains the parser program's class that to create the AST of an input phrase\&.  
+Contains the parser program's class that to create the ST of an input phrase\&.  
 
 .SH SYNOPSIS
 .br
@@ -12,10 +12,6 @@ Contains the parser program's class that to create the AST of an input phrase\&.
 .SS "Classes"
 
 .in +1c
-.ti -1c
-.RI "class \fBAst\fP"
-.br
-.RI "\fIAbstract Syntax Three class\&. \fP"
 .ti -1c
 .RI "class \fBHistoryElement\fP"
 .br
@@ -28,10 +24,14 @@ Contains the parser program's class that to create the AST of an input phrase\&.
 .RI "enum \fBRESULT\fP"
 .br
 .RI "\fIThe string parsing result\&. \fP"
+.ti -1c
+.RI "class \fBSt\fP"
+.br
+.RI "\fIAbstract Syntax Three class\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Contains the parser program's class that to create the AST of an input phrase\&. 
+Contains the parser program's class that to create the ST of an input phrase\&. 
 
 USAGE:
 .br
@@ -43,11 +43,11 @@ USAGE:
 .br
  case ACCEPT: 
 .br
- \fBAst\fP ast = new \fBAst\fP(parserProgram\&.getHistory()); //create the AST 
+ \fBSt\fP st = new \fBSt\fP(parserProgram\&.getHistory()); //create the ST 
 .br
- ast\&.initFromHistory(); 
+ st\&.initFromHistory(); 
 .br
- return ast\&.getRoot(); 
+ return st\&.getRoot(); 
 .br
  case ERROR: 
 .br

@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
@@ -161,8 +159,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setInput</b> (String 
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setGrammar</b> (<a class="el" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html">IGrammar</a> grammar)</td></tr>
 <tr class="memitem:ade596abd5eb6e01c6be4e9da8d71b39d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade596abd5eb6e01c6be4e9da8d71b39d"></a>
 List&lt; <a class="el" href="classparser_program_1_1_history_element.html">HistoryElement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getHistory</b> ()</td></tr>
-<tr class="memitem:ac8e01a54887a9c9f0a9d277d5cbb0c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumparser_program_1_1_r_e_s_u_l_t.html">RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61">parse</a> ()</td></tr>
+<tr class="memitem:ac8e01a54887a9c9f0a9d277d5cbb0c61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enumparser_program_1_1_r_e_s_u_l_t.html">RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61">parse</a> ()  throws InterruptedException</td></tr>
 <tr class="memdesc:ac8e01a54887a9c9f0a9d277d5cbb0c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation.  <a href="#ac8e01a54887a9c9f0a9d277d5cbb0c61"></a><br/></td></tr>
+<tr class="memitem:a8a5d6d764dffb841c4eb2e0ba7e8a831"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a5d6d764dffb841c4eb2e0ba7e8a831"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getT</b> ()</td></tr>
+<tr class="memitem:a2069ee9c4e2c9e5b842e6480ceda50e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2069ee9c4e2c9e5b842e6480ceda50e8"></a>
+List&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getV</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pac-static-attribs"></a>
 Static Package Attributes</h2></td></tr>
 <tr class="memitem:a345c2f7b22b455b824b68058e2dc1a83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a345c2f7b22b455b824b68058e2dc1a83"></a>
@@ -193,7 +195,7 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
 <p>It also save the parsing chronology. It use a Grammar and its Action and Goto table. All this operation are executed with <a class="el" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61" title="The leading method of the class, responsible of the parsing of input string and consequent stack pars...">parse()</a> method. </p>
 <dl class="section author"><dt>Author:</dt><dd>Paolo Pino </dd></dl>
 
-<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00023">23</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
+<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00026">26</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ac8e01a54887a9c9f0a9d277d5cbb0c61"></a>
 <div class="memitem">
@@ -203,7 +205,7 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
           <td class="memname"><a class="el" href="enumparser_program_1_1_r_e_s_u_l_t.html">RESULT</a> <a class="el" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61">parserProgram.ParserProgram.parse</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td>  throws InterruptedException</td>
         </tr>
       </table>
 </div>
@@ -211,8 +213,14 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
 
 <p>The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. </p>
 <dl class="section return"><dt>Returns:</dt><dd>RESULT.ACCEPT if the string has been accepted, RESULT.ERROR if not, RESULT.INVALID_ID if the input string is invalid </dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InterruptedException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00109">109</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
+<p>Definition at line <a class="el" href="_parser_program_8java_source.html#l00113">113</a> of file <a class="el" href="_parser_program_8java_source.html">ParserProgram.java</a>.</p>
 
 </div>
 </div>
@@ -226,7 +234,7 @@ Hashtable&lt; String, List&lt; String &gt; &gt;&#160;</td><td class="memItemRigh
       <li class="navelem"><a class="el" href="namespaceparser_program.html">parserProgram</a>      </li>
       <li class="navelem"><a class="el" href="classparser_program_1_1_parser_program.html">ParserProgram</a>      </li>
 
-    <li class="footer">Generated on Wed Mar 21 2012 19:55:44 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Fri Mar 30 2012 21:26:29 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

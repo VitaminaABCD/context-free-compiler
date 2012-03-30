@@ -30,6 +30,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>writeToXml</Name>
+      <APILanguage>java</APILanguage>
+      <Type>clm</Type>
+      <Scope>Home</Scope>
+    </TokenIdentifier>
+    <Path>class_home.html</Path>
+    <Anchor>a69f212766dabec3ed163022f15b5a97d</Anchor>
+    <Abstract>Store an ST into xml file named &amp;quot;ST.xml&amp;quot;.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HomeGui</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
@@ -84,14 +95,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>astMethod</Name>
+      <Name>stMethod</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
       <Scope>HomeGui</Scope>
     </TokenIdentifier>
     <Path>class_home_gui.html</Path>
-    <Anchor>ac44ac869c6c437c200139d79f9f9b027</Anchor>
-    <Abstract>Create the AST.</Abstract>
+    <Anchor>a2903109ca5fa51fc78f8487c79dafc43</Anchor>
+    <Abstract>Create the ST.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -102,7 +113,7 @@
     </TokenIdentifier>
     <Path>class_home_gui.html</Path>
     <Anchor>a0428d3c56abfafc769684835c1581f38</Anchor>
-    <Abstract>Store an AST into xml file named &amp;quot;AST.xml&amp;quot;.</Abstract>
+    <Abstract>Store an ST into xml file named &amp;quot;ST.xml&amp;quot;.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -497,18 +508,40 @@
       <Scope>contextFree.grammar.Production</Scope>
     </TokenIdentifier>
     <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-    <Anchor>a1db3c4e260abdcac50a8425cc9bd901f</Anchor>
-    <Abstract>Creates an object production and initialize it&amp;#39;s rightList.</Abstract>
+    <Anchor>aa793940d0a65f644495141b4fe4a86c0</Anchor>
+    <Abstract>Creates an object production and initialize it&amp;#39;s rightSimbolsList.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>getLeft</Name>
+      <Name>Production</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
       <Scope>contextFree.grammar.Production</Scope>
     </TokenIdentifier>
     <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-    <Anchor>a6b42819c4b8af1aa759edf3ad5978f67</Anchor>
+    <Anchor>a1db3c4e260abdcac50a8425cc9bd901f</Anchor>
+    <Abstract>Create a Complete production representation.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Production</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>contextFree.grammar.Production</Scope>
+    </TokenIdentifier>
+    <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
+    <Anchor>a70571ea099db67d650e87f0de16d684b</Anchor>
+    <Abstract>Create a Complete production representation.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getLeftSimbols</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>contextFree.grammar.Production</Scope>
+    </TokenIdentifier>
+    <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
+    <Anchor>aff0ed3fbde7f7a476a993936c27ddef7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -523,32 +556,32 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser</Name>
+      <Name>contextFree::scanner</Name>
       <APILanguage>java</APILanguage>
       <Type>ns</Type>
-      <Scope>contextFree::parser</Scope>
+      <Scope>contextFree::scanner</Scope>
     </TokenIdentifier>
-    <Path>namespacecontext_free_1_1parser.html</Path>
+    <Path>namespacecontext_free_1_1scanner.html</Path>
     <Abstract>Contains class and method for create and initialize grammar parser.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::Automa</Name>
+      <Name>contextFree::scanner::Automa</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.Automa</Scope>
+      <Scope>contextFree.scanner.Automa</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>newItemsFromKernels</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.Automa</Scope>
+      <Scope>contextFree.scanner.Automa</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-    <Anchor>ad82cfb3bb6b22d084ef18a95350828b3</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+    <Anchor>a7cb3536eab5b56faee50dafd8de978ad</Anchor>
     <Abstract>Get kernels element for each states into automa.</Abstract>
   </Token>
   <Token>
@@ -556,10 +589,10 @@
       <Name>getState</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.Automa</Scope>
+      <Scope>contextFree.scanner.Automa</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-    <Anchor>a08b46ef04492599b98660a5e55f356bd</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+    <Anchor>a1c916160a989c51dde68e032de19744f</Anchor>
     <Abstract>Return a state with a specific state index.</Abstract>
   </Token>
   <Token>
@@ -567,51 +600,51 @@
       <Name>removeDollarLookahed</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.Automa</Scope>
+      <Scope>contextFree.scanner.Automa</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-    <Anchor>ad94ecd3a9f8850220f86b6c54b751f78</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+    <Anchor>aae82c530ffa9a9ea010de9eb9f77707d</Anchor>
     <Abstract>remove dollar simbol lookahed</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::IndexedProduction</Name>
+      <Name>contextFree::scanner::IndexedProduction</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.IndexedProduction</Scope>
+      <Scope>contextFree.scanner.IndexedProduction</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getCharAfter</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.IndexedProduction</Scope>
+      <Scope>contextFree.scanner.IndexedProduction</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-    <Anchor>a498db47a05e7f10e580d689e925193b4</Anchor>
-    <Abstract>Return the next character that that will be read.</Abstract>
+    <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+    <Anchor>a732f8fa87c6841cba382c88a6a6c30a5</Anchor>
+    <Abstract>Return the next symbol that that will be read.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getLookahead</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.IndexedProduction</Scope>
+      <Scope>contextFree.scanner.IndexedProduction</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-    <Anchor>a94e0e318a96518ee50607e682e7f0382</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+    <Anchor>a45b191078f89a67427a2593b67ae4f1e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>compare</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.IndexedProduction</Scope>
+      <Scope>contextFree.scanner.IndexedProduction</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-    <Anchor>aa79a2e2cbbc1f35d6416647d80daf3d8</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+    <Anchor>a8346f298c18af8ce2f48442a12b3a123</Anchor>
     <Abstract>Compare to production without the dot.</Abstract>
   </Token>
   <Token>
@@ -619,39 +652,39 @@
       <Name>toString</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.IndexedProduction</Scope>
+      <Scope>contextFree.scanner.IndexedProduction</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-    <Anchor>a061cd84bd37e6111edcd52bcb5b9c749</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+    <Anchor>a445e1ce3ced2a3b4e1157bd682f973a6</Anchor>
     <Abstract>return a formatted string in the form axioms :: = expression</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::IParser</Name>
+      <Name>contextFree::scanner::IScanner</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.IParser</Scope>
+      <Scope>contextFree.scanner.IScanner</Scope>
     </TokenIdentifier>
-    <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
+    <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::LALR1</Name>
+      <Name>contextFree::scanner::LALR1</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>init</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>a7618cff4af4edfffb9a538a7cb1e79cf</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>a84de2247841f98c9d1339acac165d141</Anchor>
     <Abstract>Initialize the LALR(1) automaton from LR0 automaton.</Abstract>
   </Token>
   <Token>
@@ -659,10 +692,10 @@
       <Name>chiusuraLR1</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>ac711dbbc2be25d15c1a8aade7579e94e</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>a879873c5f879881494d342782387d661</Anchor>
     <Abstract>Passed a list of production I that form the kernel of a state, return closing it, and the lookahead s...</Abstract>
   </Token>
   <Token>
@@ -670,10 +703,10 @@
       <Name>tableCostruction</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>a79576626b3b59b832faecc986b293b36</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>a92b63b5d61bbdd523a16aa5e577c2ba6</Anchor>
     <Abstract>builds the Action table GoTo from an automa LALR1 and tells us if it is or not type of LALR1...</Abstract>
   </Token>
   <Token>
@@ -681,10 +714,10 @@
       <Name>reduce</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>a2281981b3043c0150c1b3d3967572b1f</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>a909aea9ab05f3633c169e4dd20447e62</Anchor>
     <Abstract>if the point is in the last position he wrote the reduces in the action table.</Abstract>
   </Token>
   <Token>
@@ -692,10 +725,10 @@
       <Name>actionWrite</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>a7379103379c94e377daca0022b28771e</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>aee49a037861ca73f5380efb261517825</Anchor>
     <Abstract>Writes the action Reduce or Scift in the Action table.</Abstract>
   </Token>
   <Token>
@@ -703,10 +736,10 @@
       <Name>printTable</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>ad7628eb817b4a8efff71f6e22cc1659f</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>a452dc07f015344b3681d8e1a161d51dd</Anchor>
     <Abstract>Return a string with tables Goto Action.</Abstract>
   </Token>
   <Token>
@@ -714,30 +747,30 @@
       <Name>calculateSymbol</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LALR1</Scope>
+      <Scope>contextFree.scanner.LALR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-    <Anchor>aeec32b5c83e031225114f46ac377f804</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+    <Anchor>ab1c19e75693982310b7494bd3b8623c9</Anchor>
     <Abstract>Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::LR0</Name>
+      <Name>contextFree::scanner::LR0</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.LR0</Scope>
+      <Scope>contextFree.scanner.LR0</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>chiusura</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LR0</Scope>
+      <Scope>contextFree.scanner.LR0</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-    <Anchor>aa0e8369b6e2db7489437ad8a6f217d22</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+    <Anchor>a313dfc00f370a910932b02034e26fb8c</Anchor>
     <Abstract>*I passed a list of production that form the kernel of a state, return closing it</Abstract>
   </Token>
   <Token>
@@ -745,10 +778,10 @@
       <Name>GoTo</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LR0</Scope>
+      <Scope>contextFree.scanner.LR0</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-    <Anchor>aea1ecb06a1880a8bc5eeb4efcca0ecea</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+    <Anchor>a087486ba03c2fb5ab400e425e7b54bbc</Anchor>
     <Abstract>Passed a state and the symbol that follows the point, returns the kernel of the new state with the re...</Abstract>
   </Token>
   <Token>
@@ -756,10 +789,10 @@
       <Name>Item</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LR0</Scope>
+      <Scope>contextFree.scanner.LR0</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-    <Anchor>aa96d752420b690ccbbc9fad67691f36a</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+    <Anchor>a5c7d77fe2a994398ef6312251e2f6109</Anchor>
     <Abstract>given a grammar G we calculate the associated grammar augmented by adding the production S &amp;#39;:: =...</Abstract>
   </Token>
   <Token>
@@ -767,10 +800,10 @@
       <Name>uguale</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LR0</Scope>
+      <Scope>contextFree.scanner.LR0</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-    <Anchor>a8de929e041a5a1a273e6ddd05dc7e0ca</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+    <Anchor>ace66d28273502a9daf8e4550f48b5782</Anchor>
     <Abstract>checks if a state is present in an automaton</Abstract>
   </Token>
   <Token>
@@ -778,48 +811,48 @@
       <Name>prodPresente</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.LR0</Scope>
+      <Scope>contextFree.scanner.LR0</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-    <Anchor>a242530010547a830ad1b9c35a724a7e6</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+    <Anchor>a43275125600a950a4a1f78ce565eac5f</Anchor>
     <Abstract>checks if a production is already in a list of productions.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::LR1</Name>
+      <Name>contextFree::scanner::LR1</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.LR1</Scope>
+      <Scope>contextFree.scanner.LR1</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_l_r1.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_l_r1.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::ParserFactory</Name>
+      <Name>contextFree::scanner::ScannerFactory</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.ParserFactory</Scope>
+      <Scope>contextFree.scanner.ScannerFactory</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>contextFree::parser::State</Name>
+      <Name>contextFree::scanner::State</Name>
       <APILanguage>java</APILanguage>
       <Type>cl</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>State</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-    <Anchor>a755084c050a72d0186cd27a8f78df9a6</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+    <Anchor>ae93b8be2177c617058502abfcfce5204</Anchor>
     <Abstract>constructor state 0</Abstract>
   </Token>
   <Token>
@@ -827,10 +860,10 @@
       <Name>State</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-    <Anchor>aa31409b43285d446a6dc1e8423ed8f65</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+    <Anchor>a81cd656c8ed26ba10aedd6598d090dcc</Anchor>
     <Abstract>constructor state i-th, with empty list productions</Abstract>
   </Token>
   <Token>
@@ -838,10 +871,10 @@
       <Name>State</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-    <Anchor>a7267946f249aada006c55e3c47a3772b</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+    <Anchor>a8dc8e0da9fdc805b0202f66eebce1e57</Anchor>
     <Abstract>constructor state i-th, whit list production c</Abstract>
   </Token>
   <Token>
@@ -849,10 +882,10 @@
       <Name>State</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-    <Anchor>ab2b42f6581c76d56a2a6b31b8f9b5961</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+    <Anchor>a7ab62a86fa7c7072e898d9b8ab1b3cd5</Anchor>
     <Abstract>constructor state i-th, whit list production c and list of lookahead</Abstract>
   </Token>
   <Token>
@@ -860,10 +893,10 @@
       <Name>gotoStateIndex</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-    <Anchor>abaac15576397224a4495d8198cfe2f1d</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+    <Anchor>a5259b186755c072d90d06dceb2b756ac</Anchor>
     <Abstract>Return the index of the state shifted with a specific simbol.</Abstract>
   </Token>
   <Token>
@@ -871,10 +904,10 @@
       <Name>getKernels</Name>
       <APILanguage>java</APILanguage>
       <Type>instm</Type>
-      <Scope>contextFree.parser.State</Scope>
+      <Scope>contextFree.scanner.State</Scope>
     </TokenIdentifier>
-    <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-    <Anchor>a1afb2f9faa5ec548897e44cc863389ba</Anchor>
+    <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+    <Anchor>a987d4c7ae8eb2754f13f0099f5d861a5</Anchor>
     <Abstract>return one list&amp;lt;IndexedProduction&amp;gt; with the kernel of a state</Abstract>
   </Token>
   <Token>
@@ -1138,88 +1171,34 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>inputParser::SplitInSymbols</Name>
+      <APILanguage>java</APILanguage>
+      <Type>cl</Type>
+      <Scope>inputParser.SplitInSymbols</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+    <Abstract>Split the input string in symbols list.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SplitInSymbols</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>inputParser.SplitInSymbols</Scope>
+    </TokenIdentifier>
+    <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+    <Anchor>a0426f5d1c5abebe971c5042584896bd0</Anchor>
+    <Abstract>Constructor with input String.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>parserProgram</Name>
       <APILanguage>java</APILanguage>
       <Type>ns</Type>
       <Scope>parserProgram</Scope>
     </TokenIdentifier>
     <Path>namespaceparser_program.html</Path>
-    <Abstract>Contains the parser program&amp;#39;s class that to create the AST of an input phrase.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>parserProgram::Ast</Name>
-      <APILanguage>java</APILanguage>
-      <Type>cl</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Abstract>Abstract Syntax Three class.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Ast</Name>
-      <APILanguage>java</APILanguage>
-      <Type>instm</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Anchor>ae717a4491faf02f3753ad055eec6d5dd</Anchor>
-    <Abstract>Default constructor.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Ast</Name>
-      <APILanguage>java</APILanguage>
-      <Type>instm</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Anchor>a0dd9cc520a52069ec8d2bcccf7567799</Anchor>
-    <Abstract>Construct the object with specified history.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>getRoot</Name>
-      <APILanguage>java</APILanguage>
-      <Type>instm</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Anchor>af586bb4da64c79d9259c87757456d685</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initFromHistory</Name>
-      <APILanguage>java</APILanguage>
-      <Type>instm</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Anchor>a9ad5f3d77935440489df31131b18bf8e</Anchor>
-    <Abstract>Initialize the three from the parsing history.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>history</Name>
-      <APILanguage>java</APILanguage>
-      <Type>data</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Anchor>a565a13f94f478e998401f7abc25643aa</Anchor>
-    <Abstract>the chronology of parsing</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>root</Name>
-      <APILanguage>java</APILanguage>
-      <Type>data</Type>
-      <Scope>parserProgram.Ast</Scope>
-    </TokenIdentifier>
-    <Path>classparser_program_1_1_ast.html</Path>
-    <Anchor>a004223ce41eed0c97a6fb63449b4b836</Anchor>
-    <Abstract>the root of the three</Abstract>
+    <Abstract>Contains the parser program&amp;#39;s class that to create the ST of an input phrase.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1367,5 +1346,80 @@
     </TokenIdentifier>
     <Path>enumparser_program_1_1_r_e_s_u_l_t.html</Path>
     <Abstract>The string parsing result.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parserProgram::St</Name>
+      <APILanguage>java</APILanguage>
+      <Type>cl</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Abstract>Abstract Syntax Three class.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>St</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Anchor>aeb3f4be7d7e11f582302cb2a0c3339a6</Anchor>
+    <Abstract>Default constructor.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>St</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Anchor>a24290706e5844bd14027ac8600744963</Anchor>
+    <Abstract>Construct the object with specified history.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRoot</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Anchor>aae0a295da8eb563e9bb2aa3ba5beab08</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initFromHistory</Name>
+      <APILanguage>java</APILanguage>
+      <Type>instm</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Anchor>afe794d3e531e9bd6c21dbb1f6398bcd0</Anchor>
+    <Abstract>Initialize the three from the parsing history.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>history</Name>
+      <APILanguage>java</APILanguage>
+      <Type>data</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Anchor>a7f4c78520e31f39647f69eaa11258c33</Anchor>
+    <Abstract>the chronology of parsing</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>root</Name>
+      <APILanguage>java</APILanguage>
+      <Type>data</Type>
+      <Scope>parserProgram.St</Scope>
+    </TokenIdentifier>
+    <Path>classparser_program_1_1_st.html</Path>
+    <Anchor>aaac4343a95fae5731d6186137e4ba3b0</Anchor>
+    <Abstract>the root of the three</Abstract>
   </Token>
 </Tokens>

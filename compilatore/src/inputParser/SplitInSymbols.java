@@ -20,7 +20,11 @@ public class SplitInSymbols implements Runnable {
 	 * @param res where the result are stored
 	 * @param symb the list of allowed symbols
 	 */
-	public SplitInSymbols(String ob,List<String> res,List<String> symb){this.obj=ob;this.result=res;this.Symbols = symb;}
+	public SplitInSymbols(String ob,List<String> res,List<String> symb){
+		this.obj=ob;
+		this.result=res;
+		this.Symbols = symb;
+		}
 	//
 	
 	public String getObj() {
@@ -67,7 +71,7 @@ public class SplitInSymbols implements Runnable {
 			boolean founded=false;
 			while(max>min){
 				if(index+max<obj.length()) temp=obj.substring(index,index+max);
-				else temp=obj.substring(index);
+	 			else temp=obj.substring(index);
 				if(Symbols.contains(temp)){
 					founded=true;
 					break;

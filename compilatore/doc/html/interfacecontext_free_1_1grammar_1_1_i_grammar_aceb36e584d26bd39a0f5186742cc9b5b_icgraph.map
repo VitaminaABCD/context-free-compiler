@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classcontext_free_1_1parser_1_1_l_r0.html#aa96d752420b690ccbbc9fad67691f36a" title="given a grammar G we calculate the associated grammar augmented by adding the production S &#39;:: =..." alt="" coords="293,5,480,32"/>
-<area shape="rect" id="node5" href="$classcontext_free_1_1parser_1_1_l_a_l_r1.html#a7618cff4af4edfffb9a538a7cb1e79cf" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="528,5,723,32"/>
+<area shape="rect" id="node3" href="$classcontext_free_1_1scanner_1_1_l_r0.html#a5c7d77fe2a994398ef6312251e2f6109" title="given a grammar G we calculate the associated grammar augmented by adding the production S &#39;:: =..." alt="" coords="293,5,491,32"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a84de2247841f98c9d1339acac165d141" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="539,5,744,32"/>
 </map>

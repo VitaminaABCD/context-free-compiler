@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classcontext_free_1_1scanner_1_1_l_r0.html" title="{contextFree.scanner.LR0\n||+ setGrammar()\l+ init()\l+ chiusura()\l+ GoTo()\l+ Item()\l+ uguale()\l+ prodPresente()\l}" alt="" coords="231,465,399,631"/>
+<area shape="rect" id="node4" href="$interfacecontext_free_1_1scanner_1_1_i_scanner.html" title="{contextFree.scanner.IScanner\n||+ setGrammar()\l+ init()\l+ getGrammar()\l+ isAmbiguos()\l+ getAutoma()\l}" alt="" coords="5,199,200,335"/>
+<area shape="rect" id="node6" href="$interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface." alt="" coords="225,147,431,386"/>
+<area shape="rect" id="node8" href="$classcontext_free_1_1scanner_1_1_automa.html" title="{contextFree.scanner.Automa\n||+ Automa()\l+ Automa()\l+ getStates()\l+ setStates()\l+ newItemsFromKernels()\l+ getState()\l+ toString()\l+ removeDollarLookahed()\l+ size()\l}" alt="" coords="423,451,613,645"/>
+</map>

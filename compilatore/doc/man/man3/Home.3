@@ -1,4 +1,4 @@
-.TH "Home" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.TH "Home" 3 "Fri Mar 30 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,6 +29,10 @@ Home \-
 .ti -1c
 .RI "static void \fBanalizer\fP (\fBAbstractInputParser\fP parser)  throws FileNotFoundException, Exception "
 .br
+.ti -1c
+.RI "static void \fBwriteToXml\fP (DefaultMutableTreeNode root)  throws FileNotFoundException "
+.br
+.RI "\fIStore an ST into xml file named 'ST\&.xml'\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -39,7 +43,30 @@ Paolo Pino
 .PP
 
 .PP
-Definition at line 27 of file Home\&.java\&.
+Definition at line 31 of file Home\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void \fBHome\&.writeToXml\fP (DefaultMutableTreeNoderoot)  throws FileNotFoundException \fC [static, private]\fP"
+
+.PP
+Store an ST into xml file named 'ST\&.xml'\&. \fBParameters:\fP
+.RS 4
+\fIroot\fP the root of AST 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIFileNotFoundException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file Home\&.java\&.
 
 .SH "Author"
 .PP 

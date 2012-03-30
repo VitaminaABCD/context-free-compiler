@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Context Free LALR1 compiler: src/contextFree/parser/State.java Source File</title>
+<title>Context Free LALR1 compiler: src/contextFree/scanner/State.java Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -29,8 +29,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  
-  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
@@ -111,40 +109,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">src/contextFree/parser/State.java</div>  </div>
+<div class="title">src/contextFree/scanner/State.java</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>contextFree.parser;
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="keyword">package </span>contextFree.scanner;
 <a name="l00002"></a>00002 
 <a name="l00003"></a>00003 <span class="keyword">import</span> java.util.Hashtable;
 <a name="l00004"></a>00004 <span class="keyword">import</span> java.util.Iterator;
 <a name="l00005"></a>00005 <span class="keyword">import</span> java.util.LinkedList;
 <a name="l00006"></a>00006 <span class="keyword">import</span> java.util.List;
 <a name="l00007"></a>00007 
-<a name="l00008"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html">00008</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcontext_free_1_1parser_1_1_state.html">State</a> {
+<a name="l00008"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html">00008</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classcontext_free_1_1scanner_1_1_state.html">State</a> {
 <a name="l00009"></a>00009         <span class="keyword">private</span> <span class="keywordtype">int</span> index;
 <a name="l00010"></a>00010         <span class="keyword">private</span> List&lt;IndexedProduction&gt; items;
 <a name="l00011"></a>00011         <span class="keyword">private</span> Hashtable&lt;String, Integer&gt; shift;
 <a name="l00012"></a>00012 
-<a name="l00016"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html#a755084c050a72d0186cd27a8f78df9a6">00016</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_state.html#a755084c050a72d0186cd27a8f78df9a6" title="constructor state 0">State</a>(){
+<a name="l00016"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html#ae93b8be2177c617058502abfcfce5204">00016</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1scanner_1_1_state.html#ae93b8be2177c617058502abfcfce5204" title="constructor state 0">State</a>(){
 <a name="l00017"></a>00017                 this.index=0;
 <a name="l00018"></a>00018                 this.items = <span class="keyword">new</span> LinkedList&lt;IndexedProduction&gt;();
 <a name="l00019"></a>00019                 this.shift = <span class="keyword">new</span> Hashtable&lt;String, Integer&gt;();
 <a name="l00020"></a>00020         }
 <a name="l00021"></a>00021         
-<a name="l00026"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html#aa31409b43285d446a6dc1e8423ed8f65">00026</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_state.html#aa31409b43285d446a6dc1e8423ed8f65" title="constructor state i-th, with empty list productions">State</a>(<span class="keywordtype">int</span> i){
+<a name="l00026"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a81cd656c8ed26ba10aedd6598d090dcc">00026</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a81cd656c8ed26ba10aedd6598d090dcc" title="constructor state i-th, with empty list productions">State</a>(<span class="keywordtype">int</span> i){
 <a name="l00027"></a>00027                 this.index=i;
 <a name="l00028"></a>00028                 this.items = <span class="keyword">new</span> LinkedList&lt;IndexedProduction&gt;();
 <a name="l00029"></a>00029                 this.shift = <span class="keyword">new</span> Hashtable&lt;String, Integer&gt;();
 <a name="l00030"></a>00030         }
 <a name="l00031"></a>00031         
-<a name="l00037"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html#a7267946f249aada006c55e3c47a3772b">00037</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_state.html#a7267946f249aada006c55e3c47a3772b" title="constructor state i-th, whit list production c">State</a>(<span class="keywordtype">int</span> i, List&lt;IndexedProduction&gt; c){
+<a name="l00037"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a8dc8e0da9fdc805b0202f66eebce1e57">00037</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a8dc8e0da9fdc805b0202f66eebce1e57" title="constructor state i-th, whit list production c">State</a>(<span class="keywordtype">int</span> i, List&lt;IndexedProduction&gt; c){
 <a name="l00038"></a>00038                 this.index=i;
 <a name="l00039"></a>00039                 this.items = c;
 <a name="l00040"></a>00040                 this.shift = <span class="keyword">new</span> Hashtable&lt;String, Integer&gt;();
 <a name="l00041"></a>00041         }
 <a name="l00042"></a>00042         
-<a name="l00049"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html#ab2b42f6581c76d56a2a6b31b8f9b5961">00049</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1parser_1_1_state.html#ab2b42f6581c76d56a2a6b31b8f9b5961" title="constructor state i-th, whit list production c and list of lookahead">State</a>(<span class="keywordtype">int</span> i, List&lt;IndexedProduction&gt; c, Hashtable&lt;String, Integer&gt; table){
+<a name="l00049"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a7ab62a86fa7c7072e898d9b8ab1b3cd5">00049</a>         <span class="keyword">public</span> <a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a7ab62a86fa7c7072e898d9b8ab1b3cd5" title="constructor state i-th, whit list production c and list of lookahead">State</a>(<span class="keywordtype">int</span> i, List&lt;IndexedProduction&gt; c, Hashtable&lt;String, Integer&gt; table){
 <a name="l00050"></a>00050                 this.index=i;
 <a name="l00051"></a>00051                 this.items = c;
 <a name="l00052"></a>00052                 this.shift = <span class="keyword">new</span> Hashtable&lt;String, Integer&gt;(table);
@@ -175,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00077"></a>00077         }
 <a name="l00078"></a>00078         
 <a name="l00079"></a>00079         
-<a name="l00084"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html#abaac15576397224a4495d8198cfe2f1d">00084</a>         <span class="keyword">public</span> Integer <a class="code" href="classcontext_free_1_1parser_1_1_state.html#abaac15576397224a4495d8198cfe2f1d" title="Return the index of the state shifted with a specific simbol.">gotoStateIndex</a>(String simbol){
+<a name="l00084"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a5259b186755c072d90d06dceb2b756ac">00084</a>         <span class="keyword">public</span> Integer <a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a5259b186755c072d90d06dceb2b756ac" title="Return the index of the state shifted with a specific simbol.">gotoStateIndex</a>(String simbol){
 <a name="l00085"></a>00085                 <span class="keywordflow">try</span>{
 <a name="l00086"></a>00086                         <span class="keywordflow">return</span> this.shift.get(simbol);
 <a name="l00087"></a>00087                 }<span class="keywordflow">catch</span> (Exception e) {
@@ -183,8 +181,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00089"></a>00089                 }
 <a name="l00090"></a>00090         }
 <a name="l00091"></a>00091         
-<a name="l00097"></a><a class="code" href="classcontext_free_1_1parser_1_1_state.html#a1afb2f9faa5ec548897e44cc863389ba">00097</a>         <span class="keyword">public</span> List&lt;IndexedProduction&gt; <a class="code" href="classcontext_free_1_1parser_1_1_state.html#a1afb2f9faa5ec548897e44cc863389ba" title="return one list&lt;IndexedProduction&gt; with the kernel of a state">getKernels</a>(){
-<a name="l00098"></a>00098                  <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> prod = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>();
+<a name="l00097"></a><a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a987d4c7ae8eb2754f13f0099f5d861a5">00097</a>         <span class="keyword">public</span> List&lt;IndexedProduction&gt; <a class="code" href="classcontext_free_1_1scanner_1_1_state.html#a987d4c7ae8eb2754f13f0099f5d861a5" title="return one list&lt;IndexedProduction&gt; with the kernel of a state">getKernels</a>(){
+<a name="l00098"></a>00098                  <a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html">IndexedProduction</a> prod = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html">IndexedProduction</a>();
 <a name="l00099"></a>00099                 List&lt;IndexedProduction&gt; j =<span class="keyword">new</span> LinkedList&lt;IndexedProduction&gt;();
 <a name="l00100"></a>00100                 <span class="comment">//se ci troviamo nello stato 0</span>
 <a name="l00101"></a>00101                 <span class="keywordflow">if</span>(index==0){
@@ -207,8 +205,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00118"></a>00118                                  <span class="comment">//puntino in una posizione diversa dalla prima faranno parte del kernel</span>
 <a name="l00119"></a>00119                                  <span class="keywordflow">if</span>(prod.getCurrentCharIndex()!=0){
 <a name="l00120"></a>00120                                         <span class="comment">//quindi la aggiungiamo a J</span>
-<a name="l00121"></a>00121                                          <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> p = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a>(prod);
-<a name="l00122"></a>00122                                          p.<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a94e0e318a96518ee50607e682e7f0382">getLookahead</a>().addAll(prod.<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html#a94e0e318a96518ee50607e682e7f0382">getLookahead</a>());
+<a name="l00121"></a>00121                                          <a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html">IndexedProduction</a> p = <span class="keyword">new</span> <a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html">IndexedProduction</a>(prod);
+<a name="l00122"></a>00122                                          p.<a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html#a45b191078f89a67427a2593b67ae4f1e">getLookahead</a>().addAll(prod.<a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html#a45b191078f89a67427a2593b67ae4f1e">getLookahead</a>());
 <a name="l00123"></a>00123                                          j.add(p);
 <a name="l00124"></a>00124                                  }
 <a name="l00125"></a>00125                          }
@@ -221,7 +219,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00132"></a>00132                 String result= <span class="stringliteral">&quot;\nState number: &quot;</span>+index+<span class="stringliteral">&quot;\t&quot;</span>;
 <a name="l00133"></a>00133                 <span class="keywordflow">if</span>(shift.values().size()!=0)
 <a name="l00134"></a>00134                         result+=<span class="stringliteral">&quot; | goto&quot;</span>+shift.values().toString()+<span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00135"></a>00135                 <span class="keywordflow">for</span>(<a class="code" href="classcontext_free_1_1parser_1_1_indexed_production.html">IndexedProduction</a> i : items){
+<a name="l00135"></a>00135                 <span class="keywordflow">for</span>(<a class="code" href="classcontext_free_1_1scanner_1_1_indexed_production.html">IndexedProduction</a> i : items){
 <a name="l00136"></a>00136                         result += i.toString() + <span class="stringliteral">&quot;\n&quot;</span>;
 <a name="l00137"></a>00137                 }
 <a name="l00138"></a>00138                 <span class="keywordflow">return</span> result;          
@@ -238,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><b>State.java</b>      </li>
 
-    <li class="footer">Generated on Wed Mar 21 2012 19:55:42 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Fri Mar 30 2012 21:26:24 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

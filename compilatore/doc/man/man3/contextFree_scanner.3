@@ -1,0 +1,53 @@
+.TH "contextFree.scanner" 3 "Fri Mar 30 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.scanner \- 
+.PP
+Contains class and method for create and initialize grammar parser\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAutoma\fP"
+.br
+.ti -1c
+.RI "class \fBIndexedProduction\fP"
+.br
+.ti -1c
+.RI "interface \fBIScanner\fP"
+.br
+.ti -1c
+.RI "class \fBLALR1\fP"
+.br
+.ti -1c
+.RI "class \fBLR0\fP"
+.br
+.ti -1c
+.RI "class \fBLR1\fP"
+.br
+.ti -1c
+.RI "class \fBScannerFactory\fP"
+.br
+.ti -1c
+.RI "class \fBState\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Contains class and method for create and initialize grammar parser\&. 
+
+Have been implemented LALR(1) bottom-up parser {\fBLALR1\fP} (LR(0) and LR(1) closure and goto have been implemented in respective class) The \fBLALR1\fP automaton is constructed through the \fBLR0\fP automaton\&. The lookahead symbols are calculated using an algorithm of 'spontaneous generation and propagation of symbols' {\fBLALR1::calculateSymbol(Automa)\fP} When the automaton is constructed, if the grammar is LALR(1) the Action and Goto table are created and stored inside the \fBLALR1\fP instance {\fBLALR1::tableCostruction()\fP}\&. 
+.br
+ :  can use the \fBScannerFactory\fP class to obtain an instance: : )you can pass a IGrammar grammar\&.\&.\&.  factory = new ScannerFactory();  lalr1 = factory\&.createScanner(IGrammar grammar); 
+.br
+ )\&.\&.\&.or an InputParser instance (contains the path of grammar file, es\&.'file\&.4l', and the grammar instance) 
+.br
+  parser = new GrammarParser(path);  factory = new ScannerFactory();  lalr1 = factory\&.createScanner(parser); 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

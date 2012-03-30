@@ -37,40 +37,40 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser</Name>
-            <Path>namespacecontext_free_1_1parser.html</Path>
+            <Name>contextFree.scanner</Name>
+            <Path>namespacecontext_free_1_1scanner.html</Path>
             <Subnodes>
              <Node>
               <Name>Automa</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
              </Node>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
              </Node>
              <Node>
-              <Name>IParser</Name>
-              <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
+              <Name>IScanner</Name>
+              <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
              </Node>
              <Node>
               <Name>LALR1</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
              </Node>
              <Node>
               <Name>LR0</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
              </Node>
              <Node>
               <Name>LR1</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r1.html</Path>
+              <Path>classcontext_free_1_1scanner_1_1_l_r1.html</Path>
              </Node>
              <Node>
-              <Name>ParserFactory</Name>
-              <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
+              <Name>ScannerFactory</Name>
+              <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
              </Node>
              <Node>
               <Name>State</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -106,16 +106,16 @@
               <Name>SingleLineInputParser</Name>
               <Path>classinput_parser_1_1_single_line_input_parser.html</Path>
              </Node>
+             <Node>
+              <Name>SplitInSymbols</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
             <Name>parserProgram</Name>
             <Path>namespaceparser_program.html</Path>
             <Subnodes>
-             <Node>
-              <Name>Ast</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-             </Node>
              <Node>
               <Name>HistoryElement</Name>
               <Path>classparser_program_1_1_history_element.html</Path>
@@ -127,6 +127,10 @@
              <Node>
               <Name>RESULT</Name>
               <Path>enumparser_program_1_1_r_e_s_u_l_t.html</Path>
+             </Node>
+             <Node>
+              <Name>St</Name>
+              <Path>classparser_program_1_1_st.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -150,99 +154,58 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>parserProgram.Ast</Name>
-            <Path>classparser_program_1_1_ast.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>Ast</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>ae717a4491faf02f3753ad055eec6d5dd</Anchor>
-             </Node>
-             <Node>
-              <Name>Ast</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>a0dd9cc520a52069ec8d2bcccf7567799</Anchor>
-             </Node>
-             <Node>
-              <Name>getRoot</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>af586bb4da64c79d9259c87757456d685</Anchor>
-             </Node>
-             <Node>
-              <Name>initFromHistory</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>a9ad5f3d77935440489df31131b18bf8e</Anchor>
-             </Node>
-             <Node>
-              <Name>toString</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>a58d8cf855d692e96d5af5d49a8bca4b9</Anchor>
-             </Node>
-             <Node>
-              <Name>history</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>a565a13f94f478e998401f7abc25643aa</Anchor>
-             </Node>
-             <Node>
-              <Name>root</Name>
-              <Path>classparser_program_1_1_ast.html</Path>
-              <Anchor>a004223ce41eed0c97a6fb63449b4b836</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>contextFree.parser.Automa</Name>
-            <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
+            <Name>contextFree.scanner.Automa</Name>
+            <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
             <Subnodes>
              <Node>
               <Name>Automa</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a6163f4f4b71c0bbd11cb883c7a3265a6</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>ad9a2cdcd7e7d429ba75153bb6a09d218</Anchor>
              </Node>
              <Node>
               <Name>Automa</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a6a030d3a01bf7ef99b437fcf14727bad</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a4d849a0068a3e9f284cd85d6b452f273</Anchor>
              </Node>
              <Node>
               <Name>getState</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a08b46ef04492599b98660a5e55f356bd</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a1c916160a989c51dde68e032de19744f</Anchor>
              </Node>
              <Node>
               <Name>getStates</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a0a2be97fe40e3035c579b83535649c2e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a3ffe7f601979b7816c632c8234828970</Anchor>
              </Node>
              <Node>
               <Name>newItemsFromKernels</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>ad82cfb3bb6b22d084ef18a95350828b3</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a7cb3536eab5b56faee50dafd8de978ad</Anchor>
              </Node>
              <Node>
               <Name>removeDollarLookahed</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>ad94ecd3a9f8850220f86b6c54b751f78</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>aae82c530ffa9a9ea010de9eb9f77707d</Anchor>
              </Node>
              <Node>
               <Name>setStates</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a16f74867e919ccddf13441295c80295b</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a71f454623cb55965b88d9209833beed2</Anchor>
              </Node>
              <Node>
               <Name>size</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>aa3e53614ea757f72b87144aa6b5b2282</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a2628fb9e864cbd63a8b9e72295eff59b</Anchor>
              </Node>
              <Node>
               <Name>toString</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a816d25575a45d9a0bbc415a6e0a71a2e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>a41a35d901a27faf5c2d1d4c779c7c68b</Anchor>
              </Node>
              <Node>
               <Name>states</Name>
-              <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
-              <Anchor>a5b71afafd71dfa903e36c786618b556d</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
+              <Anchor>ac0cf6fcc6e7e687e3b0f9a51ce8fd975</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -721,6 +684,11 @@
               <Anchor>a824a2d585cb36f1a452ebc5db9b49ed0</Anchor>
              </Node>
              <Node>
+              <Name>writeToXml</Name>
+              <Path>class_home.html</Path>
+              <Anchor>a69f212766dabec3ed163022f15b5a97d</Anchor>
+             </Node>
+             <Node>
               <Name>logger</Name>
               <Path>class_home.html</Path>
               <Anchor>ac74d97ae59ddf53153a62e8790619756</Anchor>
@@ -735,11 +703,6 @@
               <Name>HomeGui</Name>
               <Path>class_home_gui.html</Path>
               <Anchor>add92e1cf71983b9cc6f70f040d3ea593</Anchor>
-             </Node>
-             <Node>
-              <Name>astMethod</Name>
-              <Path>class_home_gui.html</Path>
-              <Anchor>ac44ac869c6c437c200139d79f9f9b027</Anchor>
              </Node>
              <Node>
               <Name>initialize</Name>
@@ -760,6 +723,11 @@
               <Name>startProcess</Name>
               <Path>class_home_gui.html</Path>
               <Anchor>a52f0602a97cd1ef63063bbbbda036d26</Anchor>
+             </Node>
+             <Node>
+              <Name>stMethod</Name>
+              <Path>class_home_gui.html</Path>
+              <Anchor>a2903109ca5fa51fc78f8487c79dafc43</Anchor>
              </Node>
              <Node>
               <Name>writeToXml</Name>
@@ -905,88 +873,88 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.IndexedProduction</Name>
-            <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
+            <Name>contextFree.scanner.IndexedProduction</Name>
+            <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
             <Subnodes>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a976a2127d6e44c5dd064107c1ad75153</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>afcb9f5140b11b7cd8a6f460a30c3e3fb</Anchor>
              </Node>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a7c67c63baac69c30e9887c0234fd35d9</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>ad5b9002f7ba3d98ecfc2e3dc7726dd43</Anchor>
              </Node>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a33ac7cade5d7f2a750e07f3b7f7983ac</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a97b000e2479c29af6618bfce987d83c6</Anchor>
              </Node>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>ac1615174ca96db64a5adfdabd768f9d5</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a6ca59cdc2f0b317c60878716bab91545</Anchor>
              </Node>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>aa1754311192ad2f5c0332025dd162e5f</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>aab947b1364a440092cde3a958aee9070</Anchor>
              </Node>
              <Node>
               <Name>IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>af2e1718023e522ef94aac862ab72307b</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a27402436a02bc8cd69f142e5ff1b6813</Anchor>
              </Node>
              <Node>
               <Name>addLookahead</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>ae6af99251737ae274afc4028fa6eb13e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a1a37f6b6ece07637677a52d970bed542</Anchor>
              </Node>
              <Node>
               <Name>compare</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>aa79a2e2cbbc1f35d6416647d80daf3d8</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a8346f298c18af8ce2f48442a12b3a123</Anchor>
              </Node>
              <Node>
               <Name>getCharAfter</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a498db47a05e7f10e580d689e925193b4</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a732f8fa87c6841cba382c88a6a6c30a5</Anchor>
              </Node>
              <Node>
               <Name>getCharBefore</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a143a99e7bf0e81789ee79f514aa3d575</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a3607c538fe8b775bdd7641a252ebb0f7</Anchor>
              </Node>
              <Node>
               <Name>getCurrentCharIndex</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>aef48dbe23561cee5a0b744978d1ac2c7</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a85be6dd98b754adf00d101df181c3bb3</Anchor>
              </Node>
              <Node>
               <Name>getLookahead</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a94e0e318a96518ee50607e682e7f0382</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a45b191078f89a67427a2593b67ae4f1e</Anchor>
              </Node>
              <Node>
               <Name>setCurrentCharIndex</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a9673f863b315e7cff584048585906718</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a043e92b74dced5730930c6d492c36a3a</Anchor>
              </Node>
              <Node>
               <Name>toString</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a061cd84bd37e6111edcd52bcb5b9c749</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a445e1ce3ced2a3b4e1157bd682f973a6</Anchor>
              </Node>
              <Node>
               <Name>currentCharIndex</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a8ed426b66a378ce272cc13ae397e52cd</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a8a1fec5bbcbe0f41511ef9ac6ae4ad7e</Anchor>
              </Node>
              <Node>
               <Name>lookahead</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
-              <Anchor>a58e8935cd1c81a767b47b4d31c87b35c</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
+              <Anchor>a8a766e2b079a0f160e3703ceff3bcef9</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1053,221 +1021,221 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.IParser</Name>
-            <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
+            <Name>contextFree.scanner.IScanner</Name>
+            <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
             <Subnodes>
              <Node>
               <Name>getAutoma</Name>
-              <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
-              <Anchor>ad977787bef5bdc14b422945143a0414c</Anchor>
+              <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
+              <Anchor>a0d7d7f324a2fd39a2fe4bfb1b73dde90</Anchor>
              </Node>
              <Node>
               <Name>getGrammar</Name>
-              <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
-              <Anchor>a19a6f39c3ebc05c90845096a2b1c5889</Anchor>
+              <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
+              <Anchor>acb2a52fff0d9e1cedd1c4078cd65baf9</Anchor>
              </Node>
              <Node>
               <Name>init</Name>
-              <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
-              <Anchor>a26c1dede13720e51bf04464b15ce1f01</Anchor>
+              <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
+              <Anchor>a8d6c2d52535e9806b48d7f26cb3744dc</Anchor>
              </Node>
              <Node>
               <Name>isAmbiguos</Name>
-              <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
-              <Anchor>a29c662e040f218bfba40fb3e8c394615</Anchor>
+              <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
+              <Anchor>a4ad530ab63f057fe97333c900fd82a7e</Anchor>
              </Node>
              <Node>
               <Name>setGrammar</Name>
-              <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
-              <Anchor>aa0b56b8cc9bf60ddd02d5fb6a99d16bd</Anchor>
+              <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
+              <Anchor>a232592dfb2897cf3a2e670b5fcab88ef</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.LALR1</Name>
-            <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
+            <Name>contextFree.scanner.LALR1</Name>
+            <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
             <Subnodes>
              <Node>
               <Name>LALR1</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a9b5c281089bfd06c95b3c61504352df2</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a8e5f602f9bf70d247cdec8b21d48f09f</Anchor>
              </Node>
              <Node>
               <Name>LALR1</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a38a0cedcd893b16f8207455f2287a7ad</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>afcaf919b13839287bfcd4c07d304af44</Anchor>
              </Node>
              <Node>
               <Name>actionWrite</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a7379103379c94e377daca0022b28771e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>aee49a037861ca73f5380efb261517825</Anchor>
              </Node>
              <Node>
               <Name>calculateSymbol</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>aeec32b5c83e031225114f46ac377f804</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>ab1c19e75693982310b7494bd3b8623c9</Anchor>
              </Node>
              <Node>
               <Name>chiusuraLR1</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>ac711dbbc2be25d15c1a8aade7579e94e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a879873c5f879881494d342782387d661</Anchor>
              </Node>
              <Node>
               <Name>getActionTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a4dcd4a4ae0b77edc1dc8abffca59c80a</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>ab74da1918c78f64f121dbbd4a4279250</Anchor>
              </Node>
              <Node>
               <Name>getAutoma</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a27ddf376aef3ff22758c44017b37c63d</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a19d4f6725ddaba47bec24a906a32bc30</Anchor>
              </Node>
              <Node>
               <Name>getGotoTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>af87607068fe2d41d8abbdb49fdeefcc0</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>ae491018691436875bc25b87126fb83c9</Anchor>
              </Node>
              <Node>
               <Name>getGrammar</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>ab1127f78e9b15a062f6bf344f1117327</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a2b83305a759d41eca9f52965dd88be51</Anchor>
              </Node>
              <Node>
               <Name>init</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a7618cff4af4edfffb9a538a7cb1e79cf</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a84de2247841f98c9d1339acac165d141</Anchor>
              </Node>
              <Node>
               <Name>isAmbiguos</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a9c19be71fc16e04343eb3c23b6eac9da</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a53759d4a64bdb55fe8c039db8eb891f3</Anchor>
              </Node>
              <Node>
               <Name>printTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>ad7628eb817b4a8efff71f6e22cc1659f</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a452dc07f015344b3681d8e1a161d51dd</Anchor>
              </Node>
              <Node>
               <Name>reduce</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a2281981b3043c0150c1b3d3967572b1f</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a909aea9ab05f3633c169e4dd20447e62</Anchor>
              </Node>
              <Node>
               <Name>setActionTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a4bf6b83fddf359b6b0f6df26b1e58455</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>ae8b5062ce6f6313e1d1baf9899a3a3d2</Anchor>
              </Node>
              <Node>
               <Name>setGotoTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a002ce309af59de1951007a27d86b53b7</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a282138d6706fc4835fe914c12e1bcd58</Anchor>
              </Node>
              <Node>
               <Name>setGrammar</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a66f5fb1ac9aab089d3fa937acf3f63ce</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a7db67e7e6a0c58be0de391f71165fc7c</Anchor>
              </Node>
              <Node>
               <Name>tableCostruction</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a79576626b3b59b832faecc986b293b36</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a92b63b5d61bbdd523a16aa5e577c2ba6</Anchor>
              </Node>
              <Node>
               <Name>toString</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>afa3cc07b08ecbe69486105beb311eb69</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>abe84feb77fd24be7e65dbfd7e1103112</Anchor>
              </Node>
              <Node>
               <Name>actionTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a50a59810900d20102a28766aad917b79</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>af6f7fe36eb851deda2a609a22c300b7c</Anchor>
              </Node>
              <Node>
               <Name>ambiguo</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>ac76b78ae26e1f59674ae10b9c1059213</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a95bbe0235c59768f32b942ba476df180</Anchor>
              </Node>
              <Node>
               <Name>automa</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>ab6054628eaec08e8b3b77a37e219ef02</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a9abae9a81b359b59dcbcfdecbf809068</Anchor>
              </Node>
              <Node>
               <Name>gotoTable</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a6f27da8ba10ef81be36845b0fffc9858</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a95bedde44fe8cd140e6ca0739928e0f7</Anchor>
              </Node>
              <Node>
               <Name>isAmbiguous</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a3e69dd16d8b89cc9a210286efe0aa0d8</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a42dc2f89ec2c642200c0d9bf78d5ce25</Anchor>
              </Node>
              <Node>
               <Name>logger</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
-              <Anchor>a9684757c9b143a5b82609c1de472400e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
+              <Anchor>a4eecab5f1245d08a45d71ba27f91350d</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.LR0</Name>
-            <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
+            <Name>contextFree.scanner.LR0</Name>
+            <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
             <Subnodes>
              <Node>
               <Name>chiusura</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>aa0e8369b6e2db7489437ad8a6f217d22</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>a313dfc00f370a910932b02034e26fb8c</Anchor>
              </Node>
              <Node>
               <Name>GoTo</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>aea1ecb06a1880a8bc5eeb4efcca0ecea</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>a087486ba03c2fb5ab400e425e7b54bbc</Anchor>
              </Node>
              <Node>
               <Name>init</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>a1936c0d9c7c80de80a5b3913f8f710b7</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>a6d4b6d0e324341b410e67778d9c9066d</Anchor>
              </Node>
              <Node>
               <Name>Item</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>aa96d752420b690ccbbc9fad67691f36a</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>a5c7d77fe2a994398ef6312251e2f6109</Anchor>
              </Node>
              <Node>
               <Name>prodPresente</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>a242530010547a830ad1b9c35a724a7e6</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>a43275125600a950a4a1f78ce565eac5f</Anchor>
              </Node>
              <Node>
               <Name>setGrammar</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>ab87079bb387c26bad40d3678e80eefc9</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>a992106eaf8f4e88b8a60e5f96518b7a7</Anchor>
              </Node>
              <Node>
               <Name>uguale</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>a8de929e041a5a1a273e6ddd05dc7e0ca</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>ace66d28273502a9daf8e4550f48b5782</Anchor>
              </Node>
              <Node>
               <Name>grammatica</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
-              <Anchor>aa81cb7c5781fa4b6f1a129077a4da618</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
+              <Anchor>af875f1cd5e40feec2ba3b08ce013c962</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.LR1</Name>
-            <Path>classcontext_free_1_1parser_1_1_l_r1.html</Path>
+            <Name>contextFree.scanner.LR1</Name>
+            <Path>classcontext_free_1_1scanner_1_1_l_r1.html</Path>
             <Subnodes>
              <Node>
               <Name>setGrammar</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r1.html</Path>
-              <Anchor>a464d377de8e3484383068a547208dab5</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r1.html</Path>
+              <Anchor>a978dd61922779f34a285f30060bf4135</Anchor>
              </Node>
              <Node>
               <Name>grammatica</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r1.html</Path>
-              <Anchor>a1639494e6b5ede7a4e9b6e4c24fd1702</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_l_r1.html</Path>
+              <Anchor>ac13fc5603c8a3b0fb8c423aff97d7350</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1304,32 +1272,6 @@
               <Name>logger</Name>
               <Path>classinput_parser_1_1_l_r_input_parser.html</Path>
               <Anchor>ae3d6e07ebb7d4368f1a2e2ad05dae6f7</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>contextFree.parser.ParserFactory</Name>
-            <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>createParser</Name>
-              <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
-              <Anchor>ace675bb41d96bc1933cafbb04e34a928</Anchor>
-             </Node>
-             <Node>
-              <Name>createParser</Name>
-              <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
-              <Anchor>a18495bcc1663076b276180a3c695e5de</Anchor>
-             </Node>
-             <Node>
-              <Name>createParser</Name>
-              <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
-              <Anchor>aa1cf87208ec422991a7bd454358b8161</Anchor>
-             </Node>
-             <Node>
-              <Name>logger</Name>
-              <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
-              <Anchor>a9f3c0ca552f2383e6da4ccabfdd4585d</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1371,6 +1313,16 @@
               <Name>getStack</Name>
               <Path>classparser_program_1_1_parser_program.html</Path>
               <Anchor>a89685a1ddaa7fe03516ab89efeffa1bf</Anchor>
+             </Node>
+             <Node>
+              <Name>getT</Name>
+              <Path>classparser_program_1_1_parser_program.html</Path>
+              <Anchor>a8a5d6d764dffb841c4eb2e0ba7e8a831</Anchor>
+             </Node>
+             <Node>
+              <Name>getV</Name>
+              <Path>classparser_program_1_1_parser_program.html</Path>
+              <Anchor>a2069ee9c4e2c9e5b842e6480ceda50e8</Anchor>
              </Node>
              <Node>
               <Name>parse</Name>
@@ -1461,12 +1413,17 @@
              <Node>
               <Name>Production</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
+              <Anchor>aa793940d0a65f644495141b4fe4a86c0</Anchor>
+             </Node>
+             <Node>
+              <Name>Production</Name>
+              <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
               <Anchor>a1db3c4e260abdcac50a8425cc9bd901f</Anchor>
              </Node>
              <Node>
               <Name>Production</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-              <Anchor>abc6df7181791245b8c3bf38871bc38b8</Anchor>
+              <Anchor>a70571ea099db67d650e87f0de16d684b</Anchor>
              </Node>
              <Node>
               <Name>getLeft</Name>
@@ -1474,29 +1431,29 @@
               <Anchor>a6b42819c4b8af1aa759edf3ad5978f67</Anchor>
              </Node>
              <Node>
+              <Name>getLeftSimbols</Name>
+              <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
+              <Anchor>aff0ed3fbde7f7a476a993936c27ddef7</Anchor>
+             </Node>
+             <Node>
               <Name>getRight</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
               <Anchor>a0b6496bc60eefe88fd4652a6f01ec15e</Anchor>
              </Node>
              <Node>
-              <Name>getRightList</Name>
+              <Name>getRightSimbols</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-              <Anchor>ae712218305325e3649fa26989db291de</Anchor>
+              <Anchor>a78a08f36758b1ad2699e04c48c04286a</Anchor>
              </Node>
              <Node>
-              <Name>setLeft</Name>
+              <Name>setLeftSimbols</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-              <Anchor>a6a9e81d7a3445993afd077cfc4d21a12</Anchor>
+              <Anchor>ae3030c00cadbd869bba5d382f8e4d06e</Anchor>
              </Node>
              <Node>
-              <Name>setRight</Name>
+              <Name>setRightSimbols</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-              <Anchor>aa36b86719aaccecb3c90a492c0d766e3</Anchor>
-             </Node>
-             <Node>
-              <Name>setRightList</Name>
-              <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-              <Anchor>a84c7fa859310c752fa76fb1ecc3fedba</Anchor>
+              <Anchor>ac51e7fc47a11fb23641aa8a7ee905dc4</Anchor>
              </Node>
              <Node>
               <Name>toString</Name>
@@ -1509,14 +1466,19 @@
               <Anchor>ad188a705cd57d55d32fd198e6af71f75</Anchor>
              </Node>
              <Node>
+              <Name>leftSimbols</Name>
+              <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
+              <Anchor>ae726278e9261fd332c0afcdc348735e8</Anchor>
+             </Node>
+             <Node>
               <Name>right</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
               <Anchor>ab72c30da44fb1fbf41b9a70bf799ef58</Anchor>
              </Node>
              <Node>
-              <Name>rightList</Name>
+              <Name>rightSimbols</Name>
               <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
-              <Anchor>a51394e602f57b3e2f9b07d14fd01adb9</Anchor>
+              <Anchor>aa19049895b51192f5e151dc2a3894865</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1533,6 +1495,32 @@
               <Name>ERROR</Name>
               <Path>enumparser_program_1_1_r_e_s_u_l_t.html</Path>
               <Anchor>ab53193d78e07c487ad5b3a77fc90de3a</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>contextFree.scanner.ScannerFactory</Name>
+            <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>createParser</Name>
+              <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
+              <Anchor>a99f862908e54a145d089b3ad2f3088db</Anchor>
+             </Node>
+             <Node>
+              <Name>createParser</Name>
+              <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
+              <Anchor>ae60f881ed9732f77c4c58498ecb4d570</Anchor>
+             </Node>
+             <Node>
+              <Name>createParser</Name>
+              <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
+              <Anchor>a74777b751fa30fb3b6f61d15aa1f991f</Anchor>
+             </Node>
+             <Node>
+              <Name>logger</Name>
+              <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
+              <Anchor>a8adeb18ed23d59cc01ab81a379aa9a54</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1578,93 +1566,200 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.State</Name>
-            <Path>classcontext_free_1_1parser_1_1_state.html</Path>
+            <Name>inputParser.SplitInSymbols</Name>
+            <Path>classinput_parser_1_1_split_in_symbols.html</Path>
             <Subnodes>
              <Node>
-              <Name>State</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a755084c050a72d0186cd27a8f78df9a6</Anchor>
+              <Name>SplitInSymbols</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a552dcffdd93549c8fa005ca8fe56ee60</Anchor>
              </Node>
              <Node>
-              <Name>State</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>aa31409b43285d446a6dc1e8423ed8f65</Anchor>
+              <Name>SplitInSymbols</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a0426f5d1c5abebe971c5042584896bd0</Anchor>
              </Node>
              <Node>
-              <Name>State</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a7267946f249aada006c55e3c47a3772b</Anchor>
+              <Name>getObj</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a419914a0af2b9917ec7f245c72f8ac65</Anchor>
              </Node>
              <Node>
-              <Name>State</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>ab2b42f6581c76d56a2a6b31b8f9b5961</Anchor>
+              <Name>getResult</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>aeb0d82f69538d93f7843c8e07f683be6</Anchor>
              </Node>
              <Node>
-              <Name>getIndex</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a2548bf6b7febee3cf305edb33cac19ca</Anchor>
+              <Name>getSymbols</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a6b85028a2a6f905c8954627eaf9fa593</Anchor>
              </Node>
              <Node>
-              <Name>getItems</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>af1362b89e4973fd940a1a6ba440e9c9e</Anchor>
+              <Name>run</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>ab532f7e0cb477fb03d8fca03505161ba</Anchor>
              </Node>
              <Node>
-              <Name>getKernels</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a1afb2f9faa5ec548897e44cc863389ba</Anchor>
+              <Name>setObj</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>afab6c86b9a0d9ddce2110ea7003f1a9a</Anchor>
              </Node>
              <Node>
-              <Name>getShift</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a0a46dd3cf055c0aa7951b4df93daf23e</Anchor>
+              <Name>setResult</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a91749a4348dc4542c181589b0f8fcb6f</Anchor>
              </Node>
              <Node>
-              <Name>gotoStateIndex</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>abaac15576397224a4495d8198cfe2f1d</Anchor>
+              <Name>setSymbols</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>ab18a4792f9c967da3a19763f15cc7ff5</Anchor>
              </Node>
              <Node>
-              <Name>setIndex</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a5ae06a15397a64125c28fd64f5985008</Anchor>
+              <Name>obj</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a138c39545ac828c3d4080b90921a7c8f</Anchor>
              </Node>
              <Node>
-              <Name>setItems</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>ac5d2c09a67b8bba054456a652964735e</Anchor>
+              <Name>result</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>ab1617b12d58b08074715629c2a285d0d</Anchor>
              </Node>
              <Node>
-              <Name>setShift</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a391213320b8ca96be1ede02b449662c7</Anchor>
+              <Name>Symbols</Name>
+              <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+              <Anchor>a836e7a18e11ec95b69ea0f6290cd4ddc</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>parserProgram.St</Name>
+            <Path>classparser_program_1_1_st.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>St</Name>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>aeb3f4be7d7e11f582302cb2a0c3339a6</Anchor>
              </Node>
              <Node>
-              <Name>size</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a6a9e16086ce29535a3e63caadb35a532</Anchor>
+              <Name>St</Name>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>a24290706e5844bd14027ac8600744963</Anchor>
+             </Node>
+             <Node>
+              <Name>getRoot</Name>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>aae0a295da8eb563e9bb2aa3ba5beab08</Anchor>
+             </Node>
+             <Node>
+              <Name>initFromHistory</Name>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>afe794d3e531e9bd6c21dbb1f6398bcd0</Anchor>
              </Node>
              <Node>
               <Name>toString</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>aa480857783a31a4b8ab22f6a92b0f142</Anchor>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>a57d9fda2fbb47bf1890205d4b9c663e6</Anchor>
+             </Node>
+             <Node>
+              <Name>history</Name>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>a7f4c78520e31f39647f69eaa11258c33</Anchor>
+             </Node>
+             <Node>
+              <Name>root</Name>
+              <Path>classparser_program_1_1_st.html</Path>
+              <Anchor>aaac4343a95fae5731d6186137e4ba3b0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>contextFree.scanner.State</Name>
+            <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>State</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>ae93b8be2177c617058502abfcfce5204</Anchor>
+             </Node>
+             <Node>
+              <Name>State</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a81cd656c8ed26ba10aedd6598d090dcc</Anchor>
+             </Node>
+             <Node>
+              <Name>State</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a8dc8e0da9fdc805b0202f66eebce1e57</Anchor>
+             </Node>
+             <Node>
+              <Name>State</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a7ab62a86fa7c7072e898d9b8ab1b3cd5</Anchor>
+             </Node>
+             <Node>
+              <Name>getIndex</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>acefc45a10d2cdbfbbfad972621c7c2a2</Anchor>
+             </Node>
+             <Node>
+              <Name>getItems</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a47e8e15d2cfc4a1bec7102605cbfbfc6</Anchor>
+             </Node>
+             <Node>
+              <Name>getKernels</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a987d4c7ae8eb2754f13f0099f5d861a5</Anchor>
+             </Node>
+             <Node>
+              <Name>getShift</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>aa4d50d40914124e22010dd49f54da845</Anchor>
+             </Node>
+             <Node>
+              <Name>gotoStateIndex</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a5259b186755c072d90d06dceb2b756ac</Anchor>
+             </Node>
+             <Node>
+              <Name>setIndex</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>abef790a67f08f3e5afb6f0114e97585f</Anchor>
+             </Node>
+             <Node>
+              <Name>setItems</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a4cf3061ae4e061bb5bda4151d25b5c76</Anchor>
+             </Node>
+             <Node>
+              <Name>setShift</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>adf18642bb9c193b9a3b0a6ba73bddc14</Anchor>
+             </Node>
+             <Node>
+              <Name>size</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a5ae1ce923c003367c33cc3f85f19181b</Anchor>
+             </Node>
+             <Node>
+              <Name>toString</Name>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>aec3a0f8337a27e244b82beb41c895e7f</Anchor>
              </Node>
              <Node>
               <Name>index</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>ade54fdccdfdced9a3b03c886dbd4bf9e</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a27437d701090c2c5684246542e2b2527</Anchor>
              </Node>
              <Node>
               <Name>items</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>ac62b4e843a6a61d6166f1aae98171854</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>a5546278a1d799c6c9b20c44e830eb84b</Anchor>
              </Node>
              <Node>
               <Name>shift</Name>
-              <Path>classcontext_free_1_1parser_1_1_state.html</Path>
-              <Anchor>a7448df2a60c1a493b1305d6d46ceecc6</Anchor>
+              <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
+              <Anchor>ae836ed1f2ab6b688b160a52def1fb47b</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1717,12 +1812,8 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>parserProgram.Ast</Name>
-            <Path>classparser_program_1_1_ast.html</Path>
-           </Node>
-           <Node>
-            <Name>contextFree.parser.Automa</Name>
-            <Path>classcontext_free_1_1parser_1_1_automa.html</Path>
+            <Name>contextFree.scanner.Automa</Name>
+            <Path>classcontext_free_1_1scanner_1_1_automa.html</Path>
            </Node>
            <Node>
             <Name>error.ERROR_TYPE</Name>
@@ -1781,28 +1872,24 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.IParser</Name>
-            <Path>interfacecontext_free_1_1parser_1_1_i_parser.html</Path>
+            <Name>contextFree.scanner.IScanner</Name>
+            <Path>interfacecontext_free_1_1scanner_1_1_i_scanner.html</Path>
             <Subnodes>
              <Node>
-              <Name>contextFree.parser.LR0</Name>
-              <Path>classcontext_free_1_1parser_1_1_l_r0.html</Path>
+              <Name>contextFree.scanner.LR0</Name>
+              <Path>classcontext_free_1_1scanner_1_1_l_r0.html</Path>
               <Subnodes>
                <Node>
-                <Name>contextFree.parser.LALR1</Name>
-                <Path>classcontext_free_1_1parser_1_1_l_a_l_r1.html</Path>
+                <Name>contextFree.scanner.LALR1</Name>
+                <Path>classcontext_free_1_1scanner_1_1_l_a_l_r1.html</Path>
                </Node>
               </Subnodes>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>contextFree.parser.LR1</Name>
-            <Path>classcontext_free_1_1parser_1_1_l_r1.html</Path>
-           </Node>
-           <Node>
-            <Name>contextFree.parser.ParserFactory</Name>
-            <Path>classcontext_free_1_1parser_1_1_parser_factory.html</Path>
+            <Name>contextFree.scanner.LR1</Name>
+            <Path>classcontext_free_1_1scanner_1_1_l_r1.html</Path>
            </Node>
            <Node>
             <Name>parserProgram.ParserProgram</Name>
@@ -1813,8 +1900,8 @@
             <Path>classcontext_free_1_1grammar_1_1_production.html</Path>
             <Subnodes>
              <Node>
-              <Name>contextFree.parser.IndexedProduction</Name>
-              <Path>classcontext_free_1_1parser_1_1_indexed_production.html</Path>
+              <Name>contextFree.scanner.IndexedProduction</Name>
+              <Path>classcontext_free_1_1scanner_1_1_indexed_production.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -1823,8 +1910,20 @@
             <Path>enumparser_program_1_1_r_e_s_u_l_t.html</Path>
            </Node>
            <Node>
-            <Name>contextFree.parser.State</Name>
-            <Path>classcontext_free_1_1parser_1_1_state.html</Path>
+            <Name>contextFree.scanner.ScannerFactory</Name>
+            <Path>classcontext_free_1_1scanner_1_1_scanner_factory.html</Path>
+           </Node>
+           <Node>
+            <Name>inputParser.SplitInSymbols</Name>
+            <Path>classinput_parser_1_1_split_in_symbols.html</Path>
+           </Node>
+           <Node>
+            <Name>parserProgram.St</Name>
+            <Path>classparser_program_1_1_st.html</Path>
+           </Node>
+           <Node>
+            <Name>contextFree.scanner.State</Name>
+            <Path>classcontext_free_1_1scanner_1_1_state.html</Path>
            </Node>
            <Node>
             <Name>TxtFileFilter</Name>

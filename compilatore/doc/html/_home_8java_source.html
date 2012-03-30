@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
@@ -124,128 +122,190 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="keyword">import</span> java.io.InputStreamReader;
 <a name="l00009"></a>00009 <span class="keyword">import</span> java.io.PrintStream;
 <a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">import</span> org.apache.log4j.Logger;
-<a name="l00012"></a>00012 <span class="keyword">import</span> org.apache.log4j.PropertyConfigurator;
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="keyword">import</span> parserProgram.Ast;
-<a name="l00015"></a>00015 <span class="keyword">import</span> parserProgram.HistoryElement;
-<a name="l00016"></a>00016 <span class="keyword">import</span> parserProgram.ParserProgram;
+<a name="l00011"></a>00011 <span class="keyword">import</span> javax.swing.tree.DefaultMutableTreeNode;
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">import</span> org.apache.log4j.Logger;
+<a name="l00014"></a>00014 <span class="keyword">import</span> org.apache.log4j.PropertyConfigurator;
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016 <span class="keyword">import</span> com.thoughtworks.xstream.XStream;
 <a name="l00017"></a>00017 
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">import</span> contextFree.parser.IParser;
-<a name="l00020"></a>00020 <span class="keyword">import</span> contextFree.parser.ParserFactory;
+<a name="l00018"></a>00018 <span class="keyword">import</span> parserProgram.St;
+<a name="l00019"></a>00019 <span class="keyword">import</span> parserProgram.HistoryElement;
+<a name="l00020"></a>00020 <span class="keyword">import</span> parserProgram.ParserProgram;
 <a name="l00021"></a>00021 
-<a name="l00027"></a><a class="code" href="class_home.html">00027</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_home.html">Home</a>{
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030         <span class="keyword">static</span> Logger logger = Logger.getLogger(<a class="code" href="class_home.html">Home</a>.class.getName());
-<a name="l00031"></a>00031         
-<a name="l00032"></a>00032         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> main(String[] args) <span class="keywordflow">throws</span> Exception{
-<a name="l00033"></a>00033                 <span class="keywordflow">if</span>(args.length==0){
-<a name="l00034"></a>00034                         PropertyConfigurator.configure(<span class="stringliteral">&quot;log4j.config&quot;</span>);
-<a name="l00035"></a>00035                         
-<a name="l00036"></a>00036                         logger.debug(<span class="stringliteral">&quot;Start Application&quot;</span>);
-<a name="l00037"></a>00037                         
-<a name="l00038"></a>00038                         System.out.println(<span class="stringliteral">&quot;\tProgetto di compilatori e interpreti&quot;</span>);
-<a name="l00039"></a>00039                         System.out.println(<span class="stringliteral">&quot;\n\tRealizzato da Paolo Pino e Pierluigi Sottile &quot;</span>);
-<a name="l00040"></a>00040                         System.out.println(<span class="stringliteral">&quot;\nE&#39; stato realizzato un programma che accetta in ingresso una grammatica context-free e produca in uscita\n&quot;</span> +
-<a name="l00041"></a>00041                                                            <span class="stringliteral">&quot;le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione \n&quot;</span>+
-<a name="l00042"></a>00042                                                            <span class="stringliteral">&quot;di ambiguita scriva i risultati in un file di testo Result.txt.&quot;</span>);
-<a name="l00043"></a>00043                         System.out.println(<span class="stringliteral">&quot;un compilatore generico che preso in ingresso il file Result.txt traduca la generica \n&quot;</span> +
-<a name="l00044"></a>00044                                                            <span class="stringliteral">&quot;frase del linguaggio generato dalla grammatica contenuta nel file Result.txt in un albero\n&quot;</span> +
-<a name="l00045"></a>00045                                                            <span class="stringliteral">&quot;sintattico, nel caso in cui la frase appartenga alla grammatica scrivai risultati in \n&quot;</span> +
-<a name="l00046"></a>00046                                                            <span class="stringliteral">&quot;un file di testo&quot;</span>);
-<a name="l00047"></a>00047                         <span class="keywordflow">try</span>{ 
-<a name="l00048"></a>00048                                 <span class="keywordflow">do</span>
-<a name="l00049"></a>00049                                     {
-<a name="l00050"></a>00050                                       <span class="comment">//print out a menu</span>
-<a name="l00051"></a>00051                                       System.out.println(<span class="stringliteral">&quot;\n------- Menu----------&quot;</span>);
-<a name="l00052"></a>00052                                       System.out.println(<span class="stringliteral">&quot;1. Analizzare una gramamtica Contex-Free&quot;</span>);
-<a name="l00053"></a>00053                                       System.out.println(<span class="stringliteral">&quot;2. COntrollare se una frase appartiene alla grammatica e stampare l&#39;albero sintattico&quot;</span>);
-<a name="l00054"></a>00054                                       System.out.println(<span class="stringliteral">&quot;3. EXIT&quot;</span>);
-<a name="l00055"></a>00055                                       System.out.println(<span class="stringliteral">&quot;Digitare la propria scelta:&quot;</span>);
-<a name="l00056"></a>00056                                         BufferedReader leggi = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
-<a name="l00057"></a>00057 <span class="comment">//                                    for(int i=0; i&lt;4;i++){</span>
-<a name="l00058"></a>00058 <span class="comment">//                                                      System.out.println(&quot;Inserire un numero&quot;);</span>
-<a name="l00059"></a>00059 <span class="comment">//                                                      leggi=new BufferedReader(new InputStreamReader(System.in));</span>
-<a name="l00060"></a>00060                                                         <span class="comment">//TODO:</span>
-<a name="l00061"></a>00061 <span class="comment">//                                                      if(leggi.readLine().compareTo(&quot;9&quot;)&gt;0 &amp;&amp; leggi.readLine().compareTo(&quot;0&quot;)&lt;0) </span>
-<a name="l00062"></a>00062 <span class="comment">//                                                              break;</span>
-<a name="l00063"></a>00063 <span class="comment">//                                    }</span>
-<a name="l00064"></a>00064                                     <span class="keywordtype">int</span> scelta= Integer.parseInt(leggi.readLine());
-<a name="l00065"></a>00065                                     <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser = null;
-<a name="l00066"></a>00066                                     <span class="keywordflow">switch</span> (scelta)
-<a name="l00067"></a>00067                                       {
-<a name="l00068"></a>00068                                         <span class="comment">//the choices go here - print the details</span>
-<a name="l00069"></a>00069                                         <span class="keywordflow">case</span> 1:
-<a name="l00070"></a>00070                                                 System.out.println(<span class="stringliteral">&quot;\nDigitare il nome del file contenente il Contex-Free: &quot;</span>); 
-<a name="l00071"></a>00071                                                 leggi = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
-<a name="l00072"></a>00072                                                 parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>(<span class="stringliteral">&quot;file.4l&quot;</span>);    <span class="comment">//TODO: da rimuovere</span>
-<a name="l00073"></a>00073 <span class="comment">//                                              parser = new GrammarParser(leggi.readLine());</span>
-<a name="l00074"></a>00074                                                 analizer(parser);
-<a name="l00075"></a>00075                                                 <span class="keywordflow">break</span>;
-<a name="l00076"></a>00076                                         <span class="keywordflow">case</span> 2:
-<a name="l00077"></a>00077                                                 System.out.println(<span class="stringliteral">&quot;\nAnalisi sintattica &quot;</span> ); 
-<a name="l00078"></a>00078                                                         parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(<span class="stringliteral">&quot;Result.txt&quot;</span>);
-<a name="l00079"></a>00079                                                         astMethod(parser);
-<a name="l00080"></a>00080                                           <span class="keywordflow">break</span>;
-<a name="l00081"></a>00081                                         <span class="keywordflow">case</span> 3:
-<a name="l00082"></a>00082                                                 System.exit(0);
-<a name="l00083"></a>00083                                       }
-<a name="l00084"></a>00084                                     }<span class="keywordflow">while</span>(<span class="keyword">true</span>);
-<a name="l00085"></a>00085                                 }<span class="keywordflow">catch</span> (NumberFormatException e) {
-<a name="l00086"></a>00086                                         logger.error(<span class="stringliteral">&quot;You have inserted a number&quot;</span>,e);
-<a name="l00087"></a>00087                                 }<span class="keywordflow">catch</span> (Exception e) {
-<a name="l00088"></a>00088                                         logger.error(<span class="stringliteral">&quot;Critical error...the programm whil termanate&quot;</span>,e);
-<a name="l00089"></a>00089                                         System.exit(0);
-<a name="l00090"></a>00090                                 }
-<a name="l00091"></a>00091                 }               
-<a name="l00092"></a>00092         }
-<a name="l00093"></a>00093         
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> astMethod(<a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser) <span class="keywordflow">throws</span> Exception {
-<a name="l00096"></a>00096                 <a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a> parserProgram = (<a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a>)parser.<a class="code" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object.">parse</a>();
-<a name="l00097"></a>00097                 System.out.println(<span class="stringliteral">&quot;\nDigitare la stringa in input: &quot;</span>); 
-<a name="l00098"></a>00098 <span class="comment">//              BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));</span>
-<a name="l00099"></a>00099                 parserProgram.setInput(<span class="stringliteral">&quot;d=d$&quot;</span>);                     <span class="comment">//TODO: da rimuovere        </span>
-<a name="l00100"></a>00100 <span class="comment">//              parserProgram.setInput(leggi.readLine());                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)</span>
-<a name="l00101"></a>00101                 System.out.println(parserProgram.<a class="code" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61" title="The leading method of the class, responsible of the parsing of input string and consequent stack pars...">parse</a>());
-<a name="l00102"></a>00102                 System.out.println(parserProgram.getStack().toString());
-<a name="l00103"></a>00103                 System.out.println(<span class="stringliteral">&quot;\nCRONOLOGIA:\n&quot;</span>);
-<a name="l00104"></a>00104                 <span class="keywordflow">for</span>(<a class="code" href="classparser_program_1_1_history_element.html" title="This class represent an element of the parsing history.">HistoryElement</a> e : parserProgram.getHistory()) System.out.println(e.toString()+<span class="stringliteral">&quot;\n&quot;</span>);
-<a name="l00105"></a>00105                 
-<a name="l00106"></a>00106                 <a class="code" href="classparser_program_1_1_ast.html" title="Abstract Syntax Three class.">Ast</a> ast = <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_ast.html" title="Abstract Syntax Three class.">Ast</a>(parserProgram.getHistory());
-<a name="l00107"></a>00107                 ast.<a class="code" href="classparser_program_1_1_ast.html#a9ad5f3d77935440489df31131b18bf8e" title="Initialize the three from the parsing history.">initFromHistory</a>();
-<a name="l00108"></a>00108                 System.out.println(ast.toString());
-<a name="l00109"></a>00109         }
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> analizer(<a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser)
-<a name="l00113"></a>00113                         <span class="keywordflow">throws</span> FileNotFoundException, Exception {
-<a name="l00114"></a>00114                 <a class="code" href="interfacecontext_free_1_1parser_1_1_i_parser.html">IParser</a> lalr1 = <a class="code" href="classcontext_free_1_1parser_1_1_parser_factory.html">ParserFactory</a>.createParser(parser);
-<a name="l00115"></a>00115                 
-<a name="l00116"></a>00116                 <span class="keywordflow">if</span>(lalr1!=null){
-<a name="l00117"></a>00117                         System.out.println(lalr1.toString());
-<a name="l00118"></a>00118                         <span class="keywordflow">if</span>(!lalr1.isAmbiguos()){
-<a name="l00119"></a>00119                                 PrintStream output = <span class="keyword">new</span> PrintStream(<span class="keyword">new</span> FileOutputStream(<span class="stringliteral">&quot;Result.txt&quot;</span>));
-<a name="l00120"></a>00120                                 String table = lalr1.toString();
-<a name="l00121"></a>00121                                 String [] temp = table.split(<span class="stringliteral">&quot;\\n&quot;</span>);
-<a name="l00122"></a>00122                                 <span class="keywordflow">for</span>(String o : temp)
-<a name="l00123"></a>00123                                         output.println(o);
-<a name="l00124"></a>00124                                 output.println(<span class="stringliteral">&quot;\nGrammatica:&quot;</span>);
-<a name="l00125"></a>00125                                 output.println(lalr1.getGrammar().<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a5fdeb5a6a9426b400c2fe805566a377c">toOneLineString</a>());
-<a name="l00126"></a>00126                                 output.close();
-<a name="l00127"></a>00127                         }
-<a name="l00128"></a>00128                 }               
-<a name="l00129"></a>00129         }
-<a name="l00130"></a>00130 }
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">import</span> contextFree.scanner.IScanner;
+<a name="l00024"></a>00024 <span class="keyword">import</span> contextFree.scanner.ScannerFactory;
+<a name="l00025"></a>00025 
+<a name="l00031"></a><a class="code" href="class_home.html">00031</a> <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_home.html">Home</a>{
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keyword">static</span> Logger logger = Logger.getLogger(<a class="code" href="class_home.html">Home</a>.class.getName());
+<a name="l00035"></a>00035         
+<a name="l00036"></a>00036         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> main(String[] args) <span class="keywordflow">throws</span> Exception{
+<a name="l00037"></a>00037                 PropertyConfigurator.configure(<span class="stringliteral">&quot;log4j.config&quot;</span>);
+<a name="l00038"></a>00038                 <span class="keywordflow">if</span>(args.length==0){
+<a name="l00039"></a>00039                         logger.debug(<span class="stringliteral">&quot;Start Application&quot;</span>);
+<a name="l00040"></a>00040                         
+<a name="l00041"></a>00041                         System.out.println(<span class="stringliteral">&quot;\tProgetto di compilatori e interpreti&quot;</span>);
+<a name="l00042"></a>00042                         System.out.println(<span class="stringliteral">&quot;\n\tRealizzato da Paolo Pino e Pierluigi Sottile &quot;</span>);
+<a name="l00043"></a>00043                         System.out.println(<span class="stringliteral">&quot;\nE&#39; stato realizzato un programma che accetta in ingresso una grammatica context-free e produca in uscita\n&quot;</span> +
+<a name="l00044"></a>00044                                                            <span class="stringliteral">&quot;le tabelle action e goto LALR(1), eventuali stati ambigui devono mostrare la situazione \n&quot;</span>+
+<a name="l00045"></a>00045                                                            <span class="stringliteral">&quot;di ambiguita scriva i risultati in un file di testo Result.txt.&quot;</span>);
+<a name="l00046"></a>00046                         System.out.println(<span class="stringliteral">&quot;un compilatore generico che preso in ingresso il file Result.txt traduca la generica \n&quot;</span> +
+<a name="l00047"></a>00047                                                            <span class="stringliteral">&quot;frase del linguaggio generato dalla grammatica contenuta nel file Result.txt in un albero\n&quot;</span> +
+<a name="l00048"></a>00048                                                            <span class="stringliteral">&quot;sintattico, nel caso in cui la frase appartenga alla grammatica scrivai risultati in \n&quot;</span> +
+<a name="l00049"></a>00049                                                            <span class="stringliteral">&quot;un file di testo&quot;</span>);
+<a name="l00050"></a>00050                         <span class="keywordflow">try</span>{ 
+<a name="l00051"></a>00051                                 <span class="keywordflow">do</span>
+<a name="l00052"></a>00052                                     {
+<a name="l00053"></a>00053                                       <span class="comment">//print out a menu</span>
+<a name="l00054"></a>00054                                       System.out.println(<span class="stringliteral">&quot;\n------- Menu----------&quot;</span>);
+<a name="l00055"></a>00055                                       System.out.println(<span class="stringliteral">&quot;1. Analizzare una gramamtica Contex-Free&quot;</span>);
+<a name="l00056"></a>00056                                       System.out.println(<span class="stringliteral">&quot;2. COntrollare se una frase appartiene alla grammatica e stampare l&#39;albero sintattico&quot;</span>);
+<a name="l00057"></a>00057                                       System.out.println(<span class="stringliteral">&quot;3. EXIT&quot;</span>);
+<a name="l00058"></a>00058                                       System.out.println(<span class="stringliteral">&quot;Digitare la propria scelta:&quot;</span>);
+<a name="l00059"></a>00059                                         BufferedReader leggi = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
+<a name="l00060"></a>00060 <span class="comment">//                                    for(int i=0; i&lt;4;i++){</span>
+<a name="l00061"></a>00061 <span class="comment">//                                                      System.out.println(&quot;Inserire un numero&quot;);</span>
+<a name="l00062"></a>00062 <span class="comment">//                                                      leggi=new BufferedReader(new InputStreamReader(System.in));</span>
+<a name="l00063"></a>00063                                                         <span class="comment">//TODO:</span>
+<a name="l00064"></a>00064 <span class="comment">//                                                      if(leggi.readLine().compareTo(&quot;9&quot;)&gt;0 &amp;&amp; leggi.readLine().compareTo(&quot;0&quot;)&lt;0) </span>
+<a name="l00065"></a>00065 <span class="comment">//                                                              break;</span>
+<a name="l00066"></a>00066 <span class="comment">//                                    }</span>
+<a name="l00067"></a>00067                                     <span class="keywordtype">int</span> scelta= Integer.parseInt(leggi.readLine());
+<a name="l00068"></a>00068                                     <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser = null;
+<a name="l00069"></a>00069                                     <span class="keywordflow">switch</span> (scelta)
+<a name="l00070"></a>00070                                       {
+<a name="l00071"></a>00071                                         <span class="comment">//the choices go here - print the details</span>
+<a name="l00072"></a>00072                                         <span class="keywordflow">case</span> 1:
+<a name="l00073"></a>00073                                                 System.out.println(<span class="stringliteral">&quot;\nDigitare il nome del file contenente il Contex-Free: &quot;</span>); 
+<a name="l00074"></a>00074                                                 leggi = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
+<a name="l00075"></a>00075                                                 parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>(leggi.readLine());    <span class="comment">//TODO: da rimuovere</span>
+<a name="l00076"></a>00076 <span class="comment">//                                              parser = new GrammarParser(leggi.readLine());</span>
+<a name="l00077"></a>00077                                                 analizer(parser);
+<a name="l00078"></a>00078                                                 <span class="keywordflow">break</span>;
+<a name="l00079"></a>00079                                         <span class="keywordflow">case</span> 2:
+<a name="l00080"></a>00080                                                 System.out.println(<span class="stringliteral">&quot;\nAnalisi sintattica &quot;</span> ); 
+<a name="l00081"></a>00081                                                         parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(<span class="stringliteral">&quot;Result.txt&quot;</span>);
+<a name="l00082"></a>00082                                                         astMethod(parser);
+<a name="l00083"></a>00083                                           <span class="keywordflow">break</span>;
+<a name="l00084"></a>00084                                         <span class="keywordflow">case</span> 3:
+<a name="l00085"></a>00085                                                 System.exit(0);
+<a name="l00086"></a>00086                                       }
+<a name="l00087"></a>00087                                     }<span class="keywordflow">while</span>(<span class="keyword">true</span>);
+<a name="l00088"></a>00088                                 }<span class="keywordflow">catch</span> (NumberFormatException e) {
+<a name="l00089"></a>00089                                         logger.error(<span class="stringliteral">&quot;You have inserted a number&quot;</span>,e);
+<a name="l00090"></a>00090                                 }<span class="keywordflow">catch</span> (Exception e) {
+<a name="l00091"></a>00091                                         logger.error(<span class="stringliteral">&quot;Critical error...the programm whil termanate&quot;</span>,e);
+<a name="l00092"></a>00092                                         System.exit(0);
+<a name="l00093"></a>00093                                 }
+<a name="l00094"></a>00094                 }<span class="keywordflow">else</span>{
+<a name="l00095"></a>00095                         logger.debug(<span class="stringliteral">&quot;Start Application&quot;</span>);
+<a name="l00096"></a>00096                         <span class="keywordtype">int</span> i=0;
+<a name="l00097"></a>00097                 String arg;
+<a name="l00098"></a>00098                 <span class="keywordtype">boolean</span> analizeFlag= <span class="keyword">false</span>;
+<a name="l00099"></a>00099                 <span class="keywordtype">boolean</span> inFlag=<span class="keyword">false</span>;
+<a name="l00100"></a>00100                 <span class="keywordtype">boolean</span> stFlag=<span class="keyword">false</span>;
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102                 String input = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00103"></a>00103                         <span class="keywordflow">while</span> (i &lt; args.length &amp;&amp; args[i].startsWith(<span class="stringliteral">&quot;-&quot;</span>)) {
+<a name="l00104"></a>00104                                 arg = args[i++];
+<a name="l00105"></a>00105                     <span class="keywordflow">if</span> (arg.equals(<span class="stringliteral">&quot;-in&quot;</span>)) {
+<a name="l00106"></a>00106                         <span class="keywordflow">if</span> (i &lt; args.length)
+<a name="l00107"></a>00107                             input = args[i++];
+<a name="l00108"></a>00108                         inFlag = <span class="keyword">true</span>;
+<a name="l00109"></a>00109                     }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg.equals(<span class="stringliteral">&quot;--analize&quot;</span>)) {
+<a name="l00110"></a>00110                         analizeFlag=<span class="keyword">true</span>;
+<a name="l00111"></a>00111                     }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg.equals(<span class="stringliteral">&quot;--st&quot;</span>)) {
+<a name="l00112"></a>00112                         stFlag=<span class="keyword">true</span>;
+<a name="l00113"></a>00113                     }
+<a name="l00114"></a>00114                         }
+<a name="l00115"></a>00115                         <span class="keywordflow">if</span>(inFlag){
+<a name="l00116"></a>00116                             <a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser = null;
+<a name="l00117"></a>00117                                 <span class="keywordflow">if</span>(stFlag){
+<a name="l00118"></a>00118                                 parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>(input);   
+<a name="l00119"></a>00119                                 analizer(parser);
+<a name="l00120"></a>00120                                 }
+<a name="l00121"></a>00121                                 <span class="keywordflow">if</span>(analizeFlag){
+<a name="l00122"></a>00122                                 System.out.println(<span class="stringliteral">&quot;\nAnalisi sintattica &quot;</span> ); 
+<a name="l00123"></a>00123                                         parser = <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_l_r_input_parser.html" title="Parse a txt file with action table, goto table and grammar in one line format (*.1l).">LRInputParser</a>(<span class="stringliteral">&quot;Result.txt&quot;</span>);
+<a name="l00124"></a>00124                                         astMethod(parser);
+<a name="l00125"></a>00125                                 }
+<a name="l00126"></a>00126                                 <span class="keywordflow">if</span>(!stFlag&amp;&amp;!analizeFlag){
+<a name="l00127"></a>00127                                         System.out.println(<span class="stringliteral">&quot;no option specified...program terminated.&quot;</span>);
+<a name="l00128"></a>00128                                 }
+<a name="l00129"></a>00129                         }
+<a name="l00130"></a>00130                 }
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132         
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> astMethod(<a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser) <span class="keywordflow">throws</span> Exception {
+<a name="l00135"></a>00135                 <a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a> parserProgram = (<a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a>)parser.<a class="code" href="classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object.">parse</a>();
+<a name="l00136"></a>00136                 <span class="keywordtype">boolean</span> flag=<span class="keyword">true</span>;
+<a name="l00137"></a>00137                 <span class="keywordflow">while</span>(flag){
+<a name="l00138"></a>00138                         System.out.println(<span class="stringliteral">&quot;\nDigitare la stringa in input: &quot;</span>); 
+<a name="l00139"></a>00139                         BufferedReader leggi = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));
+<a name="l00140"></a>00140                         parserProgram.setInput(leggi.readLine());                     
+<a name="l00141"></a>00141                         <span class="keywordflow">switch</span>(parserProgram.<a class="code" href="classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61" title="The leading method of the class, responsible of the parsing of input string and consequent stack pars...">parse</a>()){
+<a name="l00142"></a>00142                                 <span class="keywordflow">case</span> ACCEPT:
+<a name="l00143"></a>00143                                         flag=<span class="keyword">false</span>;
+<a name="l00144"></a>00144                                         logger.info(<span class="stringliteral">&quot;ACCEPT&quot;</span>);  
+<a name="l00145"></a>00145                                         System.out.println(parserProgram.getStack().toString());
+<a name="l00146"></a>00146                                         System.out.println(<span class="stringliteral">&quot;\nCRONOLOGIA:\n&quot;</span>);
+<a name="l00147"></a>00147                                         <span class="keywordflow">for</span>(<a class="code" href="classparser_program_1_1_history_element.html" title="This class represent an element of the parsing history.">HistoryElement</a> e : parserProgram.getHistory()) System.out.println(e.toString()+<span class="stringliteral">&quot;\n&quot;</span>);
+<a name="l00148"></a>00148                                         <a class="code" href="classparser_program_1_1_st.html" title="Abstract Syntax Three class.">St</a> st = <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_st.html" title="Abstract Syntax Three class.">St</a>(parserProgram.getHistory());
+<a name="l00149"></a>00149                                         st.<a class="code" href="classparser_program_1_1_st.html#afe794d3e531e9bd6c21dbb1f6398bcd0" title="Initialize the three from the parsing history.">initFromHistory</a>();   
+<a name="l00150"></a>00150                                         <a class="code" href="class_home.html#a69f212766dabec3ed163022f15b5a97d" title="Store an ST into xml file named &quot;ST.xml&quot;.">writeToXml</a>(st.<a class="code" href="classparser_program_1_1_st.html#aae0a295da8eb563e9bb2aa3ba5beab08">getRoot</a>());
+<a name="l00151"></a>00151                                         <span class="keywordflow">break</span>;
+<a name="l00152"></a>00152                                 <span class="keywordflow">case</span> ERROR:
+<a name="l00153"></a>00153                                         flag=<span class="keyword">false</span>;
+<a name="l00154"></a>00154                                         logger.info(<span class="stringliteral">&quot;ERROR&quot;</span>);
+<a name="l00155"></a>00155                                         <span class="keywordflow">break</span>;
+<a name="l00156"></a>00156                                 <span class="keywordflow">case</span> INVALID_IN:
+<a name="l00157"></a>00157                                         System.out.println(<span class="stringliteral">&quot;Uno o pi� caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente&quot;</span>);
+<a name="l00158"></a>00158                                         flag=<span class="keyword">true</span>;
+<a name="l00159"></a>00159                                         <span class="keywordflow">break</span>;
+<a name="l00160"></a>00160                         }
+<a name="l00161"></a>00161                 }
+<a name="l00162"></a>00162         }
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> analizer(<a class="code" href="classinput_parser_1_1_abstract_input_parser.html">AbstractInputParser</a> parser)
+<a name="l00166"></a>00166                         <span class="keywordflow">throws</span> FileNotFoundException, Exception {
+<a name="l00167"></a>00167                 <a class="code" href="interfacecontext_free_1_1scanner_1_1_i_scanner.html">IScanner</a> lalr1 = <a class="code" href="classcontext_free_1_1scanner_1_1_scanner_factory.html">ScannerFactory</a>.createParser(parser);
+<a name="l00168"></a>00168                 
+<a name="l00169"></a>00169                 <span class="keywordflow">if</span>(lalr1!=null){
+<a name="l00170"></a>00170                         System.out.println(lalr1.toString());
+<a name="l00171"></a>00171                         <span class="keywordflow">if</span>(!lalr1.isAmbiguos()){
+<a name="l00172"></a>00172                                 PrintStream output = <span class="keyword">new</span> PrintStream(<span class="keyword">new</span> FileOutputStream(<span class="stringliteral">&quot;Result.txt&quot;</span>));
+<a name="l00173"></a>00173                                 String table = lalr1.toString();
+<a name="l00174"></a>00174                                 String [] temp = table.split(<span class="stringliteral">&quot;\\n&quot;</span>);
+<a name="l00175"></a>00175                                 <span class="keywordflow">for</span>(String o : temp)
+<a name="l00176"></a>00176                                         output.println(o);
+<a name="l00177"></a>00177                                 output.println(<span class="stringliteral">&quot;\nGrammatica:&quot;</span>);
+<a name="l00178"></a>00178                                 output.println(lalr1.getGrammar().<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html#a5fdeb5a6a9426b400c2fe805566a377c">toOneLineString</a>());
+<a name="l00179"></a>00179                                 output.close();
+<a name="l00180"></a>00180                         }
+<a name="l00181"></a>00181                 }               
+<a name="l00182"></a>00182         }
+<a name="l00189"></a><a class="code" href="class_home.html#a69f212766dabec3ed163022f15b5a97d">00189</a>         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_home.html#a69f212766dabec3ed163022f15b5a97d" title="Store an ST into xml file named &quot;ST.xml&quot;.">writeToXml</a>(DefaultMutableTreeNode root) <span class="keywordflow">throws</span> FileNotFoundException { 
+<a name="l00190"></a>00190                 XStream xstream = <span class="keyword">new</span> XStream();
+<a name="l00191"></a>00191                 String xml = xstream.toXML(root);
+<a name="l00192"></a>00192                 PrintStream output = <span class="keyword">new</span> PrintStream(<span class="keyword">new</span> FileOutputStream(<span class="stringliteral">&quot;ST.xml&quot;</span>));
+<a name="l00193"></a>00193                 String [] temp = xml.split(<span class="stringliteral">&quot;\\n&quot;</span>);
+<a name="l00194"></a>00194                 <span class="keywordflow">for</span>(String o : temp)
+<a name="l00195"></a>00195                         output.println(o);
+<a name="l00196"></a>00196                 output.close();
+<a name="l00197"></a>00197         }
+<a name="l00198"></a>00198 }
 </pre></div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><b>Home.java</b>      </li>
 
-    <li class="footer">Generated on Wed Mar 21 2012 19:55:42 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Fri Mar 30 2012 21:26:24 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

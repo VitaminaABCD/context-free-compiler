@@ -1,4 +1,4 @@
-.TH "contextFree.grammar.Production" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.TH "contextFree.grammar.Production" 3 "Fri Mar 30 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,39 +7,51 @@ contextFree.grammar.Production \-
 .br
 .PP
 .PP
-Inherited by \fBcontextFree\&.parser\&.IndexedProduction\fP\&.
+Inherited by \fBcontextFree\&.scanner\&.IndexedProduction\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
 .ti -1c
+.RI "\fBProduction\fP (List< String > lt, List< String > rt)"
+.br
+.RI "\fICreates an object production and initialize it's rightSimbolsList\&. \fP"
+.ti -1c
 .RI "\fBProduction\fP (String lt, String rt)"
 .br
-.RI "\fICreates an object production and initialize it's rightList\&. \fP"
+.RI "\fICreate a Complete production representation\&. \fP"
 .ti -1c
-.RI "\fBProduction\fP (String lt, String rt, boolean flag)"
+.RI "\fBProduction\fP (String lt, String rt, List< String > V, List< String > T)  throws InterruptedException"
+.br
+.RI "\fICreate a Complete production representation\&. \fP"
+.ti -1c
+.RI "List< String > \fBgetLeftSimbols\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLeftSimbols\fP (List< String >lt)"
+.br
+.ti -1c
+.RI "List< String > \fBgetRightSimbols\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetRightSimbols\fP (List< String >rt)"
 .br
 .ti -1c
 .RI "String \fBgetLeft\fP ()"
 .br
 .ti -1c
-.RI "void \fBsetLeft\fP (String left)"
-.br
-.ti -1c
 .RI "String \fBgetRight\fP ()"
-.br
-.ti -1c
-.RI "void \fBsetRight\fP (String right)"
-.br
-.ti -1c
-.RI "List< String > \fBgetRightList\fP ()"
-.br
-.ti -1c
-.RI "void \fBsetRightList\fP (List< String > rightList)"
 .br
 .ti -1c
 .RI "String \fBtoString\fP ()"
 .br
 .RI "\fIreturn a formatted string in the form axioms :: = expression \fP"
+.in -1c
+.SS "Package Attributes"
+
+.in +1c
+.ti -1c
+.RI "String \fBright\fP"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -48,27 +60,27 @@ Inherited by \fBcontextFree\&.parser\&.IndexedProduction\fP\&.
 .RI "String \fBleft\fP"
 .br
 .ti -1c
-.RI "String \fBright\fP"
+.RI "List< String > \fBleftSimbols\fP"
 .br
 .ti -1c
-.RI "List< String > \fBrightList\fP"
+.RI "List< String > \fBrightSimbols\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 6 of file Production\&.java\&.
+Definition at line 8 of file Production\&.java\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "contextFree\&.grammar\&.Production\&.Production (Stringlt, Stringrt)"
+.SS "contextFree\&.grammar\&.Production\&.Production (List< String >lt, List< String >rt)"
 
 .PP
-Creates an object production and initialize it's rightList\&. passing between the right and left, check if is an empty string (epsilon) 
+Creates an object production and initialize it's rightSimbolsList\&. passing between the rightSimbols and leftSimbols\&. 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIleft\fP part of production 
+\fIleftSimbols\fP part of production 
 .br
-\fIright\fP part of production 
+\fIrightSimbols\fP part of production 
 .RE
 .PP
 \fBAuthor:\fP
@@ -78,18 +90,62 @@ Pierluigi Sottile
 .PP
 
 .PP
-Definition at line 24 of file Production\&.java\&.
-.SH "Member Function Documentation"
-.PP 
-.SS "String \fBcontextFree\&.grammar\&.Production\&.getLeft\fP ()"
-\fBReturns:\fP
+Definition at line 26 of file Production\&.java\&.
+.SS "contextFree\&.grammar\&.Production\&.Production (Stringlt, Stringrt)"
+
+.PP
+Create a Complete production representation\&. Initialize two list with one element with entire symbol on left and right part of the production\&. 
+.PP
+\fBParameters:\fP
 .RS 4
-the left side of production 
+\fIlt\fP Left part of the production 
+.br
+\fIrt\fP Right part of the production 
 .RE
 .PP
 
 .PP
-Definition at line 46 of file Production\&.java\&.
+Definition at line 38 of file Production\&.java\&.
+.SS "contextFree\&.grammar\&.Production\&.Production (Stringlt, Stringrt, List< String >V, List< String >T)  throws InterruptedException"
+
+.PP
+Create a Complete production representation\&. Initialize two list with symbols of left and right part of the production\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlt\fP Left part of the production 
+.br
+\fIrt\fP Right part of the production 
+.br
+\fIV\fP The list of terminal 
+.br
+\fIT\fP 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIInterruptedException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file Production\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "List<String> \fBcontextFree\&.grammar\&.Production\&.getLeftSimbols\fP ()"
+\fBReturns:\fP
+.RS 4
+theleftSimbolst side of production 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file Production\&.java\&.
 
 .SH "Author"
 .PP 

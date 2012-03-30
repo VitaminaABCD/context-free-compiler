@@ -1,0 +1,420 @@
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1}{\section{context\-Free.\-scanner.\-L\-A\-L\-R1 Class Reference}
+\label{classcontext_free_1_1scanner_1_1_l_a_l_r1}\index{context\-Free.\-scanner.\-L\-A\-L\-R1@{context\-Free.\-scanner.\-L\-A\-L\-R1}}
+}
+
+
+Inheritance diagram for context\-Free.\-scanner.\-L\-A\-L\-R1\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for context\-Free.\-scanner.\-L\-A\-L\-R1\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_afcaf919b13839287bfcd4c07d304af44}{{\bfseries L\-A\-L\-R1} (\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} gram)}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_afcaf919b13839287bfcd4c07d304af44}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab74da1918c78f64f121dbbd4a4279250}{String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries get\-Action\-Table} ()}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab74da1918c78f64f121dbbd4a4279250}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_ae8b5062ce6f6313e1d1baf9899a3a3d2}{void {\bfseries set\-Action\-Table} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} action\-Table)}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_ae8b5062ce6f6313e1d1baf9899a3a3d2}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_ae491018691436875bc25b87126fb83c9}{String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries get\-Goto\-Table} ()}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_ae491018691436875bc25b87126fb83c9}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a282138d6706fc4835fe914c12e1bcd58}{void {\bfseries set\-Goto\-Table} (String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} goto\-Table)}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a282138d6706fc4835fe914c12e1bcd58}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a19d4f6725ddaba47bec24a906a32bc30}{\hyperlink{classcontext_free_1_1scanner_1_1_automa}{Automa} {\bfseries get\-Automa} ()}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a19d4f6725ddaba47bec24a906a32bc30}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a2b83305a759d41eca9f52965dd88be51}{\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} {\bfseries get\-Grammar} ()}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a2b83305a759d41eca9f52965dd88be51}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a7db67e7e6a0c58be0de391f71165fc7c}{void {\bfseries set\-Grammar} (\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} gram)}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a7db67e7e6a0c58be0de391f71165fc7c}
+
+\item 
+int \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_a84de2247841f98c9d1339acac165d141}{init} ()  throws Exception
+\begin{DoxyCompactList}\small\item\em Initialize the L\-A\-L\-R(1) automaton from \hyperlink{classcontext_free_1_1scanner_1_1_l_r0}{L\-R0} automaton. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_a879873c5f879881494d342782387d661}{chiusura\-L\-R1} (List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ i)
+\begin{DoxyCompactList}\small\item\em Passed a list of production I that form the kernel of a state, return closing it, and the lookahead symbols associated. \end{DoxyCompactList}\item 
+int \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_a92b63b5d61bbdd523a16aa5e577c2ba6}{table\-Costruction} ()  throws Exception
+\begin{DoxyCompactList}\small\item\em builds the Action table Go\-To from an automa \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1} and tells us if it is or not type of \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1} \end{DoxyCompactList}\item 
+boolean \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_a909aea9ab05f3633c169e4dd20447e62}{reduce} (\hyperlink{classcontext_free_1_1scanner_1_1_state}{State} stato)
+\begin{DoxyCompactList}\small\item\em if the point is in the last position he wrote the reduces in the action table. \end{DoxyCompactList}\item 
+boolean \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_aee49a037861ca73f5380efb261517825}{action\-Write} (int i, int j, int x, String action)
+\begin{DoxyCompactList}\small\item\em Writes the action Reduce or Scift in the Action table. \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a53759d4a64bdb55fe8c039db8eb891f3}{boolean {\bfseries is\-Ambiguos} ()}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a53759d4a64bdb55fe8c039db8eb891f3}
+
+\item 
+String \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_a452dc07f015344b3681d8e1a161d51dd}{print\-Table} ()
+\begin{DoxyCompactList}\small\item\em Return a string with tables Goto Action. \end{DoxyCompactList}\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_abe84feb77fd24be7e65dbfd7e1103112}{String {\bfseries to\-String} ()}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_abe84feb77fd24be7e65dbfd7e1103112}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a4eecab5f1245d08a45d71ba27f91350d}{static Logger {\bfseries logger} = Logger.\-get\-Logger(L\-A\-L\-R1.\-class.\-get\-Name())}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a4eecab5f1245d08a45d71ba27f91350d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab1c19e75693982310b7494bd3b8623c9}{calculate\-Symbol} (\hyperlink{classcontext_free_1_1scanner_1_1_automa}{Automa} atm)  throws Exception
+\begin{DoxyCompactList}\small\item\em Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a42dc2f89ec2c642200c0d9bf78d5ce25}{boolean {\bfseries is\-Ambiguous} = false}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a42dc2f89ec2c642200c0d9bf78d5ce25}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a95bbe0235c59768f32b942ba476df180}{String {\bfseries ambiguo} = \char`\"{}\char`\"{}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a95bbe0235c59768f32b942ba476df180}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a9abae9a81b359b59dcbcfdecbf809068}{\hyperlink{classcontext_free_1_1scanner_1_1_automa}{Automa} {\bfseries automa}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a9abae9a81b359b59dcbcfdecbf809068}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_af6f7fe36eb851deda2a609a22c300b7c}{String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries action\-Table}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_af6f7fe36eb851deda2a609a22c300b7c}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a95bedde44fe8cd140e6ca0739928e0f7}{String\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries goto\-Table}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a95bedde44fe8cd140e6ca0739928e0f7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file L\-A\-L\-R1.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_aee49a037861ca73f5380efb261517825}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!action\-Write@{action\-Write}}
+\index{action\-Write@{action\-Write}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{action\-Write}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-action\-Write} (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{x, }
+\item[{String}]{action}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_aee49a037861ca73f5380efb261517825}
+
+
+Writes the action Reduce or Scift in the Action table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & state \\
+\hline
+{\em -\/1} & If it reduces, else the destination state of the shift \\
+\hline
+{\em symbol} & for which you go write in the Action table \\
+\hline
+{\em action} & \char`\"{}s\char`\"{} if it is shift, else the production for which reduce \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false case of ambiguity 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 372 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_aee49a037861ca73f5380efb261517825_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab1c19e75693982310b7494bd3b8623c9}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!calculate\-Symbol@{calculate\-Symbol}}
+\index{calculate\-Symbol@{calculate\-Symbol}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{calculate\-Symbol}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-calculate\-Symbol} (
+\begin{DoxyParamCaption}
+\item[{{\bf Automa}}]{atm}
+\end{DoxyParamCaption}
+)  throws Exception\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab1c19e75693982310b7494bd3b8623c9}
+
+
+Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation and propagation of symbol. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em atm} & the automaton \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no symbol have created, 1 otherwise. -\/1 if error. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyAuthor}{Author}
+Paolo Pino 
+\end{DoxyAuthor}
+Trasformo la singola produzione k in una list per poterla passare a chiusura \hyperlink{classcontext_free_1_1scanner_1_1_l_r1}{L\-R1} 
+
+Definition at line 122 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab1c19e75693982310b7494bd3b8623c9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab1c19e75693982310b7494bd3b8623c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a879873c5f879881494d342782387d661}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!chiusura\-L\-R1@{chiusura\-L\-R1}}
+\index{chiusura\-L\-R1@{chiusura\-L\-R1}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{chiusura\-L\-R1}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Indexed\-Production}$>$ {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-chiusura\-L\-R1} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{i}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a879873c5f879881494d342782387d661}
+
+
+Passed a list of production I that form the kernel of a state, return closing it, and the lookahead symbols associated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & kernels of the state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of products forming the state 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 171 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a879873c5f879881494d342782387d661_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a879873c5f879881494d342782387d661_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a84de2247841f98c9d1339acac165d141}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!init@{init}}
+\index{init@{init}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-init} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws Exception\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a84de2247841f98c9d1339acac165d141}
+
+
+Initialize the L\-A\-L\-R(1) automaton from \hyperlink{classcontext_free_1_1scanner_1_1_l_r0}{L\-R0} automaton. 
+
+If the grammar is L\-A\-L\-R(1) then initialize action and goto table. \begin{DoxyReturn}{Returns}
+0 if the grammar is ambiguous, 1 otherwise. -\/1 if error 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcontext_free_1_1scanner_1_1_l_r0}{context\-Free.\-scanner.\-L\-R0}.
+
+
+
+Definition at line 76 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a84de2247841f98c9d1339acac165d141_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a452dc07f015344b3681d8e1a161d51dd}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!print\-Table@{print\-Table}}
+\index{print\-Table@{print\-Table}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{print\-Table}]{\setlength{\rightskip}{0pt plus 5cm}String {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-print\-Table} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a452dc07f015344b3681d8e1a161d51dd}
+
+
+Return a string with tables Goto Action. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 404 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a452dc07f015344b3681d8e1a161d51dd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a909aea9ab05f3633c169e4dd20447e62}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!reduce@{reduce}}
+\index{reduce@{reduce}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{reduce}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-reduce} (
+\begin{DoxyParamCaption}
+\item[{{\bf State}}]{stato}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a909aea9ab05f3633c169e4dd20447e62}
+
+
+if the point is in the last position he wrote the reduces in the action table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & to control \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there are conflicts 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 334 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a909aea9ab05f3633c169e4dd20447e62_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a909aea9ab05f3633c169e4dd20447e62_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_a_l_r1_a92b63b5d61bbdd523a16aa5e577c2ba6}{\index{context\-Free\-::scanner\-::\-L\-A\-L\-R1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}!table\-Costruction@{table\-Costruction}}
+\index{table\-Costruction@{table\-Costruction}!contextFree::scanner::LALR1@{context\-Free\-::scanner\-::\-L\-A\-L\-R1}}
+\subsubsection[{table\-Costruction}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf context\-Free.\-scanner.\-L\-A\-L\-R1.\-table\-Costruction} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throws Exception}}\label{classcontext_free_1_1scanner_1_1_l_a_l_r1_a92b63b5d61bbdd523a16aa5e577c2ba6}
+
+
+builds the Action table Go\-To from an automa \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1} and tells us if it is or not type of \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em automa} & to control \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the type of grammar is L\-A\-L\-R (1), 0 otherwise 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 283 of file L\-A\-L\-R1.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a92b63b5d61bbdd523a16aa5e577c2ba6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_a_l_r1_a92b63b5d61bbdd523a16aa5e577c2ba6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/context\-Free/scanner/L\-A\-L\-R1.\-java\end{DoxyCompactItemize}

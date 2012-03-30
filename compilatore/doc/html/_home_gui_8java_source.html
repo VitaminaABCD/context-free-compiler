@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Context Free LALR1 compiler
@@ -143,14 +141,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 <span class="keyword">import</span> org.apache.log4j.Logger;
 <a name="l00028"></a>00028 <span class="keyword">import</span> org.apache.log4j.PropertyConfigurator;
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">import</span> parserProgram.Ast;
+<a name="l00030"></a>00030 <span class="keyword">import</span> parserProgram.St;
 <a name="l00031"></a>00031 <span class="keyword">import</span> parserProgram.ParserProgram;
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 <span class="keyword">import</span> com.thoughtworks.xstream.XStream;
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="keyword">import</span> contextFree.grammar.IGrammar;
-<a name="l00036"></a>00036 <span class="keyword">import</span> contextFree.parser.IParser;
-<a name="l00037"></a>00037 <span class="keyword">import</span> contextFree.parser.ParserFactory;
+<a name="l00036"></a>00036 <span class="keyword">import</span> contextFree.scanner.IScanner;
+<a name="l00037"></a>00037 <span class="keyword">import</span> contextFree.scanner.ScannerFactory;
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039 <span class="keyword">import</span> javax.swing.JTree;
 <a name="l00040"></a>00040 <span class="keyword">import</span> javax.swing.JTextField;
@@ -223,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00128"></a>00128         <span class="keywordtype">long</span> startTime = System.currentTimeMillis();
 <a name="l00129"></a>00129         <a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a> grammar= (<a class="code" href="interfacecontext_free_1_1grammar_1_1_i_grammar.html" title="Grammar Interface.">IGrammar</a>) <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>(path).<a class="code" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object.">parse</a>();
 <a name="l00130"></a>00130 <span class="comment">//              IParsing l = p.createParsing();</span>
-<a name="l00131"></a>00131                 <a class="code" href="interfacecontext_free_1_1parser_1_1_i_parser.html">IParser</a> lalr1 = <a class="code" href="classcontext_free_1_1parser_1_1_parser_factory.html">ParserFactory</a>.createParser(grammar);
+<a name="l00131"></a>00131                 <a class="code" href="interfacecontext_free_1_1scanner_1_1_i_scanner.html">IScanner</a> lalr1 = <a class="code" href="classcontext_free_1_1scanner_1_1_scanner_factory.html">ScannerFactory</a>.createParser(grammar);
 <a name="l00132"></a>00132                 
 <a name="l00133"></a>00133                 <span class="keywordflow">if</span>(lalr1!=null){
 <a name="l00134"></a>00134                         leftPanel.setText(lalr1.toString());
@@ -350,7 +348,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00262"></a>00262                                 <span class="keywordtype">long</span> startTime = System.currentTimeMillis();
 <a name="l00263"></a>00263                                 <span class="keywordflow">try</span> {
 <a name="l00264"></a>00264                                         <a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a> parserProgram = (<a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a>) <span class="keyword">new</span> <a class="code" href="classinput_parser_1_1_input_parser.html" title="An object rappresentation of input file parsing result.">InputParser</a>(<span class="stringliteral">&quot;Result.txt&quot;</span>).<a class="code" href="classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object.">parse</a>();
-<a name="l00265"></a>00265                                 DefaultMutableTreeNode root = <a class="code" href="class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027" title="Create the AST.">astMethod</a>(parserProgram);
+<a name="l00265"></a>00265                                 DefaultMutableTreeNode root = <a class="code" href="class_home_gui.html#a2903109ca5fa51fc78f8487c79dafc43" title="Create the ST.">stMethod</a>(parserProgram);
 <a name="l00266"></a>00266                                 <span class="keywordflow">if</span>(root!=null){
 <a name="l00267"></a>00267                                         tree.setModel(<span class="keyword">new</span> JTree(root).getModel());
 <a name="l00268"></a>00268                                         tree.expandPath(<span class="keyword">new</span> TreePath(root.getPath()));
@@ -430,7 +428,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00342"></a>00342                 frame.getContentPane().add(automaText);
 <a name="l00343"></a>00343         }
 <a name="l00344"></a>00344 
-<a name="l00352"></a><a class="code" href="class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027">00352</a>         <span class="keyword">private</span> DefaultMutableTreeNode <a class="code" href="class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027" title="Create the AST.">astMethod</a>(<a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a> parserProgram) <span class="keywordflow">throws</span> Exception {
+<a name="l00352"></a><a class="code" href="class_home_gui.html#a2903109ca5fa51fc78f8487c79dafc43">00352</a>         <span class="keyword">private</span> DefaultMutableTreeNode <a class="code" href="class_home_gui.html#a2903109ca5fa51fc78f8487c79dafc43" title="Create the ST.">stMethod</a>(<a class="code" href="classparser_program_1_1_parser_program.html" title="This class is responsible of the parsing of input string, and stack parsing creation.">ParserProgram</a> parserProgram) <span class="keywordflow">throws</span> Exception {
 <a name="l00353"></a>00353                 <span class="comment">//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));</span>
 <a name="l00354"></a>00354                 String in = this.input.getText();
 <a name="l00355"></a>00355                 <span class="keywordflow">if</span>(in.length()==0) <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Nessuna stringa in ingresso&quot;</span>);
@@ -438,11 +436,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00357"></a>00357                 <span class="keywordflow">switch</span>(parserProgram.parse()){
 <a name="l00358"></a>00358                         <span class="keywordflow">case</span> ACCEPT:
 <a name="l00359"></a>00359                                 logger.info(<span class="stringliteral">&quot;ACCEPT&quot;</span>);          
-<a name="l00360"></a>00360                                 <a class="code" href="classparser_program_1_1_ast.html" title="Abstract Syntax Three class.">Ast</a> ast = <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_ast.html" title="Abstract Syntax Three class.">Ast</a>(parserProgram.getHistory());
-<a name="l00361"></a>00361                                 ast.<a class="code" href="classparser_program_1_1_ast.html#a9ad5f3d77935440489df31131b18bf8e" title="Initialize the three from the parsing history.">initFromHistory</a>();
+<a name="l00360"></a>00360                                 <a class="code" href="classparser_program_1_1_st.html" title="Abstract Syntax Three class.">St</a> st = <span class="keyword">new</span> <a class="code" href="classparser_program_1_1_st.html" title="Abstract Syntax Three class.">St</a>(parserProgram.getHistory());
+<a name="l00361"></a>00361                                 st.<a class="code" href="classparser_program_1_1_st.html#afe794d3e531e9bd6c21dbb1f6398bcd0" title="Initialize the three from the parsing history.">initFromHistory</a>();
 <a name="l00362"></a>00362 <span class="comment">//                              this.tree.setModel(ast.getRoot());      </span>
-<a name="l00363"></a>00363                                 <a class="code" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38" title="Store an AST into xml file named &quot;AST.xml&quot;.">writeToXml</a>(ast.<a class="code" href="classparser_program_1_1_ast.html#af586bb4da64c79d9259c87757456d685">getRoot</a>());
-<a name="l00364"></a>00364                                 <span class="keywordflow">return</span> ast.<a class="code" href="classparser_program_1_1_ast.html#af586bb4da64c79d9259c87757456d685">getRoot</a>();
+<a name="l00363"></a>00363                                 <a class="code" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38" title="Store an ST into xml file named &quot;ST.xml&quot;.">writeToXml</a>(st.<a class="code" href="classparser_program_1_1_st.html#aae0a295da8eb563e9bb2aa3ba5beab08">getRoot</a>());
+<a name="l00364"></a>00364                                 <span class="keywordflow">return</span> st.<a class="code" href="classparser_program_1_1_st.html#aae0a295da8eb563e9bb2aa3ba5beab08">getRoot</a>();
 <a name="l00365"></a>00365                         <span class="keywordflow">case</span> ERROR:
 <a name="l00366"></a>00366                                 logger.info(<span class="stringliteral">&quot;ERROR&quot;</span>);
 <a name="l00367"></a>00367                                 <span class="keywordflow">return</span> null;
@@ -452,10 +450,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00371"></a>00371                 <span class="keywordflow">return</span> null;    
 <a name="l00372"></a>00372         }
 <a name="l00373"></a>00373 
-<a name="l00380"></a><a class="code" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38">00380</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38" title="Store an AST into xml file named &quot;AST.xml&quot;.">writeToXml</a>(DefaultMutableTreeNode root) <span class="keywordflow">throws</span> FileNotFoundException { 
+<a name="l00380"></a><a class="code" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38">00380</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="class_home_gui.html#a0428d3c56abfafc769684835c1581f38" title="Store an ST into xml file named &quot;ST.xml&quot;.">writeToXml</a>(DefaultMutableTreeNode root) <span class="keywordflow">throws</span> FileNotFoundException { 
 <a name="l00381"></a>00381                 XStream xstream = <span class="keyword">new</span> XStream();
 <a name="l00382"></a>00382                 String xml = xstream.toXML(root);
-<a name="l00383"></a>00383                 PrintStream output = <span class="keyword">new</span> PrintStream(<span class="keyword">new</span> FileOutputStream(<span class="stringliteral">&quot;AST.xml&quot;</span>));
+<a name="l00383"></a>00383                 PrintStream output = <span class="keyword">new</span> PrintStream(<span class="keyword">new</span> FileOutputStream(<span class="stringliteral">&quot;ST.xml&quot;</span>));
 <a name="l00384"></a>00384                 String [] temp = xml.split(<span class="stringliteral">&quot;\\n&quot;</span>);
 <a name="l00385"></a>00385                 <span class="keywordflow">for</span>(String o : temp)
 <a name="l00386"></a>00386                         output.println(o);
@@ -468,7 +466,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><b>HomeGui.java</b>      </li>
 
-    <li class="footer">Generated on Wed Mar 21 2012 19:55:42 for Context Free LALR1 compiler by
+    <li class="footer">Generated on Fri Mar 30 2012 21:26:24 for Context Free LALR1 compiler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.0 </li>
    </ul>

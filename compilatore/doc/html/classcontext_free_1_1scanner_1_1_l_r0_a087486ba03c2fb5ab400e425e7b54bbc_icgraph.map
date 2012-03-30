@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1scanner_1_1_l_r0.html#a5c7d77fe2a994398ef6312251e2f6109" title="given a grammar G we calculate the associated grammar augmented by adding the production S &#39;:: =..." alt="" coords="256,5,453,32"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a84de2247841f98c9d1339acac165d141" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="501,5,707,32"/>
+</map>

@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027" title="Create the AST." alt="" coords="197,5,339,32"/>
-<area shape="rect" id="node5" href="$class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010" title="Save operation." alt="" coords="387,5,514,32"/>
-<area shape="rect" id="node7" href="$class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593" title="Initialize GUI component and start the process." alt="" coords="563,5,698,32"/>
-<area shape="rect" id="node9" href="$class_home_gui.html#a241867731938068ae82ae7d5e7371fa3" title="Launch the application." alt="" coords="747,5,855,32"/>
+<area shape="rect" id="node3" href="$class_home_gui.html#a2903109ca5fa51fc78f8487c79dafc43" title="Create the ST." alt="" coords="198,5,333,32"/>
+<area shape="rect" id="node5" href="$class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010" title="Save operation." alt="" coords="382,5,509,32"/>
+<area shape="rect" id="node7" href="$class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593" title="Initialize GUI component and start the process." alt="" coords="558,5,693,32"/>
+<area shape="rect" id="node9" href="$class_home_gui.html#a241867731938068ae82ae7d5e7371fa3" title="Launch the application." alt="" coords="742,5,850,32"/>
 </map>

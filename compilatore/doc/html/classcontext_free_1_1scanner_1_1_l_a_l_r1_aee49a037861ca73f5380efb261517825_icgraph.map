@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a92b63b5d61bbdd523a16aa5e577c2ba6" title="builds the Action table GoTo from an automa LALR1 and tells us if it is or not type of LALR1..." alt="" coords="584,5,867,32"/>
+<area shape="rect" id="node7" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a909aea9ab05f3633c169e4dd20447e62" title="if the point is in the last position he wrote the reduces in the action table." alt="" coords="309,31,536,57"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a84de2247841f98c9d1339acac165d141" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="915,5,1120,32"/>
+</map>

@@ -7,6 +7,8 @@ var classparser_program_1_1_parser_program =
     [ "getHistory", "classparser_program_1_1_parser_program.html#ade596abd5eb6e01c6be4e9da8d71b39d", null ],
     [ "getInput", "classparser_program_1_1_parser_program.html#af5f3b504a20607ba94a8e3a1cb7e39b4", null ],
     [ "getStack", "classparser_program_1_1_parser_program.html#a89685a1ddaa7fe03516ab89efeffa1bf", null ],
+    [ "getT", "classparser_program_1_1_parser_program.html#a8a5d6d764dffb841c4eb2e0ba7e8a831", null ],
+    [ "getV", "classparser_program_1_1_parser_program.html#a2069ee9c4e2c9e5b842e6480ceda50e8", null ],
     [ "parse", "classparser_program_1_1_parser_program.html#ac8e01a54887a9c9f0a9d277d5cbb0c61", null ],
     [ "replaceLast", "classparser_program_1_1_parser_program.html#ad3661a982707613bf19207e8a8dea111", null ],
     [ "setActionTable", "classparser_program_1_1_parser_program.html#a85c97b5518ccedd3cfeae357e8ed28e2", null ],

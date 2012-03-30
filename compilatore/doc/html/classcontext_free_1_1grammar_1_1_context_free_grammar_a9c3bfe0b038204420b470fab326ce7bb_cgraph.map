@@ -1,4 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classcontext_free_1_1grammar_1_1_production.html#a6b42819c4b8af1aa759edf3ad5978f67" title="contextFree.grammar.Production.getLeft" alt="" coords="710,5,965,32"/>
-<area shape="rect" id="node5" href="$classcontext_free_1_1grammar_1_1_context_free_grammar.html#ac880ed3ca36ddcd8e20d8279af08244d" title="population structure Bolean [] null defined in class grammar, it has the same size of V..." alt="" coords="355,31,661,57"/>
+<area shape="rect" id="node3" href="$classcontext_free_1_1grammar_1_1_context_free_grammar.html#ac880ed3ca36ddcd8e20d8279af08244d" title="population structure Bolean [] null defined in class grammar, it has the same size of V..." alt="" coords="355,5,661,32"/>
 </map>

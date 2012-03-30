@@ -8,8 +8,7 @@ This class is responsible of the parsing of input string, and stack parsing crea
 
 
 
-Collaboration diagram for parser\-Program.\-Parser\-Program\-:
-\nopagebreak
+Collaboration diagram for parser\-Program.\-Parser\-Program\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -52,8 +51,14 @@ Collaboration diagram for parser\-Program.\-Parser\-Program\-:
 \hypertarget{classparser_program_1_1_parser_program_ade596abd5eb6e01c6be4e9da8d71b39d}{List$<$ \hyperlink{classparser_program_1_1_history_element}{History\-Element} $>$ {\bfseries get\-History} ()}\label{classparser_program_1_1_parser_program_ade596abd5eb6e01c6be4e9da8d71b39d}
 
 \item 
-\hyperlink{enumparser_program_1_1_r_e_s_u_l_t}{R\-E\-S\-U\-L\-T} \hyperlink{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}{parse} ()
-\begin{DoxyCompactList}\small\item\em The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{enumparser_program_1_1_r_e_s_u_l_t}{R\-E\-S\-U\-L\-T} \hyperlink{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}{parse} ()  throws Interrupted\-Exception
+\begin{DoxyCompactList}\small\item\em The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. \end{DoxyCompactList}\item 
+\hypertarget{classparser_program_1_1_parser_program_a8a5d6d764dffb841c4eb2e0ba7e8a831}{List$<$ String $>$ {\bfseries get\-T} ()}\label{classparser_program_1_1_parser_program_a8a5d6d764dffb841c4eb2e0ba7e8a831}
+
+\item 
+\hypertarget{classparser_program_1_1_parser_program_a2069ee9c4e2c9e5b842e6480ceda50e8}{List$<$ String $>$ {\bfseries get\-V} ()}\label{classparser_program_1_1_parser_program_a2069ee9c4e2c9e5b842e6480ceda50e8}
+
+\end{DoxyCompactItemize}
 \subsection*{Static Package Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -100,7 +105,7 @@ Paolo Pino
 \end{DoxyAuthor}
 
 
-Definition at line 23 of file Parser\-Program.\-java.
+Definition at line 26 of file Parser\-Program.\-java.
 
 
 
@@ -111,7 +116,7 @@ Definition at line 23 of file Parser\-Program.\-java.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}
+)  throws Interrupted\-Exception}}\label{classparser_program_1_1_parser_program_ac8e01a54887a9c9f0a9d277d5cbb0c61}
 
 
 The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. 
@@ -120,8 +125,13 @@ The leading method of the class, responsible of the parsing of input string and 
 R\-E\-S\-U\-L\-T.\-A\-C\-C\-E\-P\-T if the string has been accepted, R\-E\-S\-U\-L\-T.\-E\-R\-R\-O\-R if not, R\-E\-S\-U\-L\-T.\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-D if the input string is invalid 
 \end{DoxyReturn}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\-Exception} & \\
+\hline
+\end{DoxyExceptions}
 
-Definition at line 109 of file Parser\-Program.\-java.
+
+Definition at line 113 of file Parser\-Program.\-java.
 
 
 

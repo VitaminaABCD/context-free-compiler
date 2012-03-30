@@ -1,0 +1,294 @@
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0}{\section{context\-Free.\-scanner.\-L\-R0 Class Reference}
+\label{classcontext_free_1_1scanner_1_1_l_r0}\index{context\-Free.\-scanner.\-L\-R0@{context\-Free.\-scanner.\-L\-R0}}
+}
+
+
+Inheritance diagram for context\-Free.\-scanner.\-L\-R0\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classcontext_free_1_1scanner_1_1_l_r0__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for context\-Free.\-scanner.\-L\-R0\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_a992106eaf8f4e88b8a60e5f96518b7a7}{abstract void {\bfseries set\-Grammar} (\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} gram)}\label{classcontext_free_1_1scanner_1_1_l_r0_a992106eaf8f4e88b8a60e5f96518b7a7}
+
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_a6d4b6d0e324341b410e67778d9c9066d}{abstract int {\bfseries init} ()  throws Exception}\label{classcontext_free_1_1scanner_1_1_l_r0_a6d4b6d0e324341b410e67778d9c9066d}
+
+\item 
+List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ \hyperlink{classcontext_free_1_1scanner_1_1_l_r0_a313dfc00f370a910932b02034e26fb8c}{chiusura} (List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ i)
+\begin{DoxyCompactList}\small\item\em $\ast$\-I passed a list of production that form the kernel of a state, return closing it \end{DoxyCompactList}\item 
+List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ \hyperlink{classcontext_free_1_1scanner_1_1_l_r0_a087486ba03c2fb5ab400e425e7b54bbc}{Go\-To} (List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ i, String X)
+\begin{DoxyCompactList}\small\item\em Passed a state and the symbol that follows the point, returns the kernel of the new state with the relative closure. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_state}{State} $>$ \hyperlink{classcontext_free_1_1scanner_1_1_l_r0_a5c7d77fe2a994398ef6312251e2f6109}{Item} ()
+\begin{DoxyCompactList}\small\item\em given a grammar G we calculate the associated grammar augmented by adding the production S '\-:\-: =. \end{DoxyCompactList}\item 
+int \hyperlink{classcontext_free_1_1scanner_1_1_l_r0_ace66d28273502a9daf8e4550f48b5782}{uguale} (List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_state}{State} $>$ automa, List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$ stato)
+\begin{DoxyCompactList}\small\item\em checks if a state is present in an automaton \end{DoxyCompactList}\item 
+boolean \hyperlink{classcontext_free_1_1scanner_1_1_l_r0_a43275125600a950a4a1f78ce565eac5f}{prod\-Presente} (List$<$ \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production} $>$j, \hyperlink{classcontext_free_1_1grammar_1_1_production}{Production} corrente)
+\begin{DoxyCompactList}\small\item\em checks if a production is already in a list of productions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_af875f1cd5e40feec2ba3b08ce013c962}{\hyperlink{interfacecontext_free_1_1grammar_1_1_i_grammar}{I\-Grammar} {\bfseries grammatica}}\label{classcontext_free_1_1scanner_1_1_l_r0_af875f1cd5e40feec2ba3b08ce013c962}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file L\-R0.\-java.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_a313dfc00f370a910932b02034e26fb8c}{\index{context\-Free\-::scanner\-::\-L\-R0@{context\-Free\-::scanner\-::\-L\-R0}!chiusura@{chiusura}}
+\index{chiusura@{chiusura}!contextFree::scanner::LR0@{context\-Free\-::scanner\-::\-L\-R0}}
+\subsubsection[{chiusura}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Indexed\-Production}$>$ {\bf context\-Free.\-scanner.\-L\-R0.\-chiusura} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{i}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_r0_a313dfc00f370a910932b02034e26fb8c}
+
+
+$\ast$\-I passed a list of production that form the kernel of a state, return closing it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & kernels of the state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of products forming the state 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 27 of file L\-R0.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a313dfc00f370a910932b02034e26fb8c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a313dfc00f370a910932b02034e26fb8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_a087486ba03c2fb5ab400e425e7b54bbc}{\index{context\-Free\-::scanner\-::\-L\-R0@{context\-Free\-::scanner\-::\-L\-R0}!Go\-To@{Go\-To}}
+\index{Go\-To@{Go\-To}!contextFree::scanner::LR0@{context\-Free\-::scanner\-::\-L\-R0}}
+\subsubsection[{Go\-To}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Indexed\-Production}$>$ {\bf context\-Free.\-scanner.\-L\-R0.\-Go\-To} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{i, }
+\item[{String}]{X}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_r0_a087486ba03c2fb5ab400e425e7b54bbc}
+
+
+Passed a state and the symbol that follows the point, returns the kernel of the new state with the relative closure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classcontext_free_1_1scanner_1_1_state}{State}} & which calculated to be the new kernel \\
+\hline
+{\em X} & symbol that moves the point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+closure of new state 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 92 of file L\-R0.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a087486ba03c2fb5ab400e425e7b54bbc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a087486ba03c2fb5ab400e425e7b54bbc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_a5c7d77fe2a994398ef6312251e2f6109}{\index{context\-Free\-::scanner\-::\-L\-R0@{context\-Free\-::scanner\-::\-L\-R0}!Item@{Item}}
+\index{Item@{Item}!contextFree::scanner::LR0@{context\-Free\-::scanner\-::\-L\-R0}}
+\subsubsection[{Item}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf State}$>$ {\bf context\-Free.\-scanner.\-L\-R0.\-Item} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_r0_a5c7d77fe2a994398ef6312251e2f6109}
+
+
+given a grammar G we calculate the associated grammar augmented by adding the production S '\-:\-: =. 
+
+S, where S is the assiom. We calculate the closure of it and so associated Go\-To 'to have the finite state autom. \begin{DoxyReturn}{Returns}
+the autom L\-R(0) 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 121 of file L\-R0.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a5c7d77fe2a994398ef6312251e2f6109_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a5c7d77fe2a994398ef6312251e2f6109_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_a43275125600a950a4a1f78ce565eac5f}{\index{context\-Free\-::scanner\-::\-L\-R0@{context\-Free\-::scanner\-::\-L\-R0}!prod\-Presente@{prod\-Presente}}
+\index{prod\-Presente@{prod\-Presente}!contextFree::scanner::LR0@{context\-Free\-::scanner\-::\-L\-R0}}
+\subsubsection[{prod\-Presente}]{\setlength{\rightskip}{0pt plus 5cm}boolean {\bf context\-Free.\-scanner.\-L\-R0.\-prod\-Presente} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{j, }
+\item[{{\bf Production}}]{corrente}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_r0_a43275125600a950a4a1f78ce565eac5f}
+
+
+checks if a production is already in a list of productions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & state in which control \\
+\hline
+{\em prodaction} & to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is false if it is not 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 251 of file L\-R0.\-java.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a43275125600a950a4a1f78ce565eac5f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_a43275125600a950a4a1f78ce565eac5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classcontext_free_1_1scanner_1_1_l_r0_ace66d28273502a9daf8e4550f48b5782}{\index{context\-Free\-::scanner\-::\-L\-R0@{context\-Free\-::scanner\-::\-L\-R0}!uguale@{uguale}}
+\index{uguale@{uguale}!contextFree::scanner::LR0@{context\-Free\-::scanner\-::\-L\-R0}}
+\subsubsection[{uguale}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf context\-Free.\-scanner.\-L\-R0.\-uguale} (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf State} $>$}]{automa, }
+\item[{List$<$ {\bf Indexed\-Production} $>$}]{stato}
+\end{DoxyParamCaption}
+)}}\label{classcontext_free_1_1scanner_1_1_l_r0_ace66d28273502a9daf8e4550f48b5782}
+
+
+checks if a state is present in an automaton 
+
+
+\begin{DoxyParams}{Parameters}
+{\em autom} & \\
+\hline
+{\em state} & to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 If not present, otherwise returns the number state equal to the past 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Pierluigi Sottile 
+\end{DoxyAuthor}
+
+
+Definition at line 201 of file L\-R0.\-java.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcontext_free_1_1scanner_1_1_l_r0_ace66d28273502a9daf8e4550f48b5782_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/context\-Free/scanner/L\-R0.\-java\end{DoxyCompactItemize}

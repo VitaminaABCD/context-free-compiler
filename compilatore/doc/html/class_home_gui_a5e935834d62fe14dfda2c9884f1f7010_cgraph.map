@@ -1,9 +1,9 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classinput_parser_1_1_input_parser.html#a08cd69f3dbb1be117c45b4ccf5d861e6" title="Execute the parse operation on the object." alt="" coords="181,56,376,83"/>
-<area shape="rect" id="node9" href="$class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027" title="Create the AST." alt="" coords="208,132,349,159"/>
+<area shape="rect" id="node9" href="$class_home_gui.html#a2903109ca5fa51fc78f8487c79dafc43" title="Create the ST." alt="" coords="211,132,346,159"/>
 <area shape="rect" id="node5" href="$classinput_parser_1_1_input_parser_factory.html#a48971c2679b589f34a7051e795d48c49" title="Return different object instance based on the extension." alt="" coords="424,5,712,32"/>
 <area shape="rect" id="node7" href="$classinput_parser_1_1_abstract_input_parser.html#a548b0f6fa44b7954b79bdd964336bafe" title="Execute the parse operation on the object." alt="" coords="447,56,689,83"/>
-<area shape="rect" id="node11" href="$classparser_program_1_1_ast.html#a9ad5f3d77935440489df31131b18bf8e" title="Initialize the three from the parsing history." alt="" coords="457,107,679,133"/>
-<area shape="rect" id="node13" href="$class_home_gui.html#a0428d3c56abfafc769684835c1581f38" title="Store an AST into xml file named &quot;AST.xml&quot;." alt="" coords="497,157,639,184"/>
-<area shape="rect" id="node15" href="$classparser_program_1_1_ast.html#af586bb4da64c79d9259c87757456d685" title="parserProgram.Ast.getRoot" alt="" coords="478,208,658,235"/>
+<area shape="rect" id="node11" href="$classparser_program_1_1_st.html#afe794d3e531e9bd6c21dbb1f6398bcd0" title="Initialize the three from the parsing history." alt="" coords="460,107,676,133"/>
+<area shape="rect" id="node13" href="$class_home_gui.html#a0428d3c56abfafc769684835c1581f38" title="Store an ST into xml file named &quot;ST.xml&quot;." alt="" coords="497,157,639,184"/>
+<area shape="rect" id="node15" href="$classparser_program_1_1_st.html#aae0a295da8eb563e9bb2aa3ba5beab08" title="parserProgram.St.getRoot" alt="" coords="481,208,655,235"/>
 </map>

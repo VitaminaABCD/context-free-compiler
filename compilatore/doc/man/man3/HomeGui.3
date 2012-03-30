@@ -1,4 +1,4 @@
-.TH "HomeGui" 3 "Wed Mar 21 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.TH "HomeGui" 3 "Fri Mar 30 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -59,13 +59,13 @@ Inherits JFrame\&.
 .br
 .RI "\fISave operation\&. \fP"
 .ti -1c
-.RI "DefaultMutableTreeNode \fBastMethod\fP (\fBParserProgram\fP parserProgram)  throws Exception "
+.RI "DefaultMutableTreeNode \fBstMethod\fP (\fBParserProgram\fP parserProgram)  throws Exception "
 .br
-.RI "\fICreate the AST\&. \fP"
+.RI "\fICreate the ST\&. \fP"
 .ti -1c
 .RI "void \fBwriteToXml\fP (DefaultMutableTreeNode root)  throws FileNotFoundException "
 .br
-.RI "\fIStore an AST into xml file named 'AST\&.xml'\&. \fP"
+.RI "\fIStore an ST into xml file named 'ST\&.xml'\&. \fP"
 .in -1c
 .SS "Private Attributes"
 
@@ -142,32 +142,6 @@ Paolo Pino
 Definition at line 86 of file HomeGui\&.java\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "DefaultMutableTreeNode \fBHomeGui\&.astMethod\fP (\fBParserProgram\fPparserProgram)  throws Exception \fC [private]\fP"
-
-.PP
-Create the AST\&. \fBParameters:\fP
-.RS 4
-\fIparser\fP the object that rappresent 'Result\&.txt' 
-.RE
-.PP
-\fBReturns:\fP
-.RS 4
-DefaultMutableTreeNode root of AST 
-.RE
-.PP
-\fBExceptions:\fP
-.RS 4
-\fIException\fP 
-.RE
-.PP
-\fBAuthor:\fP
-.RS 4
-Paolo Pino 
-.RE
-.PP
-
-.PP
-Definition at line 352 of file HomeGui\&.java\&.
 .SS "void \fBHomeGui\&.initialize\fP ()\fC [private]\fP"
 
 .PP
@@ -204,10 +178,36 @@ Paolo Pino
 
 .PP
 Definition at line 127 of file HomeGui\&.java\&.
+.SS "DefaultMutableTreeNode \fBHomeGui\&.stMethod\fP (\fBParserProgram\fPparserProgram)  throws Exception \fC [private]\fP"
+
+.PP
+Create the ST\&. \fBParameters:\fP
+.RS 4
+\fIparser\fP the object that rappresent 'Result\&.txt' 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+DefaultMutableTreeNode root of ST 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIException\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 352 of file HomeGui\&.java\&.
 .SS "void \fBHomeGui\&.writeToXml\fP (DefaultMutableTreeNoderoot)  throws FileNotFoundException \fC [private]\fP"
 
 .PP
-Store an AST into xml file named 'AST\&.xml'\&. \fBParameters:\fP
+Store an ST into xml file named 'ST\&.xml'\&. \fBParameters:\fP
 .RS 4
 \fIroot\fP the root of AST 
 .RE

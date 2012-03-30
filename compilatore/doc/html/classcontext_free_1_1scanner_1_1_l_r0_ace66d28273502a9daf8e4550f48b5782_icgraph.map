@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a879873c5f879881494d342782387d661" title="Passed a list of production I that form the kernel of a state, return closing it, and the lookahead s..." alt="" coords="563,28,823,55"/>
+<area shape="rect" id="node10" href="$classcontext_free_1_1scanner_1_1_l_r0.html#a313dfc00f370a910932b02034e26fb8c" title="*I passed a list of production that form the kernel of a state, return closing it" alt="" coords="583,104,804,131"/>
+<area shape="rect" id="node14" href="$classcontext_free_1_1scanner_1_1_l_r0.html#a5c7d77fe2a994398ef6312251e2f6109" title="given a grammar G we calculate the associated grammar augmented by adding the production S &#39;:: =..." alt="" coords="1167,104,1364,131"/>
+<area shape="rect" id="node19" href="$classcontext_free_1_1scanner_1_1_l_r0.html#a43275125600a950a4a1f78ce565eac5f" title="checks if a production is already in a list of productions." alt="" coords="265,79,514,106"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a84de2247841f98c9d1339acac165d141" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="1456,28,1661,55"/>
+<area shape="rect" id="node7" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#ab1c19e75693982310b7494bd3b8623c9" title="Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation..." alt="" coords="1123,28,1407,55"/>
+<area shape="rect" id="node12" href="$classcontext_free_1_1scanner_1_1_l_r0.html#a087486ba03c2fb5ab400e425e7b54bbc" title="Passed a state and the symbol that follows the point, returns the kernel of the new state with the re..." alt="" coords="872,79,1075,106"/>
+</map>

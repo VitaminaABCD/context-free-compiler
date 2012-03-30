@@ -1,0 +1,95 @@
+.TH "contextFree.scanner.Automa" 3 "Fri Mar 30 2012" "Version 1.1" "Context Free LALR1 compiler" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+contextFree.scanner.Automa \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAutoma\fP (List< \fBState\fP > states)"
+.br
+.ti -1c
+.RI "List< \fBState\fP > \fBgetStates\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStates\fP (List< \fBState\fP > states)"
+.br
+.ti -1c
+.RI "List< \fBState\fP > \fBnewItemsFromKernels\fP ()"
+.br
+.RI "\fIGet kernels element for each states into automa\&. \fP"
+.ti -1c
+.RI "\fBState\fP \fBgetState\fP (int i)"
+.br
+.RI "\fIReturn a state with a specific state index\&. \fP"
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.ti -1c
+.RI "void \fBremoveDollarLookahed\fP ()"
+.br
+.RI "\fIremove dollar simbol lookahed \fP"
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBState\fP > \fBstates\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file Automa\&.java\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBState\fP \fBcontextFree\&.scanner\&.Automa\&.getState\fP (inti)"
+
+.PP
+Return a state with a specific state index\&. .PP
+.nf
+  @param i the index of desired state
+.fi
+.PP
+ 
+.PP
+\fBReturns:\fP
+.RS 4
+the \fBState\fP reference if the state exist else null; 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file Automa\&.java\&.
+.SS "List<\fBState\fP> \fBcontextFree\&.scanner\&.Automa\&.newItemsFromKernels\fP ()"
+
+.PP
+Get kernels element for each states into automa\&. \fBReturns:\fP
+.RS 4
+new \fBState\fP list with shift value and kernel item only 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file Automa\&.java\&.
+.SS "void \fBcontextFree\&.scanner\&.Automa\&.removeDollarLookahed\fP ()"
+
+.PP
+remove dollar simbol lookahed \fBAuthor:\fP
+.RS 4
+Paolo Pino 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file Automa\&.java\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Context Free LALR1 compiler from the source code\&.

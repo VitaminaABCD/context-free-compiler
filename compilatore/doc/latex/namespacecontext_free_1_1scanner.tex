@@ -1,0 +1,34 @@
+\hypertarget{namespacecontext_free_1_1scanner}{\section{Package context\-Free.\-scanner}
+\label{namespacecontext_free_1_1scanner}\index{context\-Free.\-scanner@{context\-Free.\-scanner}}
+}
+
+
+Contains class and method for create and initialize grammar parser.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_automa}{Automa}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_indexed_production}{Indexed\-Production}
+\item 
+interface \hyperlink{interfacecontext_free_1_1scanner_1_1_i_scanner}{I\-Scanner}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_l_r0}{L\-R0}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_l_r1}{L\-R1}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_scanner_factory}{Scanner\-Factory}
+\item 
+class \hyperlink{classcontext_free_1_1scanner_1_1_state}{State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains class and method for create and initialize grammar parser. Have been implemented L\-A\-L\-R(1) bottom-\/up parser \{\hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1}\} (L\-R(0) and L\-R(1) closure and goto have been implemented in respective class) The \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1} automaton is constructed through the \hyperlink{classcontext_free_1_1scanner_1_1_l_r0}{L\-R0} automaton. The lookahead symbols are calculated using an algorithm of \char`\"{}spontaneous generation and propagation of symbols\char`\"{} \{\hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_ab1c19e75693982310b7494bd3b8623c9}{L\-A\-L\-R1\-::calculate\-Symbol(\-Automa)}\} When the automaton is constructed, if the grammar is L\-A\-L\-R(1) the Action and Goto table are created and stored inside the \hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1}{L\-A\-L\-R1} instance \{\hyperlink{classcontext_free_1_1scanner_1_1_l_a_l_r1_a92b63b5d61bbdd523a16aa5e577c2ba6}{L\-A\-L\-R1\-::table\-Costruction()}\}. \par
+ \-:  can use the \hyperlink{classcontext_free_1_1scanner_1_1_scanner_factory}{Scanner\-Factory} class to obtain an instance\-: \-: )you can pass a I\-Grammar grammar...  factory = new Scanner\-Factory();  lalr1 = factory.\-create\-Scanner(\-I\-Grammar grammar); \par
+ )...or an Input\-Parser instance (contains the path of grammar file, es.\char`\"{}file.\-4l\char`\"{}, and the grammar instance) \par
+  parser = new Grammar\-Parser(path);  factory = new Scanner\-Factory();  lalr1 = factory.\-create\-Scanner(parser); 

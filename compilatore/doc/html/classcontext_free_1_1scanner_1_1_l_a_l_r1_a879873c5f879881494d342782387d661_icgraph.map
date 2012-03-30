@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#a84de2247841f98c9d1339acac165d141" title="Initialize the LALR(1) automaton from LR0 automaton." alt="" coords="648,5,853,32"/>
+<area shape="rect" id="node5" href="$classcontext_free_1_1scanner_1_1_l_a_l_r1.html#ab1c19e75693982310b7494bd3b8623c9" title="Calculate one step of lookahead symbol from an automaton with the algorithm of spontaneous generation..." alt="" coords="315,31,599,57"/>
+</map>

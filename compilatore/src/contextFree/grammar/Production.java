@@ -18,7 +18,7 @@ public class Production {
         }
         /**
          * Creates an object production and initialize it's rightSimbolsList.
-         * passing between the rightSimbols and leftSimbols, check if is an empty string (epsilon)
+         * passing between the rightSimbols and leftSimbols.
          * @param leftSimbols part of production
          * @param rightSimbols part of production
          * @author Pierluigi Sottile

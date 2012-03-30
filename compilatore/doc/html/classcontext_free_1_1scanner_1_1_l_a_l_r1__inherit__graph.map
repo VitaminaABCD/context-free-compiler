@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classcontext_free_1_1scanner_1_1_l_r0.html" title="{contextFree.scanner.LR0\n|# grammatica\l|+ setGrammar()\l+ init()\l+ chiusura()\l+ GoTo()\l+ Item()\l+ uguale()\l+ prodPresente()\l}" alt="" coords="27,189,195,355"/>
+<area shape="rect" id="node4" href="$interfacecontext_free_1_1scanner_1_1_i_scanner.html" title="{contextFree.scanner.IScanner\n||+ setGrammar()\l+ init()\l+ getGrammar()\l+ isAmbiguos()\l+ getAutoma()\l}" alt="" coords="13,5,208,141"/>
+</map>

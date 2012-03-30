@@ -1,11 +1,11 @@
 var class_home_gui =
 [
     [ "HomeGui", "class_home_gui.html#add92e1cf71983b9cc6f70f040d3ea593", null ],
-    [ "astMethod", "class_home_gui.html#ac44ac869c6c437c200139d79f9f9b027", null ],
     [ "initialize", "class_home_gui.html#a5e935834d62fe14dfda2c9884f1f7010", null ],
     [ "main", "class_home_gui.html#a241867731938068ae82ae7d5e7371fa3", null ],
     [ "operazioneApri", "class_home_gui.html#a8a91bfb188035012962b468a651f73a5", null ],
     [ "startProcess", "class_home_gui.html#a52f0602a97cd1ef63063bbbbda036d26", null ],
+    [ "stMethod", "class_home_gui.html#a2903109ca5fa51fc78f8487c79dafc43", null ],
     [ "writeToXml", "class_home_gui.html#a0428d3c56abfafc769684835c1581f38", null ],
     [ "apriFileChooser", "class_home_gui.html#a7b615d195d8208fab52fd9db85082d46", null ],
     [ "automaText", "class_home_gui.html#a6b00edbcb893105ddc5e3b2beb4c2dca", null ],

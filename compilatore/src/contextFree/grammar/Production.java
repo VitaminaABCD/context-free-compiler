@@ -109,7 +109,7 @@ public class Production {
          */
         @Override
         public String toString() {
-                if(right.equals(" "))
+                if(right.equals(""))
                         return left+ "::=" + "eps";
                 else{
                                 return left+ "::=" +right;

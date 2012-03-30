@@ -1,16 +1,16 @@
 
 		Tabella ACTION
-	*	=	d	$	
+	i	=	idi	$	
 0	s4	err	s5	err	
 1	err	err	err	acc	
 2	err	s6	err	R::=L	
 3	err	err	err	S::=R	
 4	s4	err	s5	err	
-5	err	L::=d	err	L::=d	
+5	err	L::=idi	err	L::=idi	
 6	s4	err	s5	err	
 7	err	R::=L	err	R::=L	
-8	err	L::=*R	err	L::=*R	
-9	err	err	err	S::=L=R	
+8	err	L::=i R	err	L::=i R	
+9	err	err	err	S::=L = R	
 
 		Tabella GOTO
 	S	L	R	
@@ -26,4 +26,4 @@
 9	err	err	err	
 
 Grammatica:
-S::= {S: L=R | R; L: *R | d; R: L}
+S::= {S: L = R | R; L: i R | idi; R: L}

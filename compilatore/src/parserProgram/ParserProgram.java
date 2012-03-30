@@ -3,10 +3,13 @@ package parserProgram;
 
 
 //import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
@@ -27,6 +30,7 @@ public class ParserProgram {
 	private String simbol;
 	private String input;
 	private IGrammar grammar;
+	private List<String> V,T;
 	private List<HistoryElement> history;
 	
 	
@@ -105,8 +109,9 @@ public class ParserProgram {
 	/**
 	 * The leading method of the class, responsible of the parsing of input string and consequent stack parsing and history creation. 
 	 * @return RESULT.ACCEPT if the string has been accepted, RESULT.ERROR if not, RESULT.INVALID_ID if the input string is invalid 
+	 * @throws InterruptedException 
 	 */
-	public RESULT parse(){
+	public RESULT parse() throws InterruptedException{
 		Integer state;
 		int size=this.input.length();
 		if(size==0){
@@ -114,13 +119,55 @@ public class ParserProgram {
 			return RESULT.INVALID_IN;
 		}
 		int index=0;
+		
+		Enumeration<String> e = actionTable.keys();   
+	    //iterate through Hashtable keys Enumeration
+		List<String> key = new LinkedList<String>();
+	    while(e.hasMoreElements()){
+	      key.add(e.nextElement());
+		}
+	
 		while(index<size){
-			String temp=Character.toString(this.input.charAt(index));  	//scorro i caratteri in input
-			state=Integer.parseInt(stack.lastElement());				//stato in cima allo stack
-			if(!actionTable.containsKey(temp)) {
+			String temp=Character.toString(this.input.charAt(index));
+			int max=0,min=0;
+			boolean founded=false;
+			Pattern pattern = Pattern.compile(Pattern.quote(temp)+".*");
+			for(String k : key){
+				Matcher matcher = pattern.matcher(k);
+				while(matcher.find()){
+					int sz=matcher.group().length();
+					if(sz>max) max= sz;
+					if(sz<min) min= sz;
+					founded=true;
+					}
+			}
+			
+			if(!founded){
 				logger.info("La grammatica corrente non contiene '" + temp + "' tra i caratteri ammessi");
 				return RESULT.INVALID_IN;
 			}
+			
+			founded=false;
+			while(max>min){
+				if(index+max<this.input.length()) temp=this.input.substring(index,index+max);
+				else temp=this.input.substring(index);
+				if(key.contains(temp)){
+					founded=true;
+					break;
+				}
+				max--;
+			}
+			if(!founded) return RESULT.INVALID_IN; //TODO: replicato perchè in teoria dovrebbe sempre trovare qualcosa dato il controllo che avviene in precedenza sulla lunghezza del result
+			
+				
+//			if(!actionTable.containsKey(temp)) {
+//				logger.info("La grammatica corrente non contiene '" + temp + "' tra i caratteri ammessi");
+//				return RESULT.INVALID_IN;
+//			}
+
+			
+			
+			state=Integer.parseInt(stack.lastElement());				//stato in cima allo stack
 			String act = actionTable.get(temp).get(state);   //valore della tabella action riga(lo stato) e colonna (il carattere)
 			char [] splitAct = act.toCharArray();
 			if(splitAct[0]=='s'){ //se inizia per 's' e' uno schift
@@ -132,12 +179,21 @@ public class ParserProgram {
 				this.history.add(new HistoryElement(tp,null,tempSimbol));
 				logger.debug("inserito simbolo nello stack e nella storia a seguito di uno shift");				
 //////END*/////			
-				index++;	//punta "l'indice" al prossimo carattere
+				index+=max;	//punta "l'indice" al prossimo carattere
 			}else if(act.equals("acc")) break;  //accetta
 			else if(act.equals("err")) return RESULT.ERROR;
 			else{ //e' una riduzione
-				String [] production=act.split("::=");		//act=produzione nella actionTable
-				for(int i=0;i<production[1].length();i++){ //rimuove beta simboli dallo stack
+				String [] production=act.split("::=");		//act=produzione nella actionTable.
+				
+				
+				String right="";
+				for(String t : key){	
+					right=production[1].replaceAll(Pattern.quote(t), t+" ");
+				}	
+				
+			    String [] split = right.split(" ");
+	
+				for(int i=0;i<split.length;i++){ //rimuove beta simboli dallo stack  			//TODO: rimuove beta simboli, nonn beta caratteri
 					stack.pop();
 				}
 				state=Integer.parseInt(stack.lastElement());	//prende lo stato sulla testa dello stack
@@ -146,7 +202,7 @@ public class ParserProgram {
 				String tempSimbol =simbol.toString();
 				String [] tp = new String[stack.size()]; 					//formatta lo stack in uno String[] per passarlo all'history
 				stack.copyInto(tp);
-				this.history.add(new HistoryElement(tp, new Production(production[0], production[1]),tempSimbol)); //aggiunge l'elemento nella storia
+				this.history.add(new HistoryElement(tp, new Production(production[0], production[1],getV(),getT()),tempSimbol)); //aggiunge l'elemento nella storia
 				logger.debug("inserito simbolo e produzione nello stack e nella storia a seguito di un reduce");
 			}
 		}
@@ -165,9 +221,28 @@ public class ParserProgram {
 	 * 
 	 */
 	private static String replaceLast(String text, String regex, String replacement) {
+		
         return text.replaceFirst("(?s)"+regex+"(?!.*?"+regex+")", replacement);
     }
-	
-	
+
+	public List<String> getT(){
+		List<String> result = new LinkedList<String>();
+		Enumeration<String> e = actionTable.keys();   
+	    while(e.hasMoreElements()){
+	    	String elem = e.nextElement();
+	    	result.add(elem);
+		}
+	    return result;
+	}
+
+	public List<String> getV(){
+		List<String> result = new LinkedList<String>();
+		Enumeration<String> e = gotoTable.keys();   
+	    while(e.hasMoreElements()){
+	    	String elem = e.nextElement();
+	    	result.add(elem);
+		}
+	    return result;
+	}
 	
 }

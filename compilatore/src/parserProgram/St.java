@@ -13,7 +13,8 @@ public class St {
 	private List<HistoryElement> history;
 	/**the root of the three*/
 	private DefaultMutableTreeNode root;
-
+	
+	private List<String> V,T;
 	/**
 	 * Default constructor.
 	 */
@@ -50,8 +51,7 @@ public class St {
 		try{
 			this.root = new DefaultMutableTreeNode(this.history.get(index).getProduction().getLeft());
 			HistoryElement current = this.history.get(index);
-			char temp[] = current.getProduction().getRight().toCharArray();
-			for(char c : temp){													
+			for(String c : current.getProduction().getRightSimbols()){													
 				this.root.add(new DefaultMutableTreeNode(c));					
 			}
 			//END//
@@ -64,8 +64,7 @@ public class St {
 					for(int j=0; j<currentLevel.getChildCount();j++){					//cerca un figlio nel nodo puntato con UserObject(valore) uguale alla parte  sinistra della produzione
 						DefaultMutableTreeNode node = (DefaultMutableTreeNode) currentLevel.getChildAt(j);
 						if(node.getUserObject().toString().equals(current.getProduction().getLeft())){		//se trova il nodo cercato
-							temp = current.getProduction().getRight().toCharArray();
-							for(char c : temp){													//aggiunge i figli al livello corrente
+							for(String c : current.getProduction().getRightSimbols()){													
 								node.add(new DefaultMutableTreeNode(c));					
 							}
 							currentLevel=node;													//avanza il current level e ferma il ciclo

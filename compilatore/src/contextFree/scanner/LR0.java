@@ -43,11 +43,11 @@ public abstract class LR0 implements IScanner{
 			while(iter.hasNext()){
 				//per ogni Item appartenente a j
 				item = iter.next();
-				ob = item.getRightList().toArray();
+				ob = item.getRightSimbols().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
 				//Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione � maggiore o uguale 
 				//della lunghezza del Rightlist
-				if(item.getCurrentCharIndex() >= item.getRightList().size()){
+				if(item.getCurrentCharIndex() >= item.getRightSimbols().size()){
 					//esci dal while xk� ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
 					break;
@@ -95,10 +95,10 @@ public abstract class LR0 implements IScanner{
 		//Per ogni produzione contenuta in I
 		while (iter.hasNext()){
 			item = iter.next();
-			ob= item.getRightList().toArray();
+			ob= item.getRightSimbols().toArray();
 			right = Arrays.copyOf(ob ,ob.length ,String[].class);
 			//se il puntino non si trova nell'ultima posizione
-			if(!(item.getCurrentCharIndex() >= item.getRightList().size()))
+			if(!(item.getCurrentCharIndex() >= item.getRightSimbols().size()))
 				//controlliamo se il carattere che segue il punto e' lo stesso di A::= a.Xc
 				if(right[item.getCurrentCharIndex()].equals(X))
 					//quindi aggiungiamo la produzione a J spostando il punto al carattere succesivo
@@ -217,9 +217,10 @@ public abstract class LR0 implements IScanner{
 				leng++;
 				//controllo se la produzione dello stato1 � presente nello stato che stiamo controllando, in caso incrementa il contatore
 				for(IndexedProduction prodStato : stato)
-				if (prodStato.getLeft().equals(prod.getLeft())
+					//TODO:
+				if (prodStato.getLeft().equalsIgnoreCase(prod.getLeft())
 						&
-					prodStato.getRight().equals(prod.getRight())
+					prodStato.getRight().equalsIgnoreCase(prod.getRight())
 						&
 						prodStato.getCurrentCharIndex()==prod.getCurrentCharIndex())
 					proUguali++;

@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import contextFree.grammar.GrammarFactory;
 import contextFree.grammar.IGrammar;
@@ -40,7 +42,7 @@ public class FourLineInputParser extends AbstractInputParser{
 	
 	public FourLineInputParser(String input){
 		file = input;
-		V=new ArrayList<String>();
+		V=new LinkedList<String>();
 		T=new ArrayList<String>();
 		P=new ArrayList<Production>();
 	}
@@ -71,7 +73,7 @@ public class FourLineInputParser extends AbstractInputParser{
 		
 			V_temp = V_reader.replaceAll(" ","").split(",");
 			T_temp = T_reader.replaceAll(" ","").split(",");
-			P_temp = P_reader.split(",");
+			P_temp = P_reader.replaceAll(" ","").split(",");
 			
 			try{
 				//inserisco innanzi tutto l'assioma tra i non Termianli
@@ -94,14 +96,14 @@ public class FourLineInputParser extends AbstractInputParser{
 					// separo soggetto e espressione per ogni produzione
 					singPro = P_temp[i].split("::=");
 					//e li inserisco in un oggetto di tipo Prodaction
-					P.add(new Production(singPro[0], singPro[1],true));	
+					P.add(new Production(singPro[0], singPro[1],V,T));	
 				}
 			} catch (Exception e) {
 				ErrorManager.manage(ERROR_TYPE.INVALID_GRAMMAR, e);
 			}
 			
+
+			
 			return GrammarFactory.createGrammar(A_reader, P, V, T);
-		}
-
-
+		} 	    
 }

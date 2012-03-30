@@ -43,7 +43,9 @@ public abstract class LR0 implements IScanner{
 			while(iter.hasNext()){
 				//per ogni Item appartenente a j
 				item = iter.next();
+				System.out.println(item);
 				ob = item.getRightSimbols().toArray();
+				System.out.println(item.getRightSimbols());
 				right = Arrays.copyOf(ob,ob.length,String[].class);
 				//Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione � maggiore o uguale 
 				//della lunghezza del Rightlist
@@ -58,6 +60,7 @@ public abstract class LR0 implements IScanner{
 				//per ogni produzione della grammatica 
 				while (prod.hasNext()){
 					corrente=prod.next();
+					
 					//se il simbolo alla destra del punto e' uguale alla Parte sinistra della produzione B::= z
 					if(x.equals(corrente.getLeft())){
 						//se la produzione nn e' gi presente in J

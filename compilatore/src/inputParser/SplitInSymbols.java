@@ -44,7 +44,7 @@ public class SplitInSymbols implements Runnable {
 	
 	public void run() {
 		if(obj.equals("eps")) {
-			result.add("");
+			result.add(" ");
 			return;
 		}
 		

@@ -103,15 +103,15 @@ public class Home{
 		System.out.println("\nCRONOLOGIA:\n");
 		for(HistoryElement e : parserProgram.getHistory()) System.out.println(e.toString()+"\n");
 		
-		St ast = new St(parserProgram.getHistory());
-		ast.initFromHistory();
-		System.out.println(ast.toString());
+		St st = new St(parserProgram.getHistory());
+		st.initFromHistory();
+		System.out.println(st.toString());
 	}
 
 
 	private static void analizer(AbstractInputParser parser)
 			throws FileNotFoundException, Exception {
-		IScanner lalr1 = ScannerFactory.createScanner(parser);
+		IScanner lalr1 = ScannerFactory.createParser(parser);
 		
 		if(lalr1!=null){
 			System.out.println(lalr1.toString());

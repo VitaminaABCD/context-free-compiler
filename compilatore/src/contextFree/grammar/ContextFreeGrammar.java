@@ -137,7 +137,7 @@ public class ContextFreeGrammar implements IGrammar {
 				// per ogni produzione isolo la parte dell'associazione dalla
 				// parte dell'espressione
 				String ass = prod.getLeft();
-				List<String> espr = prod.getRightList();
+				List<String> espr = prod.getRightSimbols();
 				tuttiNull = true;
 				Iterator<String> termine = espr.iterator();
 				// Controlliamo se tutti i termini dell'espressione sono nulli
@@ -197,7 +197,7 @@ public class ContextFreeGrammar implements IGrammar {
 			while (posiz.hasNext()) {
 				prod = (Production) posiz.next();
 				ass = prod.getLeft();
-				List<String> espr = prod.getRightList();
+				List<String> espr = prod.getRightSimbols();
 				// Dimensione iniziale del first, ci permette di capire se
 				// abbiamo aggiunto caratteri
 				dimensione = first[V.indexOf(ass)].size();
@@ -271,7 +271,7 @@ public class ContextFreeGrammar implements IGrammar {
 				prod = (Production) posizione.next();
 				ass = prod.getLeft();
 				LinkedList<String> espr = new LinkedList<String>(
-						prod.getRightList());
+						prod.getRightSimbols());
 				// Ripeto il ciclo per ogni elemento dell'espressione, per
 				// facilitare le operazioni su quest'ultimo uso una linked list
 				while (!espr.isEmpty()) {

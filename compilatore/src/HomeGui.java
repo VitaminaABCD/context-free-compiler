@@ -128,7 +128,7 @@ public class HomeGui extends JFrame{
         long startTime = System.currentTimeMillis();
     	IGrammar grammar= (IGrammar) new InputParser(path).parse();
 //		IParsing l = p.createParsing();
-		IScanner lalr1 = ScannerFactory.createScanner(grammar);
+		IScanner lalr1 = ScannerFactory.createParser(grammar);
 		
 		if(lalr1!=null){
 			leftPanel.setText(lalr1.toString());
@@ -143,8 +143,6 @@ public class HomeGui extends JFrame{
 				output.println(lalr1.getGrammar().toOneLineString());
 				output.close();
 			}
-			else 
-				automaText.setText(lalr1.getAutoma().toString());
 		}	
         long endTime = System.currentTimeMillis();
 		logger.info("Total elapsed time in execution of grammar parsing and \n\t\t\t\tAction e Goto table is :"+ (endTime-startTime));
@@ -264,7 +262,7 @@ public class HomeGui extends JFrame{
 				long startTime = System.currentTimeMillis();
 				try {
 					ParserProgram parserProgram = (ParserProgram) new InputParser("Result.txt").parse();
-		        	DefaultMutableTreeNode root = astMethod(parserProgram);
+		        	DefaultMutableTreeNode root = stMethod(parserProgram);
 		        	if(root!=null){
 		        		tree.setModel(new JTree(root).getModel());
 		        		tree.expandPath(new TreePath(root.getPath()));
@@ -290,7 +288,7 @@ public class HomeGui extends JFrame{
 //					logger.error("Parsing Result.txt fallito",e);
 				}
 		        long endTime = System.currentTimeMillis();
-				logger.info("Total elapsed time in parsing grammar and table\n\t\t\t\tand fot creation of ST is :"+ (endTime-startTime));
+				logger.info("Total elapsed time in parsing grammar and table\n\t\t\t\tand fot creation of AST is :"+ (endTime-startTime));
 			}
 		});
 
@@ -345,13 +343,13 @@ public class HomeGui extends JFrame{
 	}
 
 	/**
-	 * Create the AST.
+	 * Create the ST.
 	 * @param parser the object that rappresent "Result.txt"
-	 * @return DefaultMutableTreeNode root of AST
+	 * @return DefaultMutableTreeNode root of ST
 	 * @throws Exception
 	 * @author Paolo Pino
 	 */
-	private DefaultMutableTreeNode astMethod(ParserProgram parserProgram) throws Exception {
+	private DefaultMutableTreeNode stMethod(ParserProgram parserProgram) throws Exception {
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		String in = this.input.getText();
 		if(in.length()==0) throw new IOException("Nessuna stringa in ingresso");
@@ -359,11 +357,11 @@ public class HomeGui extends JFrame{
 		switch(parserProgram.parse()){
 			case ACCEPT:
 				logger.info("ACCEPT");		
-				St ast = new St(parserProgram.getHistory());
-				ast.initFromHistory();
+				St st = new St(parserProgram.getHistory());
+				st.initFromHistory();
 //				this.tree.setModel(ast.getRoot());	
-				writeToXml(ast.getRoot());
-				return ast.getRoot();
+				writeToXml(st.getRoot());
+				return st.getRoot();
 			case ERROR:
 				logger.info("ERROR");
 				return null;
@@ -374,7 +372,7 @@ public class HomeGui extends JFrame{
 	}
 
 	/**
-	 * Store an AST into xml file named "AST.xml"
+	 * Store an ST into xml file named "ST.xml"
 	 * @param root the root of AST
 	 * @throws FileNotFoundException
 	 * @author Paolo Pino

@@ -191,12 +191,15 @@ public class LALR1 extends LR0{
 			while(iter.hasNext()){
 				//per ogni Item appartenente a j
 				item = iter.next();
-				ob = item.getRightList().toArray();
+				//_____________________________________________________________________________________________________
+				//TODO: ob = item.getRight().toArray(); right = Arrays.copyOf(ob,ob.length,String[].class);  <--inutile
+				ob = item.getRightSimbols().toArray();
 				right = Arrays.copyOf(ob,ob.length,String[].class);
+				//_____________________________________________________________________________________________________
 				//Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione � maggiore o uguale 
 				//della lunghezza del Rightlist
 				punto= item.getCurrentCharIndex();
-				if(punto >= item.getRightList().size()){
+				if(punto >= item.getRightSimbols().size()){
 					//esci dal while xk� ci troviamo nel caso chiusura e quindi non possiamo 
 					//trovare alcuna produzione che ha nella parte sinistra l'elemento che segue il punto
 					//quindi inseriamo nella tabella action la Reduce per la produzione giusta...
@@ -216,7 +219,7 @@ public class LALR1 extends LR0{
 						//applchiamo un algoritmo simile a quello usato per calcolare il first cos� come � fatto nella teoria
 						look= new HashSet<String>();
 						//conrtolliamo se esiste un elemento dopo il simbolo evidenziato dal punto [A:= a.Bc, d] 
-						if(!(punto+1 >= item.getRightList().size())){
+						if(!(punto+1 >= item.getRightSimbols().size())){
 							//se esiste allora aggiungiamo ai simboli di lookahead i first(cd)
 							//quindi per prima cosa controlliamo se c � un terminale o un non terminale
 							la = (String) right[punto+1];
@@ -335,7 +338,7 @@ public class LALR1 extends LR0{
 		//per ogni produzione dello stato
 		for(IndexedProduction prodStato : stato.getKernels())
 			//se il puntino si trove nell'ultima posizione ci troviamo nel caso di una reduce
-			if(prodStato.getCurrentCharIndex()>=prodStato.getRightList().size()){
+			if(prodStato.getCurrentCharIndex()>=prodStato.getRightSimbols().size()){
 				//se si tratta della reduce [S'::=S, $] e' il caso dell'accettazione
 				if(prodStato.getLeft().equals("S'")){
 					////chiamo la funzione per scrivere nella tabella action

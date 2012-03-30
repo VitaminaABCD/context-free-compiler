@@ -19,7 +19,7 @@ public class IndexedProduction extends Production{
 	
 	
 	public IndexedProduction(IndexedProduction pro){
-		super(pro.getLeft(),pro.getRight());
+		super(pro.getLeftSimbols(),pro.getRightSimbols());
 		currentCharIndex=pro.getCurrentCharIndex();
 		lookahead=pro.getLookahead();
 		if (lookahead==null)
@@ -28,21 +28,21 @@ public class IndexedProduction extends Production{
 	}
 	
 	public IndexedProduction(Production p){
-		super(p.getLeft(),p.getRight());
+		super(p.getLeftSimbols(),p.getRightSimbols());
 		currentCharIndex=0;
 		lookahead = new HashSet<String>();
 
 	}
 	
 	public IndexedProduction(int i, Production p){
-		super(p.getLeft(),p.getRight());
+		super(p.getLeftSimbols(),p.getRightSimbols());
 		currentCharIndex=i;
 		lookahead = new HashSet<String>();
 	}
 	
 	
 	public IndexedProduction(int i, Production p, String la){
-		super(p.getLeft(),p.getRight());
+		super(p.getLeftSimbols(),p.getRightSimbols());
 		currentCharIndex=i;
 		//controlliamo se Lookahead � vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementi
 		if(lookahead==null)
@@ -53,7 +53,7 @@ public class IndexedProduction extends Production{
 	
 	
 	public IndexedProduction(Production p, Set<String> la){
-		super(p.getLeft(),p.getRight());
+		super(p.getLeftSimbols(),p.getRightSimbols());
 		currentCharIndex=0;
 		//controlliamo se Lookahead � vuoto ed eventualmente inizializziamo tale insieme prima di inserire elementis
 		if(lookahead==null)
@@ -68,12 +68,12 @@ public class IndexedProduction extends Production{
 	}
 	
 	/**
-	 * Return the next character that that will be read
+	 * Return the next symbol that that will be read
 	 * @return the character after dot in the production
 	 */
 	public String getCharAfter(){
 		try{
-			return Character.toString(getRight().charAt(currentCharIndex));
+			return getRightSimbols().get(currentCharIndex);
 		}catch (Exception e) {
 			return null;
 		}
@@ -81,7 +81,7 @@ public class IndexedProduction extends Production{
 	
 	public String getCharBefore(){
 		try{
-			return Character.toString(getRight().charAt(currentCharIndex-1));
+			return getRightSimbols().get(currentCharIndex-1);
 		}catch (Exception e) {
 			return null;
 		}
@@ -106,17 +106,17 @@ public class IndexedProduction extends Production{
 	 * @return true if they are equal, false otherwise 
 	 */
 	public boolean compare(IndexedProduction p){
-		if( p.getLeft().equals(getLeft())
+		if( p.getLeftSimbols().equals(getLeftSimbols())
 					&& 
-			p.getRight().equals(getRight())
+			p.getRightSimbols().equals(getRightSimbols())
 			) return true;
 		else return false;
 	}
 	
 	@Override
 	public String toString(){
-		String right = super.getRight();
-		return super.getLeft()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + lookahead;
+		String right = super.getRightSimbols().toString();
+		return super.getLeftSimbols()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + lookahead;
 //		for(String l : lookahead){
 //			result += l + "  ";
 //		}

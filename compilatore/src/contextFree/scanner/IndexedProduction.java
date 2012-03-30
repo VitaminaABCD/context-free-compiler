@@ -116,6 +116,7 @@ public class IndexedProduction extends Production{
 	@Override
 	public String toString(){
 		String right = super.getRight();
+		if(right.equals(" ")) return super.getLeft()+"->eps";
 		return super.getLeft()+"->"+ right.substring(0,currentCharIndex) + "." +right.substring(currentCharIndex, right.length()) + lookahead;
 //		for(String l : lookahead){
 //			result += l + "  ";

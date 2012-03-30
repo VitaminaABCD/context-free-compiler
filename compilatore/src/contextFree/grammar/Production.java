@@ -57,7 +57,6 @@ public class Production {
         public Production(String lt, String rt,List<String> V,List<String> T) throws InterruptedException{
         	leftSimbols=new LinkedList<String>();
         	rightSimbols=new LinkedList<String>();
-
         	List<String> symbols = new LinkedList<String>();
         	symbols.addAll(T);
         	symbols.addAll(V);
@@ -109,10 +108,10 @@ public class Production {
          */
         @Override
         public String toString() {
-                if(right.equals(""))
-                        return left+ "::=" + "eps";
+                if(getRight().equals(" "))
+                        return getLeft()+ "::=" + "eps";
                 else{
-                                return left+ "::=" +right;
+                                return getLeft()+ "::=" +getRight();
                 }
         }
 }

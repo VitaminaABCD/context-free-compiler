@@ -26,4 +26,4 @@
 9	err	err	err	
 
 Grammatica:
-S::= {S: L = R | R; L: i R | idi; R: L}
+S::= {S: L = R | R; L: i R | idi |  ; R: L}

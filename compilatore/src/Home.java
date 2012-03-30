@@ -8,8 +8,12 @@ import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 
+import javax.swing.tree.DefaultMutableTreeNode;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+
+import com.thoughtworks.xstream.XStream;
 
 import parserProgram.St;
 import parserProgram.HistoryElement;
@@ -30,9 +34,8 @@ public class Home{
 	static Logger logger = Logger.getLogger(Home.class.getName());
 	
 	public static void main(String[] args) throws Exception{
+		PropertyConfigurator.configure("log4j.config");
 		if(args.length==0){
-			PropertyConfigurator.configure("log4j.config");
-			
 			logger.debug("Start Application");
 		   	
 			System.out.println("\tProgetto di compilatori e interpreti");
@@ -69,7 +72,7 @@ public class Home{
 				        case 1:
 				      	  	System.out.println("\nDigitare il nome del file contenente il Contex-Free: "); 
 				      	  	leggi = new BufferedReader(new InputStreamReader(System.in));
-				      	  	parser = new InputParser("file.4l");    //TODO: da rimuovere
+				      	  	parser = new InputParser(leggi.readLine());    //TODO: da rimuovere
 //				      	  	parser = new GrammarParser(leggi.readLine());
 				      	  	analizer(parser);
 				      	  	break;
@@ -88,24 +91,74 @@ public class Home{
 					logger.error("Critical error...the programm whil termanate",e);
 					System.exit(0);
 				}
-		}		
+		}else{
+			logger.debug("Start Application");
+			int i=0;
+	        String arg;
+	        boolean analizeFlag= false;
+	        boolean inFlag=false;
+	        boolean stFlag=false;
+
+	        String input = "";
+			while (i < args.length && args[i].startsWith("-")) {
+				arg = args[i++];
+	            if (arg.equals("-in")) {
+	                if (i < args.length)
+	                    input = args[i++];
+	                inFlag = true;
+	            }else if (arg.equals("--analize")) {
+	            	analizeFlag=true;
+	            }else if (arg.equals("--st")) {
+	            	stFlag=true;
+	            }
+			}
+			if(inFlag){
+			    AbstractInputParser parser = null;
+				if(stFlag){
+		      	  	parser = new InputParser(input);   
+		      	  	analizer(parser);
+				}
+				if(analizeFlag){
+		        	System.out.println("\nAnalisi sintattica " ); 
+		  			parser = new LRInputParser("Result.txt");
+		  			astMethod(parser);
+				}
+				if(!stFlag&&!analizeFlag){
+					System.out.println("no option specified...program terminated.");
+				}
+			}
+		}
 	}
 	
 
 	private static void astMethod(AbstractInputParser parser) throws Exception {
 		ParserProgram parserProgram = (ParserProgram)parser.parse();
-		System.out.println("\nDigitare la stringa in input: "); 
-//		BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
-		parserProgram.setInput("d=d$");                     //TODO: da rimuovere	
-//		parserProgram.setInput(leggi.readLine());                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
-		System.out.println(parserProgram.parse());
-		System.out.println(parserProgram.getStack().toString());
-		System.out.println("\nCRONOLOGIA:\n");
-		for(HistoryElement e : parserProgram.getHistory()) System.out.println(e.toString()+"\n");
-		
-		St st = new St(parserProgram.getHistory());
-		st.initFromHistory();
-		System.out.println(st.toString());
+		boolean flag=true;
+		while(flag){
+			System.out.println("\nDigitare la stringa in input: "); 
+			BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
+			parserProgram.setInput(leggi.readLine());                     /////////ATTENZIONE!!!!  scrivi qui la stringa di input (es. sul libro id*id+id$)
+			switch(parserProgram.parse()){
+				case ACCEPT:
+					flag=false;
+					logger.info("ACCEPT");	
+					System.out.println(parserProgram.getStack().toString());
+					System.out.println("\nCRONOLOGIA:\n");
+					for(HistoryElement e : parserProgram.getHistory()) System.out.println(e.toString()+"\n");
+					St st = new St(parserProgram.getHistory());
+					st.initFromHistory();	
+					writeToXml(st.getRoot());
+					break;
+				case ERROR:
+					flag=false;
+					logger.info("ERROR");
+					break;
+				case INVALID_IN:
+					System.out.println("Uno o pi� caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
+					flag=true;
+					break;
+			}
+		}
 	}
 
 
@@ -126,5 +179,20 @@ public class Home{
 				output.close();
 			}
 		}		
+	}
+	/**
+	 * Store an ST into xml file named "ST.xml"
+	 * @param root the root of AST
+	 * @throws FileNotFoundException
+	 * @author Paolo Pino
+	 */
+	private static void writeToXml(DefaultMutableTreeNode root) throws FileNotFoundException { 
+		XStream xstream = new XStream();
+		String xml = xstream.toXML(root);
+		PrintStream output = new PrintStream(new FileOutputStream("ST.xml"));
+		String [] temp = xml.split("\\n");
+		for(String o : temp)
+			output.println(o);
+		output.close();
 	}
 }

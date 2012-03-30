@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.regex.Pattern;
-
 import contextFree.grammar.GrammarFactory;
 import contextFree.grammar.IGrammar;
 import contextFree.grammar.Production;

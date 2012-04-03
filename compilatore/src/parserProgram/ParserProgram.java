@@ -3,6 +3,8 @@ package parserProgram;
 
 
 //import java.util.Arrays;
+import inputParser.SplitInSymbols;
+
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -119,26 +121,16 @@ public class ParserProgram {
 		}
 		int index=0;
 		
-		Enumeration<String> e = actionTable.keys();   
-	    //iterate through Hashtable keys Enumeration
-		List<String> key = new LinkedList<String>();
-	    while(e.hasMoreElements()){
-	      key.add(e.nextElement());
-		}
-	
-	    Enumeration<String> ek = gotoTable.keys();   
-	    //iterate through Hashtable keys Enumeration
-		List<String> keyGoto = new LinkedList<String>();
-	    while(ek.hasMoreElements()){
-	      keyGoto.add(ek.nextElement());
-		}
+		List<String> T = getT();
+		List<String> V = getV();	    
 	    
+	    //legge i simboli dall'input e li salva in temp
 		while(index<size){
 			String temp=Character.toString(this.input.charAt(index));
 			int max=0,min=0;
 			boolean founded=false;
 			Pattern pattern = Pattern.compile(Pattern.quote(temp)+".*");
-			for(String k : key){
+			for(String k : T){
 				Matcher matcher = pattern.matcher(k);
 				while(matcher.find()){
 					int sz=matcher.group().length();
@@ -157,22 +149,14 @@ public class ParserProgram {
 			while(max>min){
 				if(index+max<this.input.length()) temp=this.input.substring(index,index+max);
 				else temp=this.input.substring(index);
-				if(key.contains(temp)){
+				if(T.contains(temp)){
 					founded=true;
 					break;
 				}
 				max--;
 			}
-			if(!founded) return RESULT.INVALID_IN; //TODO: replicato perchè in teoria dovrebbe sempre trovare qualcosa dato il controllo che avviene in precedenza sulla lunghezza del result
-			
-				
-//			if(!actionTable.containsKey(temp)) {
-//				logger.info("La grammatica corrente non contiene '" + temp + "' tra i caratteri ammessi");
-//				return RESULT.INVALID_IN;
-//			}
-
-			
-			
+			if(!founded) return RESULT.INVALID_IN; //TODO: replicato perchè in teoria dovrebbe sempre trovare qualcosa dato il controllo che avviene in precedenza sulla lunghezza del result			
+			///////////fine lettura///////////////////
 			state=Integer.parseInt(stack.lastElement());				//stato in cima allo stack
 			String act = actionTable.get(temp).get(state);   //valore della tabella action riga(lo stato) e colonna (il carattere)
 			char [] splitAct = act.toCharArray();
@@ -191,19 +175,12 @@ public class ParserProgram {
 			else{ //e' una riduzione
 				String [] production=act.split("::=");		//act=produzione nella actionTable.
 				
-				
-				//TODO: usare splitinsymbol o simile
-				String right=production[1];
-				for(String t : key){	
-					right=right.replaceAll(Pattern.quote(t), t+" ");
-				}	
-				
-				for(String t : keyGoto){
-					right=right.replaceAll(Pattern.quote(t), t+" ");
-				}
-			    String [] split = right.split(" ");
-	
-				for(int i=0;i<split.length;i++){ //rimuove beta simboli dallo stack  			//TODO: rimuove beta simboli, nonn beta caratteri
+				//legge il numero di simboli nella produzione della ActionTable...
+				List<String> symbols = new LinkedList<String>(V);
+				symbols.addAll(T);
+				SplitInSymbols rightSymbols = new SplitInSymbols(production[1],symbols);
+			    
+				for(int i=0;i<rightSymbols.count();i++){ //rimuove dallo stack un numero di simboli pari a quelli letti subito sopra
 					stack.pop();
 				}
 				state=Integer.parseInt(stack.lastElement());	//prende lo stato sulla testa dello stack

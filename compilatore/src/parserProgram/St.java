@@ -70,6 +70,7 @@ public class St {
 						}
 					}	
 				}else{
+					
 					currentLevel=(DefaultMutableTreeNode) currentLevel.getParent();		//se è uno shift sale di un livello
 				}
 				index--;

@@ -27,6 +27,7 @@ import javax.swing.tree.TreePath;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import parserProgram.HistoryElement;
 import parserProgram.St;
 import parserProgram.ParserProgram;
 
@@ -254,7 +255,7 @@ public class HomeGui extends JFrame{
 //        });
         
         /**
-         * When clicked parse "Result.txt" file and create the AST.
+         * When clicked parse "Result.txt" file and create the ST.
          * @author Paolo Pino
          */
 		startParsing.addActionListener(new ActionListener() {
@@ -360,6 +361,9 @@ public class HomeGui extends JFrame{
 				St st = new St(parserProgram.getHistory());
 				st.initFromHistory();
 //				this.tree.setModel(ast.getRoot());	
+				System.out.println("ok");
+				for(HistoryElement e : parserProgram.getHistory())
+				System.out.println(e.toString());
 				writeToXml(st.getRoot());
 				return st.getRoot();
 			case ERROR:

@@ -57,10 +57,12 @@ public class Production {
         public Production(String lt, String rt,List<String> V,List<String> T) throws InterruptedException{
         	leftSimbols=new LinkedList<String>();
         	rightSimbols=new LinkedList<String>();
+        	left=lt;
+        	right=rt;
         	List<String> symbols = new LinkedList<String>();
         	symbols.addAll(T);
         	symbols.addAll(V);
-			Runnable rtObj = new SplitInSymbols(rt,this.rightSimbols,symbols);  //Splitta la stringa in lista di simboli in base
+			Runnable rtObj = new SplitInSymbols(rt,this.rightSimbols,symbols);  //Splitta la stringa in lista di simboli in base ai simboli cnsentiti
 			Runnable ltObj = new SplitInSymbols(lt,this.leftSimbols,symbols);
 			Thread threadR = new Thread(rtObj);
 			Thread threadL = new Thread(ltObj);
@@ -92,14 +94,14 @@ public class Production {
 
         public String getLeft(){
         	if(left==null){
-            	this.left = this.leftSimbols.toString().replaceAll("[\\[\\],]", "");
+            	this.left = this.leftSimbols.toString().replaceAll("[\\[\\], ]", "");
         	}
         	return this.left;
         }
         
     	public String getRight() {
     		if(right==null){
-            	this.right= this.rightSimbols.toString().replaceAll("[\\[\\],]", "");
+            	this.right= this.rightSimbols.toString().replaceAll("[\\[\\], ]", "");
         	}
     				return this.right;
     	}

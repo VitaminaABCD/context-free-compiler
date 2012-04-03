@@ -354,6 +354,12 @@ public class HomeGui extends JFrame{
 		//BufferedReader leggi = new BufferedReader(new InputStreamReader(System.in));
 		String in = this.input.getText();
 		if(in.length()==0) throw new IOException("Nessuna stringa in ingresso");
+		char end = in.charAt(in.length()-1);
+		if(end!='$') {
+			logger.info("Carattere di terminazione $ mancante...");
+			in+="$";
+			logger.info("Carattere $ aggiunto automaticamente ");
+		}
 		parserProgram.setInput(in);                  
 		switch(parserProgram.parse()){
 			case ACCEPT:

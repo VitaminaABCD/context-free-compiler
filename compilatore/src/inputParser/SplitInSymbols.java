@@ -1,5 +1,6 @@
 package inputParser;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,6 +15,7 @@ public class SplitInSymbols implements Runnable {
 	private List<String> result,Symbols;
 	//Constructor
 	public SplitInSymbols(){this.obj=null;this.result=this.Symbols=null;}
+	public SplitInSymbols(String in,List<String> symb){this.obj=in;this.Symbols=symb;}
 	/**
 	 * Constructor with input String
 	 * @param ob the input string
@@ -82,5 +84,11 @@ public class SplitInSymbols implements Runnable {
 				index+=max;
 			}
 		}
+	}
+	
+	public int count(){
+		result= new LinkedList<String>();
+		run();
+		return this.result.size();
 	}
 }

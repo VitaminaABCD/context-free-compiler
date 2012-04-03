@@ -1,4 +1,4 @@
 S
 S, L, R
-*, =, idi, $
-S::=L=R, S::=R, L::=Y*R, L::=idi, R::=L, Y::=idi
+i, =, idi, $
+S::=L=R, S::=R, L::=iR, L::=idi, R::=L

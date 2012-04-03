@@ -7,88 +7,12 @@
           <javax.swing.tree.DefaultMutableTreeNode>
             <default>
               <allowsChildren>true</allowsChildren>
-              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-            </default>
-            <object-array>
-              <string>userObject</string>
-              <string>L</string>
-            </object-array>
-          </javax.swing.tree.DefaultMutableTreeNode>
-        </javax.swing.tree.DefaultMutableTreeNode>
-        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-          <javax.swing.tree.DefaultMutableTreeNode>
-            <default>
-              <allowsChildren>true</allowsChildren>
-              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-            </default>
-            <object-array>
-              <string>userObject</string>
-              <string>=</string>
-            </object-array>
-          </javax.swing.tree.DefaultMutableTreeNode>
-        </javax.swing.tree.DefaultMutableTreeNode>
-        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-          <javax.swing.tree.DefaultMutableTreeNode>
-            <default>
-              <allowsChildren>true</allowsChildren>
               <children>
                 <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
                   <javax.swing.tree.DefaultMutableTreeNode>
                     <default>
                       <allowsChildren>true</allowsChildren>
                       <children>
-                        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-                          <javax.swing.tree.DefaultMutableTreeNode>
-                            <default>
-                              <allowsChildren>true</allowsChildren>
-                              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-                            </default>
-                            <object-array>
-                              <string>userObject</string>
-                              <string>i</string>
-                            </object-array>
-                          </javax.swing.tree.DefaultMutableTreeNode>
-                        </javax.swing.tree.DefaultMutableTreeNode>
-                        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-                          <javax.swing.tree.DefaultMutableTreeNode>
-                            <default>
-                              <allowsChildren>true</allowsChildren>
-                              <children>
-                                <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-                                  <javax.swing.tree.DefaultMutableTreeNode>
-                                    <default>
-                                      <allowsChildren>true</allowsChildren>
-                                      <children>
-                                        <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
-                                          <javax.swing.tree.DefaultMutableTreeNode>
-                                            <default>
-                                              <allowsChildren>true</allowsChildren>
-                                              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-                                            </default>
-                                            <object-array>
-                                              <string>userObject</string>
-                                              <string>idi</string>
-                                            </object-array>
-                                          </javax.swing.tree.DefaultMutableTreeNode>
-                                        </javax.swing.tree.DefaultMutableTreeNode>
-                                      </children>
-                                      <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-                                    </default>
-                                    <object-array>
-                                      <string>userObject</string>
-                                      <string>L</string>
-                                    </object-array>
-                                  </javax.swing.tree.DefaultMutableTreeNode>
-                                </javax.swing.tree.DefaultMutableTreeNode>
-                              </children>
-                              <parent class="javax.swing.tree.DefaultMutableTreeNode" reference="../../../../../../.."/>
-                            </default>
-                            <object-array>
-                              <string>userObject</string>
-                              <string>R</string>
-                            </object-array>
-                          </javax.swing.tree.DefaultMutableTreeNode>
-                        </javax.swing.tree.DefaultMutableTreeNode>
                         <javax.swing.tree.DefaultMutableTreeNode serialization="custom">
                           <javax.swing.tree.DefaultMutableTreeNode>
                             <default>

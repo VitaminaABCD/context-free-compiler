@@ -126,6 +126,13 @@ public class ParserProgram {
 	      key.add(e.nextElement());
 		}
 	
+	    Enumeration<String> ek = gotoTable.keys();   
+	    //iterate through Hashtable keys Enumeration
+		List<String> keyGoto = new LinkedList<String>();
+	    while(ek.hasMoreElements()){
+	      keyGoto.add(ek.nextElement());
+		}
+	    
 		while(index<size){
 			String temp=Character.toString(this.input.charAt(index));
 			int max=0,min=0;
@@ -185,11 +192,15 @@ public class ParserProgram {
 				String [] production=act.split("::=");		//act=produzione nella actionTable.
 				
 				
-				String right="";
+				//TODO: usare splitinsymbol o simile
+				String right=production[1];
 				for(String t : key){	
-					right=production[1].replaceAll(Pattern.quote(t), t+" ");
+					right=right.replaceAll(Pattern.quote(t), t+" ");
 				}	
 				
+				for(String t : keyGoto){
+					right=right.replaceAll(Pattern.quote(t), t+" ");
+				}
 			    String [] split = right.split(" ");
 	
 				for(int i=0;i<split.length;i++){ //rimuove beta simboli dallo stack  			//TODO: rimuove beta simboli, nonn beta caratteri
@@ -221,7 +232,7 @@ public class ParserProgram {
 	 */
 	private static String replaceLast(String text, String regex, String replacement) {
 		
-        return text.replaceFirst("(?s)"+regex+"(?!.*?"+regex+")", replacement);
+        return text.replaceFirst("(?s)"+Pattern.quote(regex)+"(?!.*?"+Pattern.quote(regex)+")", replacement);
     }
 
 	public List<String> getT(){

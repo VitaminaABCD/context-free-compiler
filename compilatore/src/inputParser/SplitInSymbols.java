@@ -52,7 +52,6 @@ public class SplitInSymbols implements Runnable {
 			return;
 		}
 		
-		obj=obj.replaceAll(" ", "");
 		int size=obj.length();
 		int index=0;
 		while(index<size){

@@ -277,8 +277,6 @@ public class HomeGui extends JFrame{
 		        		}
 		        		tree.setVisible(true);
 			            tree.updateUI();
-		        	}else{
-		        		JOptionPane.showMessageDialog(frame.getContentPane(), "La frase non appartiene alla grammatica");
 		        	}
 				} catch (IOException e) {
 					JOptionPane.showMessageDialog(frame.getContentPane(), "Insert input");
@@ -367,16 +365,20 @@ public class HomeGui extends JFrame{
 				St st = new St(parserProgram.getHistory());
 				st.initFromHistory();
 //				this.tree.setModel(ast.getRoot());	
-				System.out.println("ok");
 				for(HistoryElement e : parserProgram.getHistory())
 				System.out.println(e.toString());
 				writeToXml(st.getRoot());
 				return st.getRoot();
 			case ERROR:
 				logger.info("ERROR");
+				JOptionPane.showMessageDialog(frame.getContentPane(), "La frase non appartiene alla grammatica");
 				return null;
 			case INVALID_IN:
-				throw new Exception("Uno o pi� caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
+				logger.warn("Uno o piu' caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
+        		JOptionPane.showMessageDialog(frame.getContentPane(), "Uno o piu' caratteri tra quelli inseriti non sono ammessi dalla grammatica corrente");
+        		break;
+			default:
+				throw new Exception("Invalid result from parse() method");
 		}
 		return null;	
 	}

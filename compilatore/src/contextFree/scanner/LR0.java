@@ -45,7 +45,7 @@ public abstract class LR0 implements IScanner{
 				item = iter.next();
 				System.out.println(item);
 				ob = item.getRightSimbols().toArray();
-				System.out.println(item.getRightSimbols());
+//				System.out.println(item.getRightSimbols());
 				right = Arrays.copyOf(ob,ob.length,String[].class);
 				//Se il puntino si trova nell'ultima posizione, ossia l'indice di posizione � maggiore o uguale 
 				//della lunghezza del Rightlist

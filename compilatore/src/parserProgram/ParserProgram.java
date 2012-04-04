@@ -112,51 +112,31 @@ public class ParserProgram {
 	 * @return RESULT.ACCEPT if the string has been accepted, RESULT.ERROR if not, RESULT.INVALID_ID if the input string is invalid 
 	 * @throws InterruptedException 
 	 */
+	@SuppressWarnings("unused")
 	public RESULT parse() throws InterruptedException{
 		Integer state;
 		int size=this.input.length();
+
 		if(size==0){
 			logger.info("Nessun input");
 			return RESULT.INVALID_IN;
 		}
-		int index=0;
+
+		//splitta la stringa in ingresso in simboli
+		List<String> inputSymbol = new LinkedList<String>();
+		SplitInSymbols split = new SplitInSymbols(input);
+		split.addSymbols(getT());
+		split.addSymbols(getV());
+		split.setResult(inputSymbol);
+		split.run();
+		//fine split
 		
-		List<String> T = getT();
-		List<String> V = getV();	    
-	    
+		if(inputSymbol==null) return RESULT.INVALID_IN;			
+			
+		int index=0;
 	    //legge i simboli dall'input e li salva in temp
 		while(index<size){
-			String temp=Character.toString(this.input.charAt(index));
-			int max=0,min=0;
-			boolean founded=false;
-			Pattern pattern = Pattern.compile(Pattern.quote(temp)+".*");
-			for(String k : T){
-				Matcher matcher = pattern.matcher(k);
-				while(matcher.find()){
-					int sz=matcher.group().length();
-					if(sz>max) max= sz;
-					if(sz<min) min= sz;
-					founded=true;
-					}
-			}
-			
-			if(!founded){
-				logger.info("La grammatica corrente non contiene '" + temp + "' tra i caratteri ammessi");
-				return RESULT.INVALID_IN;
-			}
-			
-			founded=false;
-			while(max>min){
-				if(index+max<this.input.length()) temp=this.input.substring(index,index+max);
-				else temp=this.input.substring(index);
-				if(T.contains(temp)){
-					founded=true;
-					break;
-				}
-				max--;
-			}
-			if(!founded) return RESULT.INVALID_IN; //TODO: replicato perchè in teoria dovrebbe sempre trovare qualcosa dato il controllo che avviene in precedenza sulla lunghezza del result			
-			///////////fine lettura///////////////////
+			String temp=inputSymbol.get(index);
 			state=Integer.parseInt(stack.lastElement());				//stato in cima allo stack
 			String act = actionTable.get(temp).get(state);   //valore della tabella action riga(lo stato) e colonna (il carattere)
 			char [] splitAct = act.toCharArray();
@@ -169,15 +149,16 @@ public class ParserProgram {
 				this.history.add(new HistoryElement(tp,null,tempSimbol));
 				logger.debug("inserito simbolo nello stack e nella storia a seguito di uno shift");				
 //////END*/////			
-				index+=max;	//punta "l'indice" al prossimo carattere
+				index++;	//punta "l'indice" al prossimo carattere
 			}else if(act.equals("acc")) break;  //accetta
 			else if(act.equals("err")) return RESULT.ERROR;
 			else{ //e' una riduzione
 				String [] production=act.split("::=");		//act=produzione nella actionTable.
 				
 				//legge il numero di simboli nella produzione della ActionTable...
-				List<String> symbols = new LinkedList<String>(V);
-				symbols.addAll(T);
+				//legge il numero di simboli nella produzione della ActionTable...
+				List<String> symbols = new LinkedList<String>(getV());
+				symbols.addAll(getT());
 				SplitInSymbols rightSymbols = new SplitInSymbols(production[1],symbols);
 			    
 				for(int i=0;i<rightSymbols.count();i++){ //rimuove dallo stack un numero di simboli pari a quelli letti subito sopra

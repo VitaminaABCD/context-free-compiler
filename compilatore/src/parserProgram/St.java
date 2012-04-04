@@ -73,8 +73,8 @@ public class St {
 							}
 						}	
 						if(!founded) {
-							if(currentLevel.getUserObject().toString().equals(current.getProduction().getLeft()) ) //se sono sulla produzione appena inserita salgo di un livello in più
-								currentLevel=(DefaultMutableTreeNode) currentLevel.getParent();
+//							if(currentLevel.getUserObject().toString().equals(current.getProduction().getLeft()) ) //se sono sulla produzione appena inserita salgo di un livello in più
+//								currentLevel=(DefaultMutableTreeNode) currentLevel.getParent();
 							currentLevel=(DefaultMutableTreeNode) currentLevel.getParent();	//se non ha appeso nulla sale di livello
 						}
 					}					

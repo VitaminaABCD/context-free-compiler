@@ -1,6 +1,5 @@
 package parserProgram;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.tree.DefaultMutableTreeNode;

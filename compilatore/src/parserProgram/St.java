@@ -63,7 +63,7 @@ public class St {
 					while(!founded)	{		//fino a quando non trova dove appendere	//-> possibile loop se non trova simboli in tutti i livelli...impossibile!!
 						for(int j=0;j<currentLevel.getChildCount(); j++){			//cerca un figlio nel nodo puntato (parte da quello più a destra) con UserObject(valore) uguale alla parte  sinistra della produzione...
 							DefaultMutableTreeNode node = (DefaultMutableTreeNode) currentLevel.getChildAt(j);
-							if(node.getUserObject().toString().equals(current.getProduction().getLeft())){		//...se lo trova...
+							if(node.getUserObject().toString().equals(current.getProduction().getLeft()) && node.getChildCount()==0){		//...se lo trova...e se non ha figli
 								for(String c : current.getProduction().getRightSimbols()){													
 									node.add(new DefaultMutableTreeNode(c));	//...lo appende.
 								}
